@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>千佛山医院管理系统 主页</title>
+    <title>千佛山医院管理系统 库存</title>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
     <script src="/bootstrap/table/bootstrap-table.js"></script>
     <script src="/bootstrap/js/bootstrap-tab.js"></script>
@@ -14,7 +14,7 @@
     <script>
         $(function () {
             $("#tab1").bootstrapTable({
-                url: "/Library/showInventory",
+                url: "${pageContext.request.contextPath}/Library/showInventory",
                 method: "get",
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 pagination: true,   //开启分页
@@ -56,7 +56,7 @@
 <body>
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
-<div style="width: 1300px; height: 800px; border: 1px solid black; float: left; margin: 50px 0px 0px 60px;">
+<div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 10px black;">
     <h3>库存</h3>
     <table id="tab1"></table>
 </div>

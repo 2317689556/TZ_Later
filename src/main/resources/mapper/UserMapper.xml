@@ -13,4 +13,16 @@
     <select id="showInventory" resultType="Stock">
         SELECT * FROM stock
     </select>
+
+    <!--用户管理__全查-->
+    <!--List<User> userFandAll();-->
+    <select id="userFandAll" resultType="User">
+      select * from user
+    </select>
+
+    <!--用户管理__添加-->
+    <!--int userAdd(User user);-->
+    <insert id="userAdd">
+        insert into user(username,password,grade_Id) value(#{username},#{password},#{gradeId});
+    </insert>
 </mapper>

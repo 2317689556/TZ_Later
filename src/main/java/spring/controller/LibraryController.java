@@ -3,6 +3,7 @@ package spring.controller;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import spring.pojo.Stock;
 import spring.pojo.utils.Page;
 import spring.service.UserService;
@@ -18,6 +19,7 @@ public class LibraryController {
 
     //展示库存
     @RequestMapping("/showInventory")
+    @ResponseBody
     public PageInfo<Stock> login(Page page) {
         PageInfo<Stock> info = userService.showInventory(page);
         return info;
