@@ -31,4 +31,9 @@ public class UserService {
     public List<User> userFandAll() {
         return userMapper.userFandAll();
     }
+
+    /*用户管理__添加*/
+    public int userAdd(User user) {
+        return userMapper.userAdd(user);
+    }
 }

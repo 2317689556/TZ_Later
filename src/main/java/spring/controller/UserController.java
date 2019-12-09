@@ -40,4 +40,12 @@ public class UserController {
         return "user";
     }
 
+    /*用户管理__添加*/
+    @RequestMapping("addUser")
+    @ResponseBody
+    public boolean userAdd(User user){
+        int i = userService.userAdd(user);
+        return i>0;
+    }
+
 }
