@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>千佛山医院管理系统 登录</title>
+    <script src="/js/jquery-3.4.1.min.js"></script>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/zzsc.css">
@@ -157,7 +158,8 @@
 </head>
 
 <body>
-<div class="demo form-bg">
+<jsp:include page="utlis/background.jsp"/>
+<div class="demo form-bg" style="margin: 200px 0 0 0;">
     <div class="container">
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
