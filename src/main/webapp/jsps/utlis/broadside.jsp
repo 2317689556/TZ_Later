@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div style="float: left; margin: 0 0 0 100px; opacity: 0.75;">
+<div style="float: left; margin: 0 0 0 100px; opacity: 0.8;">
     <div class="content">
         <ul class="vertical-nav dark red">
             <li class="active"><a href="#"><i class="icon-home"></i>首页
@@ -18,7 +18,7 @@
                     </li>
                     <li><a href="#">采购申请/入库单查询</a>
                     </li>
-                    <li><a href="#">手术单</a>
+                    <li><a href="#">手术单</a>d
                     </li>
                     <li><a href="#">备货单</a>
                     </li>
