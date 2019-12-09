@@ -140,6 +140,7 @@
             contentType:false,
             success: function (data) {
 
+
                 $("#myModalAdd2").modal("hide");
                 alert("添加成功");
                 window.location.reload();
