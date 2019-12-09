@@ -19,15 +19,19 @@
 
 </head>
 <body>
-<div>
-    <ul class="nav nav-tabs" role="tablist" id="biaoqian">
-        <li role="presentation" class="active"><a href="#Admin" role="tab" data-toggle="tab">厂家代理、管理</a></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane active" id="Admin" role="tabpanel">
-            <div style="height: 230px; whit :500">
-                <table id="Tab3">
-                </table>
+<jsp:include page="../utlis/background.jsp"/>
+<jsp:include page="../utlis/broadside.jsp"/>
+<div style="width: 1300px; height: 800px; border: 1px solid black; float: left; margin: 50px 0px 0px 60px;">
+    <div>
+        <ul class="nav nav-tabs" role="tablist" id="biaoqian">
+            <li role="presentation" class="active"><a href="#Admin" role="tab" data-toggle="tab">厂家代理、管理</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="Admin" role="tabpanel">
+                <div style="height: 230px; whit :500">
+                    <table id="Tab3">
+                    </table>
+                </div>
             </div>
         </div>
     </div>
