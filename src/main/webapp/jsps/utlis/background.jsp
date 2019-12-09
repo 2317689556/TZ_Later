@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script type="text/javascript" src="/js/google-maps.js"></script>
 <link href="/css/fonts.css" rel="stylesheet">
 <script>

@@ -48,7 +48,6 @@
 		</div>
 	</div>
 </div>
-
   <script src="${pageContext.request.contextPath}/static/assets/js/jquery.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/assets/js/amazeui.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/assets/js/app.js"></script>
@@ -70,7 +69,6 @@
 				return false;
 			}
 		});
-
 
 	$(function () {
 	 	//用户登陆
