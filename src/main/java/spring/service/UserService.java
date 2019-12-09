@@ -26,4 +26,9 @@ public class UserService {
         PageInfo<Stock> info = new PageInfo<>(list);
         return info;
     }
+
+    /*用户管理__全查*/
+    public List<User> userFandAll() {
+        return userMapper.userFandAll();
+    }
 }
