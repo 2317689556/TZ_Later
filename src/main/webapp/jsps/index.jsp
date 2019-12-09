@@ -7,8 +7,8 @@
 </head>
 
 <body>
+<jsp:include page="utlis/background.jsp"/>
 <div>
-    <jsp:include page="utlis/background.jsp"/>
     <div class="content">
         <ul class="vertical-nav dark red">
             <li class="active"><a href="#"><i class="icon-home"></i>首页

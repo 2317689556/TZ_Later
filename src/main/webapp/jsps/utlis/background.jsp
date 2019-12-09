@@ -1421,4 +1421,4 @@
 </style>
 
 <%--背景--%>
-<canvas id="Mycanvas" style="position: absolute; top: 0; left:0; z-index: -1;"/>
+<canvas id="Mycanvas" style="position: absolute; top: 0; left:0; z-index: -1;"></canvas>
