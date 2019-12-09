@@ -16,7 +16,7 @@
     <script>
         $(function () {
             $("#tab1").bootstrapTable({
-                url: "/Library/showInventory",
+                url: "${pageContext.request.contextPath}/Library/showInventory",
                 method: "get",
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 pagination: true,   //开启分页

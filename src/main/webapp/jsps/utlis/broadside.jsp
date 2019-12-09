@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div style="float: left; margin: 0 0 0 100px; opacity: 0.9;">
+<div style="float: left; margin: 0 0 0 100px; opacity: 0.8;">
     <div class="content">
         <ul class="vertical-nav dark red" style="text-align: center;">
             <li class="active"><a href="#"><i class="icon-home"></i>首页
