@@ -22,7 +22,7 @@
                     </li>
                     <li><a href="#">采购申请/入库单查询</a>
                     </li>
-                    <li><a href="#">手术单</a>d
+                    <li><a href="#">手术单</a>
                     </li>
                     <li><a href="#">备货单</a>
                     </li>
