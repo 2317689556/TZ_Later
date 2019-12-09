@@ -57,7 +57,7 @@
 </div>
 </body>
 <!-- 添加的模态框（Modal） -->
-<%--<div class="modal fade" id="myModalAdd2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModalAdd2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -82,9 +82,19 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="col-sm-3 control-label">密码</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="password" name="password"/>
+                        </div>
+                        <div class="col-sm-2">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="col-sm-3 control-label">用户身份</label>
                         <div class="col-sm-7">
-                            <select class="form-control" id="form-field-select-1" name="userRole">
+                            <select class="form-control" id="form-field-select-1" name="gradeId">
                                 <option>请选择</option>
                                 <option value="1">管理员</option>
                                 <option value="2">库管</option>
@@ -109,10 +119,9 @@
             </div>
         </div>
     </div>
-</div>--%>
+</div>
 
 </html>
-<%--
 <script>
     /*******添加用户*********/
     $('#ads_add').on('click', function () {
@@ -125,7 +134,7 @@
             //几个参数需要注意一下
             type: "post",//方法类型
             dataType: "json",//预期服务器返回的数据类型
-            url: "${pageContext.request.contextPath}/user/addOceanUser",//url
+            url: "${pageContext.request.contextPath}/user/addUser",//url
             data:form,
             processData:false,
             contentType:false,
@@ -150,4 +159,4 @@
 
 
 
-</script>--%>
+</script>
