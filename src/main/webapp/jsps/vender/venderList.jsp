@@ -23,9 +23,7 @@
 <jsp:include page="../utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border: 1px solid black; float: left; margin: 50px 0px 0px 60px;">
     <div>
-        <ul class="nav nav-tabs" role="tablist" id="biaoqian">
-            <li role="presentation" class="active"><a href="#Admin" role="tab" data-toggle="tab">厂家代理、管理</a></li>
-        </ul>
+        <h3>厂家代理、管理</h3>
         <div class="tab-content">
             <div class="tab-pane active" id="Admin" role="tabpanel">
                 <div style="height: 230px; whit :500">
@@ -90,6 +88,16 @@
             ]
         });
     });
+
+    $(function () {
+        $('#Tab3').on('click-row.bs.table', function (e, row, element){
+            //$(element).css({"color":"blue","font-size":"16px;"});
+            console.log(row);
+            //response.sendRedirect("venderShow.jsp");
+           // request.getRequestDispatcher("venderShow.jsp").forward(request,response);
+            window.location = "venderShow.jsp";
+        });
+    })
 </script>
 
 </html>

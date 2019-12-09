@@ -11,8 +11,6 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
-    <jsp:include page="utlis/background.jsp"/>
-    <jsp:include page="utlis/broadside.jsp"/>
     <script>
         $(function () {
             $("#tab1").bootstrapTable({

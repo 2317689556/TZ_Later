@@ -79,7 +79,7 @@
                     <li><a href="#">修改密码</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="icon-question" style="padding-left: 20px;width: 20px;padding-right: 35px;"></i>厂家、代理管理</a>
+            <li><a href="/jsps/vender/venderList.jsp"><i class="icon-question" style="padding-left: 20px;width: 20px;padding-right: 35px;"></i>厂家、代理管理</a>
             </li>
             <li><a href="#"><i class="icon-envelope"></i>修改库存</a></li>
             <li><a href="#"><i class="icon-bar-chart"></i>统计</a></li>
