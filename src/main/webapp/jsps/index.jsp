@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>千佛山医院管理系统</title>
+    <title>千佛山医院管理系统 主页</title>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
 </head>
 
