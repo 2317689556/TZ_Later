@@ -1,14 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div style="float: left; margin: 0 0 0 100px; opacity: 0.9;">
     <div class="content">
         <ul class="vertical-nav dark red" style="text-align: center;">
             <li class="active"><a href="#"><i class="icon-home"></i>首页
                 <span class="submenu-icon"></span></a>
                 <c:if test="${USER.gradeId==1}">
-                <ul>
-                    <li><a href="#">预警页面</a>
-                    </li>
-                </ul>
+                    <ul>
+                        <li><a href="#">预警页面</a></li>
+                    </ul>
                 </c:if>
             </li>
             <li><a href="#"><i class="icon-cogs"></i>查询
@@ -39,7 +39,8 @@
                     <li><a href="#">委托加工单</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="icon-user" style="padding-left: 18px;width: 20px;padding-right: 37px;"></i>库管<span class="submenu-icon"></span></a>
+            <li><a href="#"><i class="icon-user" style="padding-left: 18px;width: 20px;padding-right: 37px;"></i>库管<span
+                    class="submenu-icon"></span></a>
                 <ul>
                     <li><a href="#">采购申请</a></li>
                     <li><a href="#">入库扫货</a></li>
@@ -49,7 +50,8 @@
                     <li><a href="#">报损申请</a></li>
                 </ul>
             </li>
-            <li style="text-align: center"><a href="#"><i class="icon-comments-alt"></i>供养设备库<span class="submenu-icon"></span></a>
+            <li style="text-align: center"><a href="#"><i class="icon-comments-alt"></i>供养设备库<span
+                    class="submenu-icon"></span></a>
                 <ul>
                     <li><a href="#">零件库</a></li>
                     <li><a href="#">委托加工成品库</a></li>
@@ -61,7 +63,9 @@
                 </ul>
             </li>
             <%--要改的图标--%>
-            <li style="text-align: center"><a href="#" style="text-align: center"><i class="icon-info" style="padding-left: 25px;width: 20px;padding-right: 30px;"></i>委托加工成品表<span class="submenu-icon"></span></a>
+            <li style="text-align: center"><a href="#" style="text-align: center"><i class="icon-info"
+                                                                                     style="padding-left: 25px;width: 20px;padding-right: 30px;"></i>委托加工成品表<span
+                    class="submenu-icon"></span></a>
                 <ul>
                     <li><a href="#">新建表</a></li>
                 </ul>
@@ -69,8 +73,8 @@
             <li><a href="#"><i class="icon-group"></i>账号管理<span class="submenu-icon"></span></a>
                 <ul>
                     <c:if test="${p.gradeId==1}">
-                    <li><a href="#">账户权限管理</a></li>
-                    <li><a href="#">用户管理</a></li>
+                        <li><a href="#">账户权限管理</a></li>
+                        <li><a href="#">用户管理</a></li>
                     </c:if>
                     <li><a href="#">修改密码</a></li>
                 </ul>
