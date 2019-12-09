@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
   <div class="am-g myapp-login" style="color:#6495ED;">
 	<div class="myapp-login-logo-block  tpl-login-max">
 		<div class="myapp-login-logo-text">
