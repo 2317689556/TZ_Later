@@ -1342,7 +1342,7 @@
     }
 
     .content {
-        margin: 10px 50px 0 50px;
+        margin: 30px 50px 0 50px;
     }
 
     .panel {

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div>
+<div style="float: left; margin: 0 0 0 100px; opacity: 0.75;">
     <div class="content">
         <ul class="vertical-nav dark red">
             <li class="active"><a href="#"><i class="icon-home"></i>首页
