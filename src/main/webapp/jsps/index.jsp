@@ -11,6 +11,7 @@
 <jsp:include page="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border: 1px solid black; float: left; margin: 50px 0px 0px 60px;">
     <h3>库存</h3>
+    123
 </div>
 </body>
 </html>
