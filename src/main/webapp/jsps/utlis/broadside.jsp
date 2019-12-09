@@ -12,7 +12,7 @@
             <li><a href="#"><i class="icon-cogs"></i>查询
                 <span class="submenu-icon"></span></a>
                 <ul>
-                    <li><a href="#">库存</a>
+                    <li><a href="/jsps/inventory.jsp">库存</a>
                     </li>
                     <li><a href="#">出库单</a>
                     </li>

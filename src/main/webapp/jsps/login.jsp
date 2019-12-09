@@ -158,7 +158,7 @@
 </head>
 
 <body>
-<jsp:include page="utlis/background.jsp"/>
+<c:import url="utlis/background.jsp"/>
 <div class="demo form-bg" style="margin: 200px 0 0 0;">
     <div class="container">
         <div class="row">
