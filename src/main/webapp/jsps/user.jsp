@@ -46,7 +46,10 @@
                                 <c:if test="${user2.gradeId==2}">库管</c:if>
                                 <c:if test="${user2.gradeId==3}">路人</c:if>
                             </td>
-                            <td><a>删除</a>&nbsp;&nbsp;<a>修改</a></td>
+                            <td><a>删除</a>&nbsp;&nbsp;
+                                <a title="修改" onclick="modifyUser1(${user2.id})"
+                                   href="javascript:;" class="btn btn-xs btn-info">修改</a>
+                            </td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -121,13 +124,80 @@
     </div>
 </div>
 
+<!-- 修改的模态框（Modal） -->
+<div class="modal fade" id="myModalUpdate3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">修改用户</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="updateForm" action="##" id="updateUser4">
+                    <div class="form-group">
+                        <div class="col-sm-7" id="div02">
+                            <input type="hidden" id="updateuserId" name='id'/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">用户名</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="updateuserName" name="username"/>
+                        </div>
+                        <div class="col-sm-2">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">用户密码</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="updatepassword" name="password"/>
+                        </div>
+                        <div class="col-sm-2">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">用户身份</label>
+                        <div class="col-sm-7">
+                            <select class="form-control" id="form-field-select-2" name="gradeId">
+                                <option>请选择</option>
+                                <option value="1">管理员</option>
+                                <option value="2">库管</option>
+                                <option value="3">路人</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-10">
+                            <button id="sendMai2" type="button" onclick="updateUser3()" class="btn btn-primary">确定修改
+                            </button>
+                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                            <button type="reset" class="btn btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 </html>
 <script>
     /*******添加用户*********/
     $('#ads_add').on('click', function () {
         $("#myModalAdd2").modal("show");
     });
-    function addUser2(){
+
+    function addUser2() {
 
         var form = new FormData($("#adduser2")[0]);
         $.ajax({
@@ -135,29 +205,74 @@
             type: "post",//方法类型
             dataType: "json",//预期服务器返回的数据类型
             url: "${pageContext.request.contextPath}/user/addUser",//url
-            data:form,
-            processData:false,
-            contentType:false,
+            data: form,
+            processData: false,
+            contentType: false,
             success: function (data) {
 
 
                 $("#myModalAdd2").modal("hide");
                 alert("添加成功");
                 window.location.reload();
+            },
+            error: function () {
+                alert("请求失败！！！！");
+            }
+        })
+    }
 
+    /*
+   * 配合修改的单查
+   * */
+    function modifyUser1(id) {
+        alert(id)
+        $.ajax({
+            type: "post",
+            url: "${pageContext.request.contextPath}/user/findUserById",
+            data: {"id": id},
+            dataType: "json",
+            success: function (data) {
+                $("#myModalUpdate3").modal("show");
+                $("#updateuserId").val(data.id);
+                $("#updateuserName").val(data.username);
+                $("#updatepassword").val(data.password);
+                $("option[value=" + data.gradeId + "]").attr("selected",true);
+            },
+            error: function (msg) {
+                alert(22)
+            }
+        });
+    }
+
+    /*
+* 修改
+* */
+    function updateUser3() {
+        debugger
+        var form = new FormData($("#updateUser4")[0]);
+
+        $.ajax({
+            //几个参数需要注意一下
+            type: "post",//方法类型
+            dataType: "json",//预期服务器返回的数据类型
+            url: "${pageContext.request.contextPath}/user/updateUser",//url
+            data: form,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+
+                $("#myModalUpdate3").modal("hide");
+                alert("修改成功");
+                window.location.reload();
 
             },
-            error : function() {
+            error: function () {
                 alert("请求失败！！！！");
 
             }
 
         })
-
-
-
     }
-
 
 
 </script>

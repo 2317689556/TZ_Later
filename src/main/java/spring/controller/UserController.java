@@ -48,4 +48,12 @@ public class UserController {
         return i>0;
     }
 
+    /*用户管理__配合修改的单查*/
+    @RequestMapping("findUserById")
+    @ResponseBody
+    public User fandUserbyId(User user){
+        User i = userService.findUserById(user);
+        return i;
+    }
+
 }

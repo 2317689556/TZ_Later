@@ -25,4 +25,9 @@ public class UserService {
     public int userAdd(User user) {
         return userMapper.userAdd(user);
     }
+
+    /*用户管理__配合修改的单查*/
+    public User findUserById(User user) {
+        return userMapper.fandUserById(user);
+    }
 }
