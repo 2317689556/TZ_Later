@@ -4,9 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.dao.VenderMapper">
     <select id="findVender" resultType="Agency">
-        SELECT
-	      *
-        FROM
-      	  agency
+        SELECT *
+        FROM agency
     </select>
 </mapper>
