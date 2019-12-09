@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.dao.LibraryMapper">
+    <select id="showInventory" resultType="Stock">
+        SELECT *
+        FROM stock
+        <where>
+            <if test="date1 != null and date1 != ''">
+                InboundDate>=#{date1}
+            </if>
+            <if test="date2 != null and date2 != ''">
+                AND InboundDate&lt;=#{date2}
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -1,5 +1,6 @@
 package spring.dao;
 
+import org.apache.ibatis.annotations.Param;
 import spring.pojo.Stock;
 import spring.pojo.User;
 
@@ -7,8 +8,6 @@ import java.util.List;
 
 public interface UserMapper {
     User login(User user);
-
-    List<Stock> showInventory();
 
     /*用户管理__全查*/
     List<User> userFandAll();
