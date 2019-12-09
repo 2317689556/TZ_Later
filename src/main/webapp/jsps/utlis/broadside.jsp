@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div style="float: left; margin: 0 0 0 100px; opacity: 0.9;">
     <div class="content">
+        <c:forEach items="${USER}" var="p">
         <ul class="vertical-nav dark red">
             <li class="active"><a href="#"><i class="icon-home"></i>首页
                 <span class="submenu-icon"></span></a>
@@ -58,13 +59,18 @@
                     <li><a href="#">新增商品录入信息</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="icon-info"></i>委托加工成品表<span class="submenu-icon"></span></a>
+            <%--要改的图标--%>
+            <li><a href="#"><center><i class="icon-info"></i></center>委托加工成品表<span class="submenu-icon"></span></a>
                 <ul>
                     <li><a href="#">新建表</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class="icon-group"></i>账号管理<span class="submenu-icon"></span></a>
                 <ul>
+                    <c:if test="${p.gradeId==1}">
+                    <li><a href="#">账户权限管理</a></li>
+                    <li><a href="#">用户管理</a></li>
+                    </c:if>
                     <li><a href="#">修改密码</a></li>
                 </ul>
             </li>
@@ -73,5 +79,6 @@
             <li><a href="#"><i class="icon-envelope"></i>修改库存</a></li>
             <li><a href="#"><i class="icon-bar-chart"></i>统计</a></li>
         </ul>
+        </c:forEach>
     </div>
 </div>
