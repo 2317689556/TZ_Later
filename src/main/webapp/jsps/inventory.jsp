@@ -56,7 +56,7 @@
 <body>
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
-<div style="width: 1300px; height: 800px; border: 1px solid black; float: left; margin: 50px 0px 0px 60px;">
+<div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 10px black;">
     <h3>库存</h3>
     <table id="tab1"></table>
 </div>
