@@ -1,12 +1,13 @@
 package spring.controller;
 
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import spring.pojo.User;
+import spring.pojo.Stock;
+import spring.pojo.utils.Page;
 import spring.service.UserService;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 
 //库
 @Controller
@@ -16,14 +17,9 @@ public class LibraryController {
     UserService userService;
 
     //展示库存
-    @RequestMapping("/showInventory ")
-    public String login(User user, HttpSession session) {
-        User user1 = userService.login(user);
-        if (user1 != null) {
-            session.setAttribute("USER", user1);
-            return "index";
-        } else {
-            return "login";
-        }
+    @RequestMapping("/showInventory")
+    public PageInfo<Stock> login(Page page) {
+        PageInfo<Stock> info = userService.showInventory(page);
+        return info;
     }
 }
