@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>千佛山医院管理系统 登录</title>
-    <script src="/js/jquery-3.4.1.min.js"></script>
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/bootstrap/table/bootstrap-table.js"></script>
+    <script src="/bootstrap/js/bootstrap-tab.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/zzsc.css">
     <style type="text/css">

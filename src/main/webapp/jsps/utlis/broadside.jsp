@@ -2,7 +2,7 @@
 <div style="float: left; margin: 0 0 0 100px; opacity: 0.9;">
     <div class="content">
         <c:forEach items="${USER}" var="p">
-        <ul class="vertical-nav dark red" style="text-align: center;">
+        <ul class="vertical-nav dark red">
             <li class="active"><a href="#"><i class="icon-home"></i>首页
                 <span class="submenu-icon"></span></a>
                 <ul>
