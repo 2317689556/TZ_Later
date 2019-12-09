@@ -1,14 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div style="float: left; margin: 0 0 0 100px; opacity: 0.9;">
     <div class="content">
-        <c:forEach items="${USER}" var="p">
-        <ul class="vertical-nav dark red">
+        <ul class="vertical-nav dark red" style="text-align: center;">
             <li class="active"><a href="#"><i class="icon-home"></i>首页
                 <span class="submenu-icon"></span></a>
+                <c:if test="${USER.gradeId==1}">
                 <ul>
                     <li><a href="#">预警页面</a>
                     </li>
                 </ul>
+                </c:if>
             </li>
             <li><a href="#"><i class="icon-cogs"></i>查询
                 <span class="submenu-icon"></span></a>
@@ -79,6 +80,5 @@
             <li><a href="#"><i class="icon-envelope"></i>修改库存</a></li>
             <li><a href="#"><i class="icon-bar-chart"></i>统计</a></li>
         </ul>
-        </c:forEach>
     </div>
 </div>
