@@ -14,42 +14,33 @@
     <script>
         $(function () {
             $("#tab1").bootstrapTable({
-                url: "${pageContext.request.contextPath}/",
+                url: "/Library/showInventory",
                 method: "get",
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-                //编码，bootstrapTable的post提交默认是application/json
-                cache: false,      //关闭缓存
                 pagination: true,   //开启分页
                 sidePagination: "server", //服务端分页，client是客户端
                 pageNumber: 1,     //分页起始行,默认第一行
-                pageSize: 3,       //每页几行
-                pageList: [3, 5, 10],   //设置每页几行的下拉框
+                pageSize: 8,       //每页几行
                 showRefresh: true,  //刷新按钮
-                strictSearch: true,     //精确搜索
                 showColumns: true,      //列的下拉菜单
                 clickToSelect: true,    //设置复选框头
-                queryParams: function (params) {   //传入
+                queryParams: function (params) {
                     return {
-                        limit: params.limit,     // 每页要显示的数据条数
-                        offset: params.offset,   // 每页显示数据的开始行号
-                        sort: params.sort,       // 要排序的字段
-                        order: params.order,     // 排序规则
+                        limit: params.limit,
+                        offset: params.offset,
                     };
                 },
-                responseHandler: function (res) {//返回
+                responseHandler: function (res) {
                     return {
-                        "total": res.total,//总页数
-                        "rows": res.list   //返回数据的集合
+                        "total": res.total,
+                        "rows": res.list
                     };
                 },
-                columns: [//field：属性  title：列名
+                columns: [
                     {
                         field: 'id',
                         title: '序号',
                         formatter: function (value, row, index) {
-                            //value：该列的字段值
-                            //row：这一行的数据对象
-                            //index：行号，从0开始
                             return index + 1;
                         }
                     }, {

@@ -9,4 +9,8 @@
         WHERE username=#{username}
         AND password=#{password}
     </select>
+
+    <select id="showInventory" resultType="Stock">
+        SELECT * FROM stock
+    </select>
 </mapper>
