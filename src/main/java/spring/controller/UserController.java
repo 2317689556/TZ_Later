@@ -17,7 +17,11 @@ public class UserController {
     @RequestMapping("login")
     public String login(User user, HttpSession session) {
         User user1 = userService.login(user);
-        session.setAttribute("USER", user1);
-        return "index";
+        if (user1 != null) {
+            session.setAttribute("USER", user1);
+            return "index";
+        } else {
+            return "login";
+        }
     }
 }
