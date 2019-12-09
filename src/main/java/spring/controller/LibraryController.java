@@ -8,15 +8,15 @@ import spring.service.UserService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
-//用户
+//库
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/Library")
+public class LibraryController {
     @Resource
     UserService userService;
 
-    //登录
-    @RequestMapping("login")
+    //展示库存
+    @RequestMapping("/showInventory ")
     public String login(User user, HttpSession session) {
         User user1 = userService.login(user);
         if (user1 != null) {

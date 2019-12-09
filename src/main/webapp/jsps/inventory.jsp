@@ -14,10 +14,8 @@
     <script>
         $(function () {
             $("#tab1").bootstrapTable({
-                url: "${pageContext.request.contextPath}/show",
-                sortName: "id",           //排序名
-                sortOrder: "desc",        //排序方式
-                method: "POST",             //请求方式，默认get
+                url: "${pageContext.request.contextPath}/",
+                method: "get",
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 //编码，bootstrapTable的post提交默认是application/json
                 cache: false,      //关闭缓存

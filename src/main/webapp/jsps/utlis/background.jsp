@@ -113,6 +113,10 @@
 
 </script>
 <style>
+    .icon-bar-chart {
+        width: 50px;
+    }
+
     .bggjgjjgjywrturuwehegqeq410000 {
         clear: both
     }
@@ -466,7 +470,7 @@
         float: left;
         border-right: solid 1px #dedede;
         padding-right: 10px;
-        padding: 14px 15px 12px 15px;
+        padding: 14px 40px 12px 15px;
         width: 28px;
         text-align: center;
         -o-transition: background .3s ease-in-out;
