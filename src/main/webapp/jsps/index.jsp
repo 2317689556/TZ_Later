@@ -2,14 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>千佛山医院管理系统</title>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
-<jsp:include page="utlis/background.jsp"/>
 <div>
+    <jsp:include page="utlis/background.jsp"/>
     <div class="content">
         <ul class="vertical-nav dark red">
             <li class="active"><a href="#"><i class="icon-home"></i>首页
