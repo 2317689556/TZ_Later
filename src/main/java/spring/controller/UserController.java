@@ -1,7 +1,9 @@
 package spring.controller;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import spring.pojo.User;
@@ -35,6 +37,7 @@ public class UserController {
     @ResponseBody
     public List<User> userFandAll(Model m) {
         List<User> user = userService.userFandAll();
+        System.out.println(user);
         return user;
     }
 
@@ -68,6 +71,15 @@ public class UserController {
     public int deleteUser(Integer id){
         int i = userService.deleteUser(id);
         return i;
+    }
+
+    /*用户管理__备注修改*/
+    @RequestMapping("updateUserBZ")
+    @ResponseBody
+    public void updateUserBZ(Integer id,String remarks){
+        System.out.println(id);
+        System.out.println(remarks);
+        userService.updateUserBZ(id,remarks);
     }
 
 }

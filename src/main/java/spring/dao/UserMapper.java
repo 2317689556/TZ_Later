@@ -23,4 +23,7 @@ public interface UserMapper {
 
     /*用户管理__删除*/
     int deleteUser(Integer id);
+
+    /*公户管理__备注修改*/
+    void updateUserBZ(@Param("id") Integer id,@Param("remarks") String remarks);
 }

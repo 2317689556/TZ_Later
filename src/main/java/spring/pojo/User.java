@@ -8,5 +8,5 @@ public class User extends Grade {
     private String username;
     private String password;
     private long gradeId;
-    private long remarks;
+    private String remarks;
 }
