@@ -11,7 +11,6 @@ public class Agency {
     private long productLineNum;
     private String name;
     private java.sql.Date date;
-    private java.sql.Timestamp validityAgency;
     private String credentials;
     private String credentials1;
     private String businessLicense;

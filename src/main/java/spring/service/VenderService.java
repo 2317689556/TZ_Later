@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import spring.dao.VenderMapper;
 import spring.pojo.Agency;
+import spring.pojo.ProductLine;
 import spring.pojo.utils.Page;
 
 import javax.annotation.Resource;
@@ -25,5 +26,11 @@ public class VenderService {
 
     public Agency venderListParticular(Integer id) {
         return venderMapper.venderListParticular(id);
+    }
+
+    public void UpdataVender(Agency agency, List<ProductLine> lines, Integer[] id1) {
+        venderMapper.delectProductLine(id1);
+        venderMapper.UpdataVender(agency);
+        venderMapper.UpdataProductLine(lines);
     }
 }
