@@ -35,6 +35,12 @@
                     }, {
                         field: 'name',
                         title: '权限'
+                    }, {
+                        field: 'id',
+                        title: '操作',
+                        formatter: function (value, row, index) {
+                            return "<input type=\"button\" class=\"btn btn-primary\" value=\"删除\"><input type=\"button\" class=\"btn btn-primary\" value=\"修改\" style=\"margin-left: 1em\">";
+                        }
                     }
                 ]
             })
@@ -45,9 +51,9 @@
 <body>
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
-<div style="width: 1300px; height: 800px; border: 1px solid black; float: left; margin: 50px 0px 0px 60px;">
-    <a href="javascript:ovid()" id="ads_add" class="btn btn-primary"><i class="fa fa-plus"></i> 添加用户</a>
-    <h3>用户管理</h3>
+<div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black; text-align: left;">
+    <center><h3 style="margin-bottom: 40px">用户管理</h3></center>
+    <a href="javascript:ovid()" id="ads_add" class="btn btn-primary" style="margin: 0 0 0 40px">添加用户</a>
     <div class="sort_list" style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
         <table id="tab1"></table>
     </div>
@@ -105,11 +111,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-4 col-sm-10">
+                        <div class="col-sm-offset-4 col-sm-10" style="text-align: right; margin-top: 30px;">
                             <button id="sendMail" onclick="addUser2()" type="button" class="btn btn-primary">提交</button>
-                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                            <button type="reset" class="btn btn-primary">重置</button>
+                            <button type="reset" class="btn btn-primary" style="margin: 0 100px 0 1em">重置</button>
                         </div>
                     </div>
                 </form>
