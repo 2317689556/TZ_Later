@@ -39,12 +39,6 @@
                 },
                 columns: [
                     {
-                        field: 'id',
-                        title: '序号',
-                        formatter: function (value, row, index) {
-                            return index + 1;
-                        }
-                    }, {
                         field: 'name',
                         title: '厂家名',
                         formatter: function (value, row, index) {

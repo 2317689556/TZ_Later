@@ -6,8 +6,7 @@ public class ProductLine {
   private long id;
   private String name;
   private String address;
-  private String includingProduct;
-  private java.sql.Date validity_Of_Agency;
+  private java.sql.Date validityOfAgency;
   private long agencyId;
   private java.sql.Timestamp createTime;
   private java.sql.Timestamp updateTime;
@@ -41,21 +40,12 @@ public class ProductLine {
   }
 
 
-  public String getIncludingProduct() {
-    return includingProduct;
+  public java.sql.Date getValidityOfAgency() {
+    return validityOfAgency;
   }
 
-  public void setIncludingProduct(String includingProduct) {
-    this.includingProduct = includingProduct;
-  }
-
-
-  public java.sql.Date getValidity_Of_Agency() {
-    return validity_Of_Agency;
-  }
-
-  public void setValidity_Of_Agency(java.sql.Date validity_Of_Agency) {
-    this.validity_Of_Agency = validity_Of_Agency;
+  public void setValidityOfAgency(java.sql.Date validityOfAgency) {
+    this.validityOfAgency = validityOfAgency;
   }
 
 

@@ -13,6 +13,7 @@ public class Agency {
     private java.sql.Date date;
     private java.sql.Timestamp validityAgency;
     private String credentials;
+    private String credentials1;
     private String businessLicense;
     private java.sql.Timestamp createTime;
     private java.sql.Timestamp updateTime;
