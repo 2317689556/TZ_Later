@@ -9,56 +9,52 @@
     <script src="/bootstrap/js/bootstrap-tab.js"></script>
     <script src="/bootstrap/js/bootstrap.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/cxCalendar/js/jquery.cxcalendar.js"></script>
+    <script src="/cxCalendar/js/jquery.cxcalendar.languages.js"></script>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
+    <link rel="stylesheet" href="/cxCalendar/css/jquery.cxcalendar.css">
+    <script>
+        $(function () {
+            $("#tab1").bootstrapTable({
+                url: "${pageContext.request.contextPath}/user/userFandAll",
+                method: "get",
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                sidePagination: "server",
+                pageSize: 8,
+                columns: [
+                    {
+                        field: 'id',
+                        title: '序号',
+                        formatter: function (value, row, index) {
+                            return index + 1;
+                        }
+                    }, {
+                        field: 'username',
+                        title: '用户名'
+                    }, {
+                        field: 'name',
+                        title: '权限'
+                    }
+                ]
+            })
+        })
+    </script>
 </head>
 
 <body>
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border: 1px solid black; float: left; margin: 50px 0px 0px 60px;">
+    <a href="javascript:ovid()" id="ads_add" class="btn btn-primary"><i class="fa fa-plus"></i> 添加用户</a>
     <h3>用户管理</h3>
-    <div class="page-content clearfix" id="advertising">
-        <div class="sort_style">
-            <div class="border clearfix">
-       <span class="l_f">
-        <a href="javascript:ovid()" id="ads_add" class="btn btn-warning"><i class="fa fa-plus"></i> 添加用户</a>
-       </span>
-            </div>
-            <div class="sort_list">
-
-                <table class="table table-striped table-bordered table-hover" id="sample-table">
-                    <thead>
-                    <tr>
-                        <th width="80">ID</th>
-                        <th width="100">用户名</th>
-                        <th width="180px">用户身份</th>
-                        <th width="250px">操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${user2}" var="user2">
-                        <tr>
-                            <td>${user2.id}</td>
-                            <td>${user2.username}</td>
-                            <td>
-                                <c:if test="${user2.gradeId==1}">管理员</c:if>
-                                <c:if test="${user2.gradeId==2}">库管</c:if>
-                                <c:if test="${user2.gradeId==3}">路人</c:if>
-                            </td>
-                            <td><a>删除</a>&nbsp;&nbsp;
-                                <a title="修改" onclick="modifyUser1(${user2.id})"
-                                   href="javascript:;" class="btn btn-xs btn-info">修改</a>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div class="sort_list" style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
+        <table id="tab1"></table>
     </div>
 </div>
 </body>
+
+
 <!-- 添加的模态框（Modal） -->
 <div class="modal fade" id="myModalAdd2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -235,7 +231,7 @@
                 $("#updateuserId").val(data.id);
                 $("#updateuserName").val(data.username);
                 $("#updatepassword").val(data.password);
-                $("option[value=" + data.gradeId + "]").attr("selected",true);
+                $("option[value=" + data.gradeId + "]").attr("selected", true);
             },
             error: function (msg) {
                 alert(22)

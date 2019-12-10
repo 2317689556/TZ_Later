@@ -96,7 +96,7 @@
     <input class="form-control date_1" id="date_1" type="date" style="width: 150px; float: left;" onchange="shuaXin()">
     <span style="float: left; font-size: 17px; line-height: 34px; margin-left: 50px;">结束日期：</span>
     <input class="form-control date_1" id="date_2" type="date" style="width: 150px;" onchange="shuaXin()">
-    <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 3px black; height: 620px; padding: 10px">
+    <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
         <table id="tab1"></table>
     </div>
 </div>

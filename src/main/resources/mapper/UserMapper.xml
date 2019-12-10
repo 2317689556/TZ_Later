@@ -13,8 +13,8 @@
 
     <!--用户管理__全查-->
     <select id="userFandAll" resultType="User">
-      select *
-      from user
+      SELECT user.*,grade.`name`
+      FROM `user` LEFT JOIN grade ON `user`.Grade_id=grade.id
     </select>
 
     <!--用户管理__添加-->
