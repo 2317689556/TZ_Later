@@ -36,6 +36,9 @@
                         field: 'name',
                         title: '权限'
                     }, {
+                        field: 'remarks',
+                        title: '备注'
+                    }, {
                         field: 'id',
                         title: '操作',
                         formatter: function (value, row, index) {
