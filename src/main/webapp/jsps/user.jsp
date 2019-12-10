@@ -9,53 +9,61 @@
     <script src="/bootstrap/js/bootstrap-tab.js"></script>
     <script src="/bootstrap/js/bootstrap.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/cxCalendar/js/jquery.cxcalendar.js"></script>
+    <script src="/cxCalendar/js/jquery.cxcalendar.languages.js"></script>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
+    <link rel="stylesheet" href="/cxCalendar/css/jquery.cxcalendar.css">
+    <script>
+        $(function () {
+            $("#tab1").bootstrapTable({
+                url: "/user/userFandAll",
+                method: "get",
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                sidePagination: "server",
+                pageSize: 8,
+                columns: [
+                    {
+                        field: 'id',
+                        title: '序号',
+                        formatter: function (value, row, index) {
+                            return index + 1;
+                        }
+                    }, {
+                        field: 'username',
+                        title: '用户名'
+                    }, {
+                        field: 'name',
+                        title: '权限'
+                    }, {
+                        field: 'remarks',
+                        title: '备注'
+                    }, {
+                        field: 'id',
+                        title: '操作',
+                        formatter: function (value, row, index) {
+                            return "<input type=\"button\" class=\"btn btn-primary\" onclick=\"deleteUser3('"+value+"')\" value=\"删除\"><input type=\"button\" class=\"btn btn-primary\" onclick=\"modifyUser1('"+value+"')\" value=\"修改\" style=\"margin-left: 1em\">";
+                        }
+                    }
+                ]
+            })
+        })
+    </script>
 </head>
 
 <body>
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
-<div style="width: 1300px; height: 800px; border: 1px solid black; float: left; margin: 50px 0px 0px 60px;">
-    <h3>用户管理</h3>
-    <div class="page-content clearfix" id="advertising">
-        <div class="sort_style">
-            <div class="border clearfix">
-       <span class="l_f">
-        <a href="javascript:ovid()" id="ads_add" class="btn btn-warning"><i class="fa fa-plus"></i> 添加用户</a>
-       </span>
-            </div>
-            <div class="sort_list">
-
-                <table class="table table-striped table-bordered table-hover" id="sample-table">
-                    <thead>
-                    <tr>
-                        <th width="80">ID</th>
-                        <th width="100">用户名</th>
-                        <th width="180px">用户身份</th>
-                        <th width="250px">操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${user2}" var="user2">
-                        <tr>
-                            <td>${user2.id}</td>
-                            <td>${user2.username}</td>
-                            <td>
-                                <c:if test="${user2.gradeId==1}">管理员</c:if>
-                                <c:if test="${user2.gradeId==2}">库管</c:if>
-                                <c:if test="${user2.gradeId==3}">路人</c:if>
-                            </td>
-                            <td><a>删除</a>&nbsp;&nbsp;<a>修改</a></td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black; text-align: left;">
+    <center><h3 style="margin-bottom: 40px">用户管理</h3></center>
+    <a href="javascript:ovid()" id="ads_add" class="btn btn-primary" style="margin: 0 0 0 40px">添加用户</a>
+    <div class="sort_list" style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
+        <table id="tab1"></table>
     </div>
 </div>
 </body>
+
+
 <!-- 添加的模态框（Modal） -->
 <div class="modal fade" id="myModalAdd2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -106,11 +114,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-4 col-sm-10">
+                        <div class="col-sm-offset-4 col-sm-10" style="text-align: right; margin-top: 30px;">
                             <button id="sendMail" onclick="addUser2()" type="button" class="btn btn-primary">提交</button>
-                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                            <button type="reset" class="btn btn-primary">重置</button>
+                            <button type="reset" class="btn btn-primary" style="margin: 0 100px 0 1em">重置</button>
                         </div>
                     </div>
                 </form>
@@ -121,13 +127,88 @@
     </div>
 </div>
 
+<!-- 修改的模态框（Modal） -->
+<div class="modal fade" id="myModalUpdate3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">修改用户</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="updateForm" action="##" id="updateUser4">
+                    <div class="form-group">
+                        <div class="col-sm-7" id="div02">
+                            <input type="hidden" id="updateuserId" name='id'/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">用户名</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="updateuserName" name="username"/>
+                        </div>
+                        <div class="col-sm-2">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">用户密码</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="updatepassword" name="password"/>
+                        </div>
+                        <div class="col-sm-2">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">用户身份</label>
+                        <div class="col-sm-7">
+                            <select class="form-control" id="form-field-select-2" name="gradeId">
+                                <option>请选择</option>
+                                <option value="1">管理员</option>
+                                <option value="2">库管</option>
+                                <option value="3">路人</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-10">
+                            <button id="sendMai2" type="button" onclick="updateUser3()" class="btn btn-primary">确定修改
+                            </button>
+                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                            <button type="reset" class="btn btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
 </html>
 <script>
+
+    /*刷新页面*/
+    function shuaXin() {
+        $('#tab1').bootstrapTable('refresh');
+    }
+
+
     /*******添加用户*********/
     $('#ads_add').on('click', function () {
         $("#myModalAdd2").modal("show");
     });
-    function addUser2(){
+
+    function addUser2() {
 
         var form = new FormData($("#adduser2")[0]);
         $.ajax({
@@ -135,29 +216,99 @@
             type: "post",//方法类型
             dataType: "json",//预期服务器返回的数据类型
             url: "${pageContext.request.contextPath}/user/addUser",//url
-            data:form,
-            processData:false,
-            contentType:false,
+            data: form,
+            processData: false,
+            contentType: false,
             success: function (data) {
 
 
                 $("#myModalAdd2").modal("hide");
                 alert("添加成功");
                 window.location.reload();
+            },
+            error: function () {
+                alert("请求失败！！！！");
+            }
+        })
+    }
 
+    /*
+   * 配合修改的单查
+   * */
+    function modifyUser1(id) {
+        alert(id)
+        $.ajax({
+            type: "post",
+            url: "${pageContext.request.contextPath}/user/findUserById",
+            data: {"id": id},
+            dataType: "json",
+            success: function (data) {
+                $("#myModalUpdate3").modal("show");
+                $("#updateuserId").val(data.id);
+                $("#updateuserName").val(data.username);
+                $("#updatepassword").val(data.password);
+                $("option[value=" + data.gradeId + "]").attr("selected", true);
+            },
+            error: function (msg) {
+                alert(11)
+            }
+        });
+    }
+
+    /*
+* 修改
+* */
+    function updateUser3() {
+        debugger
+        var form = new FormData($("#updateUser4")[0]);
+
+        $.ajax({
+            //几个参数需要注意一下
+            type: "post",//方法类型
+            dataType: "json",//预期服务器返回的数据类型
+            url: "${pageContext.request.contextPath}/user/updateUser",//url
+            data: form,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+
+                $("#myModalUpdate3").modal("hide");
+                alert("修改成功");
+                /*window.location.reload();*/
+                shuaXin();
 
             },
-            error : function() {
+            error: function () {
                 alert("请求失败！！！！");
 
             }
 
         })
-
-
-
     }
 
-
+    /*删除用户*/
+    function deleteUser3(id) {
+        var msg = "您真的确定要删除吗？\n\n请确认！";
+        if (confirm(msg)==true){
+            return deleteUser4(id);
+        }else{
+            return false;
+        }
+    }
+    function deleteUser4(id) {
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            url:"${pageContext.request.contextPath}/user/deleteUser",
+            data:{"id":id},
+            success:function () {
+                alert("删除成功")
+                shuaXin();
+            },
+            error: function () {
+                alert("失败了,废物");
+            }
+        })
+    }
 
 </script>

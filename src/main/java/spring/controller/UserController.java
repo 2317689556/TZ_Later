@@ -1,9 +1,7 @@
 package spring.controller;
 
-import com.jcraft.jsch.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import spring.pojo.User;
@@ -34,18 +32,42 @@ public class UserController {
 
     /*用户管理__全查*/
     @RequestMapping("userFandAll")
-    public String userFandAll(Model m){
-        List<User> user2 = userService.userFandAll();
-        m.addAttribute("user2",user2);
-        return "user";
+    @ResponseBody
+    public List<User> userFandAll(Model m) {
+        List<User> user = userService.userFandAll();
+        return user;
     }
 
     /*用户管理__添加*/
     @RequestMapping("addUser")
     @ResponseBody
-    public boolean userAdd(User user){
+    public boolean userAdd(User user) {
         int i = userService.userAdd(user);
-        return i>0;
+        return i > 0;
+    }
+
+    /*用户管理__配合修改的单查*/
+    @RequestMapping("findUserById")
+    @ResponseBody
+    public User fandUserbyId(User user) {
+        User i = userService.findUserById(user);
+        return i;
+    }
+
+    /*用户管理__修改*/
+    @RequestMapping("updateUser")
+    @ResponseBody
+    public int updateUser(User user) {
+        int i = userService.updateUser(user);
+        return i;
+    }
+
+    /*用户管理__删除*/
+    @RequestMapping("deleteUser")
+    @ResponseBody
+    public int deleteUser(Integer id){
+        int i = userService.deleteUser(id);
+        return i;
     }
 
 }
