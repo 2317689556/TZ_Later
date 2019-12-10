@@ -18,7 +18,7 @@
         $(function () {
             $('.date_1').cxCalendar();
             $("#tab1").bootstrapTable({
-                url: "${pageContext.request.contextPath}/Library/showInventory",
+                url: "/Library/showInventory",
                 method: "get",
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 pagination: true,

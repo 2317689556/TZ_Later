@@ -17,7 +17,7 @@
     <script>
         $(function () {
             $("#tab1").bootstrapTable({
-                url: "${pageContext.request.contextPath}/user/userFandAll",
+                url: "/user/userFandAll",
                 method: "get",
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 sidePagination: "server",

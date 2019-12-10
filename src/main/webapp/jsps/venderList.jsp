@@ -1,88 +1,83 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>厂家代理、管理</title>
-    <script type="text/javascript" src="/static/js/jquery-3.4.1.min.js"></script>
-    <script src="/static/bootstrap/table/bootstrap-table.js"></script>
-    <script src="/static/bootstrap/js/bootstrap-tab.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-tab.css">
+    <meta charset="utf-8">
+    <title>千佛山医院管理系统 库存</title>
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/bootstrap/table/bootstrap-table.js"></script>
+    <script src="/bootstrap/js/bootstrap-tab.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/cxCalendar/js/jquery.cxcalendar.js"></script>
+    <script src="/cxCalendar/js/jquery.cxcalendar.languages.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
+    <link rel="stylesheet" href="/cxCalendar/css/jquery.cxcalendar.css">
+    <script>
+        $(function () {
+            $('.date_1').cxCalendar();
+            $("#tab1").bootstrapTable({
+                url: "${pageContext.request.contextPath}/Vender/findVender",
+                method: "get",
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                pagination: true,
+                sidePagination: "server",
+                pageNumber: 1,
+                pageSize: 8,
+                queryParams: function (params) {
+                    return {
+                        limit: params.limit,
+                        offset: params.offset,
+                    };
+                },
+                responseHandler: function (res) {
+                    return {
+                        "total": res.total,
+                        "rows": res.list
+                    };
+                },
+                columns: [
+                    {
+                        field: 'id',
+                        title: '序号',
+                        formatter: function (value, row, index) {
+                            return index + 1;
+                        }
+                    }, {
+                        field: 'name',
+                        title: '厂家名',
+                        formatter: function (value, row, index) {
+                            return "<a href='/Vender/venderListParticular?id=" + row.id + "'>" + value + "</a>";
+                        }
+                    }, {
+                        field: 'productLineNum',
+                        title: '产品线数量'
+                    }, {
+                        field: 'productQuantity',
+                        title: '产品数量'
+                    }, {
+                        field: 'date',
+                        title: '营业执照有效期'
+                    }
+                ]
+            });
+        })
 
+        function shuaXin() {
+            $('#tab1').bootstrapTable('refresh');
+        }
+    </script>
 </head>
+
 <body>
-<jsp:include page="utlis/background.jsp"/>
-<jsp:include page="utlis/broadside.jsp"/>
-<div style="width: 1300px; height: 800px; border: 1px solid black; float: left; margin: 50px 0px 0px 60px;">
-    <div>
-        <ul class="nav nav-tabs" role="tablist" id="biaoqian">
-            <li role="presentation" class="active"><a href="#Admin" role="tab" data-toggle="tab">厂家代理、管理</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane active" id="Admin" role="tabpanel">
-                <div style="height: 230px; whit :500">
-                    <table id="Tab3">
-                    </table>
-                </div>
-            </div>
-        </div>
+<c:import url="utlis/background.jsp"/>
+<c:import url="utlis/broadside.jsp"/>
+<div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
+    <h3 style="margin-bottom: 40px">代理厂商</h3>
+    <div style="margin: 40px; margin-top: 94px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
+        <table id="tab1"></table>
     </div>
 </div>
 </body>
-<script>
-    $(function () {
-        $("#Tab3").bootstrapTable({
-            url: "/Vender/findVender",
-            method: "post",//提交方式
-            pagination: true,//开启分页
-            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-            sortable: true,   //是否启用排序
-            sortOrder: "asc",//排序的方式
-            sortName: "id",
-            sidePagination: 'server',//client:前端分页；server:后端分页
-            cache: false,//是否使用缓存
-            responseHandler: function (res) {//处理服务器返回数据
-                return {
-                    "total": res.total,
-                    "rows": res.list
-                }
-            }, columns: [
-                {
-                    align: "center",
-                    title: '序号',//表头名
-                    formatter: function (value, row, index) {
-                        return index + 1;
-                    }
-                }, {
-                    align: "center",
-                    field: 'name',
-                    title: '用户名',
-                    formatter: function (value, row, index) {
-                        return 0;
-                    }
-                }, {
-                    align: "center",
-                    title: '生产线数量',
-                    formatter: function (value, row, index) {
-                        return 0;
-                    }
-                }, {
-                    align: "center",
-                    title: '产品数量',
-                    formatter: function (value, row, index) {
-                        return 0;
-                    }
-                }, {
-                    align: "center",
-                    title: '营业执照有效期',
-                    formatter: function (value, row, index) {
-                        return 0;
-                    }
-                },
-            ]
-        });
-    });
-</script>
-
 </html>
