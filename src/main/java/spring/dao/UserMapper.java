@@ -20,4 +20,7 @@ public interface UserMapper {
 
     /*用户管理__修改*/
     int updateUser(User user);
+
+    /*用户管理__删除*/
+    int deleteUser(Integer id);
 }

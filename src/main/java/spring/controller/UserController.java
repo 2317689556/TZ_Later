@@ -54,11 +54,19 @@ public class UserController {
         return i;
     }
 
-    /*用户管理__单查*/
+    /*用户管理__修改*/
     @RequestMapping("updateUser")
     @ResponseBody
     public int updateUser(User user) {
         int i = userService.updateUser(user);
+        return i;
+    }
+
+    /*用户管理__删除*/
+    @RequestMapping("deleteUser")
+    @ResponseBody
+    public int deleteUser(Integer id){
+        int i = userService.deleteUser(id);
         return i;
     }
 

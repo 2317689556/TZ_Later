@@ -35,4 +35,9 @@ public class UserService {
     public int updateUser(User user) {
         return userMapper.updateUser(user);
     }
+
+    /*用户管理__删除*/
+    public int deleteUser(Integer id) {
+        return userMapper.deleteUser(id);
+    }
 }
