@@ -41,4 +41,9 @@
          where
          id=#{id}
     </update>
+
+    <!--用户管理__删除-->
+    <delete id="deleteUser">
+        delete from user where id=#{id}
+    </delete>
 </mapper>

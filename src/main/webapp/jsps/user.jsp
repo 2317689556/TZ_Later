@@ -42,7 +42,7 @@
                         field: 'id',
                         title: '操作',
                         formatter: function (value, row, index) {
-                            return "<input type=\"button\" class=\"btn btn-primary\" value=\"删除\"><input type=\"button\" class=\"btn btn-primary\" value=\"修改\" style=\"margin-left: 1em\">";
+                            return "<input type=\"button\" class=\"btn btn-primary\" onclick=\"deleteUser3('"+value+"')\" value=\"删除\"><input type=\"button\" class=\"btn btn-primary\" onclick=\"modifyUser1('"+value+"')\" value=\"修改\" style=\"margin-left: 1em\">";
                         }
                     }
                 ]
@@ -193,8 +193,16 @@
 </div>
 
 
+
 </html>
 <script>
+
+    /*刷新页面*/
+    function shuaXin() {
+        $('#tab1').bootstrapTable('refresh');
+    }
+
+
     /*******添加用户*********/
     $('#ads_add').on('click', function () {
         $("#myModalAdd2").modal("show");
@@ -228,6 +236,7 @@
    * 配合修改的单查
    * */
     function modifyUser1(id) {
+        alert(id)
         $.ajax({
             type: "post",
             url: "${pageContext.request.contextPath}/user/findUserById",
@@ -241,7 +250,7 @@
                 $("option[value=" + data.gradeId + "]").attr("selected", true);
             },
             error: function (msg) {
-                alert(22)
+                alert(11)
             }
         });
     }
@@ -265,7 +274,8 @@
 
                 $("#myModalUpdate3").modal("hide");
                 alert("修改成功");
-                window.location.reload();
+                /*window.location.reload();*/
+                shuaXin();
 
             },
             error: function () {
@@ -276,5 +286,29 @@
         })
     }
 
+    /*删除用户*/
+    function deleteUser3(id) {
+        var msg = "您真的确定要删除吗？\n\n请确认！";
+        if (confirm(msg)==true){
+            return deleteUser4(id);
+        }else{
+            return false;
+        }
+    }
+    function deleteUser4(id) {
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            url:"${pageContext.request.contextPath}/user/deleteUser",
+            data:{"id":id},
+            success:function () {
+                alert("删除成功")
+                shuaXin();
+            },
+            error: function () {
+                alert("失败了,废物");
+            }
+        })
+    }
 
 </script>
