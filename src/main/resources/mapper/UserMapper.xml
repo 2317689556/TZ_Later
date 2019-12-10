@@ -26,6 +26,19 @@
     <!--用户管理__配合修改的单查-->
     <!--User fandUserById(User user);-->
     <select id="fandUserById" resultType="User">
-      select * from user where id=#{id}
+      select * from
+       user
+        where
+         id=#{id}
     </select>
+
+    <!--用户管理__修改-->
+    <update id="updateUser" parameterType="User">
+        update user set
+         username=#{username},
+         password=#{password},
+         Grade_Id=#{gradeId}
+         where
+         id=#{id}
+    </update>
 </mapper>

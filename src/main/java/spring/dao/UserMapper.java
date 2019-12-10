@@ -17,4 +17,7 @@ public interface UserMapper {
 
     /*用户管理__配合修改的单查*/
     User fandUserById(User user);
+
+    /*用户管理__修改*/
+    int updateUser(User user);
 }

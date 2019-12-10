@@ -30,4 +30,9 @@ public class UserService {
     public User findUserById(User user) {
         return userMapper.fandUserById(user);
     }
+
+    /*用户管理__修改*/
+    public int updateUser(User user) {
+        return userMapper.updateUser(user);
+    }
 }

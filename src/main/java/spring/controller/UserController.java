@@ -56,4 +56,12 @@ public class UserController {
         return i;
     }
 
+    /*用户管理__单查*/
+    @RequestMapping("updateUser")
+    @ResponseBody
+    public int updateUser(User user){
+            int i = userService.updateUser(user);
+        return i;
+    }
+
 }

@@ -225,7 +225,6 @@
    * 配合修改的单查
    * */
     function modifyUser1(id) {
-        alert(id)
         $.ajax({
             type: "post",
             url: "${pageContext.request.contextPath}/user/findUserById",
