@@ -14,5 +14,5 @@ public interface LibraryMapper {
     List<PurchaseRequest> PurchaseRequestfindAll(@Param("date1") String date_1,@Param("date2") String date_2);
 
     /*出库单__详情*/
-    List<PurchaseRequestDetails> PurchaseRequestDetailsFindAllById();
+    List<PurchaseRequestDetails> PurchaseRequestDetailsFindAllById(Integer id);
 }

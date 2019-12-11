@@ -25,7 +25,7 @@
                 applyDate>=#{date1}
             </if>
             <if test="date2!=null and date2!=''">
-              and  applyDate&lt;=#{date2}
+                and applyDate&lt;=#{date2}
             </if>
 
         </where>
@@ -33,7 +33,13 @@
 
     <!--出库单__详情-->
     <select id="PurchaseRequestDetailsFindAllById" resultType="PurchaseRequestDetails">
-        select*from purchase_request a,purchase_request_details b where a.id=#{id}=b.stockout_id=#{stockoutId}
+        select *
+        from purchase_request a,
+        purchase_request_details b
+         where
+          a.id=b.stockout_id
+           and
+            a.id=#{id}
     </select>
 
 </mapper>

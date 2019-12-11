@@ -39,11 +39,11 @@ public class LibraryController {
     }
 
     /*出库单__详情*/
-    @RequestMapping("venderListParticular")
-    @ResponseBody
-    public String PurchaseRequestDetailsFindAllById(Model model){
-        List<PurchaseRequestDetails> list = libraryService.PurchaseRequestDetailsFindAllById();
+    @RequestMapping("PurchaseRequestDetailsFindAllById")
+    public String PurchaseRequestDetailsFindAllById(Model model,Integer id){
+        List<PurchaseRequestDetails> list = libraryService.PurchaseRequestDetailsFindAllById(id);
         model.addAttribute("list",list);
+        System.out.println(list);
         return "purchaseRequestBetails";
     }
 
