@@ -39,6 +39,10 @@
         }
     </style>
     <script>
+        $(function () {
+            $('.date_1').cxCalendar();
+        })
+
         function updata() {
             $("input").removeAttr("disabled");
             $(".temp4").css("display", "none");
@@ -53,7 +57,9 @@
                 processData: false,
                 contentType: false,
                 success: function (data) {
-
+                    alert("修改成功");
+                }, error: function () {
+                    alert("修改失败");
                 }
             })
             $("#temp1 table input").attr("disabled", "disabled");
@@ -78,7 +84,7 @@
                 </tr>
                 <tr>
                     <td><span>营业执照时间：</span></td>
-                    <td><input type="text" value="${AGENCY.date}" class="form-control" disabled name="date"></td>
+                    <td><input type="date" value="${AGENCY.date}" class="form-control date_1" disabled name="date"></td>
                 </tr>
                 <c:forEach items="${AGENCY.productLines}" var="i">
                     <tr>
@@ -91,7 +97,7 @@
                     </tr>
                     <tr>
                         <td><span>代理有效期：</span></td>
-                        <td><input type="text" value="${i.validityOfAgency}" disabled class="form-control" name="validityOfAgency"></td>
+                        <td><input type="date" value="${i.validityOfAgency}" disabled class="form-control date_1" name="validityOfAgency"></td>
                     </tr>
                     <input type="hidden" value="${i.id}" name="id1">
                 </c:forEach>
@@ -106,7 +112,7 @@
         </form>
         <div style="float: right; margin-top: 250px;" id="temp3">
             <input type="button" value="修改" class="btn-primary btn temp4" onclick="updata()">
-            <input type="button" value="添加" class="btn-primary btn temp5" onclick="updata1()" style="margin-left: 1em; display: none;">
+            <input type="button" value="完成" class="btn-primary btn temp5" onclick="updata1()" style="margin-left: 1em; display: none;">
         </div>
     </div>
 </div>

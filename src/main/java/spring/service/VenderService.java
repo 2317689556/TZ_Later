@@ -33,4 +33,13 @@ public class VenderService {
         venderMapper.UpdataVender(agency);
         venderMapper.UpdataProductLine(lines);
     }
+
+    public void VenderAdd(Agency agency, List<ProductLine> lines, List<String[]> list) {
+        venderMapper.AddAgency(agency);
+        for (int i = 0; i < lines.size(); i++) {
+            lines.get(i).setAgencyId(agency.getId());
+            venderMapper.addLines(lines.get(i));
+            venderMapper.addProduct(list.get(i), lines.get(i).getId());
+        }
+    }
 }
