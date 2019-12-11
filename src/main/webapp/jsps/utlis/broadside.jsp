@@ -18,7 +18,7 @@
                     <ul>
                         <li><a href="/jsps/inventory.jsp">库存</a>
                         </li>
-                        <li><a href="#">出库单</a>
+                        <li><a href="/jsps/purchaseRequest.jsp">出库单</a>
                         </li>
                         <li><a href="#">采购申请/入库单查询</a>
                         </li>

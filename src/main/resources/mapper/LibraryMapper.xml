@@ -15,4 +15,25 @@
             </if>
         </where>
     </select>
+
+    <!--出库单全查-->
+    <select id="PurchaseRequestfindAll" resultType="PurchaseRequest">
+        select *
+        from purchase_request
+        <where>
+            <if test="date1!=null and date1!=''">
+                applyDate>=#{date1}
+            </if>
+            <if test="date2!=null and date2!=''">
+              and  applyDate&lt;=#{date2}
+            </if>
+
+        </where>
+    </select>
+
+    <!--出库单__详情-->
+    <select id="PurchaseRequestDetailsFindAllById" resultType="">
+
+    </select>
+
 </mapper>
