@@ -24,7 +24,7 @@
                         </li>
                         <li><a href="#">手术单</a>
                         </li>
-                        <li><a href="#">备货单</a>
+                        <li><a href="/jsps/stockup.jsp">备货单</a>
                         </li>
                         <li><a href="#">异常查询</a>
                         </li>

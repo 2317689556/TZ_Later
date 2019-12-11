@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import spring.pojo.Stock;
 import spring.pojo.utils.Page;
 import spring.service.LibraryService;
-import spring.service.UserService;
 
 import javax.annotation.Resource;
 
