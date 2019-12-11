@@ -18,8 +18,8 @@
         $(function () {
             $('.date_1').cxCalendar();
             $("#tab1").bootstrapTable({
-                url: "${pageContext.request.contextPath}/Storup/findStorup",
-                method: "get",
+                url: "${pageContext.request.contextPath}/Stockup/findStockup",
+                method: "post",
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 pagination: true,
                 sidePagination: "server",
@@ -38,33 +38,28 @@
                     };
                 },
                 columns: [
-                    /*{
-                        field: 'name',
-                        title: '厂家名',
-                        formatter: function (value, row, index) {
-                            return "<a href='/Vender/venderListParticular?id=" + row.id + "'>" + value + "</a>";
-                        }
-                    },*/ {
+                    {
                         field: 'number',
                         title: '单号'
                     },{
-                        field: 'manufacturers',
+                        field: 'center',
                         title: '订货单位'
                     },{
-                        field: 'center',
+                        field: 'manufacturers',
                         title: '科室'
                     }, {
                         field: 'proposer',
                         title: '申请人'
                     }, {
-                        field: 'center',
+                        field: 'applyDate',
                         title: '填写日期'
                     }, {
                         field: 'signDate',
                         title: '签批日期'
                     }, {
-                        field: 'productQuantity',
+                        field: 'signState',
                         title: '状态'
+
                     },
                 ]
             });
