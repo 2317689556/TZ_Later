@@ -42,7 +42,7 @@ public class LibraryController {
     public String PurchaseRequestDetailsFindAllById(Model model,Integer id){
         List<PurchaseRequestDetails> list = libraryService.PurchaseRequestDetailsFindAllById(id);
         model.addAttribute("list",list);
-        System.out.println(list);
+        model.addAttribute("list1", list.get(0));
         return "purchaseRequestBetails";
     }
 
