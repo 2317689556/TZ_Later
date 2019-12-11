@@ -46,7 +46,7 @@
                         field: 'number',
                         title: '单号',
                         formatter: function (value, row, index) {
-                            return "<a href='/jsps/stockupList.jsp   ?id=" + row.id + "'>" + value + "</a>";
+                            return "<a href='/Stockup/findStockupFindAllById?id=" + row.id + "'>" + value + "</a>"
                         }
                     },{
                         field: 'manufacturers',
