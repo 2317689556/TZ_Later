@@ -61,8 +61,16 @@
                         title: '签批日期'
                     }, {
                         field: 'signState',
-                        title: '状态'
-
+                        title: '状态',
+                        formatter:function (value,row,index) {
+                            if (value == 0) {
+                                return "未签批"
+                            } else if (value == 1) {
+                                return "已签批"
+                            }else if(value==2){
+                                return "已驳回"
+                            }
+                        }
                     },
                 ]
             });
@@ -82,7 +90,7 @@
     <div style="margin-left: 40px;">
         <input class="form-control" style="width: 700px; float: left;" >
         <input type="button" value="查询" class="btn-primary btn" onclick="updata()" id="chaxun">
-        <input type="button" value="生成出库单" class="btn-primary btn" onclick="updata()" id="daoshu" style="margin-left: 200px">
+        <input type="button" value="生成出库单" class="btn-primary btn"  id="daoshu" style="margin-left: 200px" onclick="window.location='/jsps/stockupShow.jsp'">
     </div>
     <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
         <table id="tab1"></table>
