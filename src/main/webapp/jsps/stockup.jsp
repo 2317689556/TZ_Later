@@ -25,6 +25,7 @@
                 sidePagination: "server",
                 pageNumber: 1,
                 pageSize: 8,
+                singleSelect: true,//单行选择单行,设置为true将禁止多选
                 queryParams: function (params) {
                     return {
                         limit: params.limit,
@@ -39,6 +40,8 @@
                 },
                 columns: [
                     {
+                        checkbox: true
+                    },{
                         field: 'number',
                         title: '单号'
                     },{
@@ -75,8 +78,13 @@
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
-    <h3 style="margin-bottom: 40px">备货单</h3>
-    <div style="margin: 40px; margin-top: 94px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
+    <h3 style="margin-bottom: 40px;">备货单</h3>
+    <div style="margin-left: 40px;">
+        <input class="form-control" style="width: 700px; float: left;" >
+        <input type="button" value="查询" class="btn-primary btn" onclick="updata()" id="chaxun">
+        <input type="button" value="生成出库单" class="btn-primary btn" onclick="updata()" id="daoshu" style="margin-left: 200px">
+    </div>
+    <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
         <table id="tab1"></table>
     </div>
 </div>
