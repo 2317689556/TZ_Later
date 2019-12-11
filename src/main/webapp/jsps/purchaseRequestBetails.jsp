@@ -25,24 +25,39 @@
     <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
         <table class="table table-striped table-bordered table-hover" id="sample-table">
 
-            <tr><div>
-                <div style="width: 70px">
-                    订货单位：
+            <tr>
+                <div>
+                    <div style="text-align: left;float: left">
+                        <span>订货单位：${2222222222}</span>
+                    </div>
+                    <div style="margin-left: 800px">
+                        <span >出库单号：${1}</span>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div style="clear: both ; margin-top: 10px">
+                        <div style="text-align: left;float: left">
+                            <span>科室：${1}</span>
+                        </div>
+                        <div style="margin-left: 810px">
+                            <span >发票号：${1111}</span>
+                        </div>
+                    </div>
+
+                    <div style="clear: both ; margin-top: 10px">
+                        <div style="text-align: left;float: left">
+                            <span>业务员：${1111111}</span>
+                        </div>
+                        <div style="margin-left: 790px">
+                            <span >日期：${111}</span>
+                        </div>
+                    </div>
+
+
+
+
+
+
                 </div>
-                <div style="width: 70px;float: right">
-                    出库单号：
-                </div>
-                <div style="width: 70px">
-                    科室：
-                </div>
-                <div style="width: 70px;float: right">
-                    发票号：
-                </div>
-                    业务员：
-                <div style="width: 70px;float: right">
-                    日期：
-                </div>
-            </div>
             </tr>
             <thead>
             <tr>
