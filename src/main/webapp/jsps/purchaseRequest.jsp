@@ -103,7 +103,7 @@
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
-    <h3 style="margin-bottom: 40px">库存</h3>
+    <h3 style="margin-bottom: 40px">出库单</h3>
     <span style="float: left; font-size: 17px; line-height: 34px; margin-left: 40px;">开始日期：</span>
     <input class="form-control date_1" id="date_1" type="date" style="width: 150px; float: left;" onchange="shuaXin()">
     <span style="float: left; font-size: 17px; line-height: 34px; margin-left: 50px;">结束日期：</span>

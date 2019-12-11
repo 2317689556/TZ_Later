@@ -24,6 +24,26 @@
 
     <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
         <table class="table table-striped table-bordered table-hover" id="sample-table">
+
+            <tr><div>
+                <div style="width: 70px">
+                    订货单位：
+                </div>
+                <div style="width: 70px;float: right">
+                    出库单号：
+                </div>
+                <div style="width: 70px">
+                    科室：
+                </div>
+                <div style="width: 70px;float: right">
+                    发票号：
+                </div>
+                    业务员：
+                <div style="width: 70px;float: right">
+                    日期：
+                </div>
+            </div>
+            </tr>
             <thead>
             <tr>
                 <th width="25"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
@@ -52,6 +72,10 @@
                     <td>${p.money}</td>
                 </tr>
             </c:forEach>
+            <tr>
+                <td colspan="5">合计：</td>
+                <td colspan="4">大写</td>
+            </tr>
             </tbody>
         </table>
     </div>
