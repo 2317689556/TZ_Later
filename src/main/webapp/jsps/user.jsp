@@ -234,10 +234,7 @@
             }
         })
     }
-
-    /*
-   * 配合修改的单查
-   * */
+    /* 配合修改的单查*/
     function modifyUser1(id) {
         alert(id)
         $.ajax({
@@ -257,10 +254,7 @@
             }
         });
     }
-
-    /*
-* 修改
-* */
+    /* 修改 */
     function updateUser3() {
         debugger
         var form = new FormData($("#updateUser4")[0]);
@@ -314,6 +308,7 @@
         })
     }
 
+    /*备注修改*/
     function changeData(id,remarks) {
         alert(id)
         alert(remarks)
