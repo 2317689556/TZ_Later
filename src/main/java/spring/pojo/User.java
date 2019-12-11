@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class User extends Grade {
     private long id;
-    private String username;
-    private String password;
-    private long gradeId;
-    private String remarks;
+    private String username;//用户名
+    private String password;//密码
+    private long gradeId;//权限等级
+    private String remarks;//备注
 }

@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>千佛山医院管理系统 库存</title>
+    <title>千佛山医院管理系统 代理厂商</title>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
     <script src="/bootstrap/table/bootstrap-table.js"></script>
     <script src="/bootstrap/js/bootstrap-tab.js"></script>

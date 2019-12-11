@@ -310,9 +310,6 @@
 
     /*备注修改*/
     function changeData(id,remarks) {
-        alert(id)
-        alert(remarks)
-        debugger
         $.ajax({
             type: "post",//方法类型
             url: "${pageContext.request.contextPath}/user/updateUserBZ",//url
