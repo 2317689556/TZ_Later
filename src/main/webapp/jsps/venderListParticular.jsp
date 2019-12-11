@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>千佛山医院管理系统 代理厂商  详情</title>
+    <title>千佛山医院管理系统 代理厂商 详情</title>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
     <script src="/bootstrap/table/bootstrap-table.js"></script>
     <script src="/bootstrap/js/bootstrap-tab.js"></script>
@@ -58,6 +58,7 @@
                 contentType: false,
                 success: function (data) {
                     alert("修改成功");
+                    window.location = "/Vender/venderListParticular?id=${AGENCY.id}";
                 }, error: function () {
                     alert("修改失败");
                 }

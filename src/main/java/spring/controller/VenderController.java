@@ -63,11 +63,10 @@ public class VenderController {
             AliyunOSSUtil.upload(file1, format);
             agency.setBusinessLicense("https://vihtrsa.oss-cn-beijing.aliyuncs.com/" + format);
         }
-
         //添加资格证书
         List<String> temp = new ArrayList<>();
         for (MultipartFile multipartFile : credentialsTemp) {
-            format = "千佛山/credentials/" + new SimpleDateFormat("yyyyMMddHHmmss").format(new java.util.Date());
+            format += 1;
             originalFilename1 = businessLicenseTemp.getOriginalFilename();
             originalFilename = request.getSession().getServletContext().getRealPath("/") + "upload/01";
             if (originalFilename1 != null && !originalFilename1.equals("")) {
@@ -119,7 +118,7 @@ public class VenderController {
         //添加资格证书
         List<String> temp = new ArrayList<>();
         for (MultipartFile multipartFile : credentialsTemp) {
-            format = "千佛山/credentials/" + new SimpleDateFormat("yyyyMMddHHmmss").format(new java.util.Date());
+            format += 1;
             originalFilename1 = tupian1[0].getOriginalFilename();
             originalFilename = request.getSession().getServletContext().getRealPath("/") + "upload/01";
             if (originalFilename1 != null && !originalFilename1.equals("")) {
