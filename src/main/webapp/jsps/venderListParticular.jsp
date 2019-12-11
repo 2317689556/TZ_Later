@@ -33,7 +33,7 @@
 
         img {
             height: 240px;
-            width: 300px;
+            width: 325px;
             float: left;
             box-shadow: 0 0 5px black;
         }
@@ -96,9 +96,9 @@
                     <input type="hidden" value="${i.id}" name="id1">
                 </c:forEach>
             </table>
-            <div id="Temp2" style="margin-left: 390px; margin-top: 9px">
+            <div id="Temp2" style="margin-left: 350px; margin-top: 9px">
                 <img src="${AGENCY.credentials}">
-                <img src="${AGENCY.credentials1}" style="margin-left: 3em; margin-bottom: 40px">
+                <img src="${AGENCY.credentials1}" style="margin-left: 30px; margin-bottom: 30px">
                 <input type="file" name="credentialsTemp" class="temp4 temp5" value="资格证书" multiple="multiple" style="width: 75px; float: left; margin-top: 215px; margin-left: 10px; display: none;"><br>
                 <img src="${AGENCY.businessLicense}">
                 <input type="file" value="营业执照" name="businessLicenseTemp" class="temp4 temp5" style="width: 75px;float: left; margin-top: 215px; margin-left: 10px; display: none;">
