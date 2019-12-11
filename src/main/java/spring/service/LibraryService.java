@@ -33,7 +33,7 @@ public class LibraryService {
     }
 
     /*出库单__详情*/
-    public List<PurchaseRequestDetails> PurchaseRequestDetailsFindAllById() {
-        return libraryMapper.PurchaseRequestDetailsFindAllById();
+    public List<PurchaseRequestDetails> PurchaseRequestDetailsFindAllById(Integer id) {
+        return libraryMapper.PurchaseRequestDetailsFindAllById(id);
     }
 }
