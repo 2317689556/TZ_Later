@@ -46,4 +46,9 @@
     <delete id="deleteUser">
         delete from user where id=#{id}
     </delete>
+
+    <!--公户管理__备注修改-->
+    <update id="updateUserBZ">
+        update user set remarks=#{remarks} where id=#{id}
+    </update>
 </mapper>

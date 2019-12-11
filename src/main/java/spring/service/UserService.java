@@ -40,4 +40,10 @@ public class UserService {
     public int deleteUser(Integer id) {
         return userMapper.deleteUser(id);
     }
+
+    /*用户管理__备注修改*/
+    public void updateUserBZ(Integer id, String remarks) {
+        userMapper.updateUserBZ(id,remarks);
+
+    }
 }

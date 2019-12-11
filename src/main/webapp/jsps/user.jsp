@@ -37,7 +37,10 @@
                         title: '权限'
                     }, {
                         field: 'remarks',
-                        title: '备注'
+                        title: '备注',
+                        formatter:function (value,row,index) {
+                            return ['<input type="text" id="1plan'+row.id+'" name="remarks" data='+value+' value='+value+' onblur="changeData('+row.id+',this.value)">'].join("")
+                        }
                     }, {
                         field: 'id',
                         title: '操作',
@@ -231,10 +234,7 @@
             }
         })
     }
-
-    /*
-   * 配合修改的单查
-   * */
+    /* 配合修改的单查*/
     function modifyUser1(id) {
         alert(id)
         $.ajax({
@@ -254,10 +254,7 @@
             }
         });
     }
-
-    /*
-* 修改
-* */
+    /* 修改 */
     function updateUser3() {
         debugger
         var form = new FormData($("#updateUser4")[0]);
@@ -310,5 +307,31 @@
             }
         })
     }
+
+    /*备注修改*/
+    function changeData(id,remarks) {
+        alert(id)
+        alert(remarks)
+        debugger
+        $.ajax({
+            type: "post",//方法类型
+            url: "${pageContext.request.contextPath}/user/updateUserBZ",//url
+            data: {"id":id,"remarks":remarks},
+            success: function (data) {
+                shuaXin();
+
+            },
+            error: function (msg) {
+                alert("请求失败！！！！");
+
+            }
+
+        })
+
+
+    }
+
+
+
 
 </script>

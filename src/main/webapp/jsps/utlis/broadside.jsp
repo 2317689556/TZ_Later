@@ -75,7 +75,6 @@
                     <c:if test="${USER.gradeId==1}">
                         <li><a href="/jsps/user.jsp">用户管理</a></li>
                     </c:if>
-                    <li><a href="#">修改密码</a></li>
                 </ul>
             </li>
             <li><a href="/jsps/venderList.jsp"><i class="icon-question" style="padding-left: 20px;width: 20px;padding-right: 35px;"></i>厂家、代理管理</a>

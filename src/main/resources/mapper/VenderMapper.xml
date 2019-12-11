@@ -25,4 +25,22 @@
         SELECT *
         FROM agency WHERE id=#{id}
     </select>
+
+    <update id="UpdataVender" parameterType="Agency">
+        UPDATE agency SET name=#{name},date=#{date} WHERE id=#{id}
+    </update>
+
+    <update id="UpdataProductLine" parameterType="ProductLine">
+        INSERT INTO product_line (id,name,address,Validity_of_agency,agency_id) VALUE
+        <foreach collection="lines" item="l" separator=",">
+            (null,#{l.name},#{l.address},#{l.validityOfAgency},#{l.id})
+        </foreach>
+    </update>
+
+    <update id="delectProductLine">
+        DELETE FROM product_line WHERE id IN (
+        <foreach collection="id" item="l" separator=",">
+            #{l}
+        </foreach>)
+    </update>
 </mapper>
