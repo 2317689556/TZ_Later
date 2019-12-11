@@ -25,7 +25,7 @@
                 sidePagination: "server",
                 pageNumber: 1,
                 pageSize: 8,
-                singleSelect: true,//单行选择单行,设置为true将禁止多选
+                clickToSelect:true,		//是否选中
                 queryParams: function (params) {
                     return {
                         limit: params.limit,
@@ -40,16 +40,17 @@
                 },
                 columns: [
                     {
-                        checkbox: true
+                        align : 'center',
+                        checkbox: true,
                     },{
                         field: 'number',
-                        title: '单号'
-                    },{
-                        field: 'center',
-                        title: '订货单位'
+                        title: '单号',
+                        formatter: function (value, row, index) {
+                            return "<a href='/jsps/stockupList.jsp   ?id=" + row.id + "'>" + value + "</a>";
+                        }
                     },{
                         field: 'manufacturers',
-                        title: '科室'
+                        title: '订货单位'
                     }, {
                         field: 'proposer',
                         title: '申请人'
@@ -63,21 +64,40 @@
                         field: 'signState',
                         title: '状态',
                         formatter:function (value,row,index) {
-                            if (value == 0) {
-                                return "未签批"
-                            } else if (value == 1) {
-                                return "已签批"
+                            if(value==0){
+                                return "<span>未签批</span>";
+                            }else if(value==1){
+                                return "<span id='third-item2'>已签批</span>";
                             }else if(value==2){
-                                return "已驳回"
+                                return "<span id='third-item'>已驳回</span>";
                             }
                         }
                     },
-                ]
+                ],
+                onLoadSuccess: function () {  //加载成功时执行
+                    getTdValue();
+                }
             });
         })
 
-        function shuaXin() {
-            $('#tab1').bootstrapTable('refresh');
+        function getTdValue(){
+            /*已驳回颜色*/
+            $("#third-item").parent().parent().css('background-color', '#FFECEC');
+            /*已批改颜色*/
+            $("#third-item2").parent().parent().css('background-color', '#F0FFF0');
+        }
+
+
+        function chaxun() {
+            $.ajax({
+                url:"/Stockup/findLikeStockup",
+                type: "POST",
+                dataType:"json",
+                data:{id:id},
+                success: function (data) {
+                    alert(111);
+                }
+            })
         }
     </script>
 </head>
@@ -89,7 +109,7 @@
     <h3 style="margin-bottom: 40px;">备货单</h3>
     <div style="margin-left: 40px;">
         <input class="form-control" style="width: 700px; float: left;" >
-        <input type="button" value="查询" class="btn-primary btn" onclick="updata()" id="chaxun">
+        <input type="button" value="查询" class="btn-primary btn" onclick="chaxun()" id="chaxun">
         <input type="button" value="生成出库单" class="btn-primary btn"  id="daoshu" style="margin-left: 200px" onclick="window.location='/jsps/stockupShow.jsp'">
     </div>
     <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">

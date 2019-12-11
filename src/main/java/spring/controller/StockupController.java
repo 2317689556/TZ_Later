@@ -9,6 +9,8 @@ import spring.pojo.utils.Page;
 import javax.annotation.Resource;
 import spring.service.StockupService;
 
+import java.util.List;
+
 //厂商
 @Controller
 @RequestMapping("/Stockup")
@@ -18,11 +20,19 @@ public class StockupController {
 
 
 
-    //代理厂商全查
+    //备货单全查
     @RequestMapping("/findStockup")
     @ResponseBody
     public PageInfo<PickingList> findStockup(Page page) {
         PageInfo<PickingList> list = StockupService.findStockup(page);
         return list;
     }
+
+    //备货单模糊查
+    @RequestMapping("/findLikeStockup")
+    @ResponseBody
+    public List<PickingList> findStockup() {
+        return null;
+    }
+
 }
