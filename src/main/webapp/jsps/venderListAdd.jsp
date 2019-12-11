@@ -132,8 +132,8 @@
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
-    <h3 style="margin-bottom: 10px">代理厂商详情</h3>
-    <div style="margin: 40px; margin-top: 94px; box-shadow: 0 0 4px black; height: 650px; padding: 25px 50px 0 50px; text-align: left;" id="temp1">
+    <h3 style="margin-bottom: 10px">代理厂商添加</h3>
+    <div style="margin: 40px; margin-top: 89px; box-shadow: 0 0 4px black; height: 650px; padding: 25px 50px 0 50px; text-align: left;" id="temp1">
         <form id="temp6" enctype="multipart/form-data" action="/Vender/VenderAdd" method="post">
             <table style="float:left;">
                 <tr>
