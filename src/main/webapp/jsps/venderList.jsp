@@ -61,6 +61,10 @@
         function shuaXin() {
             $('#tab1').bootstrapTable('refresh');
         }
+
+        function tiaozhuan() {
+            window.location = "/jsps/venderListAdd.jsp";
+        }
     </script>
 </head>
 
@@ -69,6 +73,7 @@
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
     <h3 style="margin-bottom: 40px">代理厂商</h3>
+    <input class="btn btn-primary" type="button" style="width: 100px; float: left; margin-left: 40px;" onclick="tiaozhuan()" value="添加厂商">
     <div style="margin: 40px; margin-top: 94px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
         <table id="tab1"></table>
     </div>

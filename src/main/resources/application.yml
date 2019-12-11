@@ -1,5 +1,12 @@
 #jsp的视图解析器
 spring:
+  servlet:
+    multipart:
+      max:
+        max-file-size:
+          30mb
+        max-request-size:
+          30mb
   mvc:
     view:
       suffix: .jsp

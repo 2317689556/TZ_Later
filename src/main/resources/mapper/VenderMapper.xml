@@ -7,8 +7,7 @@
         SELECT a.*,count(DISTINCT(b.name)) productLineNum, count(DISTINCT(d.`name`)) productQuantity
         FROM agency a
         LEFT JOIN product_line b ON a.id=b.agency_id
-        LEFT JOIN product_line_product c ON b.id=c.product_line_id
-        LEFT JOIN product d ON c.product_id=d.id
+        LEFT JOIN product d ON b.id=d.product_line_id
         GROUP BY a.name
     </select>
 
@@ -27,7 +26,17 @@
     </select>
 
     <update id="UpdataVender" parameterType="Agency">
-        UPDATE agency SET name=#{name},date=#{date},businessLicense=#{businessLicense},credentials=#{credentials},credentials1=#{credentials1} WHERE id=#{id}
+        UPDATE agency SET name=#{name},date=#{date}
+        <if test="credentials != null and credentials !=''">
+            ,credentials=#{credentials}
+        </if>
+        <if test="businessLicense != null and businessLicense !=''">
+            ,businessLicense=#{businessLicense}
+        </if>
+        <if test="credentials1 != null and credentials1 !=''">
+            ,credentials1=#{credentials1}
+        </if>
+        WHERE id=#{id}
     </update>
 
     <update id="UpdataProductLine" parameterType="ProductLine">
@@ -43,4 +52,26 @@
             #{l}
         </foreach>)
     </update>
+
+    <insert id="AddAgency" parameterType="Agency">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            SELECT last_insert_id()
+        </selectKey>
+        INSERT INTO agency (id,name,date,credentials,credentials1,businessLicense)
+        VALUE (null,#{name},#{date},#{credentials},#{credentials1},#{businessLicense})
+    </insert>
+
+    <insert id="addLines" parameterType="ProductLine">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            SELECT last_insert_id()
+        </selectKey>
+        INSERT INTO product_line (id,name,address,Validity_of_agency,agency_id) VALUE (null,#{name},#{address},#{validityOfAgency},#{agencyId})
+    </insert>
+
+    <insert id="addProduct" parameterType="ProductLine">
+        INSERT INTO product (id,name,product_line_id) VALUE
+        <foreach collection="str" item="i" separator=",">
+            (null,#{i},#{id})
+        </foreach>
+    </insert>
 </mapper>

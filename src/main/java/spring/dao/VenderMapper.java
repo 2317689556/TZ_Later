@@ -17,4 +17,12 @@ public interface VenderMapper {
     void UpdataProductLine(@Param("lines") List<ProductLine> lines);
 
     void delectProductLine(@Param("id") Integer[] id1);
+
+    void AddAgency(Agency agency);
+
+    void AddLines(List<ProductLine> lines);
+
+    void addLines(ProductLine productLine);
+
+    void addProduct(@Param("str") String[] strings, @Param("id") long id);
 }
