@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>千佛山医院管理系统 库存</title>
+    <title>千佛山医院管理系统 出库单__详情</title>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
     <script src="/bootstrap/table/bootstrap-table.js"></script>
     <script src="/bootstrap/js/bootstrap-tab.js"></script>
@@ -14,66 +14,85 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
     <link rel="stylesheet" href="/cxCalendar/css/jquery.cxcalendar.css">
-    <style>
-        span {
-            float: left;
-        }
-
-        #temp1 input {
-            width: 150px;
-        }
-
-        #temp1 table tr {
-            height: 50px;
-        }
-
-        #temp3 input {
-            width: 100px;
-        }
-
-        img {
-            height: 240px;
-            float: left;
-            box-shadow: 0 0 5px black;
-        }
-    </style>
-    <script>
-        function updata1() {
-            $.ajax({
-                url: "/xxx/xxx",
-                data: new FormData($("#temp6")[0]),
-                type: "post",
-                processData: false,
-                contentType: false,
-                success: function (data) {
-
-                }
-            })
-        }
-    </script>
 </head>
 
 <body>
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
-    <h3 style="margin-bottom: 40px">备货单</h3>
-    <div id="temp1">
-        <form id="temp6">
-            <table style="float:left;">
-                    <tr>
-                        <td><span>订货单位：</span></td>
-                        <td><input type="text"  class="form-control"  name="name"></td>
-                    </tr>
-                    <tr>
-                         <td><span>科室：</span></td>
-                        <td><input type="text"  class="form-control"  name="date"></td>
-                    </tr>
-            </table>
-        </form>
-        <div style="float: right; margin-top: 250px;" id="temp3">
-            <input type="button" value="添加" class="btn-primary btn" onclick="updata1()" style="margin-left: 1em; display: none;" id="temp5">
-        </div>
+    <h3 style="margin-bottom: 40px">出库单</h3>
+
+    <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
+        <table class="table table-striped table-bordered table-hover" id="sample-table">
+
+            <tr>
+                <div>
+                    <div style="text-align: left;float: left">
+                        <span>订货单位：${2222222222}</span>
+                    </div>
+                    <div style="margin-left: 800px">
+                        <span >出库单号：${1}</span>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div style="clear: both ; margin-top: 10px">
+                        <div style="text-align: left;float: left">
+                            <span>科室：${1}</span>
+                        </div>
+                        <div style="margin-left: 810px">
+                            <span >发票号：${1111}</span>
+                        </div>
+                    </div>
+
+                    <div style="clear: both ; margin-top: 10px">
+                        <div style="text-align: left;float: left">
+                            <span>业务员：${1111111}</span>
+                        </div>
+                        <div style="margin-left: 790px">
+                            <span >日期：${111}</span>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </tr>
+            <thead>
+            <tr>
+                <th width="25"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
+                <th width="80">序号</th>
+                <th width="100">品名</th>
+                <th width="220px">型号</th>
+                <th width="150px">规格</th>
+                <th width="250px">单位</th>
+                <th width="160px">数量</th>
+                <th width="180px">单价</th>
+                <th width="180px">金额</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${list}" var="p">
+                <tr>
+                    <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
+                    <td>${p.id}</td>
+                    <td>${p.name}</td>
+                    <td>${p.model}</td>
+
+                    <td>${p.specification}</td>
+                    <td>${p.unit}</td>
+                    <td>${p.count}</td>
+                    <td>${p.unitPrice}</td>
+                    <td>${p.money}</td>
+                </tr>
+            </c:forEach>
+            <tr>
+                <td colspan="5">合计：</td>
+                <td colspan="4">大写</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 </body>
