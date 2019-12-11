@@ -27,7 +27,7 @@
     </select>
 
     <update id="UpdataVender" parameterType="Agency">
-        UPDATE agency SET name=#{name},date=#{date} WHERE id=#{id}
+        UPDATE agency SET name=#{name},date=#{date},businessLicense=#{businessLicense},credentials=#{credentials},credentials1=#{credentials1} WHERE id=#{id}
     </update>
 
     <update id="UpdataProductLine" parameterType="ProductLine">

@@ -33,6 +33,7 @@
 
         img {
             height: 240px;
+            width: 300px;
             float: left;
             box-shadow: 0 0 5px black;
         }
@@ -40,15 +41,15 @@
     <script>
         function updata() {
             $("input").removeAttr("disabled");
-            $("#temp4").css("display", "none");
-            $("#temp5").css("display", "block");
+            $(".temp4").css("display", "none");
+            $(".temp5").css("display", "block");
         }
 
         function updata1() {
             $.ajax({
                 url: "/Vender/UpdataVender",
                 data: new FormData($("#temp6")[0]),
-                type: "post",
+                type: "POST",
                 processData: false,
                 contentType: false,
                 success: function (data) {
@@ -56,8 +57,8 @@
                 }
             })
             $("#temp1 table input").attr("disabled", "disabled");
-            $("#temp4").css("display", "block");
-            $("#temp5").css("display", "none");
+            $(".temp4").css("display", "block");
+            $(".temp5").css("display", "none");
         }
     </script>
 </head>
@@ -68,7 +69,7 @@
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
     <h3 style="margin-bottom: 40px">代理厂商详情</h3>
     <div style="margin: 40px; margin-top: 94px; box-shadow: 0 0 4px black; height: 620px; padding: 25px 50px 0 50px; text-align: left;" id="temp1">
-        <form id="temp6">
+        <form id="temp6" enctype="multipart/form-data" type="post">
             <table style="float:left;">
                 <input type="hidden" value="${AGENCY.id}" name="id">
                 <tr>
@@ -95,15 +96,17 @@
                     <input type="hidden" value="${i.id}" name="id1">
                 </c:forEach>
             </table>
+            <div id="Temp2" style="margin-left: 390px; margin-top: 9px">
+                <img src="${AGENCY.credentials}">
+                <img src="${AGENCY.credentials1}" style="margin-left: 3em; margin-bottom: 40px">
+                <input type="file" name="credentialsTemp" class="temp4 temp5" value="资格证书" multiple="multiple" style="width: 75px; float: left; margin-top: 215px; margin-left: 10px; display: none;"><br>
+                <img src="${AGENCY.businessLicense}">
+                <input type="file" value="营业执照" name="businessLicenseTemp" class="temp4 temp5" style="width: 75px;float: left; margin-top: 215px; margin-left: 10px; display: none;">
+            </div>
         </form>
-        <div id="Temp2" style="margin-left: 400px; margin-top: 9px">
-            <img src="/img/credentials/${AGENCY.credentials}">
-            <img src="/img/credentials/${AGENCY.credentials1}" style="margin-left: 3em; margin-bottom: 40px"><br>
-            <img src="/img/businessLicense/${AGENCY.businessLicense}">
-        </div>
         <div style="float: right; margin-top: 250px;" id="temp3">
-            <input type="button" value="修改" class="btn-primary btn" onclick="updata()" id="temp4">
-            <input type="button" value="添加" class="btn-primary btn" onclick="updata1()" style="margin-left: 1em; display: none;" id="temp5">
+            <input type="button" value="修改" class="btn-primary btn temp4" onclick="updata()">
+            <input type="button" value="添加" class="btn-primary btn temp5" onclick="updata1()" style="margin-left: 1em; display: none;">
         </div>
     </div>
 </div>
