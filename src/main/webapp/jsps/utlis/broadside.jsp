@@ -61,6 +61,7 @@
                 </li>
                 <li><a href="#"><i class="icon-picture"></i>商品录入信息<span class="submenu-icon"></span></a>
                     <ul>
+                        <li><a href="/jsps/CommodityInformation.jsp">商品信息</a></li>
                         <li><a href="#">新增商品录入信息</a></li>
                     </ul>
                 </li>
