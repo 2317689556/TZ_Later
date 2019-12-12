@@ -105,8 +105,19 @@
             </tbody>
         </table>
         <div style="float: right;">
-            <c:if test="${DE.signState==0}"><input type="button" value="签批" onclick="qianpi(1)">&nbsp;<input type="button" onclick="qianpi(2)" value="驳回"></c:if>
-            <c:if test="${DE.signState==1}"><input type="button" value="回执单" onclick="huizhidan()"></c:if>
+            <%--签批，驳回--%>
+            <c:if test="${DE.signState==0}">
+                <div  style="margin-left:1077px;margin-top: 50px;">
+                    <input type="button"class="btn btn-success" value="签批" onclick="qianpi(1)">&nbsp;&nbsp;<input type="button"class="btn btn-danger" onclick="qianpi(2)" value="驳回">
+                </div>
+            </c:if>
+
+
+            <c:if test="${DE.signState==1}">
+                <div  style="margin-left:1137px;margin-top: 50px;">
+                    <input type="button"class="btn btn-info" value="回执单" onclick="huizhidan()">
+                </div>
+            </c:if>
         </div>
     </div>
 </div>
