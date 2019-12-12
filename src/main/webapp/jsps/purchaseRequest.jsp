@@ -68,12 +68,12 @@
                     }, {
                         field: 'signState',
                         title: '签批状态',
-                        formatter: function (value, row, index) {
-                            if (value == 0) {
+                        formatter:function (value,row,index) {
+                            if(value==0){
                                 return "<span>未签批</span>";
-                            } else if (value == 1) {
+                            }else if(value==1){
                                 return "<span id='third-item2'>已签批</span>";
-                            } else if (value == 2) {
+                            }else if(value==2){
                                 return "<span id='third-item'>已驳回</span>";
                             }
                         }
@@ -85,7 +85,7 @@
             });
         })
 
-        function getTdValue() {
+        function getTdValue(){
             /*已驳回颜色*/
             $("#third-item").parent().parent().css('background-color', '#FFECEC');
             /*已批改颜色*/
