@@ -4,7 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.dao.StockupMapper">
     <select id="findStockup" resultType="pickingList">
-      SELECT  *
-      FROM  picking_list
+        SELECT *
+        FROM picking_list
+        <where>
+            <if test="date_1 != null and date_1 != ''">
+                signDate>=#{date_1}
+            </if>
+            <if test="date_2 != null and date_2 != ''">
+                AND signDate&lt;=#{date_2}
+            </if>
+        </where>
     </select>
 </mapper>

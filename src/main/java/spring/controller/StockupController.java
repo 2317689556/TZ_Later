@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import spring.pojo.PickingList;
 import spring.pojo.utils.Page;
-import javax.annotation.Resource;
 import spring.service.StockupService;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 //厂商
@@ -18,13 +18,11 @@ public class StockupController {
     @Resource
     StockupService StockupService;
 
-
-
     //备货单全查
     @RequestMapping("/findStockup")
     @ResponseBody
-    public PageInfo<PickingList> findStockup(Page page) {
-        PageInfo<PickingList> list = StockupService.findStockup(page);
+    public PageInfo<PickingList> findStockup(Page page, String date_1, String date_2) {
+        PageInfo<PickingList> list = StockupService.findStockup(page, date_1, date_2);
         return list;
     }
 

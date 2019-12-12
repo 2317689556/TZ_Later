@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.dao.SurgeryMapper">
+    <select id="ShowSurgery" resultType="Surgicaldrape">
+        SELECT *
+        FROM surgicalDrape
+    </select>
+
+    <select id="SurgeryParticulars" resultType="SurgicaldrapeDetails">
+        SELECT *,sum(a.count) as sumcount
+        FROM surgicalDrape_details a
+        LEFT JOIN surgicalDrape b ON a.stockout_id=b.id
+        WHERE a.stockout_id=#{id}
+    </select>
+
+    <update id="Sign">
+        UPDATE surgicalDrape SET signState=#{q} WHERE id=#{id}
+    </update>
+</mapper>

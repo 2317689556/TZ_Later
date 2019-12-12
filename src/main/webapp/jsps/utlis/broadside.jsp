@@ -22,7 +22,7 @@
                         </li>
                         <li><a href="#">采购申请/入库单查询</a>
                         </li>
-                        <li><a href="#">手术单</a>
+                        <li><a href="/jsps/surgicalDrape.jsp">手术单</a>
                         </li>
                         <li><a href="/jsps/stockup.jsp">备货单</a>
                         </li>
