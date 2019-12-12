@@ -27,11 +27,20 @@
             })
         }
 
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return (false);
+        }
+
         function huizhidan() {
-            alert("1");
-            <jsp:forward page="/jsps/surgicalReceipt.jsp">
-            <jsp:param name="xx" value="${DE.id}" />
-            </jsp:forward>
+            window.location = "/jsps/surgicalDrape.jsp";
         }
     </script>
 </head>
@@ -40,7 +49,7 @@
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
-    <h3 style="margin-bottom: 40px">手术单</h3>
+    <h3 style="margin-bottom: 40px">手术单${xx}</h3>
 
     <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
         <table class="table table-striped table-bordered table-hover" id="sample-table">
