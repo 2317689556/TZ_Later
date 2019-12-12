@@ -18,4 +18,11 @@
     <update id="Sign">
         UPDATE surgicalDrape SET signState=#{q} WHERE id=#{id}
     </update>
+
+    <insert id="AddSurgery" parameterType="Receipt">
+        INSERT INTO receipt VALUE
+        <foreach collection="list" item="l" separator=",">
+            (null,#{l.name},#{l.model},#{l.specification},#{l.unit},#{l.employCount},#{l.performer},#{l.sex},#{l.surgicalDrapeId},now(),now(),1,#{l.date},#{l.num},#{l.number},#{l.patientName})
+        </foreach>
+    </insert>
 </mapper>

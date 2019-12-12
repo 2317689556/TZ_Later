@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import spring.dao.SurgeryMapper;
+import spring.pojo.Receipt;
 import spring.pojo.Surgicaldrape;
 import spring.pojo.SurgicaldrapeDetails;
 import spring.pojo.utils.Page;
@@ -27,7 +28,11 @@ public class SurgeryService {
         return surgeryMapper.SurgeryParticulars(id);
     }
 
-    public void Sign(Integer id,Integer q) {
+    public void Sign(Integer id, Integer q) {
         surgeryMapper.Sign(id, q);
+    }
+
+    public void AddSurgery(List<Receipt> list) {
+        surgeryMapper.AddSurgery(list);
     }
 }

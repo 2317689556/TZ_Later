@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>千佛山医院管理系统 手术单 详情</title>
+    <title>千佛山医院管理系统 手术单 回执单</title>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
     <script src="/bootstrap/table/bootstrap-table.js"></script>
     <script src="/bootstrap/js/bootstrap-tab.js"></script>
@@ -14,7 +14,20 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
     <link rel="stylesheet" href="/cxCalendar/css/jquery.cxcalendar.css">
+    <style>
+        .table input {
+            width: 130px;
+        }
+
+        #temp1 .sample-table tr td {
+            line-height: 34px;
+        }
+    </style>
     <script>
+        $(function () {
+            $('.date_1').cxCalendar();
+        })
+
         function qianpi(asd) {
             $.ajax({
                 url: "/Surgery/Sign",
@@ -42,6 +55,67 @@
         function huizhidan() {
             window.location = "/jsps/surgicalDrape.jsp";
         }
+
+        function tianjia() {
+            var a = "";
+            a += "<tbody><tr><td></td>";
+            $('#table1  tr:eq(1) td input:text').each(function () {
+                a += "<td>" + $(this).val() + "</td>";
+            });
+            a += "<td></td></tr></tbody>";
+            $("#table1").append(a);
+        }
+
+        function over() {
+            var name = "";
+            $('#table1  tr:gt(1)').each(function () {
+                name += $(this).find("td:eq(1)").text() + ",";
+            });
+            $("#name").val(name);
+
+            var model = "";
+            $('#table1  tr:gt(1)').each(function () {
+                model += $(this).find("td:eq(2)").text() + ",";
+            });
+            $("#model").val(model);
+
+            var specification = "";
+            $('#table1  tr:gt(1)').each(function () {
+                specification += $(this).find("td:eq(3)").text() + ",";
+            });
+            $("#specification").val(specification);
+
+            var unit = "";
+            $('#table1  tr:gt(1)').each(function () {
+                unit += $(this).find("td:eq(4)").text() + ",";
+            });
+            $("#unit").val(unit);
+
+            var employCount = "";
+            $('#table1  tr:gt(1)').each(function () {
+                employCount += $(this).find("td:eq(5)").text() + ",";
+            });
+            $("#employCount").val(employCount);
+
+            var number = "";
+            $('#table1  tr:gt(1)').each(function () {
+                number += $(this).find("td:eq(6)").text() + ",";
+            });
+            $("#number").val(number);
+
+
+            $.ajax({
+                url: "/Surgery/AddSurgery",
+                data: new FormData($("#temp2")[0]),
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    alert("回执成功");
+                    // window.location = "/jsps/surgicalDrape.jsp";
+                }
+            })
+        }
     </script>
 </head>
 
@@ -49,78 +123,68 @@
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
-    <h3 style="margin-bottom: 40px">手术单${xx}</h3>
-
-    <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
-        <table class="table table-striped table-bordered table-hover" id="sample-table">
-            <tr>
-                <div style="margin: 20px">
-                    <div style="text-align: left;float: left">
-                        <span>订货单位：${DE.proposer}</span>
-                    </div>
-                    <div style="margin-left: 800px">
-                        <span>出库单号：${DE.number}</span>
-                    </div>
-                    <div style="clear: both"></div>
-                    <div style="clear: both ; margin-top: 10px">
-                        <div style="text-align: left;float: left">
-                            <span>科室：${DE.administrativeOffice}</span>
-                        </div>
-                        <div style="margin-left: 810px">
-                            <span>业务员：${DE.proposer}</span>
-                        </div>
-                    </div>
-                    <div style="clear: both ; margin-top: 10px">
-                        <div style="text-align: left;float: left">
-                            <span>日期：${DE.writeDate}</span>
-                        </div>
-                    </div>
-                </div>
-            </tr>
-            <tr style="height: 20px;"></tr>
-            <tr>
-                <th width="80">序号</th>
-                <th width="200px">品名</th>
-                <th width="220px">型号</th>
-                <th width="150px">规格</th>
-                <th width="250px">单位</th>
-                <th width="160px">数量</th>
-                <th width="180px">单价</th>
-                <th width="180px">金额</th>
-            </tr>
-            <c:forEach items="${SU}" var="p">
+    <h3 style="margin-bottom: 40px">回执单</h3>
+    <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px" id="temp1">
+        <form id="temp2">
+            <table class="table table-striped table-bordered table-hover sample-table">
                 <tr>
-                    <td>${p.id}</td>
-                    <td>${p.name}</td>
-                    <td>${p.model}</td>
-
-                    <td>${p.specification}</td>
-                    <td>${p.unit}</td>
-                    <td>${p.count}</td>
-                    <td>${p.unitPrice}</td>
-                    <td>${p.money}</td>
+                    <td>手术单号：</td>
+                    <td>${param.number}</td>
+                    <td>患者姓名：</td>
+                    <td><input type="text" class="form-control" name="patientName"></td>
+                    <td>术者：</td>
+                    <td><input type="text" name="performer" class="form-control"></td>
                 </tr>
-            </c:forEach>
-            <tr>
-                <td colspan="5">合计：${DE.sumcount}</td>
-                <td colspan="4">大写：${DE.daXie}</td>
-            </tr>
-            <tr>
-                <td colspan="5">制单：${DE.prepareDocument}</td>
-                <td colspan="4">审核：${DE.audit}</td>
-            </tr>
-            <c:if test="${DE.signState==2}">
                 <tr>
-                    <td colspan="9">驳回原因：${DE.remark}</td>
+                    <td>订货单位：</td>
+                    <td>${param.customer}</td>
+                    <td>患者性别：</td>
+                    <td><input type="text" name="sex" class="form-control"></td>
+                    <td>科室：</td>
+                    <td>${param.ao}</td>
                 </tr>
-            </c:if>
-            </tbody>
-        </table>
-        <div style="float: right;">
-            <c:if test="${DE.signState==0}"><input type="button" value="签批" onclick="qianpi(1)">&nbsp;<input type="button" onclick="qianpi(2)" value="驳回"></c:if>
-            <c:if test="${DE.signState==1}"><input type="button" value="回执单" onclick="huizhidan()"></c:if>
-        </div>
+                <tr>
+                    <td>手术日期：</td>
+                    <td><input type="date" name="date" class="form-control date_1"></td>
+                    <td>病历号：</td>
+                    <td><input type="text" name="num" class="form-control"></td>
+                    <td>业务员：</td>
+                    <td>${param.proposer}</td>
+                </tr>
+            </table>
+            <table class="table table-striped table-bordered table-hover sample-table" id="table1">
+                <tr>
+                    <td>序号</td>
+                    <td>品名</td>
+                    <td>型号</td>
+                    <td>规格</td>
+                    <td>单位</td>
+                    <td>使用数量</td>
+                    <td>货品编码</td>
+                    <td>
+                        <input type="hidden" name="name" id="name">
+                        <input type="hidden" name="model" id="model">
+                        <input type="hidden" name="specification" id="specification">
+                        <input type="hidden" name="unit" id="unit">
+                        <input type="hidden" name="employCount1" id="employCount">
+                        <input type="hidden" name="number1" id="number">
+                        <input type="hidden" name="surgicalDrapeId" value="${param.id}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>序号</td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="button" class="btn-primary btn" onclick="tianjia()" value="添加"></td>
+                </tr>
+            </table>
+        </form>
     </div>
+    <input type="button" value="完成" onclick="over()" class="btn-primary btn" style="float: right;margin-right: 40px;">
 </div>
 </body>
 </html>

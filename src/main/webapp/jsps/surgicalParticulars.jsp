@@ -28,10 +28,7 @@
         }
 
         function huizhidan() {
-            alert("1");
-            <jsp:forward page="/jsps/surgicalReceipt.jsp">
-            <jsp:param name="xx" value="${DE.id}" />
-            </jsp:forward>
+            window.location = "/jsps/surgicalReceipt.jsp?id=${DE.id}&number=${DE.number}&customer=${DE.customer}&ao=${DE.administrativeOffice}&proposer=${DE.proposer}";
         }
     </script>
 </head>

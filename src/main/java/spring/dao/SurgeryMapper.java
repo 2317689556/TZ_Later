@@ -2,6 +2,7 @@ package spring.dao;
 
 import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Param;
+import spring.pojo.Receipt;
 import spring.pojo.Surgicaldrape;
 import spring.pojo.SurgicaldrapeDetails;
 import spring.pojo.utils.Page;
@@ -14,4 +15,6 @@ public interface SurgeryMapper {
     List<SurgicaldrapeDetails> SurgeryParticulars(Integer id);
 
     void Sign(@Param("id") Integer id, @Param("q") Integer q);
+
+    void AddSurgery(List<Receipt> list);
 }
