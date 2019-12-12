@@ -1,77 +1,19 @@
 package spring.pojo;
 
+import lombok.Data;
 
+@Data
 public class StockOut {
 
   private long id;
-  private long number;
-  private String customer;
-  private String administrativeOffice;
-  private String proposer;
-  private java.sql.Timestamp date;
-  private String signState;
+  private long number;//单号
+  private String customer;//订货单位
+  private String manufacturer;//厂家
+  private String administrativeOffice;//科室
+  private String proposer;//申请人
+  private java.sql.Timestamp date;//申请日期
+  private String signState;//签批状态
+  private java.sql.Timestamp dateOut;//金额
 
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
-
-
-  public long getNumber() {
-    return number;
-  }
-
-  public void setNumber(long number) {
-    this.number = number;
-  }
-
-
-  public String getCustomer() {
-    return customer;
-  }
-
-  public void setCustomer(String customer) {
-    this.customer = customer;
-  }
-
-
-  public String getAdministrativeOffice() {
-    return administrativeOffice;
-  }
-
-  public void setAdministrativeOffice(String administrativeOffice) {
-    this.administrativeOffice = administrativeOffice;
-  }
-
-
-  public String getProposer() {
-    return proposer;
-  }
-
-  public void setProposer(String proposer) {
-    this.proposer = proposer;
-  }
-
-
-  public java.sql.Timestamp getDate() {
-    return date;
-  }
-
-  public void setDate(java.sql.Timestamp date) {
-    this.date = date;
-  }
-
-
-  public String getSignState() {
-    return signState;
-  }
-
-  public void setSignState(String signState) {
-    this.signState = signState;
-  }
 
 }
