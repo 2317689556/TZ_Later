@@ -84,14 +84,12 @@
                 }
             });
         })
-
         function getTdValue(){
             /*已驳回颜色*/
             $("#third-item").parent().parent().css('background-color', '#FFECEC');
             /*已批改颜色*/
             $("#third-item2").parent().parent().css('background-color', '#F0FFF0');
         }
-
         /*刷新*/
         function shuaXin() {
             $('#tab1').bootstrapTable('refresh');
