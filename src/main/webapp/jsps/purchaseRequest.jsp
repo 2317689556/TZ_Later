@@ -72,9 +72,9 @@
                             if(value==0){
                                 return "<span>未签批</span>";
                             }else if(value==1){
-                                return "<span id='third-item2'>已签批</span>";
+                                return "<span class='third-item2'>已签批</span>";
                             }else if(value==2){
-                                return "<span id='third-item'>已驳回</span>";
+                                return "<span class='third-item'>已驳回</span>";
                             }
                         }
                     }
@@ -87,9 +87,9 @@
 
         function getTdValue(){
             /*已驳回颜色*/
-            $("#third-item").parent().parent().css('background-color', '#FFECEC');
+            $(".third-item").parent().parent().css('background-color', '#FFECEC');
             /*已批改颜色*/
-            $("#third-item2").parent().parent().css('background-color', '#F0FFF0');
+            $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
         }
 
         /*刷新*/

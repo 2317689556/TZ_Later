@@ -15,4 +15,33 @@
             </if>
         </where>
     </select>
+
+
+    <!--入库单__全查-->
+    <select id="StockOutFindAll" resultType="StockOut">
+        SELECT *
+        FROM stock_out
+        <where>
+            <if test="date_1 != null and date_1 != ''">
+                signDate>=#{date_1}
+            </if>
+            <if test="date_2 != null and date_2 != ''">
+                AND signDate&lt;=#{date_2}
+            </if>
+        </where>
+    </select>
+
+    <!--入库单__详情-->
+    <select id="StockOutFindAllById" resultType="StockOutDetails">
+      select *
+      from
+       stock_out a ,
+       stock_out_details b
+        where
+         a.id=b.stockout_id
+          and
+           a.id=#{id}
+
+    </select>
+
 </mapper>
