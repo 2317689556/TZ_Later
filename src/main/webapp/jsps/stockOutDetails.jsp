@@ -85,9 +85,36 @@
             </c:if>
             </tbody>
         </table>
-        <c:if test="${list1.signState==1}"><input type="button" value="出库扫码"></c:if>
-        <c:if test="${list1.signState==0}"><input type="button" value="签批">&nbsp;<input type="button" value="驳回"></c:if>
-        <input type="button" value="打印">
+        <c:if test="${list1.signState==1}">
+        <%--未签批--%>
+        <div style="margin-left:1077px;margin-top: 50px;">
+            <input type="button"class="btn btn-success" value="签批">&nbsp;&nbsp;&nbsp;<input type="button"class="btn btn-danger" value="驳回">
+        </div>
+        </c:if>
+        <%--已签批--%>
+        <c:if test="${list1.signState==2}">
+        <div  style="margin-left:1035px;margin-top: 50px;">
+            <input type="button"class="btn btn-success" value="生成入库单">&nbsp;&nbsp;&nbsp; <a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+        </div>
+        </c:if>
+        <%--已驳回--%>
+        <c:if test="${list1.signState==3}">
+            <div  style="margin-left:1137px;margin-top: 50px;">
+                <a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            </div>
+        </c:if>
+        <%--未入库--%>
+        <c:if test="${list1.signState==4}">
+            <div  style="margin-left:1043px;margin-top: 50px;">
+                <input type="button"class="btn btn-primary" value="入库扫码">&nbsp;&nbsp;&nbsp;<a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            </div>
+        </c:if>
+        <%--已入库--%>
+        <c:if test="${list1.signState==5}">
+            <div  style="margin-left:1077px;margin-top: 50px;">
+                <input type="button" class="btn btn-success" value="打印">&nbsp;&nbsp;&nbsp;<a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            </div>
+        </c:if>
     </div>
 </div>
 </body>

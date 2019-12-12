@@ -96,9 +96,26 @@
             </c:if>
             </tbody>
         </table>
-        <c:if test="${list1.signState==1}"><input type="button" value="出库扫码"></c:if>
-        <c:if test="${list1.signState==0}"><input type="button" value="签批">&nbsp;<input type="button" value="驳回"></c:if>
-        <input type="button" value="打印">
+        <%--已签批--%>
+        <c:if test="${list1.signState==1}">
+        <div  style="margin-left:1040px;margin-top: 50px;">
+            <input type="button"class="btn btn-success" value="出库扫码">&nbsp;&nbsp;&nbsp;<a href="/jsps/purchaseRequest.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+        </div>
+        </c:if>
+
+        <%--未签批--%>
+        <c:if test="${list1.signState==0}">
+            <div  style="margin-left:1002px;margin-top: 50px;">
+                <input type="button"class="btn btn-success" value="签批">&nbsp;&nbsp;&nbsp;<input type="button"class="btn btn-warning" value="驳回">&nbsp;&nbsp;&nbsp;<a href="/jsps/purchaseRequest.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            </div>
+        </c:if>
+
+        <%--驳回--%>
+        <c:if test="${list1.signState==2}">
+            <div  style="margin-left:1127px;margin-top: 50px;">
+               <a href="/jsps/purchaseRequest.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            </div>
+        </c:if>
     </div>
 </div>
 </body>
