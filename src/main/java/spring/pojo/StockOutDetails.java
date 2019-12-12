@@ -4,7 +4,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class StockOutDetails {
+public class StockOutDetails extends StockOut{
 
   private long id;
   private String name;//品名
@@ -15,6 +15,8 @@ public class StockOutDetails {
   private long unitPrice;//单价
   private long money;//金额
   private long stockoutId;//外键
+  private String salesman;//审核人
+
 
 
 

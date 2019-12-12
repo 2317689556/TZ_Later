@@ -11,9 +11,11 @@ public class StockOut {
   private String manufacturer;//厂家
   private String administrativeOffice;//科室
   private String proposer;//申请人
-  private java.sql.Timestamp date;//申请日期
+  private java.sql.Timestamp signDate;//申请日期
   private String signState;//签批状态
-  private java.sql.Timestamp dateOut;//金额
+  private java.sql.Timestamp dateOut;//签批日期
+  private long moneys;//金额
+  private String rejected;//驳回原因
 
 
 }

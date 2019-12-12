@@ -20,7 +20,7 @@
                         </li>
                         <li><a href="/jsps/purchaseRequest.jsp">出库单</a>
                         </li>
-                        <li><a href="#">采购申请/入库单查询</a>
+                        <li><a href="/jsps/stockOut.jsp">采购申请/入库单查询</a>
                         </li>
                         <li><a href="/jsps/surgicalDrape.jsp">手术单</a>
                         </li>
