@@ -26,7 +26,7 @@
                         </li>
                         <li><a href="/jsps/PickingList.jsp">备货单</a>
                         </li>
-                        <li><a href="#">异常查询</a>
+                        <li><a href="/jsps/abnormal.jsp">异常查询</a>
                         </li>
                         <li><a href="#">厂家、代理</a>
                         </li>

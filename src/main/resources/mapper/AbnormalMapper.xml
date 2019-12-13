@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.dao.AbnormalMapper">
+
+    <select id="showInventory" resultType="Abnormal">
+        select *
+        from abnormal
+        <where>
+            <if test="date1!=null and date1!=''">
+                date>=#{date1}
+            </if>
+            <if test="date2!=null and date2!=''">
+                and date&lt;=#{date2}
+            </if>
+
+        </where>
+    </select>
+
+
+    <!--异常详情-->
+    <select id="AbnormalFindAllById" resultType="AbnormalDetails">
+       select *
+        from abnormal a,
+        abnormal_details b
+         where
+          a.id=b.stockout_id
+           and
+            a.id=#{id}
+    </select>
+
+
+    <!--异常__完成换货-->
+    <update id="updateSuccess">
+        update abnormal set signState=3 where id=#{id}
+    </update>
+
+    <!--异常__允许换货-->
+    <update id="updateInThe">
+        update abnormal set signState=2 where id=#{id}
+    </update>
+
+</mapper>
