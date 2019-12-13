@@ -20,5 +20,7 @@ public interface SurgeryMapper {
 
     List<Receipt> showReceipts(Integer id);
 
-    void AddManufacturing(@Param("li") List<Consignedprocessing> list,@Param("co") Consignedprocessings con);
+    void AddManufacturing(@Param("li") List<Consignedprocessing> list, @Param("co") Consignedprocessings con);
+
+    List<Consignedprocessing> CommissionedProcessing(@Param("date_1") String date_1, @Param("date_2") String date_2);
 }

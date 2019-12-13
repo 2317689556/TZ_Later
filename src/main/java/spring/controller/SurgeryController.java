@@ -119,7 +119,7 @@ public class SurgeryController {
     //展示手术单详情
     @RequestMapping("/AddManufacturing")
     @ResponseBody
-    public Integer AddManufacturing(Consignedprocessings con) {
+    public void AddManufacturing(Consignedprocessings con) {
         List<Consignedprocessing> list = new ArrayList<>();
         for (int i = 0; i < con.getName().length - 1; i++) {
             Consignedprocessing s = new Consignedprocessing();
@@ -133,6 +133,13 @@ public class SurgeryController {
             list.add(s);
         }
         surgeryService.AddManufacturing(list, con);
-        return 1;
+    }
+
+    //展示手术单详情
+    @RequestMapping("/CommissionedProcessing")
+    @ResponseBody
+    public PageInfo<Consignedprocessing> CommissionedProcessing(Page page, String date_1, String date_2) {
+        PageInfo<Consignedprocessing> info = surgeryService.CommissionedProcessing(page, date_1, date_2);
+        return info;
     }
 }

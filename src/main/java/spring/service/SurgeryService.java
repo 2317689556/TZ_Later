@@ -47,4 +47,11 @@ public class SurgeryService {
     public void AddManufacturing(List<Consignedprocessing> list, Consignedprocessings con) {
         surgeryMapper.AddManufacturing(list, con);
     }
+
+    public PageInfo<Consignedprocessing> CommissionedProcessing(Page page, String date_1, String date_2) {
+        PageHelper.offsetPage(page.getOffset(), page.getLimit());
+        List<Consignedprocessing> surgicaldrapes = surgeryMapper.CommissionedProcessing(date_1, date_2);
+        PageInfo<Consignedprocessing> pageInfo = new PageInfo<>(surgicaldrapes);
+        return pageInfo;
+    }
 }

@@ -16,6 +16,19 @@
         </where>
     </select>
 
+    <select id="CommissionedProcessing" resultType="Consignedprocessing">
+        SELECT *
+        FROM consignedProcessing
+        <where>
+            <if test="date_1 != null and date_1 != ''">
+                date>=#{date_1}
+            </if>
+            <if test="date_2 != null and date_2 != ''">
+                AND date&lt;=#{date_2}
+            </if>
+        </where>
+    </select>
+
     <select id="SurgeryParticulars" resultType="SurgicaldrapeDetails">
         SELECT *,sum(a.count) as sumcount
         FROM surgicalDrape_details a
