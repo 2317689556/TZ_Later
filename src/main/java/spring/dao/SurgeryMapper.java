@@ -19,4 +19,6 @@ public interface SurgeryMapper {
     void AddSurgeryOrder(Surgicaldrape sur);
 
     void AddSurgeryOrder1(@Param("li") List<SurgicaldrapeDetails> list, @Param("id") long id);
+
+    List<Receipt> showReceipts(Integer id);
 }

@@ -38,6 +38,10 @@
         function huizhidan() {
             window.location = "/jsps/surgicalReceipt.jsp?id=${DE.id}&number=${DE.number}&customer=${DE.customer}&ao=${DE.administrativeOffice}&proposer=${DE.proposer}";
         }
+
+        function huizhixq() {
+            window.location = "/Surgery/ReturnReceiptDetails?id=${DE.id}";
+        }
     </script>
 </head>
 
@@ -112,17 +116,19 @@
             </tbody>
         </table>
         <div style="float: right;">
-            <%--签批，驳回--%>
             <c:if test="${DE.signState==0}">
                 <div style="margin-left:1077px;margin-top: 50px;">
                     <input type="button" class="btn btn-success" value="签批" onclick="qianpi(1)">&nbsp;&nbsp;<input type="button" class="btn btn-danger" onclick="qianpi(2)" value="驳回">
                 </div>
             </c:if>
-
-
             <c:if test="${DE.signState==1}">
                 <div style="margin-left:1137px;margin-top: 50px;">
                     <input type="button" class="btn btn-info" value="回执单" onclick="huizhidan()">
+                </div>
+            </c:if>
+            <c:if test="${DE.signState==3}">
+                <div style="margin-left:1137px;margin-top: 50px;">
+                    <input type="button" class="btn btn-info" value="回执详情" onclick="huizhixq()">
                 </div>
             </c:if>
         </div>

@@ -40,6 +40,17 @@ public class SurgeryController {
         return "surgicalParticulars";
     }
 
+    //展示回执单详情
+    @RequestMapping("/ReturnReceiptDetails")
+    public String ReturnReceiptDetails(Integer id, Model model) {
+        List<SurgicaldrapeDetails> surgicaldrapeDetails = surgeryService.SurgeryParticulars(id);
+        model.addAttribute("DE", surgicaldrapeDetails.get(0));
+        List<Receipt> receipts = surgeryService.showReceipts(id);
+        model.addAttribute("RE", receipts.get(0));
+        model.addAttribute("REC", receipts);
+        return "ReturnReceiptDetails";
+    }
+
     //展示手术单详情
     @RequestMapping("/Sign")
     @ResponseBody
