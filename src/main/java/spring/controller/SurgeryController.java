@@ -5,10 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import spring.pojo.Receipt;
-import spring.pojo.Surgicaldrape;
-import spring.pojo.SurgicaldrapeDetails;
-import spring.pojo.SurgicaldrapeDetailss;
+import spring.pojo.*;
 import spring.pojo.utils.Page;
 import spring.service.SurgeryService;
 
@@ -33,11 +30,15 @@ public class SurgeryController {
 
     //展示手术单详情
     @RequestMapping("/SurgeryParticulars")
-    public String SurgeryParticulars(Integer id, Model model) {
+    public String SurgeryParticulars(Integer id, Model model, Integer s) {
         List<SurgicaldrapeDetails> surgicaldrapeDetails = surgeryService.SurgeryParticulars(id);
         model.addAttribute("SU", surgicaldrapeDetails);
         model.addAttribute("DE", surgicaldrapeDetails.get(0));
-        return "surgicalParticulars";
+        if (s == 1) {
+            return "PickingListParticulars";
+        } else {
+            return "surgicalParticulars";
+        }
     }
 
     //展示回执单详情
@@ -112,6 +113,26 @@ public class SurgeryController {
             list.add(s);
         }
         surgeryService.AddSurgeryOrder(list, sur);
+        return 1;
+    }
+
+    //展示手术单详情
+    @RequestMapping("/AddManufacturing")
+    @ResponseBody
+    public Integer AddManufacturing(Consignedprocessings con) {
+        List<Consignedprocessing> list = new ArrayList<>();
+        for (int i = 0; i < con.getName().length - 1; i++) {
+            Consignedprocessing s = new Consignedprocessing();
+            s.setName(con.getName()[i]);
+            s.setModel(con.getModel()[i]);
+            s.setSpecification(con.getSpecification()[i]);
+            s.setUnit(con.getUnit()[i]);
+            s.setCount(con.getCount()[i]);
+            s.setUnitPrice(con.getUnitPrice()[i]);
+            s.setMoney(con.getMoney()[i]);
+            list.add(s);
+        }
+        surgeryService.AddManufacturing(list, con);
         return 1;
     }
 }

@@ -24,7 +24,7 @@
                         </li>
                         <li><a href="/jsps/surgicalDrape.jsp">手术单</a>
                         </li>
-                        <li><a href="/jsps/stockup.jsp">备货单</a>
+                        <li><a href="/jsps/PickingList.jsp">备货单</a>
                         </li>
                         <li><a href="#">异常查询</a>
                         </li>
@@ -38,9 +38,9 @@
                     <span class="submenu-icon"></span></a>
                     <ul>
                         <li><a href="#">货随发票出库单</a></li>
-                        <li><a href="#">备货单</a></li>
+                        <li><a href="/jsps/PickingListAdd.jsp">备货单</a></li>
                         <li><a href="/jsps/SurgicalOrder.jsp">手术单</a></li>
-                        <li><a href="#">委托加工单</a></li>
+                        <li><a href="/jsps/ManufacturingConsignment.jsp">委托加工单</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class="icon-user" style="padding-left: 18px;width: 20px;padding-right: 37px;"></i>库管<span class="submenu-icon"></span></a>

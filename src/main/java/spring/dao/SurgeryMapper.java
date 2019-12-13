@@ -1,9 +1,7 @@
 package spring.dao;
 
 import org.apache.ibatis.annotations.Param;
-import spring.pojo.Receipt;
-import spring.pojo.Surgicaldrape;
-import spring.pojo.SurgicaldrapeDetails;
+import spring.pojo.*;
 
 import java.util.List;
 
@@ -21,4 +19,6 @@ public interface SurgeryMapper {
     void AddSurgeryOrder1(@Param("li") List<SurgicaldrapeDetails> list, @Param("id") long id);
 
     List<Receipt> showReceipts(Integer id);
+
+    void AddManufacturing(@Param("li") List<Consignedprocessing> list,@Param("co") Consignedprocessings con);
 }

@@ -6,6 +6,14 @@
     <select id="ShowSurgery" resultType="Surgicaldrape">
         SELECT *
         FROM surgicalDrape
+        <where>
+            <if test="date_1 != null and date_1 != ''">
+                sign_date>=#{date_1}
+            </if>
+            <if test="date_2 != null and date_2 != ''">
+                AND sign_date&lt;=#{date_2}
+            </if>
+        </where>
     </select>
 
     <select id="SurgeryParticulars" resultType="SurgicaldrapeDetails">
@@ -41,6 +49,13 @@
         INSERT INTO surgicalDrape_details (id,name,model,specification,unit,count,unitPrice,money,stockout_id) VALUE
         <foreach collection="li" item="l" separator=",">
             (null,#{l.name},#{l.model},#{l.specification},#{l.unit},#{l.count},#{l.unitPrice},#{l.money},#{id})
+        </foreach>
+    </insert>
+
+    <insert id="AddManufacturing">
+        INSERT INTO consignedProcessing (id,wtdw,sbmc,sbsl,zqsj,date,name,model,specification,unit,count,unitPrice,money) VALUE
+        <foreach collection="li" item="l" separator=",">
+            (null,#{co.wtdw},#{co.sbmc},#{co.sbsl},#{co.zqsj},#{co.date},#{l.name          },#{l.model         },#{l.specification },#{l.unit          },#{l.count         },#{l.unitPrice     },#{l.money         })
         </foreach>
     </insert>
 

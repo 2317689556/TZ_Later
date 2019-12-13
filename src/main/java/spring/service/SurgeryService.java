@@ -4,9 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import spring.dao.SurgeryMapper;
-import spring.pojo.Receipt;
-import spring.pojo.Surgicaldrape;
-import spring.pojo.SurgicaldrapeDetails;
+import spring.pojo.*;
 import spring.pojo.utils.Page;
 
 import javax.annotation.Resource;
@@ -44,5 +42,9 @@ public class SurgeryService {
 
     public List<Receipt> showReceipts(Integer id) {
         return surgeryMapper.showReceipts(id);
+    }
+
+    public void AddManufacturing(List<Consignedprocessing> list, Consignedprocessings con) {
+        surgeryMapper.AddManufacturing(list, con);
     }
 }
