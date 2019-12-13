@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import spring.pojo.Receipt;
 import spring.pojo.Surgicaldrape;
 import spring.pojo.SurgicaldrapeDetails;
+import spring.pojo.SurgicaldrapeDetailss;
 import spring.pojo.utils.Page;
 import spring.service.SurgeryService;
 
@@ -61,17 +62,45 @@ public class SurgeryController {
         Integer[] number = new Integer[employCount1.length];
         List<Receipt> list = new ArrayList<>();
         for (int i = 0; i < employCount1.length; i++) {
+            Receipt r1 = new Receipt();
             employCount[i] = Integer.parseInt(employCount1[i]);
             number[i] = Integer.parseInt(number1[i]);
-            re.setName(name[i]);
-            re.setModel(model[i]);
-            re.setSpecification(specification[i]);
-            re.setUnit(unit[i]);
-            re.setNumber(number[i]);
-            re.setEmployCount(employCount[i]);
-            list.add(re);
+            r1.setName(name[i]);
+            r1.setModel(model[i]);
+            r1.setSpecification(specification[i]);
+            r1.setUnit(unit[i]);
+            r1.setNumber(number[i]);
+            r1.setEmployCount(employCount[i]);
+            r1.setPerformer(re.getPerformer());
+            r1.setSex(re.getSex());
+            r1.setSurgicalDrapeId(re.getSurgicalDrapeId());
+            r1.setDate(re.getDate());
+            r1.setNum(re.getNum());
+            r1.setPatientName(re.getPatientName());
+            list.add(r1);
         }
         surgeryService.AddSurgery(list);
+        surgeryService.Sign((int) re.getSurgicalDrapeId(), 3);
+        return 1;
+    }
+
+    //展示手术单详情
+    @RequestMapping("/AddSurgeryOrder")
+    @ResponseBody
+    public Integer AddSurgeryOrder(SurgicaldrapeDetailss su, Surgicaldrape sur) {
+        List<SurgicaldrapeDetails> list = new ArrayList<>();
+        for (int i = 0; i < su.getName().length - 1; i++) {
+            SurgicaldrapeDetails s = new SurgicaldrapeDetails();
+            s.setName(su.getName()[i]);
+            s.setModel(su.getModel()[i]);
+            s.setSpecification(su.getSpecification()[i]);
+            s.setUnit(su.getUnit()[i]);
+            s.setCount(su.getCount()[i]);
+            s.setUnitPrice(su.getUnitPrice()[i]);
+            s.setMoney(su.getMoney()[i]);
+            list.add(s);
+        }
+        surgeryService.AddSurgeryOrder(list, sur);
         return 1;
     }
 }

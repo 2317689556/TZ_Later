@@ -12,7 +12,7 @@
         SELECT *,sum(a.count) as sumcount
         FROM surgicalDrape_details a
         LEFT JOIN surgicalDrape b ON a.stockout_id=b.id
-        WHERE a.stockout_id=#{id}
+        WHERE a.stockout_id=#{id} GROUP BY a.id
     </select>
 
     <update id="Sign">
@@ -23,6 +23,24 @@
         INSERT INTO receipt VALUE
         <foreach collection="list" item="l" separator=",">
             (null,#{l.name},#{l.model},#{l.specification},#{l.unit},#{l.employCount},#{l.performer},#{l.sex},#{l.surgicalDrapeId},now(),now(),1,#{l.date},#{l.num},#{l.number},#{l.patientName})
+        </foreach>
+    </insert>
+
+    <insert id="AddSurgeryOrder" parameterType="Surgicaldrape">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            SELECT last_insert_id()
+        </selectKey>
+        INSERT INTO surgicalDrape (id,number,customer,administrativeOffice,proposer,write_date)
+        VALUE (null,#{number},#{customer},#{administrativeOffice},#{proposer},#{writeDate})
+    </insert>
+
+    <insert id="AddSurgeryOrder1">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            SELECT last_insert_id()
+        </selectKey>
+        INSERT INTO surgicalDrape_details (id,name,model,specification,unit,count,unitPrice,money,stockout_id) VALUE
+        <foreach collection="li" item="l" separator=",">
+            (null,#{l.name},#{l.model},#{l.specification},#{l.unit},#{l.count},#{l.unitPrice},#{l.money},#{id})
         </foreach>
     </insert>
 </mapper>

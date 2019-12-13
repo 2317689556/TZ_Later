@@ -3,6 +3,8 @@ package spring.pojo;
 
 import lombok.Data;
 
+import java.sql.Date;
+
 @Data
 public class Surgicaldrape {
     private long id;
@@ -10,7 +12,7 @@ public class Surgicaldrape {
     private String customer;
     private String administrativeOffice;
     private String proposer;
-    private java.sql.Timestamp writeDate;
+    private Date writeDate;
     private java.sql.Timestamp signDate;
     private String signState;
     private java.sql.Timestamp createTime;

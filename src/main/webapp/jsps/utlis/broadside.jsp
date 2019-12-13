@@ -39,7 +39,7 @@
                     <ul>
                         <li><a href="#">货随发票出库单</a></li>
                         <li><a href="#">备货单</a></li>
-                        <li><a href="#">手术单</a></li>
+                        <li><a href="/jsps/SurgicalOrder.jsp">手术单</a></li>
                         <li><a href="#">委托加工单</a></li>
                     </ul>
                 </li>

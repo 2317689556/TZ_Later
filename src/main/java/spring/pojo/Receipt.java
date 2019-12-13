@@ -6,7 +6,7 @@ import lombok.Data;
 import java.sql.Date;
 
 @Data
-public class Receipt {
+public class Receipt implements Cloneable {
     private long id;
     private String name;
     private String model;

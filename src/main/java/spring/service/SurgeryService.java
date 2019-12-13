@@ -35,4 +35,10 @@ public class SurgeryService {
     public void AddSurgery(List<Receipt> list) {
         surgeryMapper.AddSurgery(list);
     }
+
+    public void AddSurgeryOrder(List<SurgicaldrapeDetails> list, Surgicaldrape sur) {
+        surgeryMapper.AddSurgeryOrder(sur);
+        long id = sur.getId();
+        surgeryMapper.AddSurgeryOrder1(list, id);
+    }
 }

@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
     <link rel="stylesheet" href="/cxCalendar/css/jquery.cxcalendar.css">
     <script>
+        $(function () {
+            a = 0;
+            $('#sample-table tr:gt(2):lt(-2)').each(function () {
+                a += parseInt($(this).find("td:eq(5)").text());
+            });
+            $("#temp3").html(a);
+        })
+
         function qianpi(asd) {
             $.ajax({
                 url: "/Surgery/Sign",
@@ -38,7 +46,6 @@
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
     <h3 style="margin-bottom: 40px">手术单</h3>
-
     <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
         <table class="table table-striped table-bordered table-hover" id="sample-table">
             <tr>
@@ -90,7 +97,7 @@
                 </tr>
             </c:forEach>
             <tr>
-                <td colspan="5">合计：${DE.sumcount}</td>
+                <td colspan="5">合计：<span id="temp3"></span></td>
                 <td colspan="4">大写：${DE.daXie}</td>
             </tr>
             <tr>
@@ -107,15 +114,15 @@
         <div style="float: right;">
             <%--签批，驳回--%>
             <c:if test="${DE.signState==0}">
-                <div  style="margin-left:1077px;margin-top: 50px;">
-                    <input type="button"class="btn btn-success" value="签批" onclick="qianpi(1)">&nbsp;&nbsp;<input type="button"class="btn btn-danger" onclick="qianpi(2)" value="驳回">
+                <div style="margin-left:1077px;margin-top: 50px;">
+                    <input type="button" class="btn btn-success" value="签批" onclick="qianpi(1)">&nbsp;&nbsp;<input type="button" class="btn btn-danger" onclick="qianpi(2)" value="驳回">
                 </div>
             </c:if>
 
 
             <c:if test="${DE.signState==1}">
-                <div  style="margin-left:1137px;margin-top: 50px;">
-                    <input type="button"class="btn btn-info" value="回执单" onclick="huizhidan()">
+                <div style="margin-left:1137px;margin-top: 50px;">
+                    <input type="button" class="btn btn-info" value="回执单" onclick="huizhidan()">
                 </div>
             </c:if>
         </div>

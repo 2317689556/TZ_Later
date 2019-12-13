@@ -75,24 +75,24 @@
                                 return "<span class='third-item2'>已签批</span>";
                             } else if (value == 2) {
                                 return "<span class='third-item'>已驳回</span>";
+                            } else if (value == 3) {
+                                return "<span class='third-item3'>已回执</span>";
                             }
                         }
                     }
                 ],
-                onLoadSuccess: function () {  //加载成功时执行
+                onLoadSuccess: function () {
                     getTdValue();
                 }
             });
         })
 
         function getTdValue() {
-            /*已驳回颜色*/
             $(".third-item").parent().parent().css('background-color', '#FFECEC');
-            /*已批改颜色*/
             $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
+            $(".third-item3").parent().parent().css('background-color', 'rgba(0,240,255,0.1)');
         }
 
-        /*刷新*/
         function shuaXin() {
             $('#tab1').bootstrapTable('refresh');
         }
