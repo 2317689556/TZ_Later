@@ -62,7 +62,7 @@
                 <li><a href="#"><i class="icon-picture"></i>商品录入信息<span class="submenu-icon"></span></a>
                     <ul>
                         <li><a href="/jsps/CommodityInformation.jsp">商品信息</a></li>
-                        <li><a href="#">新增商品录入信息</a></li>
+                        <li><a href="/jsps/CommodityInformationAdd.jsp">新增商品录入信息</a></li>
                     </ul>
                 </li>
                 <li style="text-align: center"><a href="#" style="text-align: center"><i class="icon-info" style="padding-left: 25px;width: 20px;padding-right: 30px;"></i>委托加工成品表<span class="submenu-icon"></span></a>

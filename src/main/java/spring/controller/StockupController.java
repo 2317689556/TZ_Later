@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import spring.pojo.PickingList;
 import spring.pojo.StockOut;
+import spring.pojo.PurchaseRequestDetails;
 import spring.pojo.utils.Page;
 import spring.service.StockupService;
 
@@ -28,12 +29,16 @@ public class StockupController {
         return list;
     }
 
-    //备货单模糊查
-    @RequestMapping("/findLikeStockup")
-    @ResponseBody
-    public List<PickingList> findStockup() {
-        return null;
+
+    /*备货单__详情*/
+    @RequestMapping("findStockupFindAllById")
+    public String findStockupFindAllById(Model model, Integer id){
+        List<PurchaseRequestDetails> list = StockupService.findStockupFindAllById(id);
+        model.addAttribute("list",list);
+        model.addAttribute("list1", list.get(0));
+        return "stockupList";
     }
+
 
     /*入库单__全查*/
     @RequestMapping("StockOutFindAll")

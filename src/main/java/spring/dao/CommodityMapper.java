@@ -8,4 +8,6 @@ public interface CommodityMapper {
     List<Commodity> ShowCommodity();
 
     Commodity CommodityParticular(Integer id);
+
+    int CommodityInformationAdd(Commodity commodity);
 }

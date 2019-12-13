@@ -82,7 +82,7 @@
                     <div style="text-align: left;float: left">
                         <span>订货单位：${list1.proposer}</span>
                     </div>
-                    <div style="margin-left: 800px">
+                    <div style="margin-left: 630px">
                         <span >出库单号：${list1.number}</span>
                     </div>
                     <div style="clear: both"></div>
@@ -90,7 +90,7 @@
                         <div style="text-align: left;float: left">
                             <span>科室：${list1.department}</span>
                         </div>
-                        <div style="margin-left: 810px">
+                        <div style="margin-left: 610px">
                             <span >发票号：${list1.orderOn}</span>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                         <div style="text-align: left;float: left">
                             <span>业务员：${list1.salesman}</span>
                         </div>
-                        <div style="margin-left: 790px">
+                        <div style="margin-left: 680px">
                             <span >日期：${list1.applyDate}</span>
                         </div>
                     </div>

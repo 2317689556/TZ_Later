@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import spring.dao.StockupMapper;
 import spring.pojo.PickingList;
 import spring.pojo.StockOut;
+import spring.pojo.PurchaseRequestDetails;
 import spring.pojo.utils.Page;
 
 import javax.annotation.Resource;
@@ -33,6 +34,10 @@ public class StockupService {
         return info;
     }
 
+
+    public List<PurchaseRequestDetails> findStockupFindAllById(Integer id) {
+        return stockupMapper.findStockupFindAllById(id);
+    }
     /*入库单__详情*/
     public List<StockOut> StockOutFindAllById(Integer id) {
         return stockupMapper.StockOutFindAllById(id);

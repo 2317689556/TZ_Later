@@ -26,44 +26,39 @@
         <table class="table table-striped table-bordered table-hover" id="sample-table">
 
             <tr>
-                <div>
+                <div style="margin: 20px">
                     <div style="text-align: left;float: left">
-                        <span>订货单位：${2222222222}</span>
+                        <span>订货单位：${list1.proposer}</span>
                     </div>
-                    <div style="margin-left: 800px">
-                        <span >出库单号：${1}</span>
+                    <div style="margin-left: 630px">
+                        <span >出库单号：${list1.number}</span>
                     </div>
                     <div style="clear: both"></div>
                     <div style="clear: both ; margin-top: 10px">
                         <div style="text-align: left;float: left">
-                            <span>科室：${1}</span>
+                            <span>科室：${list1.department}</span>
                         </div>
-                        <div style="margin-left: 810px">
-                            <span >发票号：${1111}</span>
-                        </div>
+                        <%--<div style="margin-left: 610px">
+                            <span >发票号：${list1.orderOn}</span>
+                        </div>--%>
                     </div>
 
-                    <div style="clear: both ; margin-top: 10px">
+                    <div style="clear: both ; margin-top: 40px">
                         <div style="text-align: left;float: left">
-                            <span>业务员：${1111111}</span>
+                            <span>业务员：${list1.salesman}</span>
                         </div>
-                        <div style="margin-left: 790px">
-                            <span >日期：${111}</span>
+                        <div style="margin-left: 680px">
+                            <span >日期：${list1.applyDate}</span>
                         </div>
                     </div>
-
-
-
-
 
 
                 </div>
             </tr>
             <thead>
             <tr>
-                <th width="25"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
                 <th width="80">序号</th>
-                <th width="100">品名</th>
+                <th width="200px">品名</th>
                 <th width="220px">型号</th>
                 <th width="150px">规格</th>
                 <th width="250px">单位</th>
@@ -75,7 +70,6 @@
             <tbody>
             <c:forEach items="${list}" var="p">
                 <tr>
-                    <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
                     <td>${p.id}</td>
                     <td>${p.name}</td>
                     <td>${p.model}</td>
@@ -88,12 +82,36 @@
                 </tr>
             </c:forEach>
             <tr>
-                <td colspan="5">合计：</td>
-                <td colspan="4">大写</td>
+                <td colspan="5">合计：${list1.money}</td>
+                <td colspan="4">大写：${list1.name}</td>
             </tr>
+            <tr>
+                <td colspan="5">制单：${list1.number}</td>
+                <td colspan="4">审核：${list1.salesman}</td>
+            </tr>
+            <c:if test="${list1.signState==2}">
+                <tr>
+                    <td colspan="9">驳回原因：${list1.rejected}</td>
+                </tr>
+            </c:if>
             </tbody>
         </table>
+        <c:if test="${list1.signState==1}"><input type="button" value="出库扫码"></c:if>
+        <c:if test="${list1.signState==0}"><input type="button" value="签批">&nbsp;<input type="button" value="驳回"></c:if>
+        <input type="button" value="打印">
     </div>
 </div>
 </body>
 </html>
+<script>
+    function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+</script>

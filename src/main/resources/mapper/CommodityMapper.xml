@@ -10,4 +10,11 @@
     <select id="CommodityParticular" resultType="Commodity">
         SELECT * FROM commodity WHERE id=#{id}
     </select>
+
+    <!--商品添加 CommodityInformationAdd-->
+    <insert id="CommodityInformationAdd">
+        insert into commodity(name,model,specification,manufacturers,productLine,batchNumber,moneyInput,moneyOut)
+        value(#{name},#{model},#{specification},#{manufacturers},#{productLine},#{batchNumber},#{moneyInput},#{moneyOut});
+    </insert>
+
 </mapper>

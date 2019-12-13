@@ -50,18 +50,18 @@
             $('.date_1').cxCalendar();
         })
 
-        function updata1() {
+        function AddCommodity() {
             $.ajax({
-                url: "/Vender/VenderAdd",
+                url: "/Commodity/CommodityInformationAdd",
                 data: new FormData($("#temp6")[0]),
                 type: "POST",
                 processData: false,
                 contentType: false,
                 success: function (data) {
-                    alert("修改成功");
-                    window.location = "/jsps/venderList.jsp";
+                    alert("添加成功");
+                    window.location = "/jsps/CommodityInformation.jsp";
                 }, error: function () {
-                    alert("修改失败");
+                    alert("添加失败");
                 }
             })
         }
@@ -74,44 +74,44 @@
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
     <h3 style="margin-bottom: 10px; font-size: 24.5px">代理厂商添加</h3>
     <div style="margin: 40px; margin-top: 89px; box-shadow: 0 0 4px black; height: 650px; padding: 25px 50px 0 50px; text-align: left;" id="temp1">
-        <form id="temp6" enctype="multipart/form-data" action="/Vender/VenderAdd" method="post">
+        <form id="temp6" enctype="multipart/form-data"  method="post">
             <table style="float:left;">
                 <tr>
-                    <td><span>代理商名称：</span></td>
-                    <td><input type="text" value="${AGENCY.name}" class="form-control" name="name"></td>
+                    <td><span>品名：</span></td>
+                    <td><input type="text"  class="form-control" name="name"></td>
                 </tr>
                 <tr>
-                    <td><span>营业执照时间：</span></td>
-                    <td><input type="date" value="${AGENCY.date}" class="form-control date_1" name="date"></td>
+                    <td><span>型号：</span></td>
+                    <td><input type="test"  class="form-control " name="model"></td>
                 </tr>
                 <tr>
-                    <td><span>产品线名称：</span></td>
-                    <td><input type="text" value="${i.name}" class="form-control" name="name1"></td>
+                    <td><span>规格：</span></td>
+                    <td><input type="text"  class="form-control" name="specification"></td>
                 </tr>
                 <tr>
-                    <td><span>地区：</span></td>
-                    <td><input type="text" value="${i.address}" class="form-control" name="address"></td>
+                    <td><span>厂家：</span></td>
+                    <td><input type="text"  class="form-control" name="manufacturers"></td>
                 </tr>
                 <tr>
-                    <td><span>代理有效期：</span></td>
-                    <td><input type="date" value="${i.validityOfAgency}" class="form-control date_1" name="validityOfAgency"></td>
+                    <td><span>所属产品线：</span></td>
+                    <td><input type="test"  class="form-control " name="productLine"></td>
                 </tr>
                 <tr>
-                    <td><span>产品线名称：</span></td>
-                    <td><input type="text" value="${i.name}" class="form-control" name="name1"></td>
+                    <td><span>生产批号：</span></td>
+                    <td><input type="text"  class="form-control" name="batchNumber"></td>
                 </tr>
                 <tr>
-                    <td><span>地区：</span></td>
-                    <td><input type="text" value="${i.address}" class="form-control" name="address"></td>
+                    <td><span>入库价格：</span></td>
+                    <td><input type="text"  class="form-control" name="moneyInput"></td>
                 </tr>
                 <tr>
-                    <td><span>代理有效期：</span></td>
-                    <td><input type="date" value="${i.businessLicenseTemp}" class="form-control date_1" name="validityOfAgency"></td>
+                    <td><span>出库价格：</span></td>
+                    <td><input type="text"  class="form-control " name="moneyOut"></td>
                 </tr>
                 <input type="hidden" value="${i.id}" name="id1">
             </table>
             <div style="margin-left: 1101px;" id="temp3">
-                <input type="button" onclick="updata1()" value="完成" class="btn-primary btn temp4" style="margin-top: 560px; margin-left:-70px; position: absolute;">
+                <input type="button" onclick="AddCommodity()" value="完成" class="btn-primary btn temp4" style="margin-top: 560px; margin-left:-70px; position: absolute;">
             </div>
         </form>
     </div>

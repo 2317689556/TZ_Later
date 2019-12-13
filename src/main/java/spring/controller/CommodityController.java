@@ -33,4 +33,13 @@ public class CommodityController {
         model.addAttribute("CY", commodity);
         return "CommodityInformationParticular";
     }
+    //商品添加
+    @RequestMapping("CommodityInformationAdd")
+    @ResponseBody
+    public boolean CommodityInformationAdd(Commodity commodity) {
+        int i = commodityService.CommodityInformationAdd(commodity);
+        System.out.println("11111111111111111111111111");
+        return i > 0;
+    }
+
 }

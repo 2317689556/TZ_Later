@@ -26,4 +26,8 @@ public class CommodityService {
         Commodity commodity = commodityMapper.CommodityParticular(id);
         return commodity;
     }
+
+    public int CommodityInformationAdd(Commodity commodity) {
+        return commodityMapper.CommodityInformationAdd(commodity);
+    }
 }
