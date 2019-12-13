@@ -38,7 +38,6 @@ public class CommodityController {
     @ResponseBody
     public boolean CommodityInformationAdd(Commodity commodity) {
         int i = commodityService.CommodityInformationAdd(commodity);
-        System.out.println("11111111111111111111111111");
         return i > 0;
     }
 
