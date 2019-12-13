@@ -43,4 +43,10 @@
             (null,#{l.name},#{l.model},#{l.specification},#{l.unit},#{l.count},#{l.unitPrice},#{l.money},#{id})
         </foreach>
     </insert>
+
+    <select id="showReceipts" resultType="Receipt">
+        SELECT *
+        FROM receipt
+        WHERE surgicalDrape_id=#{id}
+    </select>
 </mapper>

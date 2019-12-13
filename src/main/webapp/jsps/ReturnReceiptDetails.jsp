@@ -21,6 +21,7 @@
 
         #temp1 .sample-table tr td {
             line-height: 34px;
+            width: auto;
         }
     </style>
     <script>
@@ -126,30 +127,30 @@
     <h3 style="margin-bottom: 40px">回执单详情</h3>
     <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px" id="temp1">
         <form id="temp2">
-            <table class="table table-striped table-bordered table-hover sample-table">
+            <table class="table table-striped table-bordered table-hover sample-table" id="temp3" style="table-layout: fixed;">
                 <tr>
                     <td>手术单号：</td>
-                    <td>${param.number}</td>
+                    <td>${DE.number}</td>
                     <td>患者姓名：</td>
-                    <td><input type="text" class="form-control" name="patientName"></td>
+                    <td>${RE.patientName}</td>
                     <td>术者：</td>
-                    <td><input type="text" name="performer" class="form-control"></td>
+                    <td>${RE.performer}</td>
                 </tr>
                 <tr>
                     <td>订货单位：</td>
-                    <td>${param.customer}</td>
+                    <td>${DE.customer}</td>
                     <td>患者性别：</td>
-                    <td><input type="text" name="sex" class="form-control"></td>
+                    <td>${RE.sex}</td>
                     <td>科室：</td>
-                    <td>${param.ao}</td>
+                    <td>${DE.administrativeOffice}</td>
                 </tr>
                 <tr>
                     <td>手术日期：</td>
-                    <td><input type="date" name="date" class="form-control date_1"></td>
+                    <td>${RE.date}</td>
                     <td>病历号：</td>
-                    <td><input type="text" name="num" class="form-control"></td>
+                    <td>${RE.num}</td>
                     <td>业务员：</td>
-                    <td>${param.proposer}</td>
+                    <td>${DE.proposer}</td>
                 </tr>
             </table>
             <table class="table table-striped table-bordered table-hover sample-table" id="table1">
@@ -160,29 +161,20 @@
                     <td>单位</td>
                     <td>使用数量</td>
                     <td>货品编码</td>
-                    <td>
-                        <input type="hidden" name="name" id="name">
-                        <input type="hidden" name="model" id="model">
-                        <input type="hidden" name="specification" id="specification">
-                        <input type="hidden" name="unit" id="unit">
-                        <input type="hidden" name="employCount1" id="employCount">
-                        <input type="hidden" name="number1" id="number">
-                        <input type="hidden" name="surgicalDrapeId" value="${param.id}">
-                    </td>
                 </tr>
-                <tr>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="button" class="btn-primary btn" onclick="tianjia()" value="添加"></td>
-                </tr>
+                <c:forEach items="${REC}" var="r">
+                    <tr>
+                        <td>${r.name}</td>
+                        <td>${r.model}</td>
+                        <td>${r.specification}</td>
+                        <td>${r.unit}</td>
+                        <td>${r.employCount}</td>
+                        <td>${r.number}</td>
+                    </tr>
+                </c:forEach>
             </table>
         </form>
     </div>
-    <input type="button" value="完成" onclick="over()" class="btn-primary btn" style="float: right;margin-right: 40px;">
 </div>
 </body>
 </html>

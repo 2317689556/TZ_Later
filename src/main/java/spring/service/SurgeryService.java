@@ -41,4 +41,8 @@ public class SurgeryService {
         long id = sur.getId();
         surgeryMapper.AddSurgeryOrder1(list, id);
     }
+
+    public List<Receipt> showReceipts(Integer id) {
+        return surgeryMapper.showReceipts(id);
+    }
 }
