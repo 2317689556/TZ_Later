@@ -37,5 +37,15 @@ public class StockupService {
     public List<StockOut> StockOutFindAllById(Integer id) {
         return stockupMapper.StockOutFindAllById(id);
     }
+
+    /*入库单__签批*/
+    public void updateQianpi(Integer id) {
+        stockupMapper.updateQianpi(id);
+    }
+
+    /*入库单__驳回*/
+    public void updateBohui(Integer id) {
+        stockupMapper.updateBohui(id);
+    }
 }
 

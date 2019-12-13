@@ -14,6 +14,59 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
     <link rel="stylesheet" href="/cxCalendar/css/jquery.cxcalendar.css">
+
+
+    <script>
+
+        /*签批*/
+        function pizhu(id) {
+            var msg = "您真的确定要签批吗？\n\n请确认！";
+            if (confirm(msg)==true){
+                return updatepQP(id);
+            }else{
+                return false;
+            }
+        }
+        function updatepQP(id) {
+
+            $.ajax({
+                url:"/Stockup/updateQianpi?id="+id,
+                type:"json",
+                success:function () {
+                    
+                }
+            })
+
+            window.location="/jsps/stockOut.jsp";
+        }
+
+        /*驳回*/
+        function bohui(id) {
+            var msg = "您真的确定要驳回吗？\n\n请确认！";
+            if (confirm(msg)==true){
+                return updateBh(id);
+            }else{
+                return false;
+            }
+        }
+
+        function updateBh(id) {
+            $.ajax({
+                url:"/Stockup/updateBohui?id="+id,
+                type:"json",
+                success:function () {
+
+                }
+            })
+            window.location="/jsps/stockOut.jsp";
+        }
+
+
+    </script>
+
+
+
+
 </head>
 
 <body>
@@ -88,13 +141,13 @@
         <c:if test="${list1.signState==1}">
         <%--未签批--%>
         <div style="margin-left:1077px;margin-top: 50px;">
-            <input type="button"class="btn btn-success" value="签批">&nbsp;&nbsp;&nbsp;<input type="button"class="btn btn-danger" value="驳回">
+            <input type="button"class="btn btn-success" onclick="pizhu(${list1.id})" value="签批">&nbsp;&nbsp;&nbsp;<input type="button"onclick="bohui(${list1.id})" class="btn btn-danger" value="驳回">
         </div>
         </c:if>
         <%--已签批--%>
         <c:if test="${list1.signState==2}">
-        <div  style="margin-left:1035px;margin-top: 50px;">
-            <input type="button"class="btn btn-success" value="生成入库单">&nbsp;&nbsp;&nbsp; <a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+        <div  style="margin-left:1030px;margin-top: 50px;">
+            <input type="button"class="btn btn-success" value="生成入库单">&nbsp;&nbsp;&nbsp;<a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
         </div>
         </c:if>
         <%--已驳回--%>

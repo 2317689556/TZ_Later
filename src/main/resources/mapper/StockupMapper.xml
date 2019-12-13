@@ -41,7 +41,16 @@
          a.id=b.stockout_id
           and
            a.id=#{id}
-
     </select>
+
+    <!--入库单__签批-->
+    <update id="updateQianpi">
+        update stock_out set signState=2,dateOut=now() where id=#{id}
+    </update>
+
+    <!--入库单__驳回-->
+    <update id="updateBohui">
+        update stock_out set signState=3 where id=#{id}
+    </update>
 
 </mapper>

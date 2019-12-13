@@ -15,4 +15,10 @@ public interface StockupMapper {
 
     /*入库单__详情*/
     List<StockOut> StockOutFindAllById(Integer id);
+
+    /*入库单__签批*/
+    void updateQianpi(Integer id);
+
+    /*入库单__驳回*/
+    void updateBohui(Integer id);
 }

@@ -51,4 +51,16 @@ public class StockupController {
         model.addAttribute("list1",list.get(0));
         return "stockOutDetails";
     }
+
+    /*入库单__签批*/
+    @RequestMapping("updateQianpi")
+    public void updateQianpi(Integer id){
+            StockupService.updateQianpi(id);
+    }
+
+    /*入库单__驳回*/
+    @RequestMapping("updateBohui")
+    public void updateBohui(Integer id){
+        StockupService.updateBohui(id);
+    }
 }
