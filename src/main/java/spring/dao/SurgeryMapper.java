@@ -23,4 +23,12 @@ public interface SurgeryMapper {
     void AddManufacturing(@Param("li") List<Consignedprocessing> list, @Param("co") Consignedprocessings con);
 
     List<Consignedprocessing> CommissionedProcessing(@Param("date_1") String date_1, @Param("date_2") String date_2);
+
+    List<TableContents> TableContents(Integer id);
+
+    List<FinishedProduct> finishedProduct();
+
+    void NewTable(TableContents tableContents);
+
+    void NewTable1(@Param("ta") List<TableContents> list,@Param("id") long id);
 }

@@ -54,4 +54,19 @@ public class SurgeryService {
         PageInfo<Consignedprocessing> pageInfo = new PageInfo<>(surgicaldrapes);
         return pageInfo;
     }
+
+    public List<TableContents> TableContents(Integer id) {
+        return surgeryMapper.TableContents(id);
+    }
+
+    public List<FinishedProduct> finishedProduct() {
+        return surgeryMapper.finishedProduct();
+    }
+
+    public void NewTable(List<TableContents> list, String namee) {
+        TableContents tableContents = new TableContents();
+        tableContents.setName(namee);
+        surgeryMapper.NewTable(tableContents);
+        surgeryMapper.NewTable1(list, tableContents.getId());
+    }
 }

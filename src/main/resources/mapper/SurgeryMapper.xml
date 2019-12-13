@@ -77,4 +77,29 @@
         FROM receipt
         WHERE surgicalDrape_id=#{id}
     </select>
+
+    <select id="TableContents" resultType="TableContents">
+        SELECT *
+        FROM TableContents
+        WHERE finishedProduct_id=#{id}
+    </select>
+
+    <select id="finishedProduct" resultType="FinishedProduct">
+        SELECT *
+        FROM finishedProduct
+    </select>
+
+    <insert id="NewTable" parameterType="TableContents">
+        <selectKey keyProperty="id" order="AFTER" resultType="Integer">
+            SELECT last_insert_id()
+        </selectKey>
+        INSERT INTO finishedProduct VALUE (null,#{name},now())
+    </insert>
+
+    <insert id="NewTable1">
+        INSERT INTO TableContents VALUE
+        <foreach collection="ta" item="t" separator=",">
+            (null,#{t.name},#{t.specification},#{t.unit},#{t.num},#{t.remark},#{id})
+        </foreach>
+    </insert>
 </mapper>

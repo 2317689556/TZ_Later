@@ -28,7 +28,6 @@ public class SurgeryController {
         return info;
     }
 
-    //展示手术单详情
     @RequestMapping("/SurgeryParticulars")
     public String SurgeryParticulars(Integer id, Model model, Integer s) {
         List<SurgicaldrapeDetails> surgicaldrapeDetails = surgeryService.SurgeryParticulars(id);
@@ -41,7 +40,6 @@ public class SurgeryController {
         }
     }
 
-    //展示回执单详情
     @RequestMapping("/ReturnReceiptDetails")
     public String ReturnReceiptDetails(Integer id, Model model) {
         List<SurgicaldrapeDetails> surgicaldrapeDetails = surgeryService.SurgeryParticulars(id);
@@ -52,7 +50,6 @@ public class SurgeryController {
         return "ReturnReceiptDetails";
     }
 
-    //展示手术单详情
     @RequestMapping("/Sign")
     @ResponseBody
     public Integer Sign(Integer id, Integer q) {
@@ -60,7 +57,6 @@ public class SurgeryController {
         return 1;
     }
 
-    //展示手术单详情
     @RequestMapping("/AddSurgery")
     @ResponseBody
     public Integer AddSurgery(Receipt re) {
@@ -96,7 +92,6 @@ public class SurgeryController {
         return 1;
     }
 
-    //展示手术单详情
     @RequestMapping("/AddSurgeryOrder")
     @ResponseBody
     public Integer AddSurgeryOrder(SurgicaldrapeDetailss su, Surgicaldrape sur) {
@@ -116,7 +111,6 @@ public class SurgeryController {
         return 1;
     }
 
-    //展示手术单详情
     @RequestMapping("/AddManufacturing")
     @ResponseBody
     public void AddManufacturing(Consignedprocessings con) {
@@ -135,11 +129,41 @@ public class SurgeryController {
         surgeryService.AddManufacturing(list, con);
     }
 
-    //展示手术单详情
     @RequestMapping("/CommissionedProcessing")
     @ResponseBody
     public PageInfo<Consignedprocessing> CommissionedProcessing(Page page, String date_1, String date_2) {
         PageInfo<Consignedprocessing> info = surgeryService.CommissionedProcessing(page, date_1, date_2);
         return info;
+    }
+
+    @RequestMapping("/TableContents")
+    @ResponseBody
+    public List<TableContents> TableContents(Integer id) {
+        List<TableContents> ta = surgeryService.TableContents(id);
+        return ta;
+    }
+
+    @RequestMapping("/finishedProduct")
+    @ResponseBody
+    public List<FinishedProduct> finishedProduct() {
+        List<FinishedProduct> ta = surgeryService.finishedProduct();
+        return ta;
+    }
+
+    @RequestMapping("/NewTable")
+    @ResponseBody
+    public int NewTable(TableContentss ta, String namee) {
+        List<TableContents> list = new ArrayList<>();
+        for (int i = 0; i < ta.getName().length - 1; i++) {
+            TableContents s = new TableContents();
+            s.setName(ta.getName()[i]);
+            s.setSpecification(ta.getSpecification()[i]);
+            s.setUnit(ta.getUnit()[i]);
+            s.setRemark(ta.getRemark()[i]);
+            s.setNum(ta.getNum()[i]);
+            list.add(s);
+        }
+        surgeryService.NewTable(list, namee);
+        return 1;
     }
 }
