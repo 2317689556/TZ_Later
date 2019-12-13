@@ -15,4 +15,10 @@ public interface LibraryMapper {
 
     /*出库单__详情*/
     List<PurchaseRequestDetails> PurchaseRequestDetailsFindAllById(Integer id);
+
+    /*出库单__签批*/
+    void updateQianPi(Integer id);
+
+    /*出库单__驳回*/
+    void updateBoHui(Integer id);
 }

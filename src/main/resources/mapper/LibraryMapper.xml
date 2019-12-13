@@ -42,4 +42,16 @@
             a.id=#{id}
     </select>
 
+    <!--出库单__签批-->
+    <update id="updateQianPi">
+        update purchase_request set signState=1 where id=#{id}
+    </update>
+
+    <!--出库单__驳回-->
+    <update id="updateBoHui">
+        update purchase_request set signState=2 where id=#{id}
+    </update>
+
+
+
 </mapper>

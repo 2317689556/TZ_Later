@@ -14,6 +14,58 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
     <link rel="stylesheet" href="/cxCalendar/css/jquery.cxcalendar.css">
+
+    <script>
+
+
+        /*签批*/
+        function qianPi(id) {
+            var msg = "您真的确定要签批吗？\n\n请确认！";
+            if (confirm(msg)==true){
+                return updateQianPi(id);
+            }else{
+                return false;
+            }
+        }
+        function updateQianPi(id) {
+
+            $.ajax({
+                url:"/Library/updateQianPi?id="+id,
+                type:"json",
+                success:function () {
+
+                }
+            })
+            window.location="/jsps/purchaseRequest.jsp";
+        }
+
+        /*驳回*/
+        function boHui(id) {
+            var msg = "您真的确定要驳回吗？\n\n请确认！";
+            if (confirm(msg)==true){
+                return updateBoHui(id);
+            }else{
+                return false;
+            }
+        }
+        function updateBoHui(id) {
+            $.ajax({
+                url:"/Library/updateBoHui?id="+id,
+                type:"json",
+                success:function () {
+
+                }
+            })
+            window.location="/jsps/purchaseRequest.jsp";
+        }
+
+
+
+
+    </script>
+
+
+
 </head>
 
 <body>
@@ -106,7 +158,7 @@
         <%--未签批--%>
         <c:if test="${list1.signState==0}">
             <div  style="margin-left:1002px;margin-top: 50px;">
-                <input type="button"class="btn btn-success" value="签批">&nbsp;&nbsp;&nbsp;<input type="button"class="btn btn-warning" value="驳回">&nbsp;&nbsp;&nbsp;<a href="/jsps/purchaseRequest.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+                <input type="button"class="btn btn-success"onclick="qianPi(${list1.id})" value="签批">&nbsp;&nbsp;&nbsp;<input type="button"onclick="boHui(${list1.id})"class="btn btn-warning" value="驳回">&nbsp;&nbsp;&nbsp;<a href="/jsps/purchaseRequest.jsp"><input type="button"class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
 
