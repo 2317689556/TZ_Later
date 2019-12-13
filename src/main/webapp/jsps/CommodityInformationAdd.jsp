@@ -89,10 +89,6 @@
                     <td><input type="text" value="${i.name}" class="form-control" name="name1"></td>
                 </tr>
                 <tr>
-                    <td><span>产品：</span></td>
-                    <td class="temp6"><input type="text" name="name2"><br><input type="text" name="name2"><br><input type="text" name="name2"><br><input type="text" name="name2" style="margin-bottom: 6px"></td>
-                </tr>
-                <tr>
                     <td><span>地区：</span></td>
                     <td><input type="text" value="${i.address}" class="form-control" name="address"></td>
                 </tr>
@@ -105,10 +101,6 @@
                     <td><input type="text" value="${i.name}" class="form-control" name="name1"></td>
                 </tr>
                 <tr>
-                    <td><span>产品：</span></td>
-                    <td class="temp6"><input type="text" name="name3"><br><input type="text" name="name3"><br><input type="text" name="name3"><br><input type="text" name="name3" style="margin-bottom: 6px"></td>
-                </tr>
-                <tr>
                     <td><span>地区：</span></td>
                     <td><input type="text" value="${i.address}" class="form-control" name="address"></td>
                 </tr>
@@ -118,13 +110,7 @@
                 </tr>
                 <input type="hidden" value="${i.id}" name="id1">
             </table>
-            <div id="Temp2" style="margin-left: 20px; float: left; text-align: center; width: 400px;">
-                <input type="file" name="tupian1" class="temp4 temp5" value="资格证书" multiple="multiple">
-            </div>
-            <div id="Temp4" style="margin-left: 20px; float: left; text-align: center; width: 400px;">
-                <input type="file" value="营业执照" name="tupian1" class="temp4 temp5" multiple="multiple">
-            </div>
-            <div style="" id="temp3">
+            <div style="margin-left: 1101px;" id="temp3">
                 <input type="button" onclick="updata1()" value="完成" class="btn-primary btn temp4" style="margin-top: 560px; margin-left:-70px; position: absolute;">
             </div>
         </form>

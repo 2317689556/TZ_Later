@@ -30,8 +30,8 @@
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()
         </selectKey>
-        INSERT INTO surgicalDrape (id,number,customer,administrativeOffice,proposer,write_date)
-        VALUE (null,#{number},#{customer},#{administrativeOffice},#{proposer},#{writeDate})
+        INSERT INTO surgicalDrape (id,number,customer,administrativeOffice,proposer,write_date,signState)
+        VALUE (null,#{number},#{customer},#{administrativeOffice},#{proposer},#{writeDate},0)
     </insert>
 
     <insert id="AddSurgeryOrder1">
