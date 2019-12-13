@@ -47,4 +47,16 @@ public class LibraryController {
     }
 
 
+    /*出库单__签批*/
+    @RequestMapping("updateQianPi")
+    public void updateQianPi(Integer id){
+        libraryService.updateQianPi(id);
+    }
+
+    /*出库单__驳回*/
+    @RequestMapping("updateBoHui")
+    public void updateBoHui(Integer id){
+        libraryService.updateBoHui(id);
+    }
+
 }

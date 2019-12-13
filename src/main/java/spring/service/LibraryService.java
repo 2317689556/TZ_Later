@@ -36,4 +36,14 @@ public class LibraryService {
     public List<PurchaseRequestDetails> PurchaseRequestDetailsFindAllById(Integer id) {
         return libraryMapper.PurchaseRequestDetailsFindAllById(id);
     }
+
+    /*出库单__签批*/
+    public void updateQianPi(Integer id) {
+        libraryMapper.updateQianPi(id);
+    }
+
+    /*出库单__驳回*/
+    public void updateBoHui(Integer id) {
+        libraryMapper.updateBoHui(id);
+    }
 }
