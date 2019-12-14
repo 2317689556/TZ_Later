@@ -21,50 +21,62 @@
         /*签批*/
         function pizhu(id) {
             var msg = "您真的确定要签批吗？\n\n请确认！";
-            if (confirm(msg)==true){
+            if (confirm(msg) == true) {
                 return updatepQP(id);
-            }else{
+            } else {
                 return false;
             }
         }
+
+        function scrkd(id) {
+            var msg = "您真的确定吗？\n\n请确认！";
+            if (confirm(msg) == true) {
+                $.ajax({
+                    url: "/Stockup/updateState?id=" + id + "&i=${param.id}",
+                    type: "json",
+                })
+                window.location = "/jsps/stockOut.jsp";
+            } else {
+                return false;
+            }
+        }
+
         function updatepQP(id) {
 
             $.ajax({
-                url:"/Stockup/updateQianpi?id="+id,
-                type:"json",
-                success:function () {
-                    
+                url: "/Stockup/updateQianpi?id=" + id,
+                type: "json",
+                success: function () {
+
                 }
             })
 
-            window.location="/jsps/stockOut.jsp";
+            window.location = "/jsps/stockOut.jsp";
         }
 
         /*驳回*/
         function bohui(id) {
             var msg = "您真的确定要驳回吗？\n\n请确认！";
-            if (confirm(msg)==true){
+            if (confirm(msg) == true) {
                 return updateBh(id);
-            }else{
+            } else {
                 return false;
             }
         }
 
         function updateBh(id) {
             $.ajax({
-                url:"/Stockup/updateBohui?id="+id,
-                type:"json",
-                success:function () {
+                url: "/Stockup/updateBohui?id=" + id,
+                type: "json",
+                success: function () {
 
                 }
             })
-            window.location="/jsps/stockOut.jsp";
+            window.location = "/jsps/stockOut.jsp";
         }
 
 
     </script>
-
-
 
 
 </head>
@@ -91,7 +103,7 @@
                             <span>申请人：${list1.proposer}</span>
                         </div>
                         <div style="margin-left: 790px">
-                            <span >申请日期：${list1.signDate}</span>
+                            <span>申请日期：${list1.signDate}</span>
                         </div>
                     </div>
 
@@ -107,6 +119,10 @@
                 <th width="160px">数量</th>
                 <th width="180px">单价</th>
                 <th width="180px">金额</th>
+                <c:if test="${list1.signState==2||list1.signState==5}">
+                    <th>扫描数量</th>
+                    <th>编码</th>
+                </c:if>
             </tr>
             </thead>
             <tbody>
@@ -121,51 +137,55 @@
                     <td>${p.count}</td>
                     <td>${p.unitPrice}</td>
                     <td>${p.money}</td>
+                    <c:if test="${list1.signState==2||list1.signState==5}">
+                        <td><input type="text" style="width: 130px;"></td>
+                        <td><input type="text" style="width: 130px;"></td>
+                    </c:if>
                 </tr>
             </c:forEach>
             <tr>
-                <td colspan="5">合计：${list1.moneys}</td>
-                <td colspan="4">大写：${list1.name}</td>
+                <td colspan="4">合计：${list1.moneys}</td>
+                <td colspan="7">大写：${list1.name}</td>
             </tr>
             <tr>
-                <td colspan="5">制单：${list1.number}</td>
-                <td colspan="4">审核：${list1.salesman}</td>
+                <td colspan="4">制单：${list1.number}</td>
+                <td colspan="7">审核：${list1.salesman}</td>
             </tr>
             <c:if test="${list1.signState==3}">
-            <tr>
-                <td colspan="9">驳回原因：${list1.rejected}</td>
-            </tr>
+                <tr>
+                    <td colspan="9">驳回原因：${list1.rejected}</td>
+                </tr>
             </c:if>
             </tbody>
         </table>
         <c:if test="${list1.signState==1}">
-        <%--未签批--%>
-        <div style="margin-left:1077px;margin-top: 50px;">
-            <input type="button"class="btn btn-success" onclick="pizhu(${list1.id})" value="签批">&nbsp;&nbsp;&nbsp;<input type="button"onclick="bohui(${list1.id})" class="btn btn-danger" value="驳回">
-        </div>
+            <%--未签批--%>
+            <div style="margin-left:1077px;margin-top: 50px;">
+                <input type="button" class="btn btn-success" onclick="pizhu(${list1.id})" value="签批">&nbsp;&nbsp;&nbsp;<input type="button" onclick="bohui(${list1.id})" class="btn btn-danger" value="驳回">
+            </div>
         </c:if>
         <%--已签批--%>
         <c:if test="${list1.signState==2}">
-        <div  style="margin-left:1030px;margin-top: 50px;">
-            <input type="button"class="btn btn-success" value="生成入库单">&nbsp;&nbsp;&nbsp;<a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
-        </div>
+            <div style="margin-left:1030px;margin-top: 50px;">
+                <input type="button" class="btn btn-success" value="生成入库单" onclick="scrkd(5)">&nbsp;&nbsp;&nbsp;<a href="/jsps/stockOut.jsp"><input type="button" class="btn btn-info" value="返回"></a>
+            </div>
         </c:if>
         <%--已驳回--%>
         <c:if test="${list1.signState==3}">
-            <div  style="margin-left:1137px;margin-top: 50px;">
-                <a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            <div style="margin-left:1137px;margin-top: 50px;">
+                <a href="/jsps/stockOut.jsp"><input type="button" class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
         <%--未入库--%>
-        <c:if test="${list1.signState==4}">
-            <div  style="margin-left:1043px;margin-top: 50px;">
-                <input type="button"class="btn btn-primary" value="入库扫码">&nbsp;&nbsp;&nbsp;<a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+        <c:if test="${list1.signState==5}">
+            <div style="margin-left:1043px;margin-top: 50px;">
+                <input type="button" class="btn btn-primary" value="入库扫码" onclick="scrkd(6)">&nbsp;&nbsp;&nbsp;<a href="/jsps/stockOut.jsp"><input type="button" class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
         <%--已入库--%>
-        <c:if test="${list1.signState==5}">
-            <div  style="margin-left:1077px;margin-top: 50px;">
-                <input type="button" class="btn btn-success" value="打印">&nbsp;&nbsp;&nbsp;<a href="/jsps/stockOut.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+        <c:if test="${list1.signState==4}">
+            <div style="margin-left:1077px;margin-top: 50px;">
+                <a href="/jsps/stockOut.jsp"><input type="button" class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
     </div>

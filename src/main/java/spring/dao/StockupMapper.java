@@ -1,10 +1,8 @@
 package spring.dao;
 
 import org.apache.ibatis.annotations.Param;
-import spring.pojo.PickingList;
-import spring.pojo.PurchaseRequestDetails;
+import spring.pojo.*;
 import spring.pojo.utils.Page;
-import spring.pojo.StockOut;
 
 import java.util.List;
 
@@ -26,4 +24,10 @@ public interface StockupMapper {
 
     /*入库单__驳回*/
     void updateBohui(Integer id);
+
+    void StockupAdd(StockOutDetailss st);
+
+    void StockupAdd1(@Param("li") List<StockOutDetails> list, @Param("id") Integer id);
+
+    void updateState(@Param("id") Integer id, @Param("i") Integer i);
 }

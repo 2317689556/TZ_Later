@@ -57,7 +57,7 @@
                         field: 'manufacturer',
                         title: '厂家'
                     }, {
-                        field: 'monry',
+                        field: 'money1',
                         title: '总金额'
                     }, {
                         field: 'proposer',
@@ -81,7 +81,9 @@
                             }else if(value==4){
                                 return "<span class='third-item3'>正在采</span>"
                             }else if(value==5){
-                                return "<span class='third-item4'>已入库</span>"
+                                return "<span class='third-item4'>未入库</span>"
+                            }else if(value==6){
+                                return "<span class='third-item5'>已入库</span>"
                             }
                         }
                     }
@@ -96,6 +98,7 @@
             $(".third-item").parent().parent().css('background-color', '#FFECEC');
             /*已批改颜色*/
             $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
+            $(".third-item5").parent().parent().css('background-color', 'rgba(0,243,255,0.09)');
         }
         /*刷新*/
         function shuaXin() {

@@ -47,11 +47,45 @@
         update purchase_request set signState=1 where id=#{id}
     </update>
 
+    <!--出库单__签批-->
+    <update id="UpdataState">
+        update purchase_request set signState=3 where id=#{id}
+    </update>
+
     <!--出库单__驳回-->
     <update id="updateBoHui">
         update purchase_request set signState=2 where id=#{id}
     </update>
 
+    <update id="LibraryAdd" parameterType="PurchaseRequestDetailss">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            SELECT last_insert_id()
+        </selectKey>
+        INSERT INTO purchase_request (id,proposer,number,department,applyDate,signState,manufacturers)
+        VALUE (null,#{proposer},#{number},#{department},#{applyDate},0,#{manufacturers})
+    </update>
 
+    <update id="LossAdd" parameterType="Abnormal">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            SELECT last_insert_id()
+        </selectKey>
+        INSERT INTO abnormal (id,number,customer,date,cause,signState)
+        VALUE (null,#{number},#{customer},now(),#{cause},0)
+    </update>
 
+    <insert id="LibraryAdd1">
+        INSERT INTO purchase_request_details (id,name,model,specification,unit,count,unitPrice,money,stockout_id,order_on,salesman)
+        VALUE
+        <foreach collection="li" item="l" separator=",">
+            (null,#{l.name},#{l.model},#{l.specification},#{l.unit},#{l.count},#{l.unitPrice},#{l.money},#{pu.id},#{pu.orderOn},#{pu.salesman})
+        </foreach>
+    </insert>
+
+    <insert id="LossAdd1">
+        INSERT INTO abnormal_details (id,name,model,unit,coding,stockout_id)
+        VALUE
+        <foreach collection="li" item="l" separator=",">
+            (null,#{l.name},#{l.model},#{l.unit},#{l.coding},#{id})
+        </foreach>
+    </insert>
 </mapper>

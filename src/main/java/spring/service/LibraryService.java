@@ -4,9 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import spring.dao.LibraryMapper;
-import spring.pojo.PurchaseRequest;
-import spring.pojo.PurchaseRequestDetails;
-import spring.pojo.Stock;
+import spring.pojo.*;
 import spring.pojo.utils.Page;
 
 import javax.annotation.Resource;
@@ -26,9 +24,9 @@ public class LibraryService {
 
     /*出库单全查*/
     public PageInfo<PurchaseRequest> PurchaseRequestfindAll(Page page, String date_1, String date_2) {
-        PageHelper.offsetPage(page.getOffset(),page.getLimit());
-        List<PurchaseRequest> list = libraryMapper.PurchaseRequestfindAll(date_1,date_2);
-        PageInfo<PurchaseRequest> info =new PageInfo<>(list);
+        PageHelper.offsetPage(page.getOffset(), page.getLimit());
+        List<PurchaseRequest> list = libraryMapper.PurchaseRequestfindAll(date_1, date_2);
+        PageInfo<PurchaseRequest> info = new PageInfo<>(list);
         return info;
     }
 
@@ -45,5 +43,19 @@ public class LibraryService {
     /*出库单__驳回*/
     public void updateBoHui(Integer id) {
         libraryMapper.updateBoHui(id);
+    }
+
+    public void LibraryAdd(PurchaseRequestDetailss pu, List<PurchaseRequestDetails> list) {
+        libraryMapper.LibraryAdd(pu);
+        libraryMapper.LibraryAdd1(list, pu);
+    }
+
+    public void UpdataState(Integer id) {
+        libraryMapper.UpdataState(id);
+    }
+
+    public void LossAdd(Abnormal ab, List<AbnormalDetails> list) {
+        libraryMapper.LossAdd(ab);
+        libraryMapper.LossAdd1(list, ab.getId());
     }
 }

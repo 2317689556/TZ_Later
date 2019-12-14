@@ -56,14 +56,14 @@
             yincangyu(6, "money");
 
             $.ajax({
-                url: "/Surgery/AddSurgeryOrder",
+                url: "/Library/LibraryAdd",
                 data: new FormData($("#temp2")[0]),
                 type: 'POST',
                 processData: false,
                 contentType: false,
                 success: function (data) {
                     alert("添加成功");
-                    window.location = "/jsps/PickingList.jsp";
+                    window.location = "/jsps/purchaseRequest.jsp";
                 }
             })
         }
@@ -74,25 +74,33 @@
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
-    <h3 style="margin-bottom: 40px">备货单添加</h3>
+    <h3 style="margin-bottom: 40px">出货单添加</h3>
     <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px" id="temp1">
         <form id="temp2">
             <table class="table table-striped table-bordered table-hover sample-table">
                 <tr>
-                    <td>订货单位：</td>
-                    <td><input type="text" class="form-control" name="customer"></td>
+                    <td>申请人：</td>
+                    <td><input type="text" class="form-control" name="proposer"></td>
                     <td>出库单号：</td>
                     <td><input type="text" class="form-control" name="number"></td>
                     <td>科室：</td>
-                    <td><input type="text" class="form-control" name="administrativeOffice"></td>
+                    <td><input type="text" class="form-control" name="department"></td>
                 </tr>
                 <tr>
+                    <td>发票号：</td>
+                    <td><input type="text" name="orderOn" class="form-control"></td>
+                    <td>日期：</td>
+                    <td><input type="date" name="applyDate" class="form-control date_1"></td>
                     <td>业务员：</td>
-                    <td><input type="text" name="proposer" class="form-control"></td>
-                    <td>日期：</td>
-                    <td><input type="date" name="writeDate" class="form-control date_1"></td>
-                    <td>日期：</td>
-                    <td><input type="date" name="writeDate" class="form-control date_1"></td>
+                    <td><input type="text" name="salesman" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>订货单位：</td>
+                    <td><input type="text" name="manufacturers" class="form-control"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </table>
             <table class="table table-striped table-bordered table-hover sample-table" id="table1">

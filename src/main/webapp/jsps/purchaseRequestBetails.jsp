@@ -21,49 +21,56 @@
         /*签批*/
         function qianPi(id) {
             var msg = "您真的确定要签批吗？\n\n请确认！";
-            if (confirm(msg)==true){
+            if (confirm(msg) == true) {
                 return updateQianPi(id);
-            }else{
+            } else {
                 return false;
             }
         }
+
         function updateQianPi(id) {
 
             $.ajax({
-                url:"/Library/updateQianPi?id="+id,
-                type:"json",
-                success:function () {
+                url: "/Library/updateQianPi?id=" + id,
+                type: "json",
+                success: function () {
 
                 }
             })
-            window.location="/jsps/purchaseRequest.jsp";
+            window.location = "/jsps/purchaseRequest.jsp";
+        }
+
+        function cksm() {
+            $.ajax({
+                url: "/Library/UpdataState?id=" +${param.id},
+                type: "json",
+            })
+            window.location = "/jsps/purchaseRequest.jsp";
         }
 
         /*驳回*/
         function boHui(id) {
             var msg = "您真的确定要驳回吗？\n\n请确认！";
-            if (confirm(msg)==true){
+            if (confirm(msg) == true) {
                 return updateBoHui(id);
-            }else{
+            } else {
                 return false;
             }
         }
+
         function updateBoHui(id) {
             $.ajax({
-                url:"/Library/updateBoHui?id="+id,
-                type:"json",
-                success:function () {
+                url: "/Library/updateBoHui?id=" + id,
+                type: "json",
+                success: function () {
 
                 }
             })
-            window.location="/jsps/purchaseRequest.jsp";
+            window.location = "/jsps/purchaseRequest.jsp";
         }
 
 
-
-
     </script>
-
 
 
 </head>
@@ -83,7 +90,7 @@
                         <span>订货单位：${list1.proposer}</span>
                     </div>
                     <div style="margin-left: 630px">
-                        <span >出库单号：${list1.number}</span>
+                        <span>出库单号：${list1.number}</span>
                     </div>
                     <div style="clear: both"></div>
                     <div style="clear: both ; margin-top: 10px">
@@ -91,7 +98,7 @@
                             <span>科室：${list1.department}</span>
                         </div>
                         <div style="margin-left: 610px">
-                            <span >发票号：${list1.orderOn}</span>
+                            <span>发票号：${list1.orderOn}</span>
                         </div>
                     </div>
 
@@ -100,7 +107,7 @@
                             <span>业务员：${list1.salesman}</span>
                         </div>
                         <div style="margin-left: 680px">
-                            <span >日期：${list1.applyDate}</span>
+                            <span>日期：${list1.applyDate}</span>
                         </div>
                     </div>
 
@@ -117,6 +124,10 @@
                 <th width="160px">数量</th>
                 <th width="180px">单价</th>
                 <th width="180px">金额</th>
+                <c:if test="${list1.signState==1}">
+                    <th>扫描数量</th>
+                    <th>编码</th>
+                </c:if>
             </tr>
             </thead>
             <tbody>
@@ -131,41 +142,46 @@
                     <td>${p.count}</td>
                     <td>${p.unitPrice}</td>
                     <td>${p.money}</td>
+                    <c:if test="${list1.signState==1}">
+                        <td><input type="text" style="width: 130px;"></td>
+                        <td><input type="text" style="width: 130px;"></td>
+                    </c:if>
                 </tr>
             </c:forEach>
             <tr>
                 <td colspan="5">合计：${list1.money}</td>
-                <td colspan="4">大写：${list1.name}</td>
+                <td colspan="7">大写：${list1.name}</td>
             </tr>
             <tr>
                 <td colspan="5">制单：${list1.number}</td>
-                <td colspan="4">审核：${list1.salesman}</td>
+                <td colspan="7">审核：${list1.salesman}</td>
             </tr>
             <c:if test="${list1.signState==2}">
-            <tr>
-                <td colspan="9">驳回原因：${list1.rejected}</td>
-            </tr>
+                <tr>
+                    <td colspan="9">驳回原因：${list1.rejected}</td>
+                </tr>
             </c:if>
             </tbody>
         </table>
         <%--已签批--%>
         <c:if test="${list1.signState==1}">
-        <div  style="margin-left:1040px;margin-top: 50px;">
-            <input type="button"class="btn btn-success" value="出库扫码">&nbsp;&nbsp;&nbsp;<a href="/jsps/purchaseRequest.jsp"><input type="button"class="btn btn-info" value="返回"></a>
-        </div>
+            <div style="margin-left:1040px;margin-top: 50px;">
+                <input type="button" class="btn btn-success" value="出库扫码" onclick="cksm()">&nbsp;&nbsp;&nbsp;<a href="/jsps/purchaseRequest.jsp"><input type="button" class="btn btn-info" value="返回"></a>
+            </div>
         </c:if>
 
         <%--未签批--%>
         <c:if test="${list1.signState==0}">
-            <div  style="margin-left:1002px;margin-top: 50px;">
-                <input type="button"class="btn btn-success"onclick="qianPi(${list1.id})" value="签批">&nbsp;&nbsp;&nbsp;<input type="button"onclick="boHui(${list1.id})"class="btn btn-warning" value="驳回">&nbsp;&nbsp;&nbsp;<a href="/jsps/purchaseRequest.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            <div style="margin-left:1002px;margin-top: 50px;">
+                <input type="button" class="btn btn-success" onclick="qianPi(${list1.id})" value="签批">&nbsp;&nbsp;&nbsp;<input type="button" onclick="boHui(${list1.id})" class="btn btn-warning" value="驳回">&nbsp;&nbsp;&nbsp;<a
+                    href="/jsps/purchaseRequest.jsp"><input type="button" class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
 
         <%--驳回--%>
         <c:if test="${list1.signState==2}">
-            <div  style="margin-left:1127px;margin-top: 50px;">
-               <a href="/jsps/purchaseRequest.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            <div style="margin-left:1127px;margin-top: 50px;">
+                <a href="/jsps/purchaseRequest.jsp"><input type="button" class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
     </div>

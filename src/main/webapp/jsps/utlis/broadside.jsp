@@ -28,8 +28,6 @@
                         </li>
                         <li><a href="/jsps/abnormal.jsp">异常查询</a>
                         </li>
-                        <li><a href="#">厂家、代理</a>
-                        </li>
                     </ul>
                 </c:if>
             </li>
@@ -37,7 +35,7 @@
                 <li><a href="#"><i class="icon-briefcase"></i>填单
                     <span class="submenu-icon"></span></a>
                     <ul>
-                        <li><a href="#">货随发票出库单</a></li>
+                        <li><a href="/jsps/libraryOut.jsp">货随发票出库单</a></li>
                         <li><a href="/jsps/PickingListAdd.jsp">备货单</a></li>
                         <li><a href="/jsps/SurgicalOrder.jsp">手术单</a></li>
                         <li><a href="/jsps/ManufacturingConsignment.jsp">委托加工单</a></li>
@@ -45,12 +43,8 @@
                 </li>
                 <li><a href="#"><i class="icon-user" style="padding-left: 18px;width: 20px;padding-right: 37px;"></i>库管<span class="submenu-icon"></span></a>
                     <ul>
-                        <li><a href="#">采购申请</a></li>
-                        <li><a href="#">入库扫货</a></li>
-                        <li><a href="#">出库扫货</a></li>
-                        <li><a href="#">过期申请</a></li>
-                        <li><a href="#">退换货</a></li>
-                        <li><a href="#">报损申请</a></li>
+                        <li><a href="/jsps/PurchasingRequisition.jsp">采购申请</a></li>
+                        <li><a href="/jsps/ReportedLoss.jsp">退货\报损申请</a></li>
                     </ul>
                 </li>
                 <li style="text-align: center"><a href="#"><i class="icon-comments-alt"></i>供养设备库<span class="submenu-icon"></span></a>

@@ -16,9 +16,17 @@
         </where>
     </select>
 
+    <select id="ParticularSelect" resultType="Integer">
+        SELECT sum(money) as money1 FROM stock_out_details WHERE stockout_id=#{id}
+    </select>
+
+    <resultMap id="StockOutaaa" type="StockOut" autoMapping="true">
+        <id column="id" property="id"/>
+        <collection property="money1" column="id" ofType="Integer" select="spring.dao.StockupMapper.ParticularSelect"/>
+    </resultMap>
 
     <!--入库单__全查-->
-    <select id="StockOutFindAll" resultType="StockOut">
+    <select id="StockOutFindAll" resultMap="StockOutaaa">
         SELECT *
         FROM stock_out
         <where>
@@ -41,7 +49,37 @@
          a.id=b.stockout_id
           and
            a.id=#{id}
-
     </select>
+
+    <insert id="StockupAdd" parameterType="StockOutDetailss">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            SELECT last_insert_id()
+        </selectKey>
+        INSERT INTO stock_out (id,number,manufacturer,proposer,signState,signDate,dateOut)
+        VALUE (null,#{number},#{manufacturer},#{proposer},0,#{signDate},#{dateOut})
+    </insert>
+
+    <insert id="StockupAdd1">
+        INSERT INTO stock_out_details (id,name,model,specification,unit,count,unitPrice,money,stockout_id)
+        VALUE
+        <foreach collection="li" item="l" separator=",">
+            (null,#{l.name},#{l.model},#{l.specification},#{l.unit},#{l.count},#{l.unitPrice},#{l.money},#{id})
+        </foreach>
+    </insert>
+
+    <!--入库单__签批-->
+    <update id="updateQianpi">
+        update stock_out set signState=2,dateOut=now() where id=#{id}
+    </update>
+
+    <!--入库单__驳回-->
+    <update id="updateBohui">
+        update stock_out set signState=3 where id=#{id}
+    </update>
+
+    <!--入库单__驳回-->
+    <update id="updateState">
+        update stock_out set signState=#{id} where id=#{i}
+    </update>
 
 </mapper>
