@@ -28,6 +28,7 @@ public class SurgeryService {
 
     public void Sign(Integer id, Integer q) {
         surgeryMapper.Sign(id, q);
+        surgeryMapper.log();
     }
 
     public void AddSurgery(List<Receipt> list) {

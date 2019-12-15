@@ -29,4 +29,12 @@ public interface LibraryMapper {
     void LossAdd(Abnormal ab);
 
     void LossAdd1(@Param("li") List<AbnormalDetails> list, @Param("id") Integer id);
+
+    void log(Integer id);
+
+    List<Stock> showStock();
+
+    void LibraryAdd2(PurchaseRequestDetails p);
+
+    void LibraryAdd3();
 }

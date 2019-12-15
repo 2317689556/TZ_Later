@@ -30,6 +30,12 @@
             a.id=#{id}
     </select>
 
+    <select id="showInventory1" resultType="Abnormal">
+       select *
+        from abnormal
+        WHERE cause="过期"
+    </select>
+
 
     <!--异常__完成换货-->
     <update id="updateSuccess">
@@ -40,5 +46,14 @@
     <update id="updateInThe">
         update abnormal set signState=2 where id=#{id}
     </update>
+
+    <!--异常__允许换货-->
+    <update id="qianpi">
+        update abnormal set signState=1 where id=#{id}
+    </update>
+
+    <insert id="log">
+        INSERT INTO log VALUE (null,(SELECT count(b.id) FROM abnormal a LEFT JOIN abnormal_details b ON a.id=b.stockout_id WHERE a.id=#{id}),(SELECT cause FROM abnormal WHERE id=#{id}),now())
+    </insert>
 
 </mapper>

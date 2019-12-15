@@ -31,4 +31,6 @@ public interface SurgeryMapper {
     void NewTable(TableContents tableContents);
 
     void NewTable1(@Param("ta") List<TableContents> list,@Param("id") long id);
+
+    void log();
 }

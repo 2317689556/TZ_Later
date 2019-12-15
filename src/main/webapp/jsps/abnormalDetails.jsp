@@ -21,49 +21,63 @@
         /*完成换货*/
         function successHuanHuo(id) {
             var msg = "您确定已经完成换货了吗？\n\n请确认！";
-            if (confirm(msg)==true){
+            if (confirm(msg) == true) {
                 return updateHH(id);
-            }else{
+            } else {
                 return false;
             }
         }
+
+        function qianpi(id) {
+            var msg = "您确定签批吗？\n\n请确认！";
+            if (confirm(msg) == true) {
+                $.ajax({
+                    url: "/Abnormal/qianpi?id=" + id,
+                    type: "json",
+                    success: function () {
+
+                    }
+                });
+                window.location = "/jsps/abnormal.jsp";
+            } else {
+                return false;
+            }
+        }
+
         function updateHH(id) {
-            alert(id)
             $.ajax({
-                url:"/Abnormal/updateSuccess?id="+id,
-                type:"json",
-                success:function () {
+                url: "/Abnormal/updateSuccess?id=" + id,
+                type: "json",
+                success: function () {
 
                 }
-            })
-            window.location="/jsps/abnormal.jsp";
+            });
+            window.location = "/jsps/abnormal.jsp";
         }
 
         /*换货中*/
         function InThe(id) {
-            var msg = "您确定要进行换货吗？\n\n请确认！";
-            if (confirm(msg)==true){
+            var msg = "您确定吗？\n\n请确认！";
+            if (confirm(msg) == true) {
                 return updateHuanHuo(id);
-            }else{
+            } else {
                 return false;
             }
         }
+
         function updateHuanHuo(id) {
             $.ajax({
-                url:"/Abnormal/updateInThe?id="+id,
-                type:"json",
-                success:function () {
+                url: "/Abnormal/updateInThe?id=" + id,
+                type: "json",
+                success: function () {
 
                 }
-            })
-            window.location="/jsps/abnormal.jsp";
+            });
+            window.location = "/jsps/abnormal.jsp";
         }
 
 
-
-
     </script>
-
 
 
 </head>
@@ -134,27 +148,20 @@
                 <td colspan="5">制单：${list1.number}</td>
                 <td colspan="4">审核：${list1.audit}</td>
             </tr>
-
             </tbody>
         </table>
-        <%--换货中--%>
-        <c:if test="${list1.signState==2}">
-        <div  style="margin-left:1040px;margin-top: 50px;">
-            <input type="button"class="btn btn-success" onclick="successHuanHuo(${list1.id})" value="完成换货">&nbsp;&nbsp;&nbsp;<a href="/jsps/abnormal.jsp"><input type="button"class="btn btn-info" value="返回"></a>
-        </div>
-        </c:if>
 
         <%--未签批--%>
         <c:if test="${list1.signState==0}">
-            <div  style="margin-left:11502px;margin-top: 50px;">
-               <a href="/jsps/abnormal.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            <div style="margin-left:1000px;margin-top: 50px;">
+                <input type="button" class="btn btn-success" onclick="qianpi(${list1.id})" value="签批">&nbsp;&nbsp;&nbsp;<a href="/jsps/abnormal.jsp"><input type="button" class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
 
         <%--已签批--%>
         <c:if test="${list1.signState==1}">
-            <div  style="margin-left:1019px;margin-top: 50px;">
-                <input type="button"class="btn btn-success" onclick="InThe(${list1.id})" value="回货入库扫码">&nbsp;&nbsp;&nbsp;<a href="/jsps/abnormal.jsp"><input type="button"class="btn btn-info" value="返回"></a>
+            <div style="margin-left:1019px;margin-top: 50px;">
+                <input type="button" class="btn btn-success" onclick="InThe(${list1.id})" value="扫码">&nbsp;&nbsp;&nbsp;<a href="/jsps/abnormal.jsp"><input type="button" class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
     </div>

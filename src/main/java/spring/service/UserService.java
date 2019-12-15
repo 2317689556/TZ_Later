@@ -2,6 +2,7 @@ package spring.service;
 
 import org.springframework.stereotype.Service;
 import spring.dao.UserMapper;
+import spring.pojo.Log;
 import spring.pojo.User;
 
 import javax.annotation.Resource;
@@ -45,5 +46,9 @@ public class UserService {
     public void updateUserBZ(Integer id, String remarks) {
         userMapper.updateUserBZ(id,remarks);
 
+    }
+
+    public List<Log> Log(String a, String start, String stop) {
+       return userMapper.Log(a,start,stop);
     }
 }

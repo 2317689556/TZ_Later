@@ -71,9 +71,7 @@
                             }else if(value==1){
                                 return "<span class='third-item2'>已签批</span>";
                             }else if(value==2){
-                                return "<span>换货中</span>";
-                            }else if(value==3){
-                                return "<span>已完成</apan>"
+                                return "<span class='third-item3'>已审核</span>";
                             }
                         }
                     }
@@ -88,6 +86,7 @@
             $(".third-item").parent().parent().css('background-color', '#FFECEC');
             /*已签批的颜色*/
             $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
+            $(".third-item3").parent().parent().css('background-color', 'rgba(0,243,255,0.07)');
         }
         /*刷新*/
         function shuaXin() {

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import spring.dao.VenderMapper;
 import spring.pojo.Agency;
 import spring.pojo.ProductLine;
+import spring.pojo.Stock;
 import spring.pojo.utils.Page;
 
 import javax.annotation.Resource;
@@ -41,5 +42,10 @@ public class VenderService {
             venderMapper.addLines(lines.get(i));
             venderMapper.addProduct(list.get(i), lines.get(i).getId());
         }
+    }
+
+    public void UpdataStock(Stock s) {
+        venderMapper.UpdataStock(s);
+        venderMapper.UpdataStock1(s);
     }
 }

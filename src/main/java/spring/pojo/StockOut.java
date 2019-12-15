@@ -6,7 +6,6 @@ import java.sql.Date;
 
 @Data
 public class StockOut {
-
   private Integer id;
   private long number;//单号
   private String customer;//订货单位
@@ -19,6 +18,4 @@ public class StockOut {
   private long moneys;//金额
   private String rejected;//驳回原因
   private Integer money1;//驳回原因
-
-
 }

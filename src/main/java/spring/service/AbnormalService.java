@@ -38,5 +38,17 @@ public class AbnormalService {
     /*异常__允许换货*/
     public void updateInThe(Integer id) {
         abnormalMapper.updateInThe(id);
+        abnormalMapper.log(id);
+    }
+
+    public void qianpi(Integer id) {
+        abnormalMapper.qianpi(id);
+    }
+
+    public PageInfo<Abnormal> showInventory1(Page page) {
+        PageHelper.offsetPage(page.getOffset(),page.getLimit());
+        List<Abnormal> list=abnormalMapper.showInventory1();
+        PageInfo<Abnormal> pageInfo=new PageInfo<>(list);
+        return pageInfo;
     }
 }

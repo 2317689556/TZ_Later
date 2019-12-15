@@ -57,7 +57,24 @@ public class StockupService {
     }
 
     public void updateState(Integer id, Integer i) {
-        stockupMapper.updateState(id,i);
+        stockupMapper.updateState(id, i);
+        //日志，已入库
+        if (id == 6) {
+            stockupMapper.log(i);
+            List<Commodity> list = stockupMapper.cha(i);
+            if (list.size() > 0) {
+                stockupMapper.kucun(i);
+            } else {
+                User u = new User();
+                u.setGradeId(i);
+                stockupMapper.kucun1(u);
+                stockupMapper.kucun2(u);
+            }
+        }
+    }
+
+    public Stock StockupUpdata(Integer id) {
+        return stockupMapper.StockupUpdata(id);
     }
 }
 

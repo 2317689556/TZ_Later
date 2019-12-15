@@ -82,4 +82,35 @@
         update stock_out set signState=#{id} where id=#{i}
     </update>
 
+    <!--已入库__日志-->
+    <insert id="log">
+        INSERT INTO log VALUE (null,(SELECT count(b.id) FROM stock_out a LEFT JOIN stock_out_details b ON a.id=b.stockout_id WHERE a.id=#{id}),"入库件数",now()),
+        (null,1,"入库单",now()),
+        (null,(SELECT sum(b.money) FROM stock_out a LEFT JOIN stock_out_details b ON a.id=b.stockout_id WHERE a.id=#{id}),"入库金额",now())
+    </insert>
+
+    <select id="cha" resultType="Commodity">
+        SELECT * FROM stock WHERE name=(SELECT name FROM stock_out_details WHERE id=#{i})
+    </select>
+
+    <select id="StockupUpdata" resultType="Stock">
+        SELECT * FROM stock a LEFT JOIN commodity c2 on a.stock_id = c2.id WHERE a.id=#{id}
+    </select>
+
+    <update id="kucun">
+        UPDATE stock SET count=(count+(SELECT count FROM stock_out_details WHERE id=#{id})) WHERE name=(SELECT name FROM stock_out_details WHERE id=#{id})
+    </update>
+
+    <insert id="kucun1" parameterType="User">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            SELECT last_insert_id()
+        </selectKey>
+        INSERT INTO stock (name,count) SELECT name,count FROM stock_out_details a LEFT JOIN stock_out b ON a.stockout_id = b.id WHERE b.id=#{gradeId}
+    </insert>
+
+    <insert id="kucun2">
+INSERT INTO commodity (model,specification,unit,unitPrice,money,stock_id)
+SELECT model,specification,unit,unitPrice,money,#{id} FROM stock_out_details a LEFT JOIN stock_out b ON a.stockout_id = b.id WHERE b.id=#{gradeId}
+    </insert>
+
 </mapper>

@@ -1,11 +1,10 @@
 package spring.controller;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import spring.pojo.Log;
 import spring.pojo.User;
 import spring.service.UserService;
 
@@ -68,7 +67,7 @@ public class UserController {
     /*用户管理__删除*/
     @RequestMapping("deleteUser")
     @ResponseBody
-    public int deleteUser(Integer id){
+    public int deleteUser(Integer id) {
         int i = userService.deleteUser(id);
         return i;
     }
@@ -76,10 +75,16 @@ public class UserController {
     /*用户管理__备注修改*/
     @RequestMapping("updateUserBZ")
     @ResponseBody
-    public void updateUserBZ(Integer id,String remarks){
-        System.out.println(id);
-        System.out.println(remarks);
-        userService.updateUserBZ(id,remarks);
+    public void updateUserBZ(Integer id, String remarks) {
+        userService.updateUserBZ(id, remarks);
+    }
+
+    /*日志__查询*/
+    @RequestMapping("Log")
+    @ResponseBody
+    public List<Log> Log(String a, String start, String stop) {
+        List<Log> log = userService.Log(a, start, stop);
+        return log;
     }
 
 }

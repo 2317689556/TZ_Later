@@ -51,4 +51,17 @@
     <update id="updateUserBZ">
         update user set remarks=#{remarks} where id=#{id}
     </update>
+
+    <select id="Log" resultType="Log">
+        SELECT * FROM log
+        <where>
+            <if test="b != null and b != ''">
+                date >= #{b} State=#{a}
+            </if>
+            <if test="c != null and c != ''">
+                date &lt;= #{c}
+            </if>
+           AND State=#{a}
+        </where>
+    </select>
 </mapper>

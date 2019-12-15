@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import spring.pojo.Agency;
 import spring.pojo.ProductLine;
+import spring.pojo.Stock;
 import spring.pojo.utils.Page;
 import spring.service.VenderService;
 import spring.utils.AliyunOSSUtil;
@@ -46,6 +47,12 @@ public class VenderController {
         }
         request.setAttribute("AGENCY", agency);
         return "venderListParticular";
+    }
+
+    @RequestMapping("/UpdataStock")
+    public String UpdataStock(Stock s) {
+        venderService.UpdataStock(s);
+        return "inventory";
     }
 
     //代理厂商修改

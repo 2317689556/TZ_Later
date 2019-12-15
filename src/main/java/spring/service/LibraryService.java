@@ -48,14 +48,23 @@ public class LibraryService {
     public void LibraryAdd(PurchaseRequestDetailss pu, List<PurchaseRequestDetails> list) {
         libraryMapper.LibraryAdd(pu);
         libraryMapper.LibraryAdd1(list, pu);
+        for (PurchaseRequestDetails p:list){
+            libraryMapper.LibraryAdd2(p);
+        }
+        libraryMapper.LibraryAdd3();
     }
 
     public void UpdataState(Integer id) {
         libraryMapper.UpdataState(id);
+        libraryMapper.log(id);
     }
 
     public void LossAdd(Abnormal ab, List<AbnormalDetails> list) {
         libraryMapper.LossAdd(ab);
         libraryMapper.LossAdd1(list, ab.getId());
+    }
+
+    public List<Stock> showStock() {
+        return libraryMapper.showStock();
     }
 }

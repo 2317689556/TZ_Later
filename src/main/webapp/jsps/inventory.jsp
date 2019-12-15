@@ -48,17 +48,20 @@
                         }
                     }, {
                         field: 'name',
-                        title: '品名'
-                    }, {
+                        title: '品名',
+                        formatter: function (value, row, index) {
+                            return "<a href='/Stockup/StockupUpdata?id=" + row.id + "'>" + value + "</a>";
+                        }
+                    },/* {
                         field: 'dateManufacture',
                         title: '生产日期'
                     }, {
                         field: 'validity',
                         title: '有效期'
-                    }, {
+                    }, */{
                         field: 'count',
                         title: '数量'
-                    }, {
+                    }, /*{
                         field: 'inboundDate',
                         title: '入库日期'
                     }, {
@@ -73,7 +76,7 @@
                     }, {
                         field: 'onlyCoding',
                         title: '唯一编码'
-                    }, {
+                    }, */{
                         field: 'remark',
                         title: '备注'
                     }

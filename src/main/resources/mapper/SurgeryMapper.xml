@@ -40,6 +40,10 @@
         UPDATE surgicalDrape SET signState=#{q} WHERE id=#{id}
     </update>
 
+    <insert id="log">
+        INSERT INTO log VALUE (null,1,"手术单进行",now())
+    </insert>
+
     <insert id="AddSurgery" parameterType="Receipt">
         INSERT INTO receipt VALUE
         <foreach collection="list" item="l" separator=",">

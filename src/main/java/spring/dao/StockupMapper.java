@@ -30,4 +30,16 @@ public interface StockupMapper {
     void StockupAdd1(@Param("li") List<StockOutDetails> list, @Param("id") Integer id);
 
     void updateState(@Param("id") Integer id, @Param("i") Integer i);
+
+    void log(Integer id);
+
+    List<Commodity> cha(Integer i);
+
+    void kucun(Integer i);
+
+    void kucun1(User i);
+
+    void kucun2(User i);
+
+    Stock StockupUpdata(Integer id);
 }

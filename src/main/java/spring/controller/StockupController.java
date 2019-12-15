@@ -56,6 +56,13 @@ public class StockupController {
         return "stockOutDetails";
     }
 
+    @RequestMapping("StockupUpdata")
+    public String StockupUpdata(Integer id, Model model) {
+        Stock s = StockupService.StockupUpdata(id);
+        model.addAttribute("S", s);
+        return "InventoryUpdata";
+    }
+
     /*入库单__签批*/
     @RequestMapping("updateQianpi")
     public void updateQianpi(Integer id) {

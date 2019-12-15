@@ -28,6 +28,13 @@ public class AbnormalController {
         System.out.println(info);
         return info;
     }
+    @RequestMapping("AbnormalFindAll1")
+    @ResponseBody
+    public PageInfo<Abnormal> AbnormalFindAll1(Page page){
+        PageInfo<Abnormal> info = abnormalService.showInventory1(page);
+        System.out.println(info);
+        return info;
+    }
 
     /*异常详情*/
     @RequestMapping("AbnormalFindAllById")
@@ -48,6 +55,11 @@ public class AbnormalController {
     @RequestMapping("updateInThe")
     public void updateInThe(Integer id){
         abnormalService.updateInThe(id);
+    }
+
+    @RequestMapping("qianpi")
+    public void qianpi(Integer id){
+        abnormalService.qianpi(id);
     }
 
 }

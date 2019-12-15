@@ -88,4 +88,22 @@
             (null,#{l.name},#{l.model},#{l.unit},#{l.coding},#{id})
         </foreach>
     </insert>
+
+    <insert id="log">
+        INSERT INTO log VALUE (null,(SELECT count(b.id) FROM purchase_request a LEFT JOIN purchase_request_details b ON a.id=b.stockout_id WHERE a.id=#{id}),"出库件数",now()),
+        (null,(SELECT sum(b.money) FROM purchase_request a LEFT JOIN purchase_request_details b ON a.id=b.stockout_id WHERE a.id=#{id}),"出库金额",now()),
+        (null,1,"出库单",now())
+    </insert>
+
+    <select id="showStock" resultType="Stock">
+        SELECT * FROM stock a LEFT JOIN commodity b ON a.id=b.stock_id
+    </select>
+
+    <update id="LibraryAdd2" parameterType="PurchaseRequestDetails">
+        UPDATE stock SET count=(count-#{count}) WHERE name=#{name }
+    </update>
+
+    <delete id="LibraryAdd3">
+        DELETE FROM  stock WHERE count =0
+    </delete>
 </mapper>

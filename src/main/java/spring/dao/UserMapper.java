@@ -1,7 +1,7 @@
 package spring.dao;
 
 import org.apache.ibatis.annotations.Param;
-import spring.pojo.Stock;
+import spring.pojo.Log;
 import spring.pojo.User;
 
 import java.util.List;
@@ -25,5 +25,7 @@ public interface UserMapper {
     int deleteUser(Integer id);
 
     /*公户管理__备注修改*/
-    void updateUserBZ(@Param("id") Integer id,@Param("remarks") String remarks);
+    void updateUserBZ(@Param("id") Integer id, @Param("remarks") String remarks);
+
+    List<Log> Log(@Param("a") String a, @Param("b") String start, @Param("c") String stop);
 }

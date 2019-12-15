@@ -96,4 +96,11 @@ public class LibraryController {
         libraryService.LossAdd(ab, list);
     }
 
+    @RequestMapping("/showStock")
+    @ResponseBody
+    public List<Stock> showStock() {
+        List<Stock> list = libraryService.showStock();
+        return list;
+    }
+
 }

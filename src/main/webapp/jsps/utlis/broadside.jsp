@@ -5,12 +5,6 @@
         <ul class="vertical-nav dark red" style="text-align: center;">
             <li class="active"><a href="#"><i class="icon-home"></i>首页
                 <span class="submenu-icon"></span></a>
-                <c:if test="${USER.gradeId==1}">
-                    <ul>
-                        <li><a href="#">预警页面</a>
-                        </li>
-                    </ul>
-                </c:if>
             </li>
             <li><a href="#"><i class="icon-cogs"></i>查询
                 <span class="submenu-icon"></span></a>
@@ -76,8 +70,7 @@
             <li><a href="/jsps/venderList.jsp"><i class="icon-question" style="padding-left: 20px;width: 20px;padding-right: 35px;"></i>厂家、代理管理</a>
             </li>
             <c:if test="${USER.gradeId==2||USER.gradeId==1}">
-                <li><a href="#"><i class="icon-envelope"></i>修改库存</a></li>
-                <li><a href="#"><i class="icon-bar-chart"></i>统计</a></li>
+                <li><a href="/jsps/log.jsp"><i class="icon-bar-chart"></i>统计</a></li>
             </c:if>
         </ul>
     </div>

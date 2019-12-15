@@ -19,4 +19,10 @@ public interface AbnormalMapper {
 
     /*异常__允许换货*/
     void updateInThe(Integer id);
+
+    void qianpi(Integer id);
+
+    void log(Integer id);
+
+    List<Abnormal> showInventory1();
 }

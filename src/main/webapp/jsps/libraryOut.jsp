@@ -25,35 +25,55 @@
     </style>
     <script>
         $(function () {
+            $("#temp3 td select").on("blur", function () {
+                $("#money1").html("<option>" + parseInt($("#count1 option:selected").text()) * parseInt($("#unitPrice1 option:selected").text()) + "</option>")
+            });
+
             $('.date_1').cxCalendar();
+            $.ajax({
+                url: "/Library/showStock",
+                type: 'post',
+                success: function (data) {
+                    $(data).each(function (a, b) {
+                        $("#name1").append("<option value='" + b.name + "'>" + b.name + "</option>");
+                        $("#model1").append("<option value='" + b.model + "'>" + b.model + "</option>");
+                        $("#specification1").append("<option value='" + b.specification + "'>" + b.specification + "</option>");
+                        $("#unitPrice1").append("<option value='" + b.money + "'>" + b.money + "</option>");
+                        $("#unit1").append("<option value='" + b.unit + "'>" + b.unit + "</option>");
+                        for (var i = 1; i <= b.count; i++) {
+                            $("#count1").append("<option value='" + b.count + "'>" + i + "</option>");
+                        }
+                    })
+                }
+            })
         })
 
         function tianjia() {
             var a = "";
             a += "<tbody><tr>";
-            $('#table1  tr:eq(1) td input:text').each(function () {
-                a += "<td>" + $(this).val() + "</td>";
+            $('#table1  tr:eq(1) td select option:selected').each(function () {
+                a += "<td>" + $(this).text() + "</td>";
             });
             a += "<td></td></tr></tbody>";
             $("#table1").append(a);
         }
 
-        function yincangyu(a, b) {
+        function yincangyu1(a, b) {
             var name = "";
-            $('#table1  tr:gt(1)').each(function () {
-                name += $(this).find("td:eq(" + a + ")").text() + ",";
+            $('#temp3').each(function () {
+                name += $(this).find("td:eq(" + a + ") option:selected").text() + ",";
             });
             $("#" + b).val(name);
         }
 
         function over() {
-            yincangyu(0, "name");
-            yincangyu(1, "model");
-            yincangyu(2, "specification");
-            yincangyu(3, "unit");
-            yincangyu(4, "count");
-            yincangyu(5, "unitPrice");
-            yincangyu(6, "money");
+            yincangyu1(0, "name",);
+            yincangyu1(1, "model");
+            yincangyu1(2, "specification");
+            yincangyu1(3, "unit");
+            yincangyu1(4, "count");
+            yincangyu1(5, "unitPrice");
+            yincangyu1(6, "money");
 
             $.ajax({
                 url: "/Library/LibraryAdd",
@@ -122,14 +142,14 @@
                         <input type="hidden" name="money" id="money">
                     </td>
                 </tr>
-                <tr>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
+                <tr id="temp3">
+                    <td><select id="name1" style="width: 140px" class="form-control"></select></td>
+                    <td><select id="model1" style="width: 140px" class="form-control"></select></td>
+                    <td><select id="specification1" style="width: 140px" class="form-control"></select></td>
+                    <td><select id="unit1" style="width: 140px" class="form-control"></select></td>
+                    <td><select id="count1" style="width: 140px" class="form-control"></select></td>
+                    <td><select id="unitPrice1" style="width: 140px" class="form-control"></select></td>
+                    <td><select id="money1" style="width: 140px" class="form-control"></select></td>
                     <td><input type="button" class="btn-primary btn" onclick="tianjia()" value="添加" style="width: 80px;"></td>
                 </tr>
             </table>
