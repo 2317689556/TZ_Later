@@ -69,6 +69,7 @@ public class LibraryController {
         List<PurchaseRequestDetails> list = new ArrayList<>();
         for (int i = 0; i < pu.getName().length - 1; i++) {
             PurchaseRequestDetails p = new PurchaseRequestDetails();
+            p.setId(pu.getIdd()[i]);
             p.setName(pu.getName()[i]);
             p.setModel(pu.getModel()[i]);
             p.setCount(pu.getCount()[i]);
@@ -98,8 +99,8 @@ public class LibraryController {
 
     @RequestMapping("/showStock")
     @ResponseBody
-    public List<Stock> showStock() {
-        List<Stock> list = libraryService.showStock();
+    public List<Stock> showStock(Integer id) {
+        List<Stock> list = libraryService.showStock(id);
         return list;
     }
 

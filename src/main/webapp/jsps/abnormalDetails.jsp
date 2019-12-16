@@ -161,7 +161,7 @@
         <%--已签批--%>
         <c:if test="${list1.signState==1}">
             <div style="margin-left:1019px;margin-top: 50px;">
-                <input type="button" class="btn btn-success" onclick="InThe(${list1.id})" value="扫码">&nbsp;&nbsp;&nbsp;<a href="/jsps/abnormal.jsp"><input type="button" class="btn btn-info" value="返回"></a>
+                <input type="button" class="btn btn-success" onclick="InThe(${list1.id})" value="确认">&nbsp;&nbsp;&nbsp;<a href="/jsps/abnormal.jsp"><input type="button" class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
     </div>

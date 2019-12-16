@@ -5,7 +5,8 @@ import lombok.Data;
 @Data
 public class PurchaseRequestDetailss extends PurchaseRequest {
 
-    private long id;
+    private Integer id;
+    private Integer[] idd;
     private String[] name;//品名
     private String[] model;//型号
     private String[] specification;//规格

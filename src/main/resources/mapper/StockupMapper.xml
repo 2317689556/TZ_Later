@@ -56,7 +56,7 @@
             SELECT last_insert_id()
         </selectKey>
         INSERT INTO stock_out (id,number,manufacturer,proposer,signState,signDate,dateOut)
-        VALUE (null,#{number},#{manufacturer},#{proposer},0,#{signDate},#{dateOut})
+        VALUE (null,#{number},#{manufacturer},#{proposer},1,#{signDate},#{dateOut})
     </insert>
 
     <insert id="StockupAdd1">
@@ -105,12 +105,7 @@
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()
         </selectKey>
-        INSERT INTO stock (name,count) SELECT name,count FROM stock_out_details a LEFT JOIN stock_out b ON a.stockout_id = b.id WHERE b.id=#{gradeId}
-    </insert>
-
-    <insert id="kucun2">
-INSERT INTO commodity (model,specification,unit,unitPrice,money,stock_id)
-SELECT model,specification,unit,unitPrice,money,#{id} FROM stock_out_details a LEFT JOIN stock_out b ON a.stockout_id = b.id WHERE b.id=#{gradeId}
+        INSERT INTO stock (name,count,model,specification,unit,unitPrice,money) SELECT name,count,model,specification,unit,unitPrice,money FROM stock_out_details a LEFT JOIN stock_out b ON a.stockout_id = b.id WHERE b.id=#{gradeId}
     </insert>
 
 </mapper>

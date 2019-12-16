@@ -81,7 +81,12 @@
                     <td>单号：</td>
                     <td><input type="text" class="form-control" name="number"></td>
                     <td>原因：</td>
-                    <td><input type="text" class="form-control" name="cause"></td>
+                    <td><select name="cause" id="cause" class="form-control">
+                        <option value="退货">退货</option>
+                        <option value="过期">过期</option>
+                        <option value="回货">回货</option>
+                        <option value="报损">报损</option>
+                    </select></td>
                 </tr>
             </table>
             <table class="table table-striped table-bordered table-hover sample-table" id="table1">

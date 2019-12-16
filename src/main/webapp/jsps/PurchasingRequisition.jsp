@@ -29,6 +29,7 @@
         })
 
         function tianjia() {
+            $("#money1").val(parseInt($("#count1").val()) * parseInt($("#unitPrice1").val()))
             var a = "";
             a += "<tbody><tr>";
             $('#table1  tr:eq(1) td input:text').each(function () {
@@ -36,6 +37,7 @@
             });
             a += "<td></td></tr></tbody>";
             $("#table1").append(a);
+
         }
 
         function yincangyu(a, b) {
@@ -53,7 +55,7 @@
             yincangyu(3, "unit");
             yincangyu(4, "count");
             yincangyu(5, "unitPrice");
-            yincangyu(6, "money");
+            yincangyu(6, "moneye");
 
             $.ajax({
                 url: "/Stockup/StockupAdd",
@@ -111,7 +113,7 @@
                         <input type="hidden" name="unit" id="unit">
                         <input type="hidden" name="count" id="count">
                         <input type="hidden" name="unitPrice" id="unitPrice">
-                        <input type="hidden" name="money" id="money">
+                        <input type="hidden" name="moneye" id="moneye">
                     </td>
                 </tr>
                 <tr>
@@ -119,9 +121,9 @@
                     <td><input type="text" class="form-control"></td>
                     <td><input type="text" class="form-control"></td>
                     <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
-                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control" id="count1"></td>
+                    <td><input type="text" class="form-control" id="unitPrice1"></td>
+                    <td><input type="text" class="form-control" id="money1"></td>
                     <td><input type="button" class="btn-primary btn" onclick="tianjia()" value="添加" style="width: 80px;"></td>
                 </tr>
             </table>

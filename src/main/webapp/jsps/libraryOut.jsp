@@ -24,9 +24,14 @@
         }
     </style>
     <script>
+        var arrayObj = new Array();
         $(function () {
             $("#temp3 td select").on("blur", function () {
                 $("#money1").html("<option>" + parseInt($("#count1 option:selected").text()) * parseInt($("#unitPrice1 option:selected").text()) + "</option>")
+            });
+
+            $("#name1").on("blur", function () {
+                asd();
             });
 
             $('.date_1').cxCalendar();
@@ -35,20 +40,37 @@
                 type: 'post',
                 success: function (data) {
                     $(data).each(function (a, b) {
-                        $("#name1").append("<option value='" + b.name + "'>" + b.name + "</option>");
-                        $("#model1").append("<option value='" + b.model + "'>" + b.model + "</option>");
-                        $("#specification1").append("<option value='" + b.specification + "'>" + b.specification + "</option>");
-                        $("#unitPrice1").append("<option value='" + b.money + "'>" + b.money + "</option>");
-                        $("#unit1").append("<option value='" + b.unit + "'>" + b.unit + "</option>");
-                        for (var i = 1; i <= b.count; i++) {
-                            $("#count1").append("<option value='" + b.count + "'>" + i + "</option>");
-                        }
+                        $("#name1").append("<option value='" + b.id + "'>" + b.name + "</option>");
                     })
                 }
             })
-        })
+        });
+
+        function asd() {
+            $.ajax({
+                url: "/Library/showStock",
+                type: 'post',
+                data: {"id": $("#name1").val()},
+                success: function (data) {
+                    $(data).each(function (a, b) {
+                        $("#model1").html("<option value='" + b.model + "'>" + b.model + "</option>");
+                        $("#specification1").html("<option value='" + b.specification + "'>" + b.specification + "</option>");
+                        $("#unitPrice1").html("<option value='" + b.money + "'>" + b.money + "</option>");
+                        $("#unit1").html("<option value='" + b.unit + "'>" + b.unit + "</option>");
+                        for (var i = 1; i <= b.count; i++) {
+                            $("#count1").html("<option value='" + b.count + "'>" + i + "</option>");
+                        }
+                    });
+                    $("#money1").html("<option>" + parseInt($("#count1 option:selected").text()) * parseInt($("#unitPrice1 option:selected").text()) + "</option>")
+                }
+            })
+        }
 
         function tianjia() {
+            if (arrayObj.includes($("#name1").val())) {
+                alert("已经选了");
+                return;
+            }
             var a = "";
             a += "<tbody><tr>";
             $('#table1  tr:eq(1) td select option:selected').each(function () {
@@ -56,6 +78,7 @@
             });
             a += "<td></td></tr></tbody>";
             $("#table1").append(a);
+            arrayObj.push($("#name1").val());
         }
 
         function yincangyu1(a, b) {
@@ -74,6 +97,12 @@
             yincangyu1(4, "count");
             yincangyu1(5, "unitPrice");
             yincangyu1(6, "money");
+
+            var name = "";
+            $('#temp3').each(function () {
+                name += $(this).find("td:eq(0) option:selected").val() + ",";
+            });
+            $("#idd").val(name);
 
             $.ajax({
                 url: "/Library/LibraryAdd",
@@ -140,6 +169,7 @@
                         <input type="hidden" name="count" id="count">
                         <input type="hidden" name="unitPrice" id="unitPrice">
                         <input type="hidden" name="money" id="money">
+                        <input type="hidden" id="idd" name="idd">
                     </td>
                 </tr>
                 <tr id="temp3">

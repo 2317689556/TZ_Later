@@ -76,10 +76,7 @@
     </insert>
 
     <update id="UpdataStock" parameterType="Stock">
-        UPDATE stock SET name=#{name},count=#{count } WHERE id=#{moneyOut}
+        UPDATE stock SET name=#{name},count=#{count },model=#{model},specification=#{specification } ,unit=#{unit } ,money=#{money } ,unitPrice=#{unitPrice } WHERE id=#{moneyOut}
     </update>
 
-    <update id="UpdataStock1" parameterType="Stock">
-        UPDATE commodity SET model=#{model},specification=#{specification } ,unit=#{unit } ,money=#{money } ,unitPrice=#{unitPrice } WHERE stock_id=#{moneyOut}
-    </update>
 </mapper>

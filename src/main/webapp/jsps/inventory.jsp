@@ -76,10 +76,7 @@
                     }, {
                         field: 'onlyCoding',
                         title: '唯一编码'
-                    }, */{
-                        field: 'remark',
-                        title: '备注'
-                    }
+                    }, */
                 ]
             });
         })

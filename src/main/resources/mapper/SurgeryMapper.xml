@@ -85,7 +85,6 @@
     <select id="TableContents" resultType="TableContents">
         SELECT *
         FROM TableContents
-        WHERE finishedProduct_id=#{id}
     </select>
 
     <select id="finishedProduct" resultType="FinishedProduct">

@@ -18,6 +18,15 @@
 
     <script>
 
+        $(function () {
+            var a = 0;
+            $("#temp8 tr:lt(-2)").each(function () {
+                var b = parseInt($(this).find("td:eq(7)").text());
+                a = a + b;
+            })
+            $("#temp9").html(a);
+        })
+
         /*签批*/
         function pizhu(id) {
             var msg = "您真的确定要签批吗？\n\n请确认！";
@@ -125,7 +134,7 @@
                 </c:if>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="temp8">
             <c:forEach items="${list}" var="p">
                 <tr>
                     <td>${p.id}</td>
@@ -144,7 +153,7 @@
                 </tr>
             </c:forEach>
             <tr>
-                <td colspan="4">合计：${list1.moneys}</td>
+                <td colspan="4">合计：<span id="temp9"></span></td>
                 <td colspan="7">大写：${list1.name}</td>
             </tr>
             <tr>

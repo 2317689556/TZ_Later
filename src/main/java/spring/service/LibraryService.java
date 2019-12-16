@@ -2,6 +2,7 @@ package spring.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import spring.dao.LibraryMapper;
 import spring.pojo.*;
@@ -64,7 +65,7 @@ public class LibraryService {
         libraryMapper.LossAdd1(list, ab.getId());
     }
 
-    public List<Stock> showStock() {
-        return libraryMapper.showStock();
+    public List<Stock> showStock(Integer id) {
+        return libraryMapper.showStock( id);
     }
 }

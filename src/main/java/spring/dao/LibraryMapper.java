@@ -32,7 +32,7 @@ public interface LibraryMapper {
 
     void log(Integer id);
 
-    List<Stock> showStock();
+    List<Stock> showStock(@Param("id") Integer id);
 
     void LibraryAdd2(PurchaseRequestDetails p);
 

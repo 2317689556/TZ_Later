@@ -68,7 +68,6 @@ public class StockupService {
                 User u = new User();
                 u.setGradeId(i);
                 stockupMapper.kucun1(u);
-                stockupMapper.kucun2(u);
             }
         }
     }

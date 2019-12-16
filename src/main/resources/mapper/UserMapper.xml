@@ -53,15 +53,15 @@
     </update>
 
     <select id="Log" resultType="Log">
-        SELECT * FROM log
+        SELECT sum(num) num,State FROM log
         <where>
             <if test="b != null and b != ''">
-                date >= #{b} State=#{a}
+                date >= #{b}
             </if>
             <if test="c != null and c != ''">
-                date &lt;= #{c}
+                AND date &lt;= #{c}
             </if>
-           AND State=#{a}
+            AND State=#{a}
         </where>
     </select>
 </mapper>

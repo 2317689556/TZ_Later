@@ -91,7 +91,7 @@ public class StockupController {
             s.setModel(st.getModel()[i]);
             s.setUnit(st.getUnit()[i]);
             s.setUnitPrice(st.getUnitPrice()[i]);
-            s.setMoney(st.getMoney()[i]);
+            s.setMoney(st.getMoneye()[i]);
             s.setSpecification(st.getSpecification()[i]);
             list.add(s);
         }

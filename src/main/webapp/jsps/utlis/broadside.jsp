@@ -3,7 +3,7 @@
 <div style="float: left; margin: 0 0 0 100px; opacity: 0.8;">
     <div class="content">
         <ul class="vertical-nav dark red" style="text-align: center;">
-            <li class="active"><a href="#"><i class="icon-home"></i>首页
+            <li class="active"><a href="/jsps/index.jsp"><i class="icon-home"></i>首页
                 <span class="submenu-icon"></span></a>
             </li>
             <li><a href="#"><i class="icon-cogs"></i>查询

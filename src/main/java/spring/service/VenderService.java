@@ -46,6 +46,5 @@ public class VenderService {
 
     public void UpdataStock(Stock s) {
         venderMapper.UpdataStock(s);
-        venderMapper.UpdataStock1(s);
     }
 }

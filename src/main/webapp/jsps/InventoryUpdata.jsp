@@ -60,7 +60,7 @@
                 contentType: false,
                 success: function (data) {
                     alert("修改成功");
-                    window.location = "/Vender/venderListParticular?id=${AGENCY.id}";
+                    window.location = "/jsps/inventory.jsp";
                 }, error: function () {
                     alert("修改失败");
                 }
