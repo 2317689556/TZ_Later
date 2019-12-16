@@ -57,9 +57,11 @@
                         $("#specification1").html("<option value='" + b.specification + "'>" + b.specification + "</option>");
                         $("#unitPrice1").html("<option value='" + b.money + "'>" + b.money + "</option>");
                         $("#unit1").html("<option value='" + b.unit + "'>" + b.unit + "</option>");
+                        var asf = "";
                         for (var i = 1; i <= b.count; i++) {
-                            $("#count1").html("<option value='" + b.count + "'>" + i + "</option>");
+                            asf += "<option value='" + b.count + "'>" + i + "</option>";
                         }
+                        $("#count1").html(asf);
                     });
                     $("#money1").html("<option>" + parseInt($("#count1 option:selected").text()) * parseInt($("#unitPrice1 option:selected").text()) + "</option>")
                 }
