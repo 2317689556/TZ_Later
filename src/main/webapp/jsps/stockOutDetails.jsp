@@ -18,6 +18,7 @@
 
     <script>
 
+        /*合计总和金额*/
         $(function () {
             var a = 0;
             $("#temp8 tr:lt(-2)").each(function () {
@@ -27,7 +28,23 @@
             $("#temp9").html(a);
         })
 
-        /*签批*/
+
+
+        /*生成入库单和入库扫码的按钮*/
+        function scrkd(id) {
+            var msg = "您真的确定吗？\n\n请确认！";
+            if (confirm(msg) == true) {
+                $.ajax({
+                    url: "/Stockup/updateState?id=" + id + "&i=${param.id}",
+                    type: "json",
+                })
+                /*执行成功后返回采购申请/入库单查询列表页面*/
+                window.location = "/jsps/stockOut.jsp";
+            } else {
+                return false;
+            }
+        }
+        /*签批按钮的提示*/
         function pizhu(id) {
             var msg = "您真的确定要签批吗？\n\n请确认！";
             if (confirm(msg) == true) {
@@ -36,20 +53,7 @@
                 return false;
             }
         }
-
-        function scrkd(id) {
-            var msg = "您真的确定吗？\n\n请确认！";
-            if (confirm(msg) == true) {
-                $.ajax({
-                    url: "/Stockup/updateState?id=" + id + "&i=${param.id}",
-                    type: "json",
-                })
-                window.location = "/jsps/stockOut.jsp";
-            } else {
-                return false;
-            }
-        }
-
+        /*签批的方法实现*/
         function updatepQP(id) {
 
             $.ajax({
@@ -59,11 +63,11 @@
 
                 }
             })
-
+            /*执行成功后返回采购申请/入库单查询列表页面*/
             window.location = "/jsps/stockOut.jsp";
         }
 
-        /*驳回*/
+        /*驳回的按钮询问*/
         function bohui(id) {
             var msg = "您真的确定要驳回吗？\n\n请确认！";
             if (confirm(msg) == true) {
@@ -72,7 +76,7 @@
                 return false;
             }
         }
-
+        /*驳回的方法实现*/
         function updateBh(id) {
             $.ajax({
                 url: "/Stockup/updateBohui?id=" + id,
@@ -81,9 +85,9 @@
 
                 }
             })
+            /*执行成功后返回采购申请/入库单查询列表页面*/
             window.location = "/jsps/stockOut.jsp";
         }
-
 
     </script>
 

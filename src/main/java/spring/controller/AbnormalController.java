@@ -28,9 +28,12 @@ public class AbnormalController {
         System.out.println(info);
         return info;
     }
+
+    /*首页的异常查询*/
     @RequestMapping("AbnormalFindAll1")
     @ResponseBody
     public PageInfo<Abnormal> AbnormalFindAll1(Page page){
+        /*用分页进行展示*/
         PageInfo<Abnormal> info = abnormalService.showInventory1(page);
         System.out.println(info);
         return info;
@@ -57,6 +60,7 @@ public class AbnormalController {
         abnormalService.updateInThe(id);
     }
 
+    /*异常__签批*/
     @RequestMapping("qianpi")
     public void qianpi(Integer id){
         abnormalService.qianpi(id);

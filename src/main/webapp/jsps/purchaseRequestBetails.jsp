@@ -18,18 +18,18 @@
     <script>
 
 
-        /*签批*/
+        /*签批按钮的确认询问*/
         function qianPi(id) {
             var msg = "您真的确定要签批吗？\n\n请确认！";
             if (confirm(msg) == true) {
+                /*执行签批方法*/
                 return updateQianPi(id);
             } else {
                 return false;
             }
         }
-
+        /*签批的实现方法*/
         function updateQianPi(id) {
-
             $.ajax({
                 url: "/Library/updateQianPi?id=" + id,
                 type: "json",
@@ -37,27 +37,42 @@
 
                 }
             })
+            /*完成操作后刷新并返回到库存列表页面*/
             window.location = "/jsps/purchaseRequest.jsp";
         }
 
+        /*出库按钮的确认询问*/
+        function chuku(id) {
+            var msg = "您真的确定要出库吗？\n\n请确认！";
+            if (confirm(msg) == true) {
+                return cksm(id);
+            } else {
+                return false;
+            }
+        }
+
+        /*出库功能的实现*/
         function cksm() {
             $.ajax({
                 url: "/Library/UpdataState?id=" +${param.id},
                 type: "json",
             })
+            /*出库后刷新并返回出库列表页面*/
             window.location = "/jsps/purchaseRequest.jsp";
         }
 
-        /*驳回*/
+        /*驳回按钮的询问*/
         function boHui(id) {
             var msg = "您真的确定要驳回吗？\n\n请确认！";
             if (confirm(msg) == true) {
+                /*带着id的值到方法里*/
                 return updateBoHui(id);
             } else {
                 return false;
             }
         }
 
+        /*驳回功能的实现*/
         function updateBoHui(id) {
             $.ajax({
                 url: "/Library/updateBoHui?id=" + id,
@@ -66,9 +81,9 @@
 
                 }
             })
+            /*操作成功后刷新并返回出库单列表页面*/
             window.location = "/jsps/purchaseRequest.jsp";
         }
-
 
     </script>
 
@@ -163,22 +178,24 @@
             </c:if>
             </tbody>
         </table>
-        <%--已签批--%>
+        <%--已签批的显示--%>
         <c:if test="${list1.signState==1}">
             <div style="margin-left:1040px;margin-top: 50px;">
-                <input type="button" class="btn btn-success" value="出库扫码" onclick="cksm()">&nbsp;&nbsp;&nbsp;<a href="/jsps/purchaseRequest.jsp"><input type="button" class="btn btn-info" value="返回"></a>
-            </div>
-        </c:if>
-
-        <%--未签批--%>
-        <c:if test="${list1.signState==0}">
-            <div style="margin-left:1002px;margin-top: 50px;">
-                <input type="button" class="btn btn-success" onclick="qianPi(${list1.id})" value="签批">&nbsp;&nbsp;&nbsp;<input type="button" onclick="boHui(${list1.id})" class="btn btn-warning" value="驳回">&nbsp;&nbsp;&nbsp;<a
+                <input type="button" class="btn btn-success" value="出库扫码" onclick="chuku()">&nbsp;&nbsp;&nbsp;<a
                     href="/jsps/purchaseRequest.jsp"><input type="button" class="btn btn-info" value="返回"></a>
             </div>
         </c:if>
 
-        <%--驳回--%>
+        <%--未签批的显示--%>
+        <c:if test="${list1.signState==0}">
+            <div style="margin-left:1002px;margin-top: 50px;">
+                <input type="button" class="btn btn-success" onclick="qianPi(${list1.id})" value="签批">&nbsp;&nbsp;&nbsp;<input
+                    type="button" onclick="boHui(${list1.id})" class="btn btn-warning" value="驳回">&nbsp;&nbsp;&nbsp;<a
+                    href="/jsps/purchaseRequest.jsp"><input type="button" class="btn btn-info" value="返回"></a>
+            </div>
+        </c:if>
+
+        <%--驳回的显示--%>
         <c:if test="${list1.signState==2}">
             <div style="margin-left:1127px;margin-top: 50px;">
                 <a href="/jsps/purchaseRequest.jsp"><input type="button" class="btn btn-info" value="返回"></a>

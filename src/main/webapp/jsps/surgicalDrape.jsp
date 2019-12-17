@@ -81,18 +81,22 @@
                         }
                     }
                 ],
-                onLoadSuccess: function () {
+                onLoadSuccess: function () {/*根据不同状态改变不同的背景颜色*/
                     getTdValue();
                 }
             });
         })
 
         function getTdValue() {
+            /*已驳回颜色*/
             $(".third-item").parent().parent().css('background-color', '#FFECEC');
+            /*已签批颜色*/
             $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
+            /*已回执颜色*/
             $(".third-item3").parent().parent().css('background-color', 'rgba(0,240,255,0.1)');
         }
 
+        /*刷新表格*/
         function shuaXin() {
             $('#tab1').bootstrapTable('refresh');
         }

@@ -6,6 +6,7 @@ import spring.pojo.*;
 import java.util.List;
 
 public interface LibraryMapper {
+    /*库存展示*/
     List<Stock> showInventory(@Param("date1") String date_1, @Param("date2") String date_2);
 
     /*出库单全查*/
@@ -24,12 +25,14 @@ public interface LibraryMapper {
 
     void LibraryAdd1(@Param("li") List<PurchaseRequestDetails> list, @Param("pu") PurchaseRequestDetailss pu);
 
+    /*出库单__出库*/
     void UpdataState(Integer id);
 
     void LossAdd(Abnormal ab);
 
     void LossAdd1(@Param("li") List<AbnormalDetails> list, @Param("id") Integer id);
 
+    /*出库单出库后执行的添加日志*/
     void log(Integer id);
 
     List<Stock> showStock(@Param("id") Integer id);

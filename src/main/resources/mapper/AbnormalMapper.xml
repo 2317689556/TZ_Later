@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.dao.AbnormalMapper">
 
+    <!--异常__全查-->
     <select id="showInventory" resultType="Abnormal">
         select *
         from abnormal
@@ -30,10 +31,12 @@
             a.id=#{id}
     </select>
 
+
+    <!--首页的异常查询-->
     <select id="showInventory1" resultType="Abnormal">
        select *
         from abnormal
-        WHERE cause="过期"
+        WHERE cause IN ("2","3")
     </select>
 
 
@@ -52,6 +55,7 @@
         update abnormal set signState=1 where id=#{id}
     </update>
 
+    <!--添加日志-->
     <insert id="log">
         INSERT INTO log VALUE (null,(SELECT count(b.id) FROM abnormal a LEFT JOIN abnormal_details b ON a.id=b.stockout_id WHERE a.id=#{id}),(SELECT cause FROM abnormal WHERE id=#{id}),now())
     </insert>

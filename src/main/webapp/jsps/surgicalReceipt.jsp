@@ -56,6 +56,7 @@
             window.location = "/jsps/surgicalDrape.jsp";
         }
 
+        /*列表添加的方法*/
         function tianjia() {
             var a = "";
             a += "<tbody><tr>";
@@ -66,6 +67,7 @@
             $("#table1").append(a);
         }
 
+        /*添加执行的方法*/
         function over() {
             var name = "";
             $('#table1  tr:gt(1)').each(function () {
@@ -104,6 +106,7 @@
             $("#number").val(number);
 
 
+            /*回执单填写*/
             $.ajax({
                 url: "/Surgery/AddSurgery",
                 data: new FormData($("#temp2")[0]),

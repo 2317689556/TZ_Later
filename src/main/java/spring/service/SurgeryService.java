@@ -15,6 +15,7 @@ public class SurgeryService {
     @Resource
     SurgeryMapper surgeryMapper;
 
+    /*展示手术单and备货单*/
     public PageInfo<Surgicaldrape> ShowSurgery(Page page, String date_1, String date_2) {
         PageHelper.offsetPage(page.getOffset(), page.getLimit());
         List<Surgicaldrape> surgicaldrapes = surgeryMapper.ShowSurgery(date_1, date_2);
@@ -22,15 +23,20 @@ public class SurgeryService {
         return pageInfo;
     }
 
+    /*手术单详情and备货单详情*/
     public List<SurgicaldrapeDetails> SurgeryParticulars(Integer id) {
         return surgeryMapper.SurgeryParticulars(id);
     }
 
+    /*改变状态*/
     public void Sign(Integer id, Integer q) {
+        /*改变状态*/
         surgeryMapper.Sign(id, q);
+        /*添加日志*/
         surgeryMapper.log();
     }
 
+    /*添加回执单*/
     public void AddSurgery(List<Receipt> list) {
         surgeryMapper.AddSurgery(list);
     }

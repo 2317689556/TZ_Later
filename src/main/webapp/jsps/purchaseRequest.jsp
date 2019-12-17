@@ -81,7 +81,7 @@
                         }
                     }
                 ],
-                onLoadSuccess: function () {  //加载成功时执行
+                onLoadSuccess: function () {  //加载成功时执行---根据不同的状态改变不同的背景颜色
                     getTdValue();
                 }
             });
@@ -92,6 +92,7 @@
             $(".third-item").parent().parent().css('background-color', '#FFECEC');
             /*已批改颜色*/
             $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
+            /*已出库颜色*/
             $(".third-item3").parent().parent().css('background-color', 'rgba(255,183,0,0.08)');
         }
 

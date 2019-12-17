@@ -24,6 +24,7 @@ public class LibraryController {
     @RequestMapping("/showInventory")
     @ResponseBody
     public PageInfo<Stock> login(Page page, String date_1, String date_2) {
+        /*将代表时间的值传到后台*/
         PageInfo<Stock> info = libraryService.showInventory(page, date_1, date_2);
         return info;
     }
@@ -32,6 +33,7 @@ public class LibraryController {
     @RequestMapping("PurchaseRequestfindAll")
     @ResponseBody
     public PageInfo<PurchaseRequest> PurchaseRequestfindAll(Page page, String date_1, String date_2) {
+        /*带着前台传来的值执行后台的方法*/
         PageInfo<PurchaseRequest> info = libraryService.PurchaseRequestfindAll(page, date_1, date_2);
         return info;
     }
@@ -40,8 +42,10 @@ public class LibraryController {
     @RequestMapping("PurchaseRequestDetailsFindAllById")
     public String PurchaseRequestDetailsFindAllById(Model model, Integer id) {
         List<PurchaseRequestDetails> list = libraryService.PurchaseRequestDetailsFindAllById(id);
+        /*将取到的值存到Model里面*/
         model.addAttribute("list", list);
         model.addAttribute("list1", list.get(0));
+        /*跳转到详情页面*/
         return "purchaseRequestBetails";
     }
 
@@ -58,6 +62,7 @@ public class LibraryController {
         libraryService.updateBoHui(id);
     }
 
+    /*出库单__出库*/
     @RequestMapping("UpdataState")
     public void UpdataState(Integer id) {
         libraryService.UpdataState(id);

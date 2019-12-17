@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-tab.css">
     <link rel="stylesheet" href="/cxCalendar/css/jquery.cxcalendar.css">
     <script>
+
+        /*计算总和金额*/
         $(function () {
             a = 0;
             $('#sample-table tr:gt(2):lt(-2)').each(function () {
@@ -23,25 +25,20 @@
             $("#temp3").html(a);
         })
 
+        /*修改状态*/
         function qianpi(asd) {
             $.ajax({
                 url: "/Surgery/Sign",
-                data: {"id": "${DE.id}", "q": asd},
+                data: {"id": "${DE.stockoutId}", "q": asd},
                 type: 'POST',
                 success: function (data) {
-                    alert("签批成功");
-                    window.location = "/jsps/surgicalDrape.jsp";
+                    alert("操作成功");
+                    /*状态修改成功后跳转到备货单列表页面*/
+                    window.location = "/jsps/PickingList.jsp";
                 }
             })
         }
 
-        function huizhidan() {
-            window.location = "/jsps/surgicalReceipt.jsp?id=${DE.id}&number=${DE.number}&customer=${DE.customer}&ao=${DE.administrativeOffice}&proposer=${DE.proposer}";
-        }
-
-        function huizhixq() {
-            window.location = "/Surgery/ReturnReceiptDetails?id=${DE.id}";
-        }
     </script>
 </head>
 
@@ -115,6 +112,7 @@
             </c:if>
             </tbody>
         </table>
+        <%--未签批的状态--%>
         <div style="float: right;">
             <c:if test="${DE.signState==0}">
                 <div style="margin-left:1077px;margin-top: 50px;">

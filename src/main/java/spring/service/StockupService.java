@@ -56,22 +56,30 @@ public class StockupService {
         stockupMapper.StockupAdd1(list, st.getId());
     }
 
+    /*生成入库单和入库扫码*/
     public void updateState(Integer id, Integer i) {
+        /*改变状态*/
         stockupMapper.updateState(id, i);
-        //日志，已入库
+        /*日志，已入库*/
         if (id == 6) {
+            /*操作日志*/
             stockupMapper.log(i);
+            /*查询商品详情*/
             List<Commodity> list = stockupMapper.cha(i);
+            /*查询有的话就修改，没有的话就添加*/
             if (list.size() > 0) {
+                /*查询后修改的方法*/
                 stockupMapper.kucun(i);
             } else {
                 User u = new User();
                 u.setGradeId(i);
+                /*查询后添加的方法*/
                 stockupMapper.kucun1(u);
             }
         }
     }
 
+    /*库存详情*/
     public Stock StockupUpdata(Integer id) {
         return stockupMapper.StockupUpdata(id);
     }

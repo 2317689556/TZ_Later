@@ -23,20 +23,23 @@
             $("#temp3").html(a);
         })
 
+        /*签批驳回的方法*/
         function qianpi(asd) {
             $.ajax({
                 url: "/Surgery/Sign",
-                data: {"id": "${DE.id}", "q": asd},
+                data: {"id": "${DE.stockoutId}", "q": asd},
                 type: 'POST',
                 success: function (data) {
-                    alert("签批成功");
+                    alert("操作成功");
+                    /*执行成功后刷新并返回到手术单列表页面*/
                     window.location = "/jsps/surgicalDrape.jsp";
                 }
             })
         }
 
+        /*签批后的回执单*/
         function huizhidan() {
-            window.location = "/jsps/surgicalReceipt.jsp?id=${DE.id}&number=${DE.number}&customer=${DE.customer}&ao=${DE.administrativeOffice}&proposer=${DE.proposer}";
+            window.location = "/jsps/surgicalReceipt.jsp?id=${DE.stockoutId}&number=${DE.number}&customer=${DE.customer}&ao=${DE.administrativeOffice}&proposer=${DE.proposer}";
         }
 
         function huizhixq() {
@@ -116,16 +119,22 @@
             </tbody>
         </table>
         <div style="float: right;">
+
+            <%--未签批--%>
             <c:if test="${DE.signState==0}">
                 <div style="margin-left:1077px;margin-top: 50px;">
                     <input type="button" class="btn btn-success" value="签批" onclick="qianpi(1)">&nbsp;&nbsp;<input type="button" class="btn btn-danger" onclick="qianpi(2)" value="驳回">
                 </div>
             </c:if>
+
+            <%--已签批--%>
             <c:if test="${DE.signState==1}">
                 <div style="margin-left:1137px;margin-top: 50px;">
                     <input type="button" class="btn btn-info" value="回执单" onclick="huizhidan()">
                 </div>
             </c:if>
+
+            <%--已回执--%>
             <c:if test="${DE.signState==3}">
                 <div style="margin-left:1137px;margin-top: 50px;">
                     <input type="button" class="btn btn-info" value="回执详情" onclick="huizhixq()">

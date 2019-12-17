@@ -16,6 +16,7 @@ public class LibraryService {
     @Resource
     LibraryMapper libraryMapper;
 
+    /*库存展示*/
     public PageInfo<Stock> showInventory(Page page, String date_1, String date_2) {
         PageHelper.offsetPage(page.getOffset(), page.getLimit());
         List<Stock> list = libraryMapper.showInventory(date_1, date_2);
@@ -55,8 +56,11 @@ public class LibraryService {
         libraryMapper.LibraryAdd3();
     }
 
+    /*出库单__出库*/
     public void UpdataState(Integer id) {
+        /*出库*/
         libraryMapper.UpdataState(id);
+        /*出库单出库后执行的添加日志*/
         libraryMapper.log(id);
     }
 

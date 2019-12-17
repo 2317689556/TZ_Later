@@ -3,6 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.dao.SurgeryMapper">
+
+    <!--展示手术单and备货单-->
     <select id="ShowSurgery" resultType="Surgicaldrape">
         SELECT *
         FROM surgicalDrape
@@ -29,6 +31,7 @@
         </where>
     </select>
 
+    <!--手术单详情and备货单详情-->
     <select id="SurgeryParticulars" resultType="SurgicaldrapeDetails">
         SELECT *,sum(a.count) as sumcount
         FROM surgicalDrape_details a
@@ -36,14 +39,17 @@
         WHERE a.stockout_id=#{id} GROUP BY a.id
     </select>
 
+    <!--修改状态-->
     <update id="Sign">
         UPDATE surgicalDrape SET signState=#{q} WHERE id=#{id}
     </update>
 
+    <!--添加日志-->
     <insert id="log">
         INSERT INTO log VALUE (null,1,"手术单进行",now())
     </insert>
 
+    <!--添加回执单-->
     <insert id="AddSurgery" parameterType="Receipt">
         INSERT INTO receipt VALUE
         <foreach collection="list" item="l" separator=",">

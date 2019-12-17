@@ -19,9 +19,9 @@ public class AbnormalService {
 
     /*异常__全查*/
     public PageInfo<Abnormal> showInventory(Page page, String date_1, String date_2) {
-        PageHelper.offsetPage(page.getOffset(),page.getLimit());
-        List<Abnormal> list = abnormalMapper.showInventory(date_1,date_2);
-        PageInfo<Abnormal> info =new PageInfo<>(list);
+        PageHelper.offsetPage(page.getOffset(), page.getLimit());
+        List<Abnormal> list = abnormalMapper.showInventory(date_1, date_2);
+        PageInfo<Abnormal> info = new PageInfo<>(list);
         return info;
     }
 
@@ -41,14 +41,21 @@ public class AbnormalService {
         abnormalMapper.log(id);
     }
 
+    /*异常__签批*/
     public void qianpi(Integer id) {
         abnormalMapper.qianpi(id);
     }
 
+
+    /*首页的异常查询*/
     public PageInfo<Abnormal> showInventory1(Page page) {
-        PageHelper.offsetPage(page.getOffset(),page.getLimit());
-        List<Abnormal> list=abnormalMapper.showInventory1();
-        PageInfo<Abnormal> pageInfo=new PageInfo<>(list);
+        /*调用分页的方法*/
+        PageHelper.offsetPage(page.getOffset(), page.getLimit());
+        /*调用Mapper方法*/
+        List<Abnormal> list = abnormalMapper.showInventory1();
+        /*将取到的值放到容器里面*/
+        PageInfo<Abnormal> pageInfo = new PageInfo<>(list);
+        /*向controller返回取到的值*/
         return pageInfo;
     }
 }

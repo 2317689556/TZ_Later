@@ -20,9 +20,12 @@ public interface AbnormalMapper {
     /*异常__允许换货*/
     void updateInThe(Integer id);
 
+    /*异常__签批*/
     void qianpi(Integer id);
 
+    /*添加日志*/
     void log(Integer id);
 
+    /*首页的异常查询*/
     List<Abnormal> showInventory1();
 }

@@ -81,6 +81,7 @@
             });
         })
 
+        /*刷新表格*/
         function shuaXin() {
             $('#tab1').bootstrapTable('refresh');
         }

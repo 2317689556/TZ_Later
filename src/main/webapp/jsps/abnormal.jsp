@@ -61,7 +61,18 @@
                         title: '出库日期'
                     }, {
                         field: 'cause',
-                        title: '异常原因'
+                        title: '异常原因',
+                        formatter:function (value,row,index) {
+                            if(value==0){
+                                return "换货";
+                            }else if(value==1){
+                                return "退货";
+                            }else if(value==2){
+                                return "过期";
+                            }else if(value==3){
+                                return "报损"
+                            }
+                        }
                     }, {
                         field: 'signState',
                         title: '状态',
@@ -71,12 +82,14 @@
                             }else if(value==1){
                                 return "<span class='third-item2'>已签批</span>";
                             }else if(value==2){
-                                return "<span class='third-item3'>已审核</span>";
+                                return "<span class='third-item3'>换货中</span>";
+                            }else if(value==3){
+                                return "<span class='third-item4'>完成换货</span>"
                             }
                         }
                     }
                 ],
-                onLoadSuccess: function () {  //加载成功时执行
+                onLoadSuccess: function () {  //根据不同的状态改变不同的背景颜色
                     getTdValue();
                 }
             });
@@ -86,6 +99,7 @@
             $(".third-item").parent().parent().css('background-color', '#FFECEC');
             /*已签批的颜色*/
             $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
+            /*已审核的状态*/
             $(".third-item3").parent().parent().css('background-color', 'rgba(0,243,255,0.07)');
         }
         /*刷新*/

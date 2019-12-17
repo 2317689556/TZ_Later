@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>千佛山医院管理系统 手术单</title>
+    <title>千佛山医院管理系统 备货单</title>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
     <script src="/bootstrap/table/bootstrap-table.js"></script>
     <script src="/bootstrap/js/bootstrap-tab.js"></script>
@@ -79,18 +79,20 @@
                         }
                     }
                 ],
-                onLoadSuccess: function () {
+                onLoadSuccess: function () {/*根据不同的状态改变背景颜色*/
                     getTdValue();
                 }
             });
         })
 
         function getTdValue() {
+            /*驳回的颜色*/
             $(".third-item").parent().parent().css('background-color', '#FFECEC');
+            /*已签批的颜色*/
             $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
-            $(".third-item3").parent().parent().css('background-color', 'rgba(0,240,255,0.1)');
         }
 
+        /*刷新表格*/
         function shuaXin() {
             $('#tab1').bootstrapTable('refresh');
         }

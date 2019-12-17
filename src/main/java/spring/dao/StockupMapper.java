@@ -29,17 +29,22 @@ public interface StockupMapper {
 
     void StockupAdd1(@Param("li") List<StockOutDetails> list, @Param("id") Integer id);
 
+    /*改变状态*/
     void updateState(@Param("id") Integer id, @Param("i") Integer i);
 
+    /*操作日志*/
     void log(Integer id);
 
     List<Commodity> cha(Integer i);
 
+    /*查询后修改的方法*/
     void kucun(Integer i);
 
+    /*查询后添加的方法*/
     void kucun1(User i);
 
     void kucun2(User i);
 
+    /*库存详情*/
     Stock StockupUpdata(Integer id);
 }

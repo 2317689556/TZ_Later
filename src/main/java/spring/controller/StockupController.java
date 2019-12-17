@@ -50,16 +50,21 @@ public class StockupController {
     /*入库单__详情*/
     @RequestMapping("StockOutFindAllById")
     public String StockOutFindAllById(Model model, Integer id) {
+        /*将取到的值放到集合里*/
         List<StockOut> list = StockupService.StockOutFindAllById(id);
         model.addAttribute("list", list);
         model.addAttribute("list1", list.get(0));
+        /*跳转到详情页面*/
         return "stockOutDetails";
     }
 
+    /*库存详情*/
     @RequestMapping("StockupUpdata")
     public String StockupUpdata(Integer id, Model model) {
         Stock s = StockupService.StockupUpdata(id);
+        /*将取到的值存到Model里面*/
         model.addAttribute("S", s);
+        /*跳转到详情jsp页面*/
         return "InventoryUpdata";
     }
 
@@ -69,6 +74,7 @@ public class StockupController {
         StockupService.updateQianpi(id);
     }
 
+    /*生成入库单和入库扫码*/
     @RequestMapping("updateState")
     public void updateState(Integer id, Integer i) {
         StockupService.updateState(id, i);

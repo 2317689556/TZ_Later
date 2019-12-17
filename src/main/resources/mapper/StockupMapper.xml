@@ -77,12 +77,12 @@
         update stock_out set signState=3 where id=#{id}
     </update>
 
-    <!--入库单__驳回-->
+    <!--改变状态-->
     <update id="updateState">
         update stock_out set signState=#{id} where id=#{i}
     </update>
 
-    <!--已入库__日志-->
+    <!--日志-->
     <insert id="log">
         INSERT INTO log VALUE (null,(SELECT count(b.id) FROM stock_out a LEFT JOIN stock_out_details b ON a.id=b.stockout_id WHERE a.id=#{id}),"入库件数",now()),
         (null,1,"入库单",now()),
@@ -93,14 +93,17 @@
         SELECT * FROM stock WHERE name=(SELECT name FROM stock_out_details WHERE id=#{i})
     </select>
 
+    <!--库存详情-->
     <select id="StockupUpdata" resultType="Stock">
         SELECT * FROM stock a LEFT JOIN commodity c2 on a.stock_id = c2.id WHERE a.id=#{id}
     </select>
 
+    <!--查询后修改的方法-->
     <update id="kucun">
         UPDATE stock SET count=(count+(SELECT count FROM stock_out_details WHERE id=#{id})) WHERE name=(SELECT name FROM stock_out_details WHERE id=#{id})
     </update>
 
+    <!--查询后添加的方法-->
     <insert id="kucun1" parameterType="User">
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()

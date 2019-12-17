@@ -8,6 +8,7 @@
             </li>
             <li><a href="#"><i class="icon-cogs"></i>查询
                 <span class="submenu-icon"></span></a>
+                <%--权限1，2可查看--%>
                 <c:if test="${USER.gradeId==1||USER.gradeId==2}">
                     <ul>
                         <li><a href="/jsps/inventory.jsp">库存</a>

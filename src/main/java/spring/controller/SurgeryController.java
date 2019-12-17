@@ -20,17 +20,20 @@ public class SurgeryController {
     @Resource
     SurgeryService surgeryService;
 
-    //展示手术单
+    //展示手术单and备货单
     @RequestMapping("/ShowSurgery")
     @ResponseBody
     public PageInfo<Surgicaldrape> ShowSurgery(Page page, String date_1, String date_2) {
         PageInfo<Surgicaldrape> info = surgeryService.ShowSurgery(page, date_1, date_2);
+        System.out.println(info);
         return info;
     }
 
+    /*手术单详情and备货单详情*/
     @RequestMapping("/SurgeryParticulars")
     public String SurgeryParticulars(Integer id, Model model, Integer s) {
         List<SurgicaldrapeDetails> surgicaldrapeDetails = surgeryService.SurgeryParticulars(id);
+        System.out.println(surgicaldrapeDetails);
         model.addAttribute("SU", surgicaldrapeDetails);
         model.addAttribute("DE", surgicaldrapeDetails.get(0));
         if (s == 1) {
@@ -50,6 +53,7 @@ public class SurgeryController {
         return "ReturnReceiptDetails";
     }
 
+    /*改变状态*/
     @RequestMapping("/Sign")
     @ResponseBody
     public Integer Sign(Integer id, Integer q) {
@@ -57,6 +61,7 @@ public class SurgeryController {
         return 1;
     }
 
+    /*签批后的回执单__添加*/
     @RequestMapping("/AddSurgery")
     @ResponseBody
     public Integer AddSurgery(Receipt re) {
@@ -87,7 +92,9 @@ public class SurgeryController {
             r1.setPatientName(re.getPatientName());
             list.add(r1);
         }
+        /*添加回执单*/
         surgeryService.AddSurgery(list);
+        /*修改状态*/
         surgeryService.Sign((int) re.getSurgicalDrapeId(), 3);
         return 1;
     }

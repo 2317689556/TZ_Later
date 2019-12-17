@@ -4,9 +4,9 @@ package spring.pojo;
 import lombok.Data;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 @Data
 public class PurchaseRequest {
+  private Integer id;
   private Integer number;//单号
   private String manufacturers;//厂家
   private Integer grossAmount;//总金额
