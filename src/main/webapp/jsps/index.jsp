@@ -59,35 +59,16 @@
                     }, {
                         field: 'date',
                         title: '出库日期'
+                    },{
+                        field: 'updateTime',
+                        title: '有效期'
                     }, {
                         field: 'cause',
                         title: '异常原因',
                         formatter: function (value,row,index) {
-                            if(value==0){
-                                return "换货";
-                            }else if(value==1){
-                                return "退货";
-                            }else if(value==2){
-                                return "过期";
-                            }else if(value==3){
-                                return "报损"
-                            }
+                           return "临期"
                         }
-                    }, {
-                        field: 'signState',
-                        title: '状态',
-                        formatter: function (value, row, index) {
-                            if (value == 0) {
-                                return "<span class='third-item'>未签批</span>";
-                            } else if (value == 1) {
-                                return "<span class='third-item2'>已签批</span>";
-                            } else if (value == 2) {
-                                return "<span class='third-item3'>换货中</span>";
-                            } else if(value==3){
-                                return "<span>完成换货</span>"
-                            }
-                        }
-                    }
+                    },
                 ],
                 onLoadSuccess: function () {  //加载成功时执行-------不同状态下颜色背景的改变
                     getTdValue();

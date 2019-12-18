@@ -51,14 +51,16 @@
            a.id=#{id}
     </select>
 
+    <!--填单__采购申请__添加-->
     <insert id="StockupAdd" parameterType="StockOutDetailss">
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()
         </selectKey>
-        INSERT INTO stock_out (id,number,manufacturer,proposer,signState,signDate,dateOut)
-        VALUE (null,#{number},#{manufacturer},#{proposer},1,#{signDate},#{dateOut})
+        INSERT INTO stock_out (id,number,manufacturer,proposer,signState,signDate,dateOut,difference,update_time)
+        VALUE (null,#{number},#{manufacturer},#{proposer},1,#{signDate},#{dateOut},0,#{updateTime})
     </insert>
 
+    <!--填单__采购申请__详情__添加-->
     <insert id="StockupAdd1">
         INSERT INTO stock_out_details (id,name,model,specification,unit,count,unitPrice,money,stockout_id)
         VALUE
@@ -108,7 +110,7 @@
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()
         </selectKey>
-        INSERT INTO stock (name,count,model,specification,unit,unitPrice,money) SELECT name,count,model,specification,unit,unitPrice,money FROM stock_out_details a LEFT JOIN stock_out b ON a.stockout_id = b.id WHERE b.id=#{gradeId}
+        INSERT INTO stock (name,count,model,specification,unit,unitPrice,money,difference,update_time) SELECT name,count,model,specification,unit,unitPrice,money,difference,update_time FROM stock_out_details a LEFT JOIN stock_out b ON a.stockout_id = b.id WHERE b.id=#{gradeId}
     </insert>
 
 </mapper>

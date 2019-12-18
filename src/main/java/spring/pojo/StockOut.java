@@ -18,4 +18,6 @@ public class StockOut {
   private Integer moneys;//金额
   private String rejected;//驳回原因
   private Integer money1;//驳回原因
+  private Integer difference;//1：异常可查，0：库存可查
+  private Date updateTime;//有效期
 }

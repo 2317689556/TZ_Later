@@ -86,6 +86,7 @@ public class StockupController {
         StockupService.updateBohui(id);
     }
 
+    /*填单__采购申请*/
     @RequestMapping("StockupAdd")
     @ResponseBody
     public void StockupAdd(StockOutDetailss st) {

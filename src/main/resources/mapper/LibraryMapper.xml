@@ -15,7 +15,7 @@
             <if test="date2 != null and date2 != ''">
                 AND InboundDate&lt;=#{date2}
             </if>
-            and difference=0
+            and TimeStampDiff(day ,now(),update_time)>=0 and difference=0
         </where>
     </select>
 
@@ -73,8 +73,8 @@
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()
         </selectKey>
-        INSERT INTO stock (id,number,customer,date,cause,signState)
-        VALUE (null,#{number},#{customer},now(),#{cause},0)
+        INSERT INTO stock (id,number,customer,date,cause,signState,difference)
+        VALUE (null,#{number},#{customer},now(),#{cause},0,1)
     </update>
 
     <insert id="LibraryAdd1">

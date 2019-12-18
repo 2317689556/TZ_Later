@@ -51,8 +51,11 @@ public class StockupService {
         stockupMapper.updateBohui(id);
     }
 
+    /*填单__采购申请*/
     public void StockupAdd(List<StockOutDetails> list, StockOutDetailss st) {
+        /*填单__采购申请__添加*/
         stockupMapper.StockupAdd(st);
+        /*填单__采购申请__详情__添加*/
         stockupMapper.StockupAdd1(list, st.getId());
     }
 
@@ -65,17 +68,10 @@ public class StockupService {
             /*操作日志*/
             stockupMapper.log(i);
             /*查询商品详情*/
-            List<Commodity> list = stockupMapper.cha(i);
-            /*查询有的话就修改，没有的话就添加*/
-            if (list.size() > 0) {
-                /*查询后修改的方法*/
-                stockupMapper.kucun(i);
-            } else {
                 User u = new User();
                 u.setGradeId(i);
                 /*查询后添加的方法*/
                 stockupMapper.kucun1(u);
-            }
         }
     }
 

@@ -27,4 +27,6 @@ public class Stock extends Commodity{
     private String cause;//原因
     private Integer signState;//签批状态
     private String audit;//审核
+    private Integer difference;//1：异常可查，0：库存可查
+    private Date updateTime;//有效期
 }

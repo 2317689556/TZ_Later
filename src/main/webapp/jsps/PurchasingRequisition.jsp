@@ -93,8 +93,8 @@
                     <td><input type="text" name="signDate" class="form-control date_1"></td>
                     <td>签批日期：</td>
                     <td><input type="date" name="dateOut" class="form-control date_1"></td>
-                    <td></td>
-                    <td></td>
+                    <td>有效期：</td>
+                    <td><input type="date" name="updateTime" class="form-control date_1"></td>
                 </tr>
             </table>
             <table class="table table-striped table-bordered table-hover sample-table" id="table1">

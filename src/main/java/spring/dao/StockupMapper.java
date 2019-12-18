@@ -25,8 +25,10 @@ public interface StockupMapper {
     /*入库单__驳回*/
     void updateBohui(Integer id);
 
+    /*填单__采购申请__添加*/
     void StockupAdd(StockOutDetailss st);
 
+    /*填单__采购申请__详情__添加*/
     void StockupAdd1(@Param("li") List<StockOutDetails> list, @Param("id") Integer id);
 
     /*改变状态*/

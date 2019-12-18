@@ -14,5 +14,6 @@ public class Abnormal {
   private String cause;//原因
   private Integer signState;//签批状态
   private String audit;//审核
+  private Date updateTime;//有效期
 
 }
