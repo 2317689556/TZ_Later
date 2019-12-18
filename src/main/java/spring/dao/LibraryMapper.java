@@ -28,8 +28,10 @@ public interface LibraryMapper {
     /*出库单__出库*/
     void UpdataState(Integer id);
 
+    /*异常列表的添加*/
     void LossAdd(Abnormal ab);
 
+    /*异常详情的添加*/
     void LossAdd1(@Param("li") List<AbnormalDetails> list, @Param("id") Integer id);
 
     /*出库单出库后执行的添加日志*/

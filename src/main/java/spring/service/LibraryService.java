@@ -64,8 +64,11 @@ public class LibraryService {
         libraryMapper.log(id);
     }
 
+    /*异常的添加*/
     public void LossAdd(Abnormal ab, List<AbnormalDetails> list) {
+        /*异常列表的添加*/
         libraryMapper.LossAdd(ab);
+        /*异常详情的添加*/
         libraryMapper.LossAdd1(list, ab.getId());
     }
 

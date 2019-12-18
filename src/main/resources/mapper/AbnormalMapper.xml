@@ -5,9 +5,9 @@
 <mapper namespace="spring.dao.AbnormalMapper">
 
     <!--异常__全查-->
-    <select id="showInventory" resultType="Abnormal">
+    <select id="showInventory" resultType="stock">
         select *
-        from abnormal
+        from stock
         <where>
             <if test="date1!=null and date1!=''">
                 date>=#{date1}
@@ -15,7 +15,6 @@
             <if test="date2!=null and date2!=''">
                 and date&lt;=#{date2}
             </if>
-
         </where>
     </select>
 
@@ -23,7 +22,7 @@
     <!--异常详情-->
     <select id="AbnormalFindAllById" resultType="AbnormalDetails">
        select *
-        from abnormal a,
+        from stock a,
         abnormal_details b
          where
           a.id=b.stockout_id
@@ -35,24 +34,24 @@
     <!--首页的异常查询-->
     <select id="showInventory1" resultType="Abnormal">
        select *
-        from abnormal
+        from stock
         WHERE cause IN ("2","3")
     </select>
 
 
     <!--异常__完成换货-->
     <update id="updateSuccess">
-        update abnormal set signState=3 where id=#{id}
+        update stock set signState=3 where id=#{id}
     </update>
 
     <!--异常__允许换货-->
     <update id="updateInThe">
-        update abnormal set signState=2 where id=#{id}
+        update stock set signState=2 where id=#{id}
     </update>
 
     <!--异常__允许换货-->
     <update id="qianpi">
-        update abnormal set signState=1 where id=#{id}
+        update stock set signState=1 where id=#{id}
     </update>
 
     <!--添加日志-->

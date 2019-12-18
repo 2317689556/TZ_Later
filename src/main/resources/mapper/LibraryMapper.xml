@@ -15,6 +15,7 @@
             <if test="date2 != null and date2 != ''">
                 AND InboundDate&lt;=#{date2}
             </if>
+            and difference=0
         </where>
     </select>
 
@@ -67,11 +68,12 @@
         VALUE (null,#{proposer},#{number},#{department},#{applyDate},0,#{manufacturers})
     </update>
 
+    <!--异常列表的添加-->
     <update id="LossAdd" parameterType="Abnormal">
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()
         </selectKey>
-        INSERT INTO abnormal (id,number,customer,date,cause,signState)
+        INSERT INTO stock (id,number,customer,date,cause,signState)
         VALUE (null,#{number},#{customer},now(),#{cause},0)
     </update>
 
@@ -83,6 +85,7 @@
         </foreach>
     </insert>
 
+    <!--异常详情的添加-->
     <insert id="LossAdd1">
         INSERT INTO abnormal_details (id,name,model,unit,coding,stockout_id)
         VALUE

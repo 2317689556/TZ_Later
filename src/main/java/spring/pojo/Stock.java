@@ -20,4 +20,11 @@ public class Stock extends Commodity{
     private String onlyCoding;
     private String remark;
     private Integer stockId;
+    /*异常*/
+    private Integer number;//单号
+    private String customer;//填单
+    private Date date;//日期
+    private String cause;//原因
+    private Integer signState;//签批状态
+    private String audit;//审核
 }

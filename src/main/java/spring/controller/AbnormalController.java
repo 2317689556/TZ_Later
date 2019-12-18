@@ -45,6 +45,7 @@ public class AbnormalController {
         List<AbnormalDetails> list = abnormalService.AbnormalFindAllById(id);
         model.addAttribute("list",list);
         model.addAttribute("list1", list.get(0));
+        System.out.println(list);
         return "abnormalDetails";
     }
 

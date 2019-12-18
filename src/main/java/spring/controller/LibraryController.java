@@ -87,6 +87,7 @@ public class LibraryController {
         libraryService.LibraryAdd(pu, list);
     }
 
+    /*异常的添加*/
     @RequestMapping("/LossAdd")
     @ResponseBody
     public void LossAdd(Abnormal ab, AbnormalDetailss abs) {

@@ -60,7 +60,7 @@
                 contentType: false,
                 success: function (data) {
                     alert("添加成功");
-                    window.location = "/jsps/purchaseRequest.jsp";
+                    window.location = "/jsps/abnormal.jsp";
                 }
             })
         }
@@ -82,10 +82,9 @@
                     <td><input type="text" class="form-control" name="number"></td>
                     <td>原因：</td>
                     <td><select name="cause" id="cause" class="form-control">
-                        <option value="退货">退货</option>
-                        <option value="过期">过期</option>
-                        <option value="回货">回货</option>
-                        <option value="报损">报损</option>
+                        <option value="0">退货</option>
+                        <option value="1">换货</option>
+                        <option value="3">报损</option>
                     </select></td>
                 </tr>
             </table>
