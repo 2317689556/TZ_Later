@@ -49,6 +49,7 @@ public class VenderController {
         return "venderListParticular";
     }
 
+    /*库存修改*/
     @RequestMapping("/UpdataStock")
     public String UpdataStock(Stock s) {
         venderService.UpdataStock(s);
@@ -154,6 +155,7 @@ public class VenderController {
         List<String[]> list = new ArrayList<>();
         list.add(name2);
         list.add(name3);
+        /*新增厂家*/
         venderService.VenderAdd(agency, lines, list);
         return "venderList";
     }

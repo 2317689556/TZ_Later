@@ -58,6 +58,7 @@
                 contentType: false,
                 success: function (data) {
                     alert("修改成功");
+                    /*刷新厂商代详情页面*/
                     window.location = "/Vender/venderListParticular?id=${AGENCY.id}";
                 }, error: function () {
                     alert("修改失败");

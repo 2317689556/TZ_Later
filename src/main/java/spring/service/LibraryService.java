@@ -47,12 +47,17 @@ public class LibraryService {
         libraryMapper.updateBoHui(id);
     }
 
+    /*填单__出库单__添加*/
     public void LibraryAdd(PurchaseRequestDetailss pu, List<PurchaseRequestDetails> list) {
+        /*添加出库单*/
         libraryMapper.LibraryAdd(pu);
+        /*添加出库单详情页面*/
         libraryMapper.LibraryAdd1(list, pu);
         for (PurchaseRequestDetails p:list){
+            /*改变状态*/
             libraryMapper.LibraryAdd2(p);
         }
+        /*删除已出库的*/
         libraryMapper.LibraryAdd3();
     }
 
@@ -72,6 +77,7 @@ public class LibraryService {
         libraryMapper.LossAdd1(list, ab.getId());
     }
 
+    /*商品信息的查询*/
     public List<Stock> showStock(Integer id) {
         return libraryMapper.showStock( id);
     }

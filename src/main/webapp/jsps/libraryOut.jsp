@@ -30,10 +30,12 @@
                 $("#money1").html("<option>" + parseInt($("#count1 option:selected").text()) * parseInt($("#unitPrice1 option:selected").text()) + "</option>")
             });
 
+            /*商品名字*/
             $("#name1").on("blur", function () {
                 asd();
             });
 
+            /*日期*/
             $('.date_1').cxCalendar();
             $.ajax({
                 url: "/Library/showStock",
@@ -46,6 +48,7 @@
             })
         });
 
+        /*商品信息的查询__拼接下拉框*/
         function asd() {
             $.ajax({
                 url: "/Library/showStock",
@@ -68,6 +71,7 @@
             })
         }
 
+        /*出库单添加的方法*/
         function tianjia() {
             if (arrayObj.includes($("#name1").val())) {
                 alert("已经选了");
@@ -83,6 +87,7 @@
             arrayObj.push($("#name1").val());
         }
 
+        /*下方表格的拼接*/
         function yincangyu1(a, b) {
             var name = "";
             $('#temp3').each(function () {
@@ -91,8 +96,9 @@
             $("#" + b).val(name);
         }
 
+        /*添加的功能实现*/
         function over() {
-            yincangyu1(0, "name",);
+            yincangyu1(0, "name");
             yincangyu1(1, "model");
             yincangyu1(2, "specification");
             yincangyu1(3, "unit");
@@ -106,6 +112,7 @@
             });
             $("#idd").val(name);
 
+            /*添加的方法*/
             $.ajax({
                 url: "/Library/LibraryAdd",
                 data: new FormData($("#temp2")[0]),
@@ -114,6 +121,7 @@
                 contentType: false,
                 success: function (data) {
                     alert("添加成功");
+                    /*完成添加后刷新并返回到出库单列表页面*/
                     window.location = "/jsps/purchaseRequest.jsp";
                 }
             })

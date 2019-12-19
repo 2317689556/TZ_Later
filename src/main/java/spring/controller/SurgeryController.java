@@ -43,6 +43,7 @@ public class SurgeryController {
         }
     }
 
+    /*回执单查询*/
     @RequestMapping("/ReturnReceiptDetails")
     public String ReturnReceiptDetails(Integer id, Model model) {
         List<SurgicaldrapeDetails> surgicaldrapeDetails = surgeryService.SurgeryParticulars(id);
@@ -99,6 +100,7 @@ public class SurgeryController {
         return 1;
     }
 
+    /*填单__备货单__手术单__添加*/
     @RequestMapping("/AddSurgeryOrder")
     @ResponseBody
     public Integer AddSurgeryOrder(SurgicaldrapeDetailss su, Surgicaldrape sur) {
@@ -118,6 +120,7 @@ public class SurgeryController {
         return 1;
     }
 
+    /*填单__委托加工单__添加*/
     @RequestMapping("/AddManufacturing")
     @ResponseBody
     public void AddManufacturing(Consignedprocessings con) {
@@ -136,6 +139,7 @@ public class SurgeryController {
         surgeryService.AddManufacturing(list, con);
     }
 
+    /*零件库__全查*/
     @RequestMapping("/CommissionedProcessing")
     @ResponseBody
     public PageInfo<Consignedprocessing> CommissionedProcessing(Page page, String date_1, String date_2) {
@@ -143,6 +147,7 @@ public class SurgeryController {
         return info;
     }
 
+    /*内容表的查询*/
     @RequestMapping("/TableContents")
     @ResponseBody
     public List<TableContents> TableContents(Integer id) {
@@ -150,6 +155,7 @@ public class SurgeryController {
         return ta;
     }
 
+    /*内容表全查*/
     @RequestMapping("/finishedProduct")
     @ResponseBody
     public List<FinishedProduct> finishedProduct() {
@@ -157,6 +163,7 @@ public class SurgeryController {
         return ta;
     }
 
+    /*新建表__添加*/
     @RequestMapping("/NewTable")
     @ResponseBody
     public int NewTable(TableContentss ta, String namee) {

@@ -39,10 +39,12 @@
 
         /*签批后的回执单*/
         function huizhidan() {
+            /*带着参数去回执单页面*/
             window.location = "/jsps/surgicalReceipt.jsp?id=${DE.stockoutId}&number=${DE.number}&customer=${DE.customer}&ao=${DE.administrativeOffice}&proposer=${DE.proposer}";
         }
 
         function huizhixq() {
+            /*刷新并跳转到回执单详情页面*/
             window.location = "/Surgery/ReturnReceiptDetails?id=${DE.id}";
         }
     </script>

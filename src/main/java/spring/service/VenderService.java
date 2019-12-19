@@ -17,6 +17,7 @@ public class VenderService {
     @Resource
     VenderMapper venderMapper;
 
+    /*代理厂商全查*/
     public PageInfo<Agency> findVender(Page page) {
         PageHelper.offsetPage(page.getOffset(), page.getLimit());
         List<Agency> list = venderMapper.findVender(page);
@@ -25,16 +26,23 @@ public class VenderService {
 
     }
 
+    /*代理厂商详情*/
     public Agency venderListParticular(Integer id) {
         return venderMapper.venderListParticular(id);
     }
 
+    /*代理厂商修改*/
     public void UpdataVender(Agency agency, List<ProductLine> lines, Integer[] id1) {
+
+        /*删除*/
         venderMapper.delectProductLine(id1);
+        /*修改照片的网址*/
         venderMapper.UpdataVender(agency);
+        /*添加代理厂商*/
         venderMapper.UpdataProductLine(lines);
     }
 
+    /*新增厂家*/
     public void VenderAdd(Agency agency, List<ProductLine> lines, List<String[]> list) {
         venderMapper.AddAgency(agency);
         for (int i = 0; i < lines.size(); i++) {
@@ -44,6 +52,7 @@ public class VenderService {
         }
     }
 
+    /*库存修改*/
     public void UpdataStock(Stock s) {
         venderMapper.UpdataStock(s);
     }

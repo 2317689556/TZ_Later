@@ -61,10 +61,12 @@
             });
         })
 
+        /*刷新表格*/
         function shuaXin() {
             $('#tab1').bootstrapTable('refresh');
         }
 
+        /*跳转到添加商品页面*/
         function tiaozhuan() {
             window.location = "/jsps/CommodityInformationAdd.jsp";
         }

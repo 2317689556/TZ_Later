@@ -18,6 +18,7 @@
         </where>
     </select>
 
+    <!--零件库__全查-->
     <select id="CommissionedProcessing" resultType="Consignedprocessing">
         SELECT *
         FROM consignedProcessing
@@ -57,6 +58,7 @@
         </foreach>
     </insert>
 
+    <!--填单__备货单__手术单__添加-->
     <insert id="AddSurgeryOrder" parameterType="Surgicaldrape">
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()
@@ -65,6 +67,7 @@
         VALUE (null,#{number},#{customer},#{administrativeOffice},#{proposer},#{writeDate},0)
     </insert>
 
+    <!--添加详情-->
     <insert id="AddSurgeryOrder1">
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()
@@ -75,6 +78,7 @@
         </foreach>
     </insert>
 
+    <!--填单__委托加工单__添加-->
     <insert id="AddManufacturing">
         INSERT INTO consignedProcessing (id,wtdw,sbmc,sbsl,zqsj,date,name,model,specification,unit,count,unitPrice,money) VALUE
         <foreach collection="li" item="l" separator=",">
@@ -82,22 +86,26 @@
         </foreach>
     </insert>
 
+    <!--回执单查询-->
     <select id="showReceipts" resultType="Receipt">
         SELECT *
         FROM receipt
         WHERE surgicalDrape_id=#{id}
     </select>
 
+    <!--内容表的查询-->
     <select id="TableContents" resultType="TableContents">
         SELECT *
         FROM TableContents
     </select>
 
+    <!--内容表全查-->
     <select id="finishedProduct" resultType="FinishedProduct">
         SELECT *
         FROM finishedProduct
     </select>
 
+    <!--添加新建表-->
     <insert id="NewTable" parameterType="TableContents">
         <selectKey keyProperty="id" order="AFTER" resultType="Integer">
             SELECT last_insert_id()
@@ -105,6 +113,7 @@
         INSERT INTO finishedProduct VALUE (null,#{name},now())
     </insert>
 
+    <!--添加详情-->
     <insert id="NewTable1">
         INSERT INTO TableContents VALUE
         <foreach collection="ta" item="t" separator=",">

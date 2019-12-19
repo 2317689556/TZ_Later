@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>千佛山医院管理系统 库存</title>
+    <title>千佛山医院管理系统 新增厂家</title>
     <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
     <script src="/bootstrap/table/bootstrap-table.js"></script>
@@ -110,6 +110,7 @@
 
         })
 
+        /*厂家代理添加的方法*/
         function updata1() {
             $.ajax({
                 url: "/Vender/VenderAdd",

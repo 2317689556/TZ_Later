@@ -44,18 +44,10 @@
                         title: '备注'
                     },
                 ],
-                onLoadSuccess: function () {
-                    getTdValue();
-                }
             });
         })
 
-        function getTdValue() {
-            $(".third-item").parent().parent().css('background-color', '#FFECEC');
-            $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
-            $(".third-item3").parent().parent().css('background-color', 'rgba(0,240,255,0.1)');
-        }
-
+        /*刷新表格*/
         function shuaXin() {
             $('#tab1').bootstrapTable('refresh');
         }

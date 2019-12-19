@@ -50,6 +50,7 @@
             $(".temp5").css("display", "block");
         }
 
+        /*库存修改*/
         function updata1() {
             $("#money").val(parseInt($("#unitPrice").val())*parseInt($("#count").val()));
             $.ajax({

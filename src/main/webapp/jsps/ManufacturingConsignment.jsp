@@ -28,6 +28,7 @@
             $('.date_1').cxCalendar();
         })
 
+        /*下面表格的添加*/
         function tianjia() {
             var a = "";
             a += "<tbody><tr>";
@@ -46,6 +47,7 @@
             $("#" + b).val(name);
         }
 
+        /*委托加工单__添加*/
         function over() {
             yincangyu(0, "name");
             yincangyu(1, "model");

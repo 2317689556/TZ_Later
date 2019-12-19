@@ -26,7 +26,7 @@ public class CommodityController {
         return info;
     }
 
-    //展示库存
+    //商品详情
     @RequestMapping("/CommodityParticular")
     public String CommodityParticular(Integer id, Model model) {
         Commodity commodity = commodityService.CommodityParticular(id);

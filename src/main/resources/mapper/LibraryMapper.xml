@@ -60,6 +60,7 @@
         update purchase_request set signState=2 where id=#{id}
     </update>
 
+    <!--添加出库单-->
     <update id="LibraryAdd" parameterType="PurchaseRequestDetailss">
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             SELECT last_insert_id()
@@ -77,6 +78,7 @@
         VALUE (null,#{number},#{customer},now(),#{cause},0,1)
     </update>
 
+    <!--添加出库单详情页面-->
     <insert id="LibraryAdd1">
         INSERT INTO purchase_request_details (id,name,model,specification,unit,count,unitPrice,money,stockout_id,order_on,salesman)
         VALUE
@@ -101,6 +103,7 @@
         (null,1,"出库单",now())
     </insert>
 
+    <!--商品信息的查询-->
     <select id="showStock" resultType="Stock">
         SELECT * FROM stock a LEFT JOIN commodity b ON a.id=b.stock_id
         <if test="id !=null and id!=''">
@@ -108,10 +111,12 @@
         </if>
     </select>
 
+    <!--修改状态-->
     <update id="LibraryAdd2" parameterType="PurchaseRequestDetails">
         UPDATE stock SET count=(count-#{count}) WHERE id=#{id}
     </update>
 
+    <!--删除已出库的-->
     <delete id="LibraryAdd3">
         DELETE FROM  stock WHERE count =0
     </delete>

@@ -58,10 +58,12 @@
             });
         })
 
+        /*刷新表格*/
         function shuaXin() {
             $('#tab1').bootstrapTable('refresh');
         }
 
+        /*跳转到添加页面*/
         function tiaozhuan() {
             window.location = "/jsps/venderListAdd.jsp";
         }

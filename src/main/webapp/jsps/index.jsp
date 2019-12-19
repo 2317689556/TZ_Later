@@ -22,7 +22,6 @@
                 method: "get",
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 pagination: true,
-                striped: true,
                 sidePagination: "server",
                 pageNumber: 1,
                 pageSize: 8,
@@ -66,7 +65,7 @@
                         field: 'cause',
                         title: '异常原因',
                         formatter: function (value,row,index) {
-                           return "临期"
+                           return "<span class='third-item'>临期</span>"
                         }
                     },
                 ],
@@ -78,11 +77,7 @@
 
         function getTdValue() {
             /*未签批的颜色*/
-            $(".third-item").parent().parent().css('background-color', '#FFECEC');
-            /*已签批的颜色*/
-            $(".third-item2").parent().parent().css('background-color', '#F0FFF0');
-            /*已审核的颜色*/
-            $(".third-item3").parent().parent().css('background-color', 'rgba(0,243,255,0.07)');
+           /*$(".third-item").parent().parent().css("background-image","linear-gradient(#FF5151 25%,#ff7575, #FF9797,#FFB5B5)");*/
         }
 
         /*刷新表格*/
@@ -97,7 +92,7 @@
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
     <h3 style="margin-bottom: 40px">首页</h3>
-    <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px">
+    <div style="margin: 40px; margin-top: 20px; box-shadow: 0 0 4px black; height: 620px; padding: 10px;">
         <table id="tab1"></table>
     </div>
 </div>

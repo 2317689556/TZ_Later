@@ -3,6 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.dao.VenderMapper">
+
+    <!--代理厂商全查-->
     <select id="findVender" resultType="Agency">
         SELECT a.*,count(DISTINCT(b.name)) productLineNum, count(DISTINCT(d.`name`)) productQuantity
         FROM agency a
@@ -20,11 +22,13 @@
         <collection property="productLines" column="id" ofType="ProductLine" select="spring.dao.VenderMapper.ParticularSelect" autoMapping="true"/>
     </resultMap>
 
+    <!--代理厂商详情-->
     <select id="venderListParticular" resultMap="Particular">
         SELECT *
         FROM agency WHERE id=#{id}
     </select>
 
+    <!--修改照片的网址-->
     <update id="UpdataVender" parameterType="Agency">
         UPDATE agency SET name=#{name},date=#{date}
         <if test="credentials != null and credentials !=''">
@@ -39,6 +43,7 @@
         WHERE id=#{id}
     </update>
 
+    <!--添加代理厂商-->
     <update id="UpdataProductLine" parameterType="ProductLine">
         INSERT INTO product_line (id,name,address,Validity_of_agency,agency_id) VALUE
         <foreach collection="lines" item="l" separator=",">
@@ -46,6 +51,7 @@
         </foreach>
     </update>
 
+    <!--删除-->
     <update id="delectProductLine">
         DELETE FROM product_line WHERE id IN (
         <foreach collection="id" item="l" separator=",">
@@ -75,6 +81,7 @@
         </foreach>
     </insert>
 
+    <!--库存修改-->
     <update id="UpdataStock" parameterType="Stock">
         UPDATE stock SET name=#{name},count=#{count },model=#{model},specification=#{specification } ,unit=#{unit } ,money=#{money } ,unitPrice=#{unitPrice } WHERE id=#{moneyOut}
     </update>

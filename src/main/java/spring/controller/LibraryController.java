@@ -68,6 +68,7 @@ public class LibraryController {
         libraryService.UpdataState(id);
     }
 
+    /*填单__出库单__添加*/
     @RequestMapping("/LibraryAdd")
     @ResponseBody
     public void LibraryAdd(PurchaseRequestDetailss pu) {
@@ -103,6 +104,7 @@ public class LibraryController {
         libraryService.LossAdd(ab, list);
     }
 
+    /*商品信息的查询*/
     @RequestMapping("/showStock")
     @ResponseBody
     public List<Stock> showStock(Integer id) {

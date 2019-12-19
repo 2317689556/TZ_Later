@@ -36,7 +36,7 @@
     <select id="showInventory1" resultType="Abnormal">
        select *
         from stock
-        WHERE TimeStampDiff(day ,now(),update_time)>=0 and TimeStampDiff(day ,now(),update_time)&lt;=60
+        WHERE TimeStampDiff(day ,now(),update_time)>=0 and TimeStampDiff(day ,now(),update_time)&lt;=60 ORDER BY update_time
     </select>
 
 

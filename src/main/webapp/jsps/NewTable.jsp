@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>千佛山医院管理系统 手术单 添加</title>
+    <title>千佛山医院管理系统 新建表</title>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
     <script src="/bootstrap/table/bootstrap-table.js"></script>
     <script src="/bootstrap/js/bootstrap-tab.js"></script>
@@ -28,6 +28,7 @@
             $('.date_1').cxCalendar();
         })
 
+        /*下面表格的添加*/
         function tianjia() {
             var a = "";
             a += "<tbody><tr>";
@@ -46,6 +47,7 @@
             $("#" + b).val(name);
         }
 
+        /*添加的方法*/
         function over() {
             $('#temp9  input').each(function (index, obj) {
                 var attr = $(this).attr("id");
@@ -71,7 +73,7 @@
 <c:import url="utlis/background.jsp"/>
 <c:import url="utlis/broadside.jsp"/>
 <div style="width: 1300px; height: 800px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 60px; box-shadow: 0 0 8px black;">
-    <h3 style="margin-bottom: 40px">备货单添加</h3>
+    <h3 style="margin-bottom: 40px">新建表</h3>
     <form id="temp2">
         <span style="float: left; font-size: 17px; line-height: 34px; margin-left: 550px;">名字： </span>
         <input class="form-control" type="text" style="width: 130px; float: left;" name="namee">

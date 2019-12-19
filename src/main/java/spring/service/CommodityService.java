@@ -15,6 +15,7 @@ public class CommodityService {
     @Resource
     CommodityMapper commodityMapper;
 
+    /*展示库存*/
     public PageInfo<Commodity> ShowCommodity(Page page) {
         PageHelper.offsetPage(page.getOffset(), page.getLimit());
         List<Commodity> list = commodityMapper.ShowCommodity();
@@ -22,11 +23,13 @@ public class CommodityService {
         return pageInfo;
     }
 
+    /*商品详情*/
     public Commodity CommodityParticular(Integer id) {
         Commodity commodity = commodityMapper.CommodityParticular(id);
         return commodity;
     }
 
+    /*商品添加*/
     public int CommodityInformationAdd(Commodity commodity) {
         return commodityMapper.CommodityInformationAdd(commodity);
     }
