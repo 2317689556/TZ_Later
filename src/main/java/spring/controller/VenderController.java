@@ -72,7 +72,7 @@ public class VenderController {
             agency.setBusinessLicense("https://vihtrsa.oss-cn-beijing.aliyuncs.com/" + format);
         }
         //添加资格证书
-        List<String> temp = new ArrayList<>();
+        List<String> temp = new ArrayList<String>();
         for (MultipartFile multipartFile : credentialsTemp) {
             format += 1;
             originalFilename1 = businessLicenseTemp.getOriginalFilename();

@@ -72,7 +72,7 @@ public class LibraryController {
     @RequestMapping("/LibraryAdd")
     @ResponseBody
     public void LibraryAdd(PurchaseRequestDetailss pu) {
-        List<PurchaseRequestDetails> list = new ArrayList<>();
+        List<PurchaseRequestDetails> list = new ArrayList<PurchaseRequestDetails>();
         for (int i = 0; i < pu.getName().length - 1; i++) {
             PurchaseRequestDetails p = new PurchaseRequestDetails();
             p.setId(pu.getIdd()[i]);
@@ -92,7 +92,7 @@ public class LibraryController {
     @RequestMapping("/LossAdd")
     @ResponseBody
     public void LossAdd(Abnormal ab, AbnormalDetailss abs) {
-        List<AbnormalDetails> list = new ArrayList<>();
+        List<AbnormalDetails> list = new ArrayList<AbnormalDetails>();
         for (int i = 0; i < abs.getName().length - 1; i++) {
             AbnormalDetails p = new AbnormalDetails();
             p.setName(abs.getName()[i]);

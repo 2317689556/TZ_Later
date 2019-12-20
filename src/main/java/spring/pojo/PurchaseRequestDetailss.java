@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class PurchaseRequestDetailss extends PurchaseRequest {
-
     private Integer id;
     private Integer[] idd;
     private String[] name;//品名
@@ -17,5 +16,4 @@ public class PurchaseRequestDetailss extends PurchaseRequest {
     private Integer[] stockoutId;//外键
     private String orderOn;//发票号
     private String salesman;//业务员
-
 }

@@ -74,7 +74,7 @@ public class SurgeryController {
         String[] number1 = re.getNumber1().split(",");
         Integer[] employCount = new Integer[employCount1.length];
         Integer[] number = new Integer[employCount1.length];
-        List<Receipt> list = new ArrayList<>();
+        List<Receipt> list = new ArrayList<Receipt>();
         for (int i = 0; i < employCount1.length; i++) {
             Receipt r1 = new Receipt();
             employCount[i] = Integer.parseInt(employCount1[i]);

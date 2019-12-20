@@ -90,7 +90,7 @@ public class StockupController {
     @RequestMapping("StockupAdd")
     @ResponseBody
     public void StockupAdd(StockOutDetailss st) {
-        List<StockOutDetails> list = new ArrayList<>();
+        List<StockOutDetails> list = new ArrayList<StockOutDetails>();
         for (int i = 0; i < st.getName().length - 1; i++) {
             StockOutDetails s = new StockOutDetails();
             s.setName(st.getName()[i]);

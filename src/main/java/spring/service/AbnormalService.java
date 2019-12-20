@@ -21,7 +21,7 @@ public class AbnormalService {
     public PageInfo<Abnormal> showInventory(Page page, String date_1, String date_2) {
         PageHelper.offsetPage(page.getOffset(), page.getLimit());
         List<Abnormal> list = abnormalMapper.showInventory(date_1, date_2);
-        PageInfo<Abnormal> info = new PageInfo<>(list);
+        PageInfo<Abnormal> info = new PageInfo<Abnormal>(list);
         return info;
     }
 

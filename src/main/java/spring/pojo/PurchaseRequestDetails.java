@@ -6,7 +6,6 @@ import java.util.List;
 
 @Data
 public class PurchaseRequestDetails extends PurchaseRequest {
-
   private Integer id;
   private String name;//品名
   private String model;//型号
@@ -18,5 +17,4 @@ public class PurchaseRequestDetails extends PurchaseRequest {
   private Integer stockoutId;//外键
   private String orderOn;//发票号
   private String salesman;//业务员
-
 }

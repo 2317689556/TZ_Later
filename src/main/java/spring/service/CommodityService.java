@@ -19,7 +19,7 @@ public class CommodityService {
     public PageInfo<Commodity> ShowCommodity(Page page) {
         PageHelper.offsetPage(page.getOffset(), page.getLimit());
         List<Commodity> list = commodityMapper.ShowCommodity();
-        PageInfo<Commodity> pageInfo = new PageInfo<>(list);
+        PageInfo<Commodity> pageInfo = new PageInfo<Commodity>(list);
         return pageInfo;
     }
 
