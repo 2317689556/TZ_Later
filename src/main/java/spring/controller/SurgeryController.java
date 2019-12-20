@@ -125,6 +125,7 @@ public class SurgeryController {
     @ResponseBody
     public void AddManufacturing(Consignedprocessings con) {
         List<Consignedprocessing> list = new ArrayList<>();
+        System.out.println(list);
         for (int i = 0; i < con.getName().length - 1; i++) {
             Consignedprocessing s = new Consignedprocessing();
             s.setName(con.getName()[i]);

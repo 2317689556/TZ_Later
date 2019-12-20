@@ -49,6 +49,7 @@
 
         /*委托加工单__添加*/
         function over() {
+            debugger
             yincangyu(0, "name");
             yincangyu(1, "model");
             yincangyu(2, "specification");
@@ -65,7 +66,7 @@
                 contentType: false,
                 success: function (data) {
                     alert("添加成功");
-                    // window.location = "/jsps/PickingList.jsp";
+                     window.location = "/jsps/PickingList.jsp";
                 }
             })
         }

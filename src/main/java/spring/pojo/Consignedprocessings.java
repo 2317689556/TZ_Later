@@ -19,11 +19,11 @@ public class Consignedprocessings {
     private Integer[] money;
 
     private String batchNumber;
-    private java.sql.Timestamp inboundDate;
+    private Date inboundDate;
     private String manufacturers;
     private long num;
-    private java.sql.Timestamp createTime;
-    private java.sql.Timestamp updateTime;
+    private Date createTime;
+    private Date updateTime;
     private long isActive;
     private long stockId;
     private String wtdw;
