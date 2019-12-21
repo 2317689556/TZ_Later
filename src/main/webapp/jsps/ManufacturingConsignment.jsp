@@ -49,7 +49,6 @@
 
         /*委托加工单__添加*/
         function over() {
-            debugger
             yincangyu(0, "name");
             yincangyu(1, "model");
             yincangyu(2, "specification");
