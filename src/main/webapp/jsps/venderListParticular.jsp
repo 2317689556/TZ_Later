@@ -32,7 +32,7 @@
         }
 
         img {
-            height: 240px;
+            height:   240px;
             width: 325px;
             float: left;
             box-shadow: 0 0 5px black;
