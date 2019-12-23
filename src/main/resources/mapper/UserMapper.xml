@@ -52,6 +52,7 @@
         update user set remarks=#{remarks} where id=#{id}
     </update>
 
+    <!--日志__查询-->
     <select id="Log" resultType="Log">
         SELECT sum(num) num,State FROM log
         <where>

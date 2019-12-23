@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import spring.dao.AbnormalMapper;
 import spring.pojo.Abnormal;
 import spring.pojo.AbnormalDetails;
+import spring.pojo.Stock;
 import spring.pojo.utils.Page;
 
 import javax.annotation.Resource;
@@ -33,6 +34,8 @@ public class AbnormalService {
     /*异常__完成换货*/
     public void updateSuccess(Integer id) {
         abnormalMapper.updateSuccess(id);
+        /*添加日志*/
+        abnormalMapper.log(id);
     }
 
     /*异常__允许换货*/
@@ -57,5 +60,25 @@ public class AbnormalService {
         PageInfo<Abnormal> pageInfo = new PageInfo<>(list);
         /*向controller返回取到的值*/
         return pageInfo;
+    }
+
+    /*过期查询*/
+    public List<Stock> timeOut(String start, String stop) {
+        return abnormalMapper.timeOut(start,stop);
+    }
+
+    /*查询损失金额*/
+    public List<Stock> moneyOut(String start, String stop) {
+        return abnormalMapper.moneyOut(start,stop);
+    }
+
+    /*时间范围*/
+    public List<Stock> timeScope() {
+        return abnormalMapper.timeScope();
+    }
+
+    /*截止时间*/
+    public List<Stock> timeScopeS(){
+        return abnormalMapper.timeScopeS();
     }
 }

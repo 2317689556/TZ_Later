@@ -27,5 +27,6 @@ public interface UserMapper {
     /*公户管理__备注修改*/
     void updateUserBZ(@Param("id") Integer id, @Param("remarks") String remarks);
 
+    /*日志查询*/
     List<Log> Log(@Param("a") String a, @Param("b") String start, @Param("c") String stop);
 }

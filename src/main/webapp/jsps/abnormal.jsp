@@ -68,9 +68,9 @@
                             }else if(value==1){
                                 return "退货";
                             }else if(value==2){
-                                return "过期";
+                                return "报损";
                             }else if(value==3){
-                                return "报损"
+                                return "过期"
                             }
                         }
                     }, {

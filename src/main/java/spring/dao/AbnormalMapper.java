@@ -3,6 +3,7 @@ package spring.dao;
 import org.apache.ibatis.annotations.Param;
 import spring.pojo.Abnormal;
 import spring.pojo.AbnormalDetails;
+import spring.pojo.Stock;
 
 import java.util.List;
 
@@ -28,4 +29,15 @@ public interface AbnormalMapper {
 
     /*首页的异常查询*/
     List<Abnormal> showInventory1();
+
+    /*过期查询*/
+    List<Stock> timeOut(@Param("b") String start, @Param("c") String stop);
+
+    /*查询损失金额*/
+    List<Stock> moneyOut(@Param("b") String start, @Param("c") String stop);
+
+    /*时间范围*/
+    List<Stock> timeScope();
+
+    List<Stock> timeScopeS();
 }

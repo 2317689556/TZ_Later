@@ -57,7 +57,57 @@
 
     <!--添加日志-->
     <insert id="log">
-        INSERT INTO log VALUE (null,(SELECT count(b.id) FROM abnormal a LEFT JOIN abnormal_details b ON a.id=b.stockout_id WHERE a.id=#{id}),(SELECT cause FROM abnormal WHERE id=#{id}),now())
+        INSERT INTO log VALUE (null,(SELECT count(b.id) FROM stock a LEFT JOIN abnormal_details b ON a.id=b.stockout_id WHERE a.id=#{id}),(SELECT cause FROM stock WHERE id=#{id}),now())
     </insert>
+
+    <!--过期查询-->
+    <select id="timeOut" resultType="Log">
+        select count(*) as num,
+        "过期" as state
+        from stock
+        <where>
+
+            <if test="b != null and b != ''">
+                date >= #{b}
+            </if>
+            <if test="c != null and c != ''">
+                AND date &lt;= #{c}
+            </if>
+            and
+            TimeStampDiff(day ,now(),update_time)&lt;=0
+            ORDER BY update_time
+        </where>
+    </select>
+
+    <!--查询损失金额-->
+    <select id="moneyOut" resultType="Log">
+        select sum(money) as num,
+        "损失金额" as state
+        from stock
+        <where>
+            <if test="b != null and b != ''">
+                date >= #{b}
+            </if>
+            <if test="c != null and c != ''">
+                AND date &lt;= #{c}
+            </if>
+            and TimeStampDiff(day ,now(),update_time)&lt;=0
+             and cause&lt;=3
+            ORDER BY update_time
+        </where>
+    </select>
+
+    <!--时间范围_起始-->
+    <select id="timeScope" resultType="Log">
+        select min(date) as num,
+        "时间范围" as State
+        from stock
+    </select>
+
+    <select id="timeScopeS" resultType="Log">
+        select min(date) as num,
+        "时间范围" as State
+        from stock
+    </select>
 
 </mapper>

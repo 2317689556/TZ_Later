@@ -32,7 +32,35 @@
             aa("换货");
             aa("退货");
             aa("报损");
-            aa("过期");
+            /*过期*/
+            $.ajax({
+                url:"/Abnormal/timeOut",
+                type:"post",
+                data: {"start": $("#date_1").val(), "stop": $("#date_2").val()},
+                success:function (data) {
+                    if (data == null) {
+                        return;
+                    }
+                    $(data).each(function (index, obj) {
+                        $("#tab").append("<tr><td>" + obj.state + "：</td><td>" + obj.num + "</td></tr>");
+                    });
+                }
+            });
+
+            /*损失金额*/
+                $.ajax({
+                    url:"/Abnormal/moneyOut",
+                    type:"post",
+                    data: {"start": $("#date_1").val(), "stop": $("#date_2").val()},
+                    success:function (data) {
+                        if (data == null) {
+                            return;
+                        }
+                        $(data).each(function (index, obj) {
+                            $("#tab").append("<tr><td>" + obj.state + "：</td><td>" + obj.num + "</td></tr>");
+                        });
+                    }
+                });
         }
 
         function aa(a) {

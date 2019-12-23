@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import spring.pojo.Abnormal;
 import spring.pojo.AbnormalDetails;
+import spring.pojo.Stock;
 import spring.pojo.utils.Page;
 import spring.service.AbnormalService;
 
@@ -65,6 +66,34 @@ public class AbnormalController {
     @RequestMapping("qianpi")
     public void qianpi(Integer id){
         abnormalService.qianpi(id);
+    }
+
+    /*查询过期*/
+    @RequestMapping("timeOut")
+    @ResponseBody
+    public List<Stock> timeOut(String start, String stop){
+            List<Stock> log = abnormalService.timeOut(start,stop);
+        return log;
+    }
+
+    /*查询损失金额*/
+    @RequestMapping("moneyOut")
+    @ResponseBody
+    public List<Stock> moneyOut(String start, String stop){
+        List<Stock> log = abnormalService.moneyOut(start,stop);
+        return log;
+    }
+
+    /*时间范围*/
+    @RequestMapping("timeScope")
+    @ResponseBody
+    public List<Stock> timeScope(String a, String start, String stop){
+        List<Stock> log = abnormalService.timeScope();
+        List<Stock> log1 = abnormalService.timeScopeS();
+        log.removeAll(log1);
+        log.addAll(log1);
+        System.out.println(log);
+        return log;
     }
 
 }

@@ -15,6 +15,7 @@ public class StockupService {
     @Resource
     StockupMapper stockupMapper;
 
+    /*备货单__全查*/
     public PageInfo<PickingList> findStockup(Page page, String date_1, String date_2) {
         PageHelper.offsetPage(page.getOffset(), page.getLimit());
         List<PickingList> list = stockupMapper.findStockup(date_1, date_2);
@@ -32,6 +33,7 @@ public class StockupService {
     }
 
 
+    /*备货单__详情*/
     public List<PurchaseRequestDetails> findStockupFindAllById(Integer id) {
         return stockupMapper.findStockupFindAllById(id);
     }
