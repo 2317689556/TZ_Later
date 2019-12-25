@@ -33,4 +33,9 @@ public class CommodityService {
     public int CommodityInformationAdd(Commodity commodity) {
         return commodityMapper.CommodityInformationAdd(commodity);
     }
+
+    /*商品的修改*/
+    public int UpdateGoods(Commodity commodity) {
+        return commodityMapper.UpdateGoods(commodity);
+    }
 }

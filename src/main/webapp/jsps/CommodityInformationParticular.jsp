@@ -51,7 +51,7 @@
 
         function updata1() {
             $.ajax({
-                url: "/Vender/UpdataVender",
+                url: "/Commodity/UpdateGoods",
                 data: new FormData($("#temp6")[0]),
                 type: "POST",
                 processData: false,
@@ -77,7 +77,7 @@
     <div style="margin: 40px; margin-top: 94px; box-shadow: 0 0 4px black; height: 620px; padding: 25px 50px 0 50px; text-align: left;" id="temp1">
         <form id="temp6" enctype="multipart/form-data" type="post">
             <table style="float:left;">
-                <input type="hidden" value="${AGENCY.id}" name="id">
+                <input type="hidden" value="${CY.id}" name="id">
                 <tr>
                     <td><span>品名：</span></td>
                     <td><input type="text" value="${CY.name}" class="form-control" disabled name="name"></td>

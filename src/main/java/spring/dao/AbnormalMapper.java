@@ -36,8 +36,4 @@ public interface AbnormalMapper {
     /*查询损失金额*/
     List<Stock> moneyOut(@Param("b") String start, @Param("c") String stop);
 
-    /*时间范围*/
-    List<Stock> timeScope();
-
-    List<Stock> timeScopeS();
 }

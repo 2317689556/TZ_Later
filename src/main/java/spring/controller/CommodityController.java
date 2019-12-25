@@ -41,4 +41,14 @@ public class CommodityController {
         return i > 0;
     }
 
+    /*商品修改*/
+    @RequestMapping("UpdateGoods")
+    @ResponseBody
+    public int UpdateGoods(Commodity commodity){
+        System.out.println(commodity);
+        int i = commodityService.UpdateGoods(commodity);
+        System.out.println(i);
+        return i;
+    }
+
 }

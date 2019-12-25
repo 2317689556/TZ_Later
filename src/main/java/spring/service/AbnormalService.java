@@ -72,13 +72,4 @@ public class AbnormalService {
         return abnormalMapper.moneyOut(start,stop);
     }
 
-    /*时间范围*/
-    public List<Stock> timeScope() {
-        return abnormalMapper.timeScope();
-    }
-
-    /*截止时间*/
-    public List<Stock> timeScopeS(){
-        return abnormalMapper.timeScopeS();
-    }
 }

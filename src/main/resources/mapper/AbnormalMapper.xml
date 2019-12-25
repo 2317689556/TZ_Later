@@ -97,17 +97,4 @@
         </where>
     </select>
 
-    <!--时间范围_起始-->
-    <select id="timeScope" resultType="Log">
-        select min(date) as num,
-        "时间范围" as State
-        from stock
-    </select>
-
-    <select id="timeScopeS" resultType="Log">
-        select min(date) as num,
-        "时间范围" as State
-        from stock
-    </select>
-
 </mapper>

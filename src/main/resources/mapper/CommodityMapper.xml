@@ -19,4 +19,13 @@
         value(#{name},#{model},#{specification},#{manufacturers},#{productLine},#{batchNumber},#{moneyInput},#{moneyOut});
     </insert>
 
+    <!--商品的修改-->
+    <update id="UpdateGoods" parameterType="Commodity">
+        update commodity set
+        model=#{model},name=#{name},specification=#{specification},manufacturers=#{manufacturers},
+        productLine=#{productLine},moneyInput=#{moneyInput},moneyOut=#{moneyOut}
+        where id = #{id}
+
+    </update>
+
 </mapper>

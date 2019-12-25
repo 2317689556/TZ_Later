@@ -84,16 +84,4 @@ public class AbnormalController {
         return log;
     }
 
-    /*时间范围*/
-    @RequestMapping("timeScope")
-    @ResponseBody
-    public List<Stock> timeScope(String a, String start, String stop){
-        List<Stock> log = abnormalService.timeScope();
-        List<Stock> log1 = abnormalService.timeScopeS();
-        log.removeAll(log1);
-        log.addAll(log1);
-        System.out.println(log);
-        return log;
-    }
-
 }

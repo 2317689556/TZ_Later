@@ -13,4 +13,7 @@ public interface CommodityMapper {
 
     /*商品添加*/
     int CommodityInformationAdd(Commodity commodity);
+
+    /*商品的修改*/
+    int UpdateGoods(Commodity commodity);
 }
