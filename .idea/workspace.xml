@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="奥友车生活项目上传">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/01" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../kaoshi/zs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -86,7 +87,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -232,7 +233,8 @@
       <workItem from="1603068738883" duration="1927000" />
       <workItem from="1603071470902" duration="372000" />
       <workItem from="1603623178153" duration="218000" />
-      <workItem from="1603623420239" duration="4700000" />
+      <workItem from="1603623420239" duration="5735000" />
+      <workItem from="1603629174135" duration="835000" />
     </task>
     <task id="LOCAL-00001" summary="图标字体">
       <created>1575853579497</created>
@@ -486,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603627286757</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="奥友车生活项目上传">
+      <created>1603628238071</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1603628238071</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,18 +541,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="414" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603625852438" />
+    <state x="716" y="349" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603629637261">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="716" y="349" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603629637261" />
     <state x="689" y="329" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1603625799376">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="329" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603625799376" />
-    <state x="542" y="136" key="CommitChangelistDialog2" timestamp="1603627282887">
+    <state x="542" y="136" key="CommitChangelistDialog2" timestamp="1603628236511">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="542" y="136" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603627282887" />
-    <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1603628112005">
+    <state x="542" y="136" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603628236511" />
+    <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1603629730911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603628112005" />
+    <state x="740" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603629730911" />
     <state x="785" y="454" width="373" height="171" key="Github.CreateGistDialog" timestamp="1603626608041">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -552,42 +565,42 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="777" y="419" key="Github.CreatePullRequestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603627775273" />
-    <state x="835" y="436" width="274" height="208" key="Github.ShareDialog" timestamp="1603626896286">
+    <state x="835" y="436" width="274" height="208" key="Github.ShareDialog" timestamp="1603629150401">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="835" y="436" width="274" height="208" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603626896286" />
-    <state width="1860" height="153" key="GridCell.Tab.0.bottom" timestamp="1603625961301">
+    <state x="835" y="436" width="274" height="208" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603629150401" />
+    <state width="1860" height="220" key="GridCell.Tab.0.bottom" timestamp="1603629161618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603625961301" />
-    <state width="1860" height="153" key="GridCell.Tab.0.center" timestamp="1603625961299">
+    <state width="1860" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603629161618" />
+    <state width="1860" height="220" key="GridCell.Tab.0.center" timestamp="1603629161618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="153" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603625961299" />
-    <state width="1860" height="153" key="GridCell.Tab.0.left" timestamp="1603625961297">
+    <state width="1860" height="220" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603629161618" />
+    <state width="1860" height="220" key="GridCell.Tab.0.left" timestamp="1603629161617">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="153" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603625961297" />
-    <state width="1860" height="153" key="GridCell.Tab.0.right" timestamp="1603625961300">
+    <state width="1860" height="220" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603629161617" />
+    <state width="1860" height="220" key="GridCell.Tab.0.right" timestamp="1603629161618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="153" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603625961300" />
-    <state width="1860" height="153" key="GridCell.Tab.1.bottom" timestamp="1603625961301">
+    <state width="1860" height="220" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603629161618" />
+    <state width="1860" height="220" key="GridCell.Tab.1.bottom" timestamp="1603629161618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="153" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603625961301" />
-    <state width="1860" height="153" key="GridCell.Tab.1.center" timestamp="1603625961301">
+    <state width="1860" height="220" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1603629161618" />
+    <state width="1860" height="220" key="GridCell.Tab.1.center" timestamp="1603629161618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="153" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603625961301" />
-    <state width="1860" height="153" key="GridCell.Tab.1.left" timestamp="1603625961301">
+    <state width="1860" height="220" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1603629161618" />
+    <state width="1860" height="220" key="GridCell.Tab.1.left" timestamp="1603629161618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="153" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603625961301" />
-    <state width="1860" height="153" key="GridCell.Tab.1.right" timestamp="1603625961301">
+    <state width="1860" height="220" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1603629161618" />
+    <state width="1860" height="220" key="GridCell.Tab.1.right" timestamp="1603629161618">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="153" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603625961301" />
+    <state width="1860" height="220" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1603629161618" />
     <state x="669" y="257" key="MultipleFileMergeDialog" timestamp="1603627390802">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -600,10 +613,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="781" y="253" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603627091143" />
-    <state x="463" y="185" key="SettingsEditor" timestamp="1603628195039">
+    <state x="463" y="185" key="SettingsEditor" timestamp="1603628941246">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="463" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1603628195039" />
+    <state x="463" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1603628941246" />
     <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1603627346139">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -624,10 +637,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="763" y="419" key="git4idea.rebase.GitRebaseDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603627720080" />
-    <state x="771" y="393" key="git4idea.ui.GitTagDialog" timestamp="1603627686319">
+    <state x="771" y="393" key="git4idea.ui.GitTagDialog" timestamp="1603629000505">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="771" y="393" key="git4idea.ui.GitTagDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603627686319" />
+    <state x="771" y="393" key="git4idea.ui.GitTagDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603629000505" />
+    <state x="604" y="356" key="git4idea.ui.GitUnstashDialog" timestamp="1603628808447">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="604" y="356" key="git4idea.ui.GitUnstashDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603628808447" />
     <state x="334" y="267" key="new project wizard" timestamp="1601430518106">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -640,14 +657,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1603625912487" />
-    <state x="790" y="334" key="svn.repositoryBrowser" timestamp="1603628119968">
+    <state x="790" y="334" key="svn.repositoryBrowser" timestamp="1603628750742">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="790" y="334" key="svn.repositoryBrowser/0.0.1920.1080@0.0.1920.1080" timestamp="1603628119968" />
-    <state x="783" y="315" key="svn4idea.import.options" timestamp="1603628114004">
+    <state x="790" y="334" key="svn.repositoryBrowser/0.0.1920.1080@0.0.1920.1080" timestamp="1603628750742" />
+    <state x="783" y="315" key="svn4idea.import.options" timestamp="1603628749385">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="783" y="315" key="svn4idea.import.options/0.0.1920.1080@0.0.1920.1080" timestamp="1603628114004" />
+    <state x="783" y="315" key="svn4idea.import.options/0.0.1920.1080@0.0.1920.1080" timestamp="1603628749385" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
