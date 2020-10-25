@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="奥友车生活项目上传">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/01" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +233,7 @@
       <workItem from="1603071470902" duration="372000" />
       <workItem from="1603623178153" duration="218000" />
       <workItem from="1603623420239" duration="5735000" />
-      <workItem from="1603629174135" duration="835000" />
+      <workItem from="1603629174135" duration="1341000" />
     </task>
     <task id="LOCAL-00001" summary="图标字体">
       <created>1575853579497</created>
@@ -495,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603628238071</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="奥友车生活项目上传">
+      <created>1603630116548</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1603630116548</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,10 +555,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="329" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603625799376" />
-    <state x="542" y="136" key="CommitChangelistDialog2" timestamp="1603628236511">
+    <state x="542" y="136" key="CommitChangelistDialog2" timestamp="1603630115193">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="542" y="136" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603628236511" />
+    <state x="542" y="136" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603630115193" />
     <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1603629730911">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -617,10 +623,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="463" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1603628941246" />
-    <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1603627346139">
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1603630158730">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603627346139" />
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603630158730" />
     <state x="652" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1603623423393">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
