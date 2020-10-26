@@ -15,7 +15,7 @@ public class UserController {
     @Resource
     UserService userService;
 
-    //登录
+    //登录123
     @RequestMapping("login")
     public String login(User user, HttpSession session) {
         User user1 = userService.login(user);
