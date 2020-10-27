@@ -9,5 +9,5 @@ public class User{
     private String password;//密码
     private long gradeId;//权限等级
     private String remarks;//备注
-    private String kkk;
+    private String kkk1;
 }
