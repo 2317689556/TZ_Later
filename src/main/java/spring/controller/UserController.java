@@ -15,7 +15,8 @@ public class UserController {
     @Resource
     UserService userService;
 
-    //登录
+
+    //奥德赛 董莽修改
     @RequestMapping("login")
     public String login(User user, HttpSession session) {
         User user1 = userService.login(user);
@@ -26,6 +27,4 @@ public class UserController {
             return "login";
         }
     }
-
-
 }
