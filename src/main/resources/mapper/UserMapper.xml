@@ -11,4 +11,17 @@
         AND password=#{password}
     </select>
 
+    <!--   登录 -->
+    <select id="login1" resultType="java.lang.String">
+        SELECT *
+        FROM user
+        WHERE username=#{username}
+        AND password=#{password}
+    </select>
+
+    <!--轮播图查询-->
+    <!--List<AoyoCommodityImg> lunbo();-->
+    <select id="lunbo" resultType="aoyoCommodityImg">
+        select commodity_img_url from aoyo_commodity_img
+    </select>
 </mapper>
