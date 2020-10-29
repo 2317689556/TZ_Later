@@ -1,8 +1,8 @@
 package spring.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import spring.pojo.*;
 import spring.response.BaseResponse;
 import spring.service.UserService;
@@ -12,19 +12,19 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-//用户
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
+
     @Resource
     UserService userService;
 
 
+    //用户登录
 
     //奥德赛 董莽修改
     @RequestMapping("login")
-    public String login(User user, HttpSession session) {
-        System.out.println("进来了");
+    public String login(User user, HttpSession session){
         User user1 = userService.login(user);
         if (user1 != null) {
             session.setAttribute("USER", user1);
@@ -34,35 +34,10 @@ public class UserController {
         }
     }
 
-    /*轮播图查询*/
-    @RequestMapping("lunbo")
-    @ResponseBody
-    public BaseResponse lunbo(){
-        List<aoyoCommodityImg> list = userService.lunbo();
-        return new BaseResponse(200,"成功！",list);
-    }
-
-    /*活动图查询*/
-    @RequestMapping("huodong")
-    @ResponseBody
-    public BaseResponse huodong(){
-        List<aoyoPlatformImage> list = userService.hudong();
-        return new BaseResponse(200,"成功！",list);
-    }
-
-    /*套餐查询*/
-    @RequestMapping("taocan")
-    @ResponseBody
-    public BaseResponse taocan(){
-        List<aoyoCommoditySuit> list = userService.taocan();
-        return new BaseResponse(200,"成功！",list);
-    }
-
-
 
     //查询所有的省
     @RequestMapping("selectProv")
-
+    @ResponseBody
     public List<AoyoProvince> selectedProv(){
 
         return userService.selectedProv();
@@ -99,14 +74,13 @@ public class UserController {
 
         System.out.println(aoyoAddress.toString());
 
-        int i  = userService.addressInsert(aoyoAddress);
-        if(i>0){
-            return  new BaseResponse(StatusCode.Success,i);
-        }
+       int i  = userService.addressInsert(aoyoAddress);
+       if(i>0){
+           return  new BaseResponse(StatusCode.Success,i);
+       }
 
         return new BaseResponse(StatusCode.Fail,i);
     }
-
 
 
 }
