@@ -56,4 +56,6 @@ public class UserService {
     public List<aoyoCommodityImg> lunbo() {
         return userMapper.lunbo();
     }
+
+
 }

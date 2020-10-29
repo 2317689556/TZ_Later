@@ -1,4 +1,4 @@
-package spring.utils;
+package spring.response;
 
 public enum StatusCode {
 

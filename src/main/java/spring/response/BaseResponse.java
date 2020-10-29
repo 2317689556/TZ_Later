@@ -1,7 +1,5 @@
 package spring.response;
 
-import spring.utils.StatusCode;
-
 /**
  *统一响应数据模型
  * @param <T>

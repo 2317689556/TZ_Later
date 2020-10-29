@@ -9,7 +9,7 @@ import spring.pojo.carBrand;
 import spring.pojo.carBrandHot;
 import spring.response.BaseResponse;
 import spring.service.CarServiceImpl;
-import spring.utils.StatusCode;
+import spring.response.StatusCode;
 
 import java.util.HashMap;
 import java.util.List;
