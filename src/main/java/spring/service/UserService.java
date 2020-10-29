@@ -2,8 +2,7 @@ package spring.service;
 
 import org.springframework.stereotype.Service;
 import spring.dao.UserMapper;
-import spring.pojo.aoyoCommodityImg;
-import spring.pojo.User;
+import spring.pojo.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -18,14 +17,25 @@ public class UserService {
         return userMapper.login(user);
     }
 
-    public String login1(String input_name, String input_pwds){
-        return userMapper.login1(input_name,input_pwds);
-    };
 
-    /*轮播图查询*/
-    public List<aoyoCommodityImg> lunbo() {
-        return userMapper.lunbo();
+    public List<AoyoProvince> selectedProv() {
+
+        return userMapper.setlectedProv();
     }
 
+    public List<AoyoCity> selectCity(Integer asd) {
+        return userMapper.selectCity(asd);
+    }
 
+    public List<AoyoArea> selectAreas(String asd) {
+        return userMapper.selectAreas(asd);
+    }
+
+    public List<AoyoAddressLabel> selectAddLabelAll() {return userMapper.selectAddLabelAll();
+    }
+
+    public int addressInsert(AoyoAddress aoyoAddress) {
+
+        return userMapper.addressInsert(aoyoAddress);
+    }
 }
