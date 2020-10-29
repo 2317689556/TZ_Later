@@ -63,5 +63,11 @@ select * from aoyo_area where city_code = #{asd}
         select * from aoyo_order_detail d, aoyo_commodity_suit s where s.commodity_suit_id = d.package_commodity_id
     </select>
 
+    <!--轮播图查询-->
+    <!--List<AoyoCommodityImg> lunbo();-->
+    <select id="lunbo" resultType="aoyoCommodityImg">
+        select commodity_img_url from aoyo_commodity_img
+    </select>
+
 
 </mapper>

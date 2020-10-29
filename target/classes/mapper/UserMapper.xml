@@ -11,19 +11,45 @@
         AND password=#{password}
     </select>
 
-    <!--   登录 -->
-    <select id="login1" resultType="java.lang.String">
-        SELECT *
-        FROM user
-        WHERE username=#{username}
-        AND password=#{password}
+    <select id="setlectedProv"  resultType="spring.pojo.AoyoProvince">
+       select `name`,code from aoyo_province
     </select>
 
-    <!--轮播图查询-->
-    <!--List<AoyoCommodityImg> lunbo();-->
-    <select id="lunbo" resultType="aoyoCommodityImg">
-        select commodity_img_url from aoyo_commodity_img
+    <select id="selectCity" resultType="spring.pojo.AoyoCity">
+
+        select * from aoyo_city where province_code = #{asd}
+
     </select>
+
+    <select id="selectAreas" resultType="spring.pojo.AoyoArea">
+
+select * from aoyo_area where city_code = #{asd}
+
+    </select>
+
+
+
+
+    <select id="selectAddLabelAll" resultType="spring.pojo.AoyoAddressLabel">
+
+        select label_id,label_name from aoyo_address_label;
+
+    </select>
+
+    <insert id="addressInsert">
+
+        insert into aoyo_address
+        (consignee_name, address_label_id, telephone, province_id, city_id, county_id,
+         address_details, default_address, creat_time
+         )
+         values
+         (#{consigneeName},#{addressLabelId},#{telephone},#{provinceId},#{cityId},#{countyId},
+         #{addressDetails}
+         ,#{defaultAddress},now()
+         );
+
+    </insert>
+
 
     <!--活动图片查询-->
     <!--List<aoyoPlatformImage> huodong();-->
@@ -35,6 +61,12 @@
     <!--List<aoyoCommoditySuit> taocan();-->
     <select id="taocan" resultType="aoyoCommoditySuit">
         select * from aoyo_order_detail d, aoyo_commodity_suit s where s.commodity_suit_id = d.package_commodity_id
+    </select>
+
+    <!--轮播图查询-->
+    <!--List<AoyoCommodityImg> lunbo();-->
+    <select id="lunbo" resultType="aoyoCommodityImg">
+        select commodity_img_url from aoyo_commodity_img
     </select>
 
 

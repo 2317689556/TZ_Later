@@ -51,4 +51,9 @@ public class UserService {
     public List<aoyoCommoditySuit> taocan() {
         return userMapper.taocan();
     }
+
+    /*轮播图查询*/
+    public List<aoyoCommodityImg> lunbo() {
+        return userMapper.lunbo();
+    }
 }
