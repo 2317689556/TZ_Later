@@ -3,6 +3,10 @@ package spring.service;
 import org.springframework.stereotype.Service;
 import spring.dao.UserMapper;
 import spring.pojo.*;
+import spring.pojo.aoyoCommodityImg;
+import spring.pojo.User;
+import spring.pojo.aoyoCommoditySuit;
+import spring.pojo.aoyoPlatformImage;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -37,5 +41,14 @@ public class UserService {
     public int addressInsert(AoyoAddress aoyoAddress) {
 
         return userMapper.addressInsert(aoyoAddress);
+    }
+    /*活动图片查询*/
+    public List<aoyoPlatformImage> hudong() {
+        return userMapper.huodong();
+    }
+
+    /*套餐查询*/
+    public List<aoyoCommoditySuit> taocan() {
+        return userMapper.taocan();
     }
 }

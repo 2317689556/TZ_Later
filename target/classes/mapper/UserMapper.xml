@@ -11,4 +11,31 @@
         AND password=#{password}
     </select>
 
+    <!--   登录 -->
+    <select id="login1" resultType="java.lang.String">
+        SELECT *
+        FROM user
+        WHERE username=#{username}
+        AND password=#{password}
+    </select>
+
+    <!--轮播图查询-->
+    <!--List<AoyoCommodityImg> lunbo();-->
+    <select id="lunbo" resultType="aoyoCommodityImg">
+        select commodity_img_url from aoyo_commodity_img
+    </select>
+
+    <!--活动图片查询-->
+    <!--List<aoyoPlatformImage> huodong();-->
+    <select id="huodong" resultType="aoyoPlatformImage">
+        select * from aoyo_platform_image;
+    </select>
+
+    <!--套餐查询-->
+    <!--List<aoyoCommoditySuit> taocan();-->
+    <select id="taocan" resultType="aoyoCommoditySuit">
+        select * from aoyo_order_detail d, aoyo_commodity_suit s where s.commodity_suit_id = d.package_commodity_id
+    </select>
+
+
 </mapper>

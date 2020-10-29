@@ -1,6 +1,10 @@
 package spring.dao;
 
 import org.apache.ibatis.annotations.Param;
+import spring.pojo.aoyoCommodityImg;
+import spring.pojo.User;
+import spring.pojo.aoyoCommoditySuit;
+import spring.pojo.aoyoPlatformImage;
 import spring.pojo.*;
 
 import java.util.List;
@@ -20,4 +24,12 @@ public interface UserMapper {
     List<AoyoAddressLabel> selectAddLabelAll();
 
     int addressInsert(AoyoAddress aoyoAddress);
+    /*轮播图查询*/
+    List<aoyoCommodityImg> lunbo();
+
+    /*活动图片查询*/
+    List<aoyoPlatformImage> huodong();
+
+    /*套餐查询*/
+    List<aoyoCommoditySuit> taocan();
 }

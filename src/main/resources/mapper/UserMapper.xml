@@ -50,4 +50,18 @@ select * from aoyo_area where city_code = #{asd}
 
     </insert>
 
+
+    <!--活动图片查询-->
+    <!--List<aoyoPlatformImage> huodong();-->
+    <select id="huodong" resultType="aoyoPlatformImage">
+        select * from aoyo_platform_image;
+    </select>
+
+    <!--套餐查询-->
+    <!--List<aoyoCommoditySuit> taocan();-->
+    <select id="taocan" resultType="aoyoCommoditySuit">
+        select * from aoyo_order_detail d, aoyo_commodity_suit s where s.commodity_suit_id = d.package_commodity_id
+    </select>
+
+
 </mapper>
