@@ -3,7 +3,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class aoyoPlatformImage {
+public class AoyoPlatformImage {
 
   private long platformImageId;//平台首页图片id
   private String platformImageName;//图片名称

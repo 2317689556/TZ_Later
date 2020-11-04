@@ -2,18 +2,18 @@ package spring.dao;
 
 
 import org.apache.ibatis.annotations.Param;
-import spring.pojo.carBrand;
-import spring.pojo.carBrandHot;
+import spring.pojo.CarBrand;
+import spring.pojo.CarBrandHot;
 
 import java.util.List;
 
 public interface CarMapper {
 
-    List<carBrandHot> getHotCarList();
+    List<CarBrandHot> getHotCarList();
 
-    List<carBrand> getCarList();
+    List<CarBrand> getCarList();
 
-    List<carBrand> getCarListByLetter(String carBrandPyFirstLetter);
+    List<CarBrand> getCarListByLetter(String carBrandPyFirstLetter);
 
-    List<carBrand> searchCarList(@Param("name") String name);
+    List<CarBrand> searchCarList(@Param("name") String name);
 }

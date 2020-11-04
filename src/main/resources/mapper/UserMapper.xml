@@ -11,24 +11,24 @@
         AND password=#{password}
     </select>
 
-    <select id="setlectedProv" resultType="spring.pojo.aoyoProvince">
+    <select id="setlectedProv" resultType="spring.pojo.AoyoProvince">
        select `name`,code from aoyo_province
     </select>
 
-    <select id="selectCity" resultType="spring.pojo.aoyoCity">
+    <select id="selectCity" resultType="spring.pojo.AoyoCity">
 
         select * from aoyo_city where province_code = #{asd}
 
     </select>
 
-    <select id="selectAreas" resultType="spring.pojo.aoyoArea">
+    <select id="selectAreas" resultType="spring.pojo.AoyoArea">
 
 select * from aoyo_area where city_code = #{asd}
 
     </select>
 
 
-    <select id="selectAddLabelAll" resultType="spring.pojo.aoyoAddressLabel">
+    <select id="selectAddLabelAll" resultType="spring.pojo.AoyoAddressLabel">
 
         select label_id,label_name from aoyo_address_label;
 

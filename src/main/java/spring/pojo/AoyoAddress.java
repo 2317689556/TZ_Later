@@ -4,7 +4,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class aoyoAddress {
+public class AoyoAddress {
 
   private long addressId;
   private long customId;

@@ -3,7 +3,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class goshopping {
+public class Goshopping {
     /*购物车混合实体类*/
     private long shoppingCartId;//购物车id
     private long commodityId;//商品id

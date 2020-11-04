@@ -3,7 +3,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class user {
+public class User {
     private long id;
     private String username;//用户名
     private String password;//密码

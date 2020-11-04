@@ -3,7 +3,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class aoyoPanel {
+public class AoyoPanel {
 
   //首页分类表
   private long panelId;//首页分类表id

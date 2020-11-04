@@ -1,10 +1,10 @@
 package spring.dao;
 
 import org.apache.ibatis.annotations.Param;
-import spring.pojo.aoyoCommodityImg;
-import spring.pojo.user;
-import spring.pojo.aoyoCommoditySuit;
-import spring.pojo.aoyoPlatformImage;
+import spring.pojo.AoyoCommodityImg;
+import spring.pojo.User;
+import spring.pojo.AoyoCommoditySuit;
+import spring.pojo.AoyoPlatformImage;
 import spring.pojo.*;
 
 import java.util.List;
@@ -12,33 +12,33 @@ import java.util.List;
 
 public interface UserMapper {
     /*登录*/
-    user login(user user);
+    User login(User user);
 
     /*查询所有的省*/
-    List<aoyoProvince> setlectedProv();
+    List<AoyoProvince> setlectedProv();
 
-    List<aoyoCity> selectCity(@Param("asd") Integer asd);
+    List<AoyoCity> selectCity(@Param("asd") Integer asd);
 
-    List<aoyoArea> selectAreas(@Param("asd")String asd);
+    List<AoyoArea> selectAreas(@Param("asd")String asd);
 
-    List<aoyoAddressLabel> selectAddLabelAll();
+    List<AoyoAddressLabel> selectAddLabelAll();
 
-    int addressInsert(aoyoAddress aoyoAddress);
+    int addressInsert(AoyoAddress aoyoAddress);
     /*轮播图查询*/
-    List<aoyoCommodityImg> lunbo();
+    List<AoyoCommodityImg> lunbo();
 
     /*活动图片查询*/
-    List<aoyoPlatformImage> huodong();
+    List<AoyoPlatformImage> huodong();
 
     /*保养套餐查询*/
-    List<aoyoCommoditySuit> taocan();
+    List<AoyoCommoditySuit> taocan();
 
     /*优惠券查询*/
-    List<aoyoCoupon> youhuiquan();
+    List<AoyoCoupon> youhuiquan();
 
     /*首页分类查询*/
-    List<aoyoPanel> fenlei();
+    List<AoyoPanel> fenlei();
 
     /*购物车列表查询*/
-    List<goshopping> goshopping();
+    List<Goshopping> goshopping();
 }

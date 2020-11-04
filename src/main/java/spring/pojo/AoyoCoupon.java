@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
-public class aoyoCoupon {
+public class AoyoCoupon {
 /*优惠券表*/
   private long couponId;//优惠券id
   private String couponNotImgUrl;//优惠券待使用图

@@ -3,7 +3,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class aoyoOrderDetail {
+public class AoyoOrderDetail {
 /*商品表*/
   private long orderDetailId;//订单详情id
   private long orderId;//订单id

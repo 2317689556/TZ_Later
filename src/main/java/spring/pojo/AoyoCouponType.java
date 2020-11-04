@@ -3,7 +3,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class aoyoCouponType {
+public class AoyoCouponType {
 
   /*优惠券类型*/
   private long typeId;//类型id

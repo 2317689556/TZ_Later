@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import spring.pojo.carBrand;
-import spring.pojo.carBrandHot;
+import spring.pojo.CarBrand;
+import spring.pojo.CarBrandHot;
 import spring.response.BaseResponse;
 import spring.service.CarServiceImpl;
 import spring.response.StatusCode;
@@ -23,7 +23,7 @@ public class CarController {
     @RequestMapping("getHotCarList")
     @ResponseBody
     public BaseResponse getHotCarList(){
-        List<carBrandHot> list=carService.getHotCarList();
+        List<CarBrandHot> list=carService.getHotCarList();
         if(list!=null){
             return new BaseResponse(StatusCode.Success,list);
         }else{
@@ -34,10 +34,10 @@ public class CarController {
     @RequestMapping("getCarList")
     @ResponseBody
     public BaseResponse getCarList(){
-        List<carBrand> list=carService.getCarList();
+        List<CarBrand> list=carService.getCarList();
         HashMap<String,Object> map=new HashMap<String,Object>();
         if(list!=null){
-            for (spring.pojo.carBrand carBrand : list) {
+            for (CarBrand carBrand : list) {
                 map.put(carBrand.getCarBrandPyFirstLetter(),carService.getCarListByLetter(carBrand.getCarBrandPyFirstLetter()));
             }
             return new BaseResponse(StatusCode.Success,map);
@@ -49,7 +49,7 @@ public class CarController {
     @RequestMapping("searchCarList")
     @ResponseBody
     public BaseResponse searchCarList(String name){
-        List<carBrand> list=carService.searchCarList(name);
+        List<CarBrand> list=carService.searchCarList(name);
         System.out.println(list);
         if(list!=null){
             return new BaseResponse(StatusCode.Success,list);

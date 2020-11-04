@@ -2,10 +2,8 @@ package spring.pojo;
 
 import lombok.Data;
 
-import java.util.List;
-
 @Data
-public class aoyoCommoditySuit  extends aoyoOrderDetail{
+public class AoyoCommoditySuit extends AoyoOrderDetail {
 /*套餐表*/
   private long commoditySuitId;//商品套餐id
   private String commoditySuitName;//套餐名称

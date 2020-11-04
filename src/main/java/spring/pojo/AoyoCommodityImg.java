@@ -3,7 +3,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class aoyoCommodityImg {
+public class AoyoCommodityImg {
 
     //轮播图
     private Integer commodityImgId;//商品轮播图id

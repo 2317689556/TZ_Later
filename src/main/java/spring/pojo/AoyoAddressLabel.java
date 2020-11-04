@@ -3,7 +3,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class aoyoAddressLabel {
+public class AoyoAddressLabel {
 
   private long labelId;
   private String labelName;

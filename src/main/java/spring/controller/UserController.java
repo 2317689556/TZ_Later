@@ -22,9 +22,9 @@ public class UserController {
 
     //奥德赛 董莽修改
     @RequestMapping("login")
-    public String login(user user, HttpSession session) {
+    public String login(User user, HttpSession session) {
         System.out.println("进来了");
-        spring.pojo.user user1 = userService.login(user);
+        User user1 = userService.login(user);
         if (user1 != null) {
             session.setAttribute("USER", user1);
             return "index";
@@ -37,7 +37,7 @@ public class UserController {
     @RequestMapping("lunbo")
     @ResponseBody
     public BaseResponse lunbo(){
-        List<aoyoCommodityImg> list = userService.lunbo();
+        List<AoyoCommodityImg> list = userService.lunbo();
         return new BaseResponse(200,"成功！",list);
     }
 
@@ -45,7 +45,7 @@ public class UserController {
     @RequestMapping("huodong")
     @ResponseBody
     public BaseResponse huodong(){
-        List<aoyoPlatformImage> list = userService.hudong();
+        List<AoyoPlatformImage> list = userService.hudong();
         return new BaseResponse(200,"成功！",list);
     }
 
@@ -53,7 +53,7 @@ public class UserController {
     @RequestMapping("taocan")
     @ResponseBody
     public BaseResponse taocan(){
-        List<aoyoCommoditySuit> list = userService.taocan();
+        List<AoyoCommoditySuit> list = userService.taocan();
         return new BaseResponse(200,"成功！",list);
     }
 
@@ -62,7 +62,7 @@ public class UserController {
     //查询所有的省
     @RequestMapping("selectProv")
 
-    public List<aoyoProvince> selectedProv(){
+    public List<AoyoProvince> selectedProv(){
 
         return userService.selectedProv();
     }
@@ -70,7 +70,7 @@ public class UserController {
     /*selectCity*/
     @RequestMapping("selectCity")
 
-    public List<aoyoCity> selectCity(Integer asd){
+    public List<AoyoCity> selectCity(Integer asd){
         System.out.println(asd+"_____________________________");
 
         return userService.selectCity(asd);
@@ -79,7 +79,7 @@ public class UserController {
     /*selectareas*/
     @RequestMapping("selectAreas")
 
-    public List<aoyoArea> selectAreas(String asd){
+    public List<AoyoArea> selectAreas(String asd){
         System.out.println(asd+"_____________________________");
 
         return userService.selectAreas(asd);
@@ -87,14 +87,14 @@ public class UserController {
 
     /*查询所有的标签页*/
     @RequestMapping("selectAddLabelAll")
-    public List<aoyoAddressLabel> selectAddLabelAll( ){
+    public List<AoyoAddressLabel> selectAddLabelAll( ){
 
         return userService.selectAddLabelAll();
     }
 
     /*添加新的地址简直是太难了*/
     @RequestMapping("addressInsert")
-    public BaseResponse addressInsert(aoyoAddress aoyoAddress){
+    public BaseResponse addressInsert(AoyoAddress aoyoAddress){
 
         System.out.println(aoyoAddress.toString());
 
@@ -110,7 +110,7 @@ public class UserController {
     @RequestMapping("youhuiquan")
     @ResponseBody
     public BaseResponse youhuiquan(){
-        List<aoyoCoupon> list = userService.youhuiquan();
+        List<AoyoCoupon> list = userService.youhuiquan();
         return new BaseResponse(200,"成功！",list);
     }
 
@@ -119,7 +119,7 @@ public class UserController {
     @RequestMapping("fenlei")
     @ResponseBody
     public BaseResponse fenlei(){
-        List<aoyoPanel> list = userService.fenlei();
+        List<AoyoPanel> list = userService.fenlei();
         return new BaseResponse(200,"成功！",list);
     }
 
@@ -127,7 +127,7 @@ public class UserController {
     @RequestMapping("goshopping")
     @ResponseBody
     public BaseResponse goshopping(){
-        List<goshopping> list = userService.goshopping();
+        List<Goshopping> list = userService.goshopping();
         System.out.println(list);
         return new BaseResponse(200,"成功！",list);
     }

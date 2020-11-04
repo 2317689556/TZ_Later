@@ -3,7 +3,7 @@ package spring.pojo;
 import lombok.Data;
 
 @Data
-public class carBrand {
+public class CarBrand {
     private Integer carBrandId;
     private String carBrandInitials;
     private String carBrandName;

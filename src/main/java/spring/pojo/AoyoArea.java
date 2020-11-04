@@ -1,7 +1,7 @@
 package spring.pojo;
 
 
-public class aoyoArea {
+public class AoyoArea {
 
   private long code;
   private String name;
