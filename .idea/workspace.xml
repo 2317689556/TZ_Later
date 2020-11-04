@@ -2,75 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="郝家乐整合董莽">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/controller/ShopController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/dao/ShopMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityBrand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityComment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityNorms.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityStock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupFeaturedServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupIndex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupTechnician.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoStreet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/Param.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroupAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroupType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/service/ShopService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShopMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/dao/CarMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoAddressLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddressLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommodityClassStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityClassStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommodityImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityImg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommodityStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommoditySuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommoditySuit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCoupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCoupon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCouponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCouponType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoOrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoOrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoPlatformImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoPlatformImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoProvince.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoProvince.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/carBrand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/CarBrand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/carBrandHot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/CarBrandHot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/goshopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/Goshopping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/service/CarServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/controller/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/CarMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/dao/CarMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/dao/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoAddress.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoArea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoProvince.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoProvince.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommodityClassStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommodityClassStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommodityImg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommodityImg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommodityStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommodityStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommoditySuit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommoditySuit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCoupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCoupon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCouponType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCouponType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoOrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoOrderDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoPlatformImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoPlatformImage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/carBrand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/carBrand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/carBrandHot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/carBrandHot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/goshopping.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/goshopping.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/CarServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/service/CarServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +84,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -609,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603957202315</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="郝家乐整合董莽">
+      <created>1604488276871</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1604488276871</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +569,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="用户管理" />
     <MESSAGE value="用户管理——添加" />
     <MESSAGE value="用户管理——配合修改的单查" />
     <MESSAGE value="用户管理——修改" />
@@ -655,7 +593,8 @@
     <MESSAGE value="董莽" />
     <MESSAGE value="状态类" />
     <MESSAGE value="解决冲突" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决冲突" />
+    <MESSAGE value="郝家乐整合董莽" />
+    <option name="LAST_COMMIT_MESSAGE" value="郝家乐整合董莽" />
   </component>
   <component name="WindowStateProjectService">
     <state x="595" y="179" key="#Application" timestamp="1603625803306">
@@ -675,11 +614,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="329" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603625799376" />
-    <state x="542" y="136" key="CommitChangelistDialog2" timestamp="1603957199607">
+    <state x="542" y="136" key="CommitChangelistDialog2" timestamp="1604488274171">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="542" y="131" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603713319087" />
-    <state x="542" y="136" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603957199607" />
+    <state x="542" y="136" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1604488274171" />
     <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1603943238306">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -697,46 +636,46 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="835" y="436" width="274" height="208" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603629150401" />
-    <state width="1860" height="137" key="GridCell.Tab.0.bottom" timestamp="1604488246485">
+    <state width="1860" height="211" key="GridCell.Tab.0.bottom" timestamp="1604488755109">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1860" height="137" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1604488246485" />
-    <state width="1860" height="137" key="GridCell.Tab.0.center" timestamp="1604488246485">
+    <state width="1860" height="211" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1604488755109" />
+    <state width="1860" height="211" key="GridCell.Tab.0.center" timestamp="1604488755109">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1860" height="137" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1604488246485" />
-    <state width="1860" height="137" key="GridCell.Tab.0.left" timestamp="1604488246485">
+    <state width="1860" height="211" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1604488755109" />
+    <state width="1860" height="211" key="GridCell.Tab.0.left" timestamp="1604488755109">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1860" height="137" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1604488246485" />
-    <state width="1860" height="137" key="GridCell.Tab.0.right" timestamp="1604488246485">
+    <state width="1860" height="211" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1604488755109" />
+    <state width="1860" height="211" key="GridCell.Tab.0.right" timestamp="1604488755109">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1860" height="137" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1604488246485" />
-    <state width="1860" height="137" key="GridCell.Tab.1.bottom" timestamp="1604488246485">
+    <state width="1860" height="211" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1604488755109" />
+    <state width="1860" height="211" key="GridCell.Tab.1.bottom" timestamp="1604488755110">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1860" height="137" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1604488246485" />
-    <state width="1860" height="137" key="GridCell.Tab.1.center" timestamp="1604488246485">
+    <state width="1860" height="211" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1604488755110" />
+    <state width="1860" height="211" key="GridCell.Tab.1.center" timestamp="1604488755110">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1860" height="137" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1604488246485" />
-    <state width="1860" height="137" key="GridCell.Tab.1.left" timestamp="1604488246485">
+    <state width="1860" height="211" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1604488755110" />
+    <state width="1860" height="211" key="GridCell.Tab.1.left" timestamp="1604488755109">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1860" height="137" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1604488246485" />
-    <state width="1860" height="137" key="GridCell.Tab.1.right" timestamp="1604488246485">
+    <state width="1860" height="211" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1604488755109" />
+    <state width="1860" height="211" key="GridCell.Tab.1.right" timestamp="1604488755110">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1860" height="137" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1604488246485" />
+    <state width="1860" height="211" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1604488755110" />
     <state x="184" y="96" key="MergeDialog" timestamp="1603956954506">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -754,16 +693,16 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="781" y="253" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603627091143" />
-    <state x="463" y="178" key="SettingsEditor" timestamp="1603716419456">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="463" y="185" key="SettingsEditor" timestamp="1604489180209">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="463" y="178" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603716419456" />
-    <state x="463" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1603628941246" />
-    <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1603957214716">
+    <state x="463" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1604489180209" />
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1604488285870">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="266" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603713851531" />
-    <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603957214716" />
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1604488285870" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604487968978">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
