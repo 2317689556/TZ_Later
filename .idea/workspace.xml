@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="解决冲突">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/response/BaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/response/BaseResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/utils/BaseResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/utils/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/response/StatusCode.java" afterDir="false" />
+    <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="董莽">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/4d7cbddd-7560-45a1-9e83-4b480faa9db2.corrupted.20201101-065113.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/4d7cbddd-7560-45a1-9e83-4b480faa9db2.corrupted.20201101-065113.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/4d7cbddd-7560-45a1-9e83-4b480faa9db2.corrupted.20201102-082111.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/4d7cbddd-7560-45a1-9e83-4b480faa9db2.corrupted.20201102-082111.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityBrand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityComment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityNorms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityStock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupFeaturedServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupTechnician.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoStreet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroupAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroupType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/aoyo.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ShopMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/controller/ShopController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/dao/ShopMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityBrand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityCollection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityComment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityNorms.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityStock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupFeaturedServices.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupIndex.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupTechnician.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoStreet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/Param.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroup.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroupAddress.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroupType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/service/ShopService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e2fcbd48-ce47-4261-a04d-7abd32619f4d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e2fcbd48-ce47-4261-a04d-7abd32619f4d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoProvince.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoProvince.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,23 +62,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="aoyo@62.234.3.187" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="aoyo@62.234.3.187" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="aoyo@62.234.3.187" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="aoyo: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -68,6 +88,11 @@
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="jdk-1.8" />
+      </list>
     </option>
   </component>
   <component name="MavenRunner">

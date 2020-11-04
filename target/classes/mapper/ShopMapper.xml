@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.dao.ShopMapper">
+        <resultMap id="listShop" type="SysGroup">
+                <id property="groupId" column="GROUP_ID"></id>
+                <result property="areaName" column="area_name"></result>
+                <result property="groupTypeName" column="GROUP_TYPE_NAME"></result>
+                <result property="streetName" column="street_name"></result>
+                <result property="cityName" column="city_name"></result>
+                <result property="groupStatusName" column="group_status_name"></result>
+                <result property="groupName" column="group_name"></result>
+                <result property="groupLatitude" column="GROUP_LATITUDE"></result>
+                <result property="provinceName" column="province_name"></result>
+                <result property="groupName" column="GROUP_NAME"></result>
+                <result property="groupNickName" column="GROUP_NICK_NAME"></result>
+                <result property="groupScore" column="group_score"></result>
+                <result property="groupAddressDetails" column="group_address_details"></result>
+                <result property="groupLongitude" column="GROUP_LONGITUDE"></result>
+                <result property="groupScore" column="group_score"></result>
+                <association property="groupIndex" javaType="AoyoGroupIndex">
+                        <id property="groupIndexId" column="group_index_id"></id>
+                        <result property="groupId" column="igid"></result>
+                        <result property="imgUrl" column="img_url"></result>
+                        <result property="deleteFlag" column="delete_flag"></result>
+                </association>
+
+                <collection property="services" javaType="list" ofType="AoyoGroupFeaturedServices">
+                        <id property="featuredServicesId" column="featured_services_id"></id>
+                        <result property="createTime" column="create_time"></result>
+                        <result property="featuredServicesName" column="featured_services_name"></result>
+                        <result property="featuredServicesIsenable" column="featured_services_isenable"></result>
+                        <result property="featuredServicesDesc" column="featured_services_desc"></result>
+                        <result property="groupFeaturedId" column="group_featured_id"></result>
+                        <result property="featuredServicesRemarks" column="featured_services_remarks"></result>
+                        <result property="deleteFlag" column="delete_flag"></result>
+                </collection>
+
+
+        </resultMap>
+        <select id="getStoreList" resultMap="listShop">
+
+
+            select distinct street.`name` as street_name,area.`name` as area_name,city.`name` as city_name,province.`name` as province_name,address.group_address_details,
+            sys_group.GROUP_NAME,sys_group.COUNTY_ID,type.GROUP_TYPE_NAME,sys_group.GROUP_ID as group_id,
+            statu.group_status_name,service.*,indexs.*,sys_group.GROUP_ID,sys_group.GROUP_LATITUDE as GROUP_LATITUDE,sys_group.GROUP_LONGITUDE as GROUP_LONGITUDE
+            ,service.create_time as create_time,middle.group_featured_id as group_featured_id,indexs.group_id as igid,sys_group.group_score
+            FROM sys_group
+            LEFT JOIN sys_group_address as address on sys_group.COUNTY_ID=address.group_address_id
+            LEFT JOIN aoyo_street as street on street.`code`=address.group_street_id
+            LEFT JOIN aoyo_area as area on area.`code`=address.group_county_id
+            LEFT JOIN aoyo_city as city on city.`code`=address.group_city_id
+            LEFT JOIN aoyo_province as province on province.`code`=address.group_province_id
+            LEFT JOIN aoyo_group_status as statu on statu.`group_status_id`=sys_group.GROUP_STATUS
+            LEFT JOIN aoyo_group_featured_services_middle as middle on middle.`group_id`=sys_group.GROUP_ID
+            LEFT JOIN aoyo_group_featured_services as service on service.`featured_services_id`=middle.featured_services_id
+            LEFT JOIN aoyo_group_index as indexs on indexs.`group_id`=sys_group.GROUP_ID
+            LEFT JOIN sys_menu_default as defaults on defaults.`GROUP_INDEX`=sys_group.GROUP_ID
+            LEFT JOIN sys_group_type as type on type.`GROUP_TYPE_ID`=defaults.GROUP_TYPE_ID
+
+            /*select street.`name` as street_name,area.`name` as area_name,city.`name` as city_name,province.`name` as province_name,address.group_address_details,
+            sys_group.GROUP_NAME,sys_group.COUNTY_ID,
+            statu.group_status_name,service.*,indexs.*
+            FROM sys_group
+            LEFT JOIN sys_group_address as address on sys_group.COUNTY_ID=address.group_address_id
+            LEFT JOIN aoyo_street as street on street.`code`=address.group_street_id
+            LEFT JOIN aoyo_area as area on area.`code`=address.group_county_id
+            LEFT JOIN aoyo_city as city on city.`code`=address.group_city_id
+            LEFT JOIN aoyo_province as province on province.`code`=address.group_province_id
+            LEFT JOIN aoyo_group_status as statu on statu.`group_status_id`=sys_group.GROUP_STATUS
+            LEFT JOIN aoyo_group_featured_services_middle as middle on middle.`group_id`=sys_group.GROUP_ID
+            LEFT JOIN aoyo_group_featured_services as service on service.`featured_services_id`=middle.featured_services_id
+            LEFT JOIN aoyo_group_index as indexs on indexs.`group_id`=sys_group.GROUP_ID*/
+
+        </select>
+
+        <resultMap id="listDetail" type="sysGroup">
+            <id property="groupId" column="GROUP_ID"></id>
+            <result property="groupAddressDetails" column="group_address"></result>
+            <result property="groupName" column="GROUP_NAME"></result>
+            <result property="groupTypeName" column="GROUP_TYPE_NAME"></result>
+            <result property="groupDesc" column="GROUP_DESC"></result>
+            <result property="groupLongitude" column="GROUP_LONGITUDE"></result>
+            <result property="groupIndexImg" column="img_url"></result>
+            <result property="groupLatitude" column="GROUP_LATITUDE"></result>
+            <result property="groupScore" column="group_score"></result>
+            <collection property="groupTechnician" javaType="list" ofType="AoyoGroupTechnician">
+                <id property="groupTechnicianId" column="group_technician_id"></id>
+                <result property="groupTechnicianName" column="group_technician_name"></result>
+                <result property="groupTechnicianImg" column="group_technician_img"></result>
+                <result property="groupTechnicianDesc" column="group_technician_desc"></result>
+                <result property="groupId" column="GROUP_ID"></result>
+                <result property="deleteFlag" column="delete_flag"></result>
+            </collection>
+            <collection property="featuredServicesSame"  ofType="String">
+                <result property="featuredServicesSame" column="featured_services_name"></result>
+
+            </collection>
+        </resultMap>
+        <select id="getGroupDetail" resultMap="listDetail">
+                select distinct address.group_address_details as group_address,sys_group.GROUP_NAME,type.GROUP_TYPE_NAME,
+                sys_group.GROUP_DESC,sys_group.GROUP_LONGITUDE,indexs.img_url,sys_group.GROUP_LATITUDE,technician.*
+                 ,sys_group.GROUP_ID,sys_group.group_score,service.featured_services_name from sys_group
+                LEFT JOIN sys_group_address as address on sys_group.COUNTY_ID=address.group_address_id
+                LEFT JOIN sys_menu_default as defaults on defaults.`GROUP_INDEX`=sys_group.GROUP_ID
+                LEFT JOIN sys_group_type as type on type.`GROUP_TYPE_ID`=defaults.GROUP_TYPE_ID
+                LEFT JOIN aoyo_group_index as indexs on indexs.`group_id`=sys_group.GROUP_ID
+                LEFT JOIN aoyo_group_technician as technician on technician.`group_id`=sys_group.GROUP_ID
+                LEFT JOIN aoyo_group_featured_services_middle as middle on middle.`group_id`=sys_group.GROUP_ID
+                LEFT JOIN aoyo_group_featured_services as service on service.`featured_services_id`=middle.featured_services_id
+
+                <where>
+                    <if test="groupId!=0 and groupId!=null">
+                        sys_group.GROUP_ID=#{groupId}
+                    </if>
+                </where>
+        </select>
+
+
+    <resultMap id="commodity" type="AoyoCommodity">
+        <id property="commodityId" column="commodity_id"></id>
+        <result property="commodityNumber" column="commodity_number"></result>
+        <result property="commodityName" column="commodity_name"></result>
+        <result property="brandId" column="brand_id"></result>
+        <result property="typeId" column="type_id"></result>
+        <result property="groupId" column="group_id"></result>
+        <result property="commdityWeight" column="commdity_weight"></result>
+        <result property="commoditySellingPrice" column="commodity_selling_price"></result>
+        <result property="commodityCostPrice" column="commodity_cost_price"></result>
+        <result property="commodityStatus" column="commodity_status"></result>
+        <result property="commodityComeOutTime" column="commodity_come_out_time"></result>
+        <result property="commodityDesc" column="commodity_desc"></result>
+        <result property="commodityEntry" column="commodity_entry"></result>
+        <result property="commodityLastupdateTime" column="commodity_lastupdate_time"></result>
+        <result property="commoditySort" column="commodity_sort"></result>
+        <result property="deleteFlag" column="delete_flag"></result>
+        <result property="commodityStockId" column="commodity_stockId"></result>
+        <result property="commodityStockTypeName" column="commodity_stock_type_name"></result>
+        <result property="commodityStockNumber" column="commodity_stock_number"></result>
+        <result property="commodityBrandId" column="commodity_brand_id"></result>
+        <result property="commodityBrandName" column="commodity_brand_name"></result>
+        <result property="telephone" column="telephone"></result>
+        <result property="commodityBrandUrl" column="commodity_brand_url"></result>
+        <result property="commodityBrandDesc" column="commodity_brand_desc"></result>
+        <result property="commodityBrandStatus" column="commodity_brand_status"></result>
+        <result property="sort" column="sort"></result>
+        <result property="customId" column="custom_id"></result>
+        <result property="endUpdateOperator" column="end_update_operator"></result>
+        <result property="endUpdateTime" column="end_update_time"></result>
+        <result property="classId" column="class_id"></result>
+        <result property="className" column="class_name"></result>
+        <result property="parentClassId" column="parent_class_id"></result>
+        <result property="classDesc" column="class_desc"></result>
+        <result property="statusId" column="status_id"></result>
+        <result property="classIncomeRatio" column="class_income_ratio"></result>
+        <result property="collection" column="collection"></result>
+
+        <collection property="imgs" ofType="AoyoCommodityImg">
+            <id column="commodity_img_id" property="commodityImgId"></id>
+            <result column="commodity_id" property="commodityId"></result>
+            <result column="commodity_img_desc" property="commodityImgDesc"></result>
+            <result column="commodity_img_url" property="commodityImgUrl"></result>
+            <result column="commodity_img_index" property="commodityImgIndex"></result>
+            <result column="commodity_img_sort" property="commodityImgSort"></result>
+            <result column="commodity_img_status" property="commodityImgStatus"></result>
+            <result column="commodity_img_lastupdate_time" property="commodityImgLastupdateTime"></result>
+            <result column="delete_flag" property="deleteFlag"></result>
+        </collection>
+        <collection property="comments" ofType="AoyoCommodityComment">
+            <id column="commodity_comment_id" property="commodityCommentId"></id>
+        </collection>
+        <collection property="norms" ofType="AoyoCommodityNorms">
+            <id column="norms_id" property="normsId"></id>
+            <result column="commodity_id" property="commodityId"></result>
+            <result column="group_id" property="groupId"></result>
+            <result column="class_id" property="classId"></result>
+            <result column="norms_name" property="normsName"></result>
+            <result column="norms_value" property="normsValue"></result>
+            <result column="delete_flag" property="deleteFlag"></result>
+        </collection>
+    </resultMap>
+
+    <select id="queryCommodityApi" resultMap="commodity" parameterType="Param">
+        select distinct *,collection.is_effective as collection from aoyo_commodity as commodity
+        LEFT JOIN aoyo_commodity_brand as brand on commodity.brand_id=brand.commodity_brand_id
+        LEFT JOIN aoyo_commodity_class as class on commodity.type_id=class.class_id
+        LEFT JOIN aoyo_commodity_img as img on commodity.commodity_id=img.commodity_id
+        LEFT JOIN aoyo_commodity_norms as norms on commodity.commodity_id=norms.commodity_id
+        LEFT JOIN aoyo_commodity_collection as collection on commodity.commodity_id=collection.commodity_id
+        LEFT JOIN aoyo_commodity_comment as comments on commodity.commodity_id=comments.commodity_id
+        <where>
+            <if test="group_id!=null and group_id!=0">
+                commodity.group_id=#{group_id}
+            </if>
+            <if test="commodity_name!=null and commodity_name!=''">
+                and commodity.commodity_name like CONCAT('%',#{commodity_name},'%')
+            </if>
+            <if test="typeId!=null and typeId!=0">
+                and norms.class_id=#{typeId}
+            </if><if test="commodity_id!=null and commodity_id!=0">
+                and commodity.commodity_id=#{commodity_id}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="queryCommodityClassByGroupId" resultType="AoyoCommodityClass">
+        select * from aoyo_commodity_class 
+        <where>
+            <if test="groupId!=null and groupId!=0">
+                group_id=#{groupId}
+            </if>
+        </where>
+    </select>
+
+    <select id="getCustomCollectionId" resultType="AoyoCommodityCollection">
+        select * from aoyo_commodity_collection
+        <where>
+            <if test="customId!=null and customId!=0">
+                custom_id=#{customId}
+            </if>
+
+            <if test="commodityId!=null and commodityId!=0">
+                and commodity_id=#{commodityId}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addCustomCollection">
+        insert into aoyo_commodity_collection values(null,#{customId},1,#{commodityId},NOW(),1)
+    </insert>
+
+
+    <select id="getCommentByCommoditId" resultType="AoyoCommodityComment">
+        select * from aoyo_commodity_comment
+        <where>
+            <if test="commoditId!=null and commoditId!=0">
+                commodity_id=#{commoditId}
+            </if>
+        </where>
+    </select>
+
+</mapper>

@@ -19,8 +19,9 @@ public class AoyoAddress {
   private String postcode;
   private long addressStatus;
   private long defaultAddress;
-  private java.util.Date creatTime;
+  private String creatTime;
   private long deleteFlag;
+
 
 
 }
