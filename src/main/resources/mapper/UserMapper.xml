@@ -11,20 +11,131 @@
         AND password=#{password}
     </select>
 
-    <!--   登录 -->
-    <select id="login1" resultType="java.lang.String">
-        SELECT *
-        FROM user
-        WHERE username=#{username}
-        AND password=#{password}
+    <select id="setlectedProv" resultType="spring.pojo.aoyoProvince">
+       select `name`,code from aoyo_province
+    </select>
+
+    <select id="selectCity" resultType="spring.pojo.aoyoCity">
+
+        select * from aoyo_city where province_code = #{asd}
+
+    </select>
+
+    <select id="selectAreas" resultType="spring.pojo.aoyoArea">
+
+select * from aoyo_area where city_code = #{asd}
+
+    </select>
+
+
+    <select id="selectAddLabelAll" resultType="spring.pojo.aoyoAddressLabel">
+
+        select label_id,label_name from aoyo_address_label;
+
+    </select>
+
+    <insert id="addressInsert">
+
+        insert into aoyo_address
+        (consignee_name, address_label_id, telephone, province_id, city_id, county_id,
+         address_details, default_address, creat_time
+         )
+         values
+         (#{consigneeName},#{addressLabelId},#{telephone},#{provinceId},#{cityId},#{countyId},
+         #{addressDetails}
+         ,#{defaultAddress},now()
+         );
+
+    </insert>
+
+
+    <!--活动图片查询-->
+    <!--List<aoyoPlatformImage> huodong();-->
+    <select id="huodong" resultType="aoyoPlatformImage">
+        select * from aoyo_platform_image;
+    </select>
+
+    <!--保养套餐查询-->
+    <!--List<aoyoCommoditySuit> taocan();-->
+    <select id="taocan" resultType="aoyoCommoditySuit">
+        select * from aoyo_order_detail a,
+         aoyo_commodity_suit b,
+          aoyo_commodity_img c
+           where
+            b.commodity_suit_id=a.package_commodity_id
+             and
+              a.order_detail_id=c.commodity_id
     </select>
 
     <!--轮播图查询-->
     <!--List<AoyoCommodityImg> lunbo();-->
     <select id="lunbo" resultType="aoyoCommodityImg">
-        select commodity_img_url from aoyo_commodity_img
+        select commodity_img_url from aoyo_commodity_img where commodity_img_id&lt;6;
     </select>
 
+    <!--优惠券查询-->
+    <!--List<aoyoCoupon> youhuiquan();-->
+    <select id="youhuiquan" resultType="aoyoCoupon">
+        SELECT coupon_name,
+        coupon_desc,
+        coupon_amt,
+        coupon_end_time,
+        coupon_new_sill_num,
+        type_name,
+        coupon_type_id,
+        type_desc
+        from
+        aoyo_coupon,
+        aoyo_coupon_type
+         where
+          aoyo_coupon.coupon_type_id
+           =
+           aoyo_coupon_type.type_id
+    </select>
 
+    <!--首页分类查询-->
+    <!--List<aoyoPanel> fenlei();-->
+    <select id="fenlei" resultType="aoyoPanel">
+        SELECT
+        panel_id,
+        jump_path,
+        type_name,
+        creat_time,
+        type_id,
+        panel_type,
+        panel_name,
+        sort,
+        panel_url,
+        delete_flag
+        from
+        aoyo_panel where panel_id&lt;5
+    </select>
+
+    <!--购物车列表查询-->
+    <!--List<goshopping> goshopping();-->
+    <select id="goshopping" resultType="goshopping">
+        SELECT
+	    a.shopping_cart_id,
+        a.join_shopping_cart_count,
+	    b.commodity_id,
+	    b.commodity_name,
+	    b.commodity_selling_price,
+	    a.enabled_static,
+	    c.commodity_stock_number,
+	    d.discount_amount,
+        e.group_name
+
+    FROM
+	    aoyo_shopping_cart a,
+	    aoyo_commodity b,
+	    aoyo_commodity_stock c,
+	    aoyo_order d,
+        sys_group e
+    WHERE
+	    a.commodity_id = b.commodity_id
+        AND b.commodity_id = c.commodity_id
+        AND c.commodity_id = d.commodity_id
+        AND d.group_id = e.GROUP_ID
+    </select>
 
 </mapper>

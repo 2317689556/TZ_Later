@@ -1,73 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="解决冲突">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/controller/ShopController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/dao/ShopMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityImg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/Param.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/service/ShopService.java" afterDir="false" />
+    <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="解决冲突（1）">
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/controller/CarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/dao/CarMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoAddressLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommodityClassStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommodityImg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommodityStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommoditySuit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCoupon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCouponType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoOrderDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoPlatformImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoProvince.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/carBrand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/carBrandHot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/goshopping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/service/CarServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CarMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCouponType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoPanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/goshopping.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/response/StatusCode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d7cbddd-7560-45a1-9e83-4b480faa9db2.corrupted.20201101-065113.reason.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d7cbddd-7560-45a1-9e83-4b480faa9db2.corrupted.20201101-065113.reason.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d7cbddd-7560-45a1-9e83-4b480faa9db2.corrupted.20201101-065113.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d7cbddd-7560-45a1-9e83-4b480faa9db2.corrupted.20201102-082111.reason.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d7cbddd-7560-45a1-9e83-4b480faa9db2.corrupted.20201102-082111.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e2fcbd48-ce47-4261-a04d-7abd32619f4d.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e2fcbd48-ce47-4261-a04d-7abd32619f4d/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/da13a87b-21f8-42d1-a53c-69189befee46.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/da13a87b-21f8-42d1-a53c-69189befee46/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/CarController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/ShopController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/CarMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/ShopMapper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddressLabel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoProvince.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoProvince.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommodityClassStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommodityImg.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommodityStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCommoditySuit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCoupon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoOrderDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoPlatformImage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/carBrand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/carBrandHot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/aoyoCity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityBrand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityComment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityImg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityNorms.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityStock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupFeaturedServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupIndex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupTechnician.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoProvince.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoStreet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/Param.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroupAddress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroupType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/user.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/response/BaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/response/BaseResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/response/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/utils/StatusCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/CarServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/ShopService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/utils/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/response/StatusCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CarMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShopMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/aoyo.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ShopMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShopMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ShopMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/ShopController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/controller/CarController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/ShopMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/dao/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoAddress.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityBrand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityCollection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityComment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityNorms.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityStock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupFeaturedServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupTechnician.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoProvince.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoProvince.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoStreet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/Param.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroupAddress.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroupType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommodityImg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommodityImg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/ShopService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommoditySuit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCommoditySuit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCoupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCoupon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/response/BaseResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/response/BaseResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/utils/BaseResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/utils/StatusCode.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,11 +123,6 @@
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
-    </option>
-    <option name="enabledProfiles">
-      <list>
-        <option value="jdk-1.8" />
-      </list>
     </option>
   </component>
   <component name="MavenRunner">
@@ -766,19 +773,19 @@
     </state>
     <state x="552" y="266" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603713851531" />
     <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603957214716" />
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604476944121">
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604480098334">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604476944121" />
+    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604480098334" />
     <state x="652" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1603930722449">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="652" y="368" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603930722449" />
-    <state x="752" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603956888267">
+    <state x="752" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604480171334">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="752" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603757883853" />
-    <state x="752" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603956888267" />
+    <state x="752" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1604480171334" />
     <state x="647" y="154" width="983" height="631" key="find.popup" timestamp="1603071689117">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
