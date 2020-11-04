@@ -1,77 +1,16 @@
 package spring.pojo;
 
+import lombok.Data;
 
+@Data
 public class SysGroupType {
 
-  private long groupTypeId;
-  private String groupTypeName;
-  private String groupTypeDesc;
-  private String groupCreator;
-  private String groupCreateTime;
-  private long deleteFlag;
-  private long loginFlag;
-
-
-  public long getGroupTypeId() {
-    return groupTypeId;
-  }
-
-  public void setGroupTypeId(long groupTypeId) {
-    this.groupTypeId = groupTypeId;
-  }
-
-
-  public String getGroupTypeName() {
-    return groupTypeName;
-  }
-
-  public void setGroupTypeName(String groupTypeName) {
-    this.groupTypeName = groupTypeName;
-  }
-
-
-  public String getGroupTypeDesc() {
-    return groupTypeDesc;
-  }
-
-  public void setGroupTypeDesc(String groupTypeDesc) {
-    this.groupTypeDesc = groupTypeDesc;
-  }
-
-
-  public String getGroupCreator() {
-    return groupCreator;
-  }
-
-  public void setGroupCreator(String groupCreator) {
-    this.groupCreator = groupCreator;
-  }
-
-
-  public String getGroupCreateTime() {
-    return groupCreateTime;
-  }
-
-  public void setGroupCreateTime(String groupCreateTime) {
-    this.groupCreateTime = groupCreateTime;
-  }
-
-
-  public long getDeleteFlag() {
-    return deleteFlag;
-  }
-
-  public void setDeleteFlag(long deleteFlag) {
-    this.deleteFlag = deleteFlag;
-  }
-
-
-  public long getLoginFlag() {
-    return loginFlag;
-  }
-
-  public void setLoginFlag(long loginFlag) {
-    this.loginFlag = loginFlag;
-  }
+  private long groupTypeId;//机构类型ID
+  private String groupTypeName;//机构类型名称
+  private String groupTypeDesc;//机构类型描述
+  private String groupCreator;//创建人
+  private String groupCreateTime;//创建时间
+  private long deleteFlag;//0删除1启用
+  private long loginFlag;//标识 1最高权限 2其他
 
 }

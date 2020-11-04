@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.dao.ClassifyMapper">
+
+    <!--List<AppClass> shoppTypeDetail();//商品分类详情-->
+    <select id="shoppTypeDetail" resultType="spring.pojo.AppClass">
+        select aoyo_app_class.app_class_id,aoyo_app_class.app_class_name from aoyo_app_class
+    </select>
+
+    <!--List<Commodity> findAllClassIfy();//商品分类列表-->
+    <select id="findAllClassIfy" resultType="spring.pojo.AoyoCommodity">
+        select aoyo_commodity.commodity_name from aoyo_commodity where type_id=1
+    </select>
+
+    <!--ist<AppClass> shoppTypeDetail2(@Param("appClassId") Integer appClassId);//商品分类详情2-->
+    <select id="shoppTypeDetail2" resultType="spring.pojo.AppClass">
+        select aac.app_class_id,aac.app_class_name,ac.type_id,ac.commodity_name from aoyo_app_class aac
+        left join aoyo_commodity as ac on ac.type_id=aac.app_class_id where aac.app_class_id=#{appClassId}
+    </select>
+
+    <!--List<AppClass> searchHot();//热门搜索-->
+    <select id="searchHot" resultType="spring.pojo.AppClass">
+        select aoyo_app_class.app_class_id,aoyo_app_class.app_class_name from aoyo_app_class
+    </select>
+
+
+    <!--List<Commodity> shoppListUrl(Commodity commodity);//获取商品列表\顶部搜索框-->
+    <select id="shoppListUrl" resultType="spring.pojo.AoyoCommodity">
+        select ac.group_id,ac.commodity_name,
+        aci.commodity_img_url,ac.commodity_selling_price
+        from aoyo_commodity ac
+        left join aoyo_commodity_img as aci on aci.commodity_id=ac.commodity_id
+        where ac.commodity_name like '%${commodityName}%'
+        <if test="commoditySellingPrice == -1">
+            order by ac.commodity_selling_price
+        </if>
+        <if test="commoditySellingPrice == -2">
+            order by ac.commodity_selling_price desc
+        </if>
+    </select>
+
+<!--SysGroup shoppDetailUrl(@Param("groupId")Integer groupid);//点击门店进入门店商品列表-->
+    <select id="shoppDetailUrl" resultType="spring.pojo.SysGroup">
+        select
+        asg.GROUP_ID,
+        asg.GROUP_NAME,asg.GROUP_TYPE,
+        asgt.GROUP_TYPE_NAME
+        from sys_group asg
+        left join sys_group_type as asgt on asgt.GROUP_TYPE_ID = asg.GROUP_TYPE
+        <where>
+            <if test="groupId!=0 and groupId!=null">
+                asg.group_id=#{groupId}
+            </if>
+        </where>
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <resultMap type="spring.pojo.AppClass" id="fci">
+        <id column="app_class_id" property="appClassId"/>
+        <result column="app_class_name" property="appClassName"/>
+
+
+        <collection property="Commodity" ofType="spring.pojo.Commodity">
+            <id column="commodity_id" property="commodityId"/>
+            <result column="type_id" property="typeId"/>
+            <result column="commodity_name" property="commodityName"/>
+        </collection>
+    </resultMap>
+
+    <select id="shoppTypeDetail" resultMap="fci">
+		select ac.app_class_id,ac.app_class_name,aac.commodity_name from aoyo_app_class ac,aoyo_commodity aac where ac.app_class_id = aac.type_id;
+	</select>
+    -->
+</mapper>

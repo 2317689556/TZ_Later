@@ -16,4 +16,5 @@ public class AoyoCommodityImg {
     private String commodityImgLastupdateTime;//最后修改时间
     private Integer deleteFlag;//删除标识符号（默认1）  1：有效，0：无效
 
+
 }

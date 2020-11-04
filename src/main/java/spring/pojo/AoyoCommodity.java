@@ -8,22 +8,22 @@ import java.util.List;
 @Data
 public class AoyoCommodity {
 
-  private Integer commodityId;
-  private String commodityNumber;
-  private String commodityName;
-  private Integer brandId;
-  private Integer typeId;
-  private Integer groupId;
-  private double commdityWeight;
-  private double commoditySellingPrice;
-  private double commodityCostPrice;
-  private Integer commodityStatus;
-  private String commodityComeOutTime;
-  private String commodityDesc;
-  private String commodityEntry;
-  private String commodityLastupdateTime;
-  private Integer commoditySort;
-  private Integer deleteFlag;
+  private Integer commodityId;//商品ID
+  private String commodityNumber;//商品编号
+  private String commodityName;//商品名称
+  private Integer brandId;//品牌ID
+  private Integer typeId;//分类ID
+  private Integer groupId;//商户ID
+  private double commdityWeight;//商品重量
+  private double commoditySellingPrice;//商品销售价格
+  private double commodityCostPrice;//商品成本价
+  private Integer commodityStatus;//上下架状态 1上2下
+  private String commodityComeOutTime;//商品出厂时间
+  private String commodityDesc;//商品描述
+  private String commodityEntry;//商品录入时间
+  private String commodityLastupdateTime;//最后修改时间
+  private Integer commoditySort;//商品排序index新增时+1
+  private Integer deleteFlag;//删除标识符 默认1   1有效    0无效
   private Integer commodityStockId;
   private String commodityStockTypeName;
   private Integer commodityStockNumber;
@@ -46,7 +46,6 @@ public class AoyoCommodity {
   private Integer classIsoriginal;
   private boolean collection;
   private int commoditCommentCount;
-
 
   private List<AoyoCommodityComment>  comments;
   private List<AoyoCommodityImg>  imgs;
