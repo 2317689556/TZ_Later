@@ -128,7 +128,14 @@ public class UserController {
     @ResponseBody
     public BaseResponse goshopping(){
         List<Goshopping> list = userService.goshopping();
-        System.out.println(list);
+        return new BaseResponse(200,"成功！",list);
+    }
+
+    /*关注商品查询*/
+    @RequestMapping("guanzhushop")
+    @ResponseBody
+    public BaseResponse guanzhushop(){
+        List<GuanZhuShop> list = userService.guanzhushop();
         return new BaseResponse(200,"成功！",list);
     }
 

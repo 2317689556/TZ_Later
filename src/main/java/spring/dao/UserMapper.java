@@ -41,4 +41,7 @@ public interface UserMapper {
 
     /*购物车列表查询*/
     List<Goshopping> goshopping();
+
+    /*关注商品查询*/
+    List<GuanZhuShop> guanzhushop();
 }

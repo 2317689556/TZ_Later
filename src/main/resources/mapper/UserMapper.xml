@@ -111,8 +111,90 @@ select * from aoyo_area where city_code = #{asd}
         aoyo_panel where panel_id&lt;5
     </select>
 
+
+
+    <resultMap id="shopping" type="Goshopping">
+        <id property="shoppingCartId" column="shopping_cart_id"></id>
+        <result property="commodityId" column="commodity_id"></result>
+        <result property="commodityName" column="commodity_name"></result>
+        <result property="commoditySellingPrice" column="commodity_selling_price"></result>
+        <result property="enabledStatic" column="enabled_static"></result>
+        <result property="commodityStockNumber" column="commodity_stock_number"></result>
+        <result property="discountAmount" column="discount_amount"></result>
+        <result property="joinShoppingCartCount" column="join_shopping_cart_count"></result>
+        <result property="groupName" column="group_name"></result>
+
+
+
+        <collection property="aoyoCommodityList" ofType="AoyoCommodity">
+            <id property="commodityId" column="commodity_id"></id>
+            <result property="commodityNumber" column="commodity_number"></result>
+            <result property="commodityName" column="commodity_name"></result>
+            <result property="brandId" column="brand_id"></result>
+            <result property="typeId" column="type_id"></result>
+            <result property="groupId" column="group_id"></result>
+            <result property="commdityWeight" column="commdity_weight"></result>
+            <result property="commoditySellingPrice" column="commodity_selling_price"></result>
+            <result property="commodityCostPrice" column="commodity_cost_price"></result>
+            <result property="commodityStatus" column="commodity_status"></result>
+            <result property="commodityComeOutTime" column="commodity_come_out_time"></result>
+            <result property="commodityDesc" column="commodity_desc"></result>
+            <result property="commodityEntry" column="commodity_entry"></result>
+            <result property="commodityLastupdateTime" column="commodity_lastupdate_time"></result>
+            <result property="commoditySort" column="commodity_sort"></result>
+            <result property="deleteFlag" column="delete_flag"></result>
+            <result property="commodityStockId" column="commodity_stockId"></result>
+            <result property="commodityStockTypeName" column="commodity_stock_type_name"></result>
+            <result property="commodityStockNumber" column="commodity_stock_number"></result>
+            <result property="commodityBrandId" column="commodity_brand_id"></result>
+            <result property="commodityBrandName" column="commodity_brand_name"></result>
+            <result property="telephone" column="telephone"></result>
+            <result property="commodityBrandUrl" column="commodity_brand_url"></result>
+            <result property="commodityBrandDesc" column="commodity_brand_desc"></result>
+            <result property="commodityBrandStatus" column="commodity_brand_status"></result>
+            <result property="sort" column="sort"></result>
+            <result property="customId" column="custom_id"></result>
+            <result property="endUpdateOperator" column="end_update_operator"></result>
+            <result property="endUpdateTime" column="end_update_time"></result>
+            <result property="classId" column="class_id"></result>
+            <result property="className" column="class_name"></result>
+            <result property="parentClassId" column="parent_class_id"></result>
+            <result property="classDesc" column="class_desc"></result>
+            <result property="statusId" column="status_id"></result>
+            <result property="classIncomeRatio" column="class_income_ratio"></result>
+            <result property="collection" column="collection"></result>
+
+
+            <collection property="imgs" ofType="AoyoCommodityImg">
+                <id column="commodity_img_id" property="commodityImgId"></id>
+                <result column="commodity_id" property="commodityId"></result>
+                <result column="commodity_img_desc" property="commodityImgDesc"></result>
+                <result column="commodity_img_url" property="commodityImgUrl"></result>
+                <result column="commodity_img_index" property="commodityImgIndex"></result>
+                <result column="commodity_img_sort" property="commodityImgSort"></result>
+                <result column="commodity_img_status" property="commodityImgStatus"></result>
+                <result column="commodity_img_lastupdate_time" property="commodityImgLastupdateTime"></result>
+                <result column="delete_flag" property="deleteFlag"></result>
+            </collection>
+
+        </collection>
+    </resultMap>
+
     <!--购物车列表查询-->
     <!--List<goshopping> goshopping();-->
+    <select id="goshopping" resultMap="shopping">
+        select distinct *,collection.is_effective as collection from aoyo_shopping_cart as shopping
+        LEFT JOIN aoyo_commodity as commodity on commodity.commodity_id=shopping.commodity_id
+        LEFT JOIN aoyo_commodity_brand as brand on commodity.brand_id=brand.commodity_brand_id
+        LEFT JOIN aoyo_commodity_class as class on commodity.type_id=class.class_id
+        LEFT JOIN aoyo_commodity_img as img on commodity.commodity_id=img.commodity_id
+        LEFT JOIN aoyo_commodity_norms as norms on commodity.commodity_id=norms.commodity_id
+        LEFT JOIN aoyo_commodity_collection as collection on commodity.commodity_id=collection.commodity_id
+        LEFT JOIN aoyo_order as orders on commodity.commodity_id=orders.commodity_id
+        LEFT JOIN aoyo_commodity_comment as comments on commodity.commodity_id=comments.commodity_id
+        LEFT JOIN sys_group as groups on groups.group_id=orders.group_id
+    </select>
+<!--
     <select id="goshopping" resultType="goshopping">
         SELECT
 	    a.shopping_cart_id,
@@ -137,5 +219,29 @@ select * from aoyo_area where city_code = #{asd}
         AND c.commodity_id = d.commodity_id
         AND d.group_id = e.GROUP_ID
     </select>
+-->
+
+    <!--关注商品查询-->
+    <!--List<GuanZhuShop> guanzhushop();-->
+    <select id="guanzhushop" resultType="GuanZhuShop">
+        SELECT
+	b.commodity_name,
+  b.commodity_selling_price,
+  a.commodity_collection_id,
+  a.is_effective,
+(SELECT sum(aoyo_commodity_collection.commodity_id=84) from aoyo_commodity_collection ) as collectionCount,
+ c.commodity_img_url
+
+FROM
+
+aoyo_commodity_collection a,
+	aoyo_commodity b,
+	aoyo_commodity_img c
+WHERE
+	a.commodity_id = b.commodity_id
+AND b.commodity_id = c.commodity_id
+    </select>
+
+
 
 </mapper>

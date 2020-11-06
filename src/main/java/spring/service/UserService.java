@@ -73,4 +73,9 @@ public class UserService {
     public List<Goshopping> goshopping() {
         return userMapper.goshopping();
     }
+
+    /*关注商品查询*/
+    public List<GuanZhuShop> guanzhushop() {
+        return userMapper.guanzhushop();
+    }
 }

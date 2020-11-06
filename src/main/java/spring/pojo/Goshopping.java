@@ -2,6 +2,8 @@ package spring.pojo;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class Goshopping {
     /*购物车混合实体类*/
@@ -14,4 +16,5 @@ public class Goshopping {
     private double discountAmount;//优惠金额
     private long joinShoppingCartCount;//加入购物车数量
     private String groupName;//机构名称
+    private List<AoyoCommodity> aoyoCommodityList;
 }
