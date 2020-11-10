@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.dao.CityMapper">
+
+    <select id="getCityList" resultType="AoyoCity">
+    SELECT name, pname FROM aoyo_city , aoyo_province WHERE aoyo_city.province_code = aoyo_province.code
+    </select>
+
+    <select id="getCityListByPname" resultType="AoyoCity">
+    SELECT * FROM aoyo_city , aoyo_province WHERE aoyo_city.province_code = aoyo_province.code and aoyo_province.pname = #{pname}
+    </select>
+
+    <select id="searchCityList" resultType="AoyoCity">
+    select * from aoyo_city
+    <where>
+        <if test="name !=null and name !='' ">
+            name like "%${name}%"
+        </if>
+    </where>
+    </select>
+</mapper>

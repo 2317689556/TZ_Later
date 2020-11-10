@@ -106,7 +106,7 @@ public class UserController {
         return new BaseResponse(StatusCode.Fail,i);
     }
 
-    /*优惠券查询*/
+    /*首页优惠券查询*/
     @RequestMapping("youhuiquan")
     @ResponseBody
     public BaseResponse youhuiquan(){
@@ -139,5 +139,12 @@ public class UserController {
         return new BaseResponse(200,"成功！",list);
     }
 
+    /*个人中心优惠券查询*/
+    @RequestMapping("myyouhuiquan")
+    @ResponseBody
+    public BaseResponse  myyouhuiquan(){
+        List<AoyoCoupon> list = userService.myyouhuiquan();
+        return new BaseResponse(200,"成功！",list);
+    }
 
 }

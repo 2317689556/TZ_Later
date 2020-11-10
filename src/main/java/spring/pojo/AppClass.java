@@ -14,4 +14,5 @@ public class AppClass extends AoyoCommodity{
     private Integer appClassStatus;//状态
     private String commodityName;//商品名称     AoyoCommodity
     //private Integer deleteFlag;//删除键
+
 }

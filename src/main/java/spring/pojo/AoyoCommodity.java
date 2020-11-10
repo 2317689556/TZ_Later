@@ -48,6 +48,7 @@ public class AoyoCommodity {
   private int commoditCommentCount;
   private String commodityImgUrl;//图片URL
 
+
   private List<AoyoCommodityComment>  comments;
   private List<AoyoCommodityImg>  imgs;
   private List<AoyoCommodityNorms>  norms;

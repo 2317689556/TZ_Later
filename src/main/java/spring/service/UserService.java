@@ -78,4 +78,9 @@ public class UserService {
     public List<GuanZhuShop> guanzhushop() {
         return userMapper.guanzhushop();
     }
+
+    /*个人中心优惠券查询*/
+    public List<AoyoCoupon> myyouhuiquan() {
+        return userMapper.myyouhuiquan();
+    }
 }

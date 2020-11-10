@@ -44,4 +44,7 @@ public interface UserMapper {
 
     /*关注商品查询*/
     List<GuanZhuShop> guanzhushop();
+
+    /*个人中心优惠券查询*/
+    List<AoyoCoupon> myyouhuiquan();
 }

@@ -80,7 +80,7 @@ select * from aoyo_area where city_code = #{asd}
         coupon_desc,
         coupon_amt,
         coupon_end_time,
-        coupon_new_sill_num,
+        coupon_num,
         type_name,
         coupon_type_id,
         type_desc
@@ -193,6 +193,7 @@ select * from aoyo_area where city_code = #{asd}
         LEFT JOIN aoyo_order as orders on commodity.commodity_id=orders.commodity_id
         LEFT JOIN aoyo_commodity_comment as comments on commodity.commodity_id=comments.commodity_id
         LEFT JOIN sys_group as groups on groups.group_id=orders.group_id
+        LEFT JOIN aoyo_commodity_stock as stocks on stocks.commodity_id=commodity.commodity_id
     </select>
 <!--
     <select id="goshopping" resultType="goshopping">
@@ -242,6 +243,26 @@ WHERE
 AND b.commodity_id = c.commodity_id
     </select>
 
+    <!--个人中心优惠券查询-->
+    <!--List<AoyoCoupon> myyouhuiquan();-->
+    <select id="myyouhuiquan" resultType="aoyoCoupon">
+        SELECT
+	a.coupon_name,
+	a.coupon_num,
+	a.coupon_type_id,
+	a.coupon_amt,
+	a.coupon_end_time,
+	a.coupon_desc,
+    a.coupon_status_id,
+    c.status_name
+FROM
+	aoyo_coupon a,
+	aoyo_coupon_type b,
+	aoyo_coupon_status c
+WHERE
+	a.coupon_type_id = b.type_id
+AND a.coupon_status_id = c.status_id
+    </select>
 
 
 </mapper>
