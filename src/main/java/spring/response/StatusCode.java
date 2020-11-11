@@ -5,6 +5,7 @@ public enum StatusCode {
     Success(0,"成功"),
     Fail(-1,"失败"),
     InvalidParams(201,"非法的参数!"),
+    UserMobileNotBlank(5002,"手机号不能为空"),
 
     UserNamePasswordNotBlank(50000,"账户密码不能为空!"),
     AccessTokenNotBlank(50001,"accessToken必填，请在请求头header中塞入该字段"),

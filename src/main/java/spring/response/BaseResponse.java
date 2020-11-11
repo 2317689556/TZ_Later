@@ -1,5 +1,7 @@
 package spring.response;
 
+import java.util.HashMap;
+
 /**
  *统一响应数据模型
  * @param <T>
@@ -52,7 +54,7 @@ public class BaseResponse<T> {
         return data;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public void setData(HashMap<Object, Object> data) {
+        this.data = (T) data;
     }
 }

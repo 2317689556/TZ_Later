@@ -265,4 +265,72 @@ AND a.coupon_status_id = c.status_id
     </select>
 
 
+
+    <select id="moblieLogin" resultType="spring.pojo.AoyoCustom">
+
+        select * from aoyo_custom where mobile = #{mobile}
+
+    </select>
+
+    <select id="selectByCustom" resultType="spring.pojo.AoyoCustom">
+
+        select * from aoyo_custom where custom_id = #{customId}
+
+    </select>
+
+    <update id="successCustomUp">
+
+       update aoyo_custom
+        set
+        nickname=#{nickname},name=#{name},mobile=#{mobile},custom_gender=#{customGender},
+        custom_birthday=#{customBirthday},update_time=now() where custom_id=#{customId}
+
+    </update>
+
+    <!--根据登录Id查询所有订单-->
+    <select id="selectShowOder" resultType="spring.pojo.MyAddressList">
+SELECT
+shangpin.commodity_name,pinpai.commodity_brand_name,dingdan.order_amount from
+ aoyo_order as dingdan
+LEFT JOIN aoyo_custom `user` on dingdan.custom_id = `user`.custom_id
+
+LEFT JOIN aoyo_commodity as shangpin on shangpin.commodity_id = dingdan.commodity_id
+
+LEFT JOIN aoyo_commodity_brand as pinpai on shangpin.brand_id = pinpai.commodity_brand_id where `user`.custom_id = #{customID}
+
+
+    </select>
+
+
+    <!--购物车列表查询升级版-->
+    <!--List<Goshopping> goshoppings();-->
+    <select id="goshoppings" resultType="goshopping">
+    SELECT
+	a.shopping_cart_id,
+  a.join_shopping_cart_count,
+	b.commodity_id,
+	b.commodity_name,
+	b.commodity_selling_price,
+	a.enabled_static,
+	c.commodity_stock_number,
+	d.discount_amount,
+	e.commodity_img_url,
+  f.group_name
+FROM
+	aoyo_shopping_cart a,
+	aoyo_commodity b,
+	aoyo_commodity_stock c,
+	aoyo_order d,
+  aoyo_commodity_img e,
+  sys_group f
+WHERE
+	a.commodity_id = b.commodity_id
+AND b.commodity_id = c.commodity_id
+AND c.commodity_id = d.commodity_id
+AND d.commodity_id = e.commodity_id
+AND d.group_id = f.GROUP_ID
+    </select>
+
+
+
 </mapper>

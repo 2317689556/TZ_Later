@@ -47,4 +47,18 @@ public interface UserMapper {
 
     /*个人中心优惠券查询*/
     List<AoyoCoupon> myyouhuiquan();
+
+
+    AoyoCustom moblieLogin(@Param("mobile") String mobile);
+
+    AoyoCustom selectByCustom(String customId);
+
+    int successCustomUp(AoyoCustom aoyoCustom);
+
+    List<MyAddressList> selectShowOder(@Param("customID")String customID);
+
+    List<MyAddressList> queryCustomAddress(@Param("customId")String customId);
+
+    /*购物车列表查询升级版*/
+    List<Goshopping> goshoppings();
 }
