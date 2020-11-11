@@ -95,4 +95,58 @@ public class ShopController {
 
     }
 
+
+
+
+    //查询订单
+    @RequestMapping("orderDriver/queryOrderCommodityAPP")
+    @ResponseBody
+    public BaseResponse<AoyoOrder> queryOrderCommodityAPP(Integer status){
+
+        List<AoyoOrder> queryOrderCommodityAPP=shopService.queryOrderCommodityAPP(status);
+
+        return new BaseResponse(1,"success",queryOrderCommodityAPP);
+
+
+    }
+
+
+
+    //查询订单数量
+    @RequestMapping("orderCommodityDriver/queryOrderStatusCount")
+    @ResponseBody
+    public BaseResponse<OrderStatusCount> queryOrderStatusCount(Integer status){
+
+        List<AoyoOrder> queryOrderCommodityAPP=shopService.queryOrderCommodityAPP(status);
+        OrderStatusCount orderStatusCount=new OrderStatusCount();
+        Integer pendingPayment=0;
+        Integer processing=0;
+        Integer comment=0;
+        Integer completed=0;
+        Integer all=0;
+        for (AoyoOrder aoyoOrder:queryOrderCommodityAPP) {
+            all++;
+            if(aoyoOrder.getSendOrderStatus()==2){
+                pendingPayment++;
+            }else if(aoyoOrder.getSendOrderStatus()==3 || aoyoOrder.getSendOrderStatus()==4){
+                processing++;
+            }else if(aoyoOrder.getSendOrderStatus()==7 || aoyoOrder.getSendOrderStatus()==8){
+                comment++;
+            }else if(aoyoOrder.getSendOrderStatus()==5){
+                completed++;
+            }
+        }
+        orderStatusCount.setPendingPayment(pendingPayment);
+        orderStatusCount.setProcessing(processing);
+        orderStatusCount.setComment(comment);
+        orderStatusCount.setCompleted(completed);
+        orderStatusCount.setAll(all);
+
+        return new BaseResponse(1,"success",orderStatusCount);
+
+    }
+
+
+
+
 }

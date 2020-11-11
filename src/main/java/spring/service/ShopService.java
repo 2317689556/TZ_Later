@@ -40,4 +40,8 @@ public class ShopService {
     public List<AoyoCommodityComment> getCommentByCommoditId(Integer commoditId) {
         return shopMapper.getCommentByCommoditId(commoditId);
     }
+
+    public List<AoyoOrder> queryOrderCommodityAPP(Integer commoditId) {
+        return shopMapper.queryOrderCommodityAPP(commoditId);
+    }
 }

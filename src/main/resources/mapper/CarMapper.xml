@@ -3,16 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.dao.CarMapper">
-    <select id="getHotCarList" resultType="carBrandHot">
+    <select id="getHotCarList" resultType="CarBrandHot">
         select * from aoyo_car_brand_hot
     </select>
-    <select id="getCarList" resultType="carBrand">
+    <select id="getCarList" resultType="CarBrand">
         select * from aoyo_car_brand
     </select>
-    <select id="getCarListByLetter" resultType="carBrand">
+    <select id="getCarListByLetter" resultType="CarBrand">
         select *from aoyo_car_brand where car_brand_py_first_letter=#{carBrandPyFirstLetter}
     </select>
-    <select id="searchCarList" resultType="carBrand">
+    <select id="searchCarList" resultType="CarBrand">
         select car_brand_id,car_brand_name
         from aoyo_car_brand
         <where>

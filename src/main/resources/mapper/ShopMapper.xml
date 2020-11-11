@@ -42,7 +42,7 @@
         <select id="getStoreList" resultMap="listShop">
 
 
-            select distinct street.`name` as street_name,area.`name` as area_name,city.`name` as city_name,province.`name` as province_name,address.group_address_details,
+            select distinct street.`name` as street_name,area.`name` as area_name,city.`name` as city_name,province.`pname` as province_name,address.group_address_details,
             sys_group.GROUP_NAME,sys_group.COUNTY_ID,type.GROUP_TYPE_NAME,sys_group.GROUP_ID as group_id,
             statu.group_status_name,service.*,indexs.*,sys_group.GROUP_ID,sys_group.GROUP_LATITUDE as GROUP_LATITUDE,sys_group.GROUP_LONGITUDE as GROUP_LONGITUDE
             ,service.create_time as create_time,middle.group_featured_id as group_featured_id,indexs.group_id as igid,sys_group.group_score
@@ -170,6 +170,7 @@
         <collection property="comments" ofType="AoyoCommodityComment">
             <id column="commodity_comment_id" property="commodityCommentId"></id>
         </collection>
+
         <collection property="norms" ofType="AoyoCommodityNorms">
             <id column="norms_id" property="normsId"></id>
             <result column="commodity_id" property="commodityId"></result>
@@ -243,5 +244,53 @@
             </if>
         </where>
     </select>
+
+
+    <resultMap id="orderCommodity" type="AoyoOrder" autoMapping="true">
+        <id property="orderId" column="order_id"></id>
+        <collection property="commoditys" ofType="AoyoCommodity" autoMapping="true">
+            <id column="commodity_id" property="commodityId"></id>
+        <collection property="imgs" ofType="AoyoCommodityImg" autoMapping="true">
+            <id column="commodity_img_id" property="commodityImgId"></id>
+        </collection>
+<!--        <collection property="comments" ofType="AoyoCommodityComment" autoMapping="true">
+            <id column="commodity_comment_id" property="commodityCommentId"></id>
+        </collection>
+        <collection property="norms" ofType="AoyoCommodityNorms" autoMapping="true">
+            <id column="norms_id" property="normsId"></id>
+        </collection>-->
+        </collection>
+    </resultMap>
+
+    <select id="queryOrderCommodityAPP" resultMap="orderCommodity">
+        select orders.*,groups.GROUP_NAME,custom.nickname,custom.name,custom.mobile,statu.aoyo_order_status_name,
+        logistics.telephone,province.pname,city.name city_name,county.name county_name,street.name street_name,address.address_details,
+        commodity.*,img.*,detail.commodity_count
+        from aoyo_order orders
+        LEFT JOIN sys_group groups on orders.group_id=groups.GROUP_ID
+        LEFT JOIN aoyo_custom custom on orders.custom_id=custom.custom_id
+        LEFT JOIN aoyo_order_status statu on orders.send_order_status=statu.aoyo_order_status_id
+        LEFT JOIN aoyo_order_logistics logistics on orders.order_id=logistics.order_id
+        LEFT JOIN aoyo_seckill_order seckill on seckill.order_logistics_id=logistics.order_logistics_id
+        LEFT JOIN aoyo_address address on address.address_id=orders.address_id
+        LEFT JOIN aoyo_province province on province.`code`=address.province_id
+        LEFT JOIN aoyo_city	 city on city.`code`=address.city_id
+        LEFT JOIN aoyo_area county on county.`code`=address.county_id
+        LEFT JOIN aoyo_street	street on street.`code`=address.street_id
+        LEFT JOIN aoyo_commodity commodity on commodity.`commodity_id`=orders.commodity_id
+        LEFT JOIN aoyo_order_detail detail on orders.`order_id`=detail.order_id
+/*        LEFT JOIN aoyo_commodity_brand as brand on commodity.brand_id=brand.commodity_brand_id
+        LEFT JOIN aoyo_commodity_class as class on commodity.type_id=class.class_id*/
+        LEFT JOIN aoyo_commodity_img as img on commodity.commodity_id=img.commodity_id
+/*        LEFT JOIN aoyo_commodity_norms as norms on commodity.commodity_id=norms.commodity_id
+        LEFT JOIN aoyo_commodity_collection as collection on commodity.commodity_id=collection.commodity_id
+        LEFT JOIN aoyo_commodity_comment as comments on commodity.commodity_id=comments.commodity_id*/
+        <where>
+            <if test="status!=0 and status!=null">
+                orders.send_order_status=#{status}
+            </if>
+        </where>
+    </select>
+
 
 </mapper>

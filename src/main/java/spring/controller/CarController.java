@@ -11,14 +11,16 @@ import spring.response.BaseResponse;
 import spring.service.CarService;
 import spring.response.StatusCode;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 
 @RequestMapping("/carBrand")
 @Controller
 public class CarController {
-    @Autowired
+    @Resource
     private CarService carService;
+
      /*获取热门车辆列表*/
     @RequestMapping("getHotCarList")
     @ResponseBody

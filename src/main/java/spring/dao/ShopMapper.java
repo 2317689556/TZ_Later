@@ -19,4 +19,6 @@ public interface ShopMapper {
     Boolean addCustomCollection(@Param("customId") Integer customId, @Param("commodityId") Integer commodityId);
 
     List<AoyoCommodityComment> getCommentByCommoditId(@Param("commoditId") Integer commoditId);
+
+    List<AoyoOrder> queryOrderCommodityAPP(@Param("status") Integer status);
 }
