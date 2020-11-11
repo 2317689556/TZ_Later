@@ -16,5 +16,6 @@ public class Goshopping {
     private double discountAmount;//优惠金额
     private long joinShoppingCartCount;//加入购物车数量
     private String groupName;//机构名称
+    private String commodityImgUrl;//图片路径
     private List<AoyoCommodity> aoyoCommodityList;
 }

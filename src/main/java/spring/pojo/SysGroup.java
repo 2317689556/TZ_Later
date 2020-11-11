@@ -73,7 +73,6 @@ public class SysGroup {
   private long addressId;//机构地址id
 
 
-
   private List<AoyoGroupFeaturedServices> services;
   private List<AoyoGroupTechnician> groupTechnician;
   private List<String> featuredServicesSame;

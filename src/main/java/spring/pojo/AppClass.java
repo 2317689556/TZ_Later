@@ -12,7 +12,10 @@ public class AppClass {
     private String appClassDesc;//app分类描述
     private Date createTime;//创建时间
     private Integer appClassStatus;//状态
+    private String commodityName;//商品名称     AoyoCommodity
+    //private Integer deleteFlag;//删除键
+
     private Integer deleteFlag;//删除键
 
-    private String commodityName;//商品名称     AoyoCommodity
+
 }

@@ -26,5 +26,9 @@ public class AoyoCoupon {
   private long couponValidId;//优惠券失效时间类型 1、绝对时效 2、相对时效
   private long deleteFlag;//删除标识符号  1：有效，0：无效
   private long couponValidSecond;//优惠券有效期
-  private double couponNewSillNum;//优惠券面值
+  private double couponNum;//优惠券面值
+
+  private String statusName;//优惠券状态
+
+
 }

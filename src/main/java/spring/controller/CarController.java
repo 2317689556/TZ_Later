@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import spring.pojo.*;
 import spring.response.BaseResponse;
-import spring.service.CarServiceImpl;
+import spring.service.CarService;
 import spring.response.StatusCode;
 
 import java.util.HashMap;
@@ -17,7 +17,7 @@ import java.util.List;
 @Controller
 public class CarController {
     @Autowired
-    private CarServiceImpl carService;
+    private CarService carService;
 
      //获取热门车辆列表
     @RequestMapping("getHotCarList")

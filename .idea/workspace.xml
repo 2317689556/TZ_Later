@@ -2,55 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="郝家乐整合陈佳乐">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarDisplacement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarMotorcycleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarProductionYear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarSeries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.corrupted.20201104-073934.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.corrupted.20201104-073934.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.corrupted.20201104-080636.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.corrupted.20201104-080636.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.corrupted.20201105-014334.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.corrupted.20201105-014334.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.corrupted.20201110-102022.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.corrupted.20201110-102022.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/controller/CityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/controller/ShopController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/dao/CityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/dao/ShopMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AccessTokenDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCustom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoWorkOrderServe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AuthToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AuthTokenModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/GuanZhuShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/MyAddressList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/OrderStatusCount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/service/CityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/service/ShopService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/utils/EncryptUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/utils/HttpClientUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/utils/ImageUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/utils/SnowFlake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShopMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/CityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ClassifyMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ShopMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/controller/CityController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/controller/ClassifyController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/controller/ShopController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/dao/CityMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/dao/ClassifyMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/dao/ShopMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/dao/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AccessTokenDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCustom.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupFeaturedServices.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoOrder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoWorkOrderServe.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AppClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AuthToken.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AuthTokenModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/Constant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/GuanZhuShop.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/MyAddressList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/OrderStatusCount.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroupType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCoupon.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/pojo/goshopping.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/response/BaseResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/response/StatusCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/service/CityService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/service/ClassifyService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/service/ShopService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/utils/EncryptUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/utils/HttpClientUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/utils/ImageUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/utils/SnowFlake.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/ShopController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/dao/CarMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/ShopMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/ClassifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/controller/ClassifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCoupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCoupon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupFeaturedServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupFeaturedServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AppClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/AppClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/CarBrand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/CarBrand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/Goshopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/Goshopping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/service/CarServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/ShopService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/response/BaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/response/BaseResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/response/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/response/StatusCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/service/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CarMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CarMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShopMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/aoyo.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CarMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CarMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ShopMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/controller/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/ShopController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/CarMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/dao/CarMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/ShopMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroupType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroupType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/carBrand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/carBrand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/goshopping.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/goshopping.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/CarServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/service/CarServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/ShopService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/UserService.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,7 +130,44 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-163">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/ShopController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2370">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassifyController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/ClassifyController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-30">
+              <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CarController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/CarController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -821,10 +897,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89709000" />
+    <option name="totallyTimeSpent" value="89807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
@@ -843,7 +920,7 @@
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Java Enterprise" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="5" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49946696" weight="0.27952328" />
       <window_info anchor="bottom" id="Spring" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -852,14 +929,40 @@
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Database Console" order="14" weight="0.4539545" />
-      <window_info anchor="bottom" id="Find" order="9" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="8" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49946696" weight="0.27952328" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.49920762" visible="true" weight="0.1945629" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Structure" order="0" sideWeight="0.5007924" side_tool="true" weight="0.23240939" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info id="Web" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="2" />
+      <window_info anchor="bottom" id="Spring" order="6" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="4" />
+      <window_info anchor="right" id="Bean Validation" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.1913646" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info anchor="right" id="Word Book" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.4539545" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="bottom" id="Find" order="9" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.44853738" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Designer" order="2" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1094,7 +1197,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/pojo/AoyoProvince.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/pojo/AoyoOrderDetail.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCoupon.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" />
     <entry file="das://0ac9da25-6576-47c3-ab92-5e8448ec1ab8/schema/aoyo/table/aoyo_commodity_img" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityClass.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityComment.java" />
@@ -1102,7 +1204,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityCollection.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupIndex.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/service/ShopService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/ShopController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityImg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1212,13 +1313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/ClassifyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="65" column="18" lean-forward="true" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://95592128-4c8e-4322-b995-f97f63ceb936/schema/aoyo/table/aoyo_car_brand">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1233,17 +1327,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/service/CarServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
-          <folding>
-            <element signature="e#1479#1480#0" expanded="true" />
-            <element signature="e#1541#1542#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/service/CarServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/dao/CarMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
@@ -1269,13 +1353,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/CarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
-          <caret line="102" column="17" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1353,6 +1430,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/ShopController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2370">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/ClassifyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/controller/CarController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
         </state>
       </provider>
     </entry>

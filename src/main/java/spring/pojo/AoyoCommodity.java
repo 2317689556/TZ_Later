@@ -42,10 +42,12 @@ public class AoyoCommodity {
   private Integer parentClassId;
   private String classDesc;
   private Integer statusId;
+  private Integer commodityCount;
   private double classIncomeRatio;
   private Integer classIsoriginal;
   private boolean collection;
   private int commoditCommentCount;
+
 
 
   private String commodityImgUrl;//图片路径   AoyoCommodityImg

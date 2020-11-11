@@ -36,6 +36,7 @@ public class ClassifyController {
     @ResponseBody
     public List<AppClass> shoppTypeDetail(){
         List<AppClass> list = classifyService.shoppTypeDetail();
+        System.out.println(list);
         return list;
     }
 
@@ -60,6 +61,7 @@ public class ClassifyController {
     @ResponseBody
     public List<AoyoCommodity> shoppListUrl(AoyoCommodity commodity){
         List<AoyoCommodity> list = classifyService.shoppListUrl(commodity);
+        System.out.println(list);
         return list;
     }
 
