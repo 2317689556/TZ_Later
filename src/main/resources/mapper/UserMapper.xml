@@ -344,6 +344,21 @@ AND d.group_id = f.GROUP_ID
 
     </delete>
 
+    <!--根据customid查询所有地址-->
+    <select id="queryCustomAddress" resultType="spring.pojo.MyAddressList">
+
+        select aoyo_custom.custom_id,address.consignee_name,address.telephone,sheng.pname as Shengname ,address.default_address as defaultAddress,address.address_id as addressId,
+        shi.`name`as ShiName ,xian.`name` as XianName,label.label_name from aoyo_custom LEFT JOIN aoyo_address address on aoyo_custom.custom_id = address.custom_id
+
+LEFT JOIN aoyo_province sheng on sheng.`code`  = address.province_id LEFT JOIN aoyo_city shi on shi.code = address.city_id LEFT JOIN aoyo_area xian on xian.`code` = address.county_id
+LEFT JOIN aoyo_address_label label on label.label_id = address.address_label_id
+
+
+
+where aoyo_custom.custom_id = #{customId}
+
+    </select>
+
 
 
 </mapper>
