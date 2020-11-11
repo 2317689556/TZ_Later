@@ -331,6 +331,19 @@ AND d.commodity_id = e.commodity_id
 AND d.group_id = f.GROUP_ID
     </select>
 
+    <update id="upDefaultAddress">
+
+        update aoyo_address set default_address=2 where custom_id = #{customId}
+
+    </update>
+
+    <!--    删除收货地址-->
+    <delete id="deleAddress">
+
+        delete from aoyo_address  where address_id = #{addressId}
+
+    </delete>
+
 
 
 </mapper>

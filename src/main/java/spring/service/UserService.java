@@ -275,4 +275,12 @@ public class UserService {
     public List<Goshopping> goshoppings() {
         return userMapper.goshoppings();
     }
+
+    public int upDefaultAddress(long customId) {
+        return userMapper.upDefaultAddress(customId);
+    }
+
+    public int deleAddress(String addressId) {
+        return userMapper.deleAddress(addressId);
+    }
 }

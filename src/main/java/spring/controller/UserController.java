@@ -74,52 +74,6 @@ public class UserController {
 
 
 
-    //查询所有的省
-    @RequestMapping("selectProv")
-
-    public List<AoyoProvince> selectedProv(){
-
-        return userService.selectedProv();
-    }
-
-    /*selectCity*/
-    @RequestMapping("selectCity")
-
-    public List<AoyoCity> selectCity(Integer asd){
-        System.out.println(asd+"_____________________________");
-
-        return userService.selectCity(asd);
-    }
-
-    /*selectareas*/
-    @RequestMapping("selectAreas")
-
-    public List<AoyoArea> selectAreas(String asd){
-        System.out.println(asd+"_____________________________");
-
-        return userService.selectAreas(asd);
-    }
-
-    /*查询所有的标签页*/
-    @RequestMapping("selectAddLabelAll")
-    public List<AoyoAddressLabel> selectAddLabelAll( ){
-
-        return userService.selectAddLabelAll();
-    }
-
-    /*添加新的地址简直是太难了*/
-    @RequestMapping("addressInsert")
-    public BaseResponse addressInsert(AoyoAddress aoyoAddress){
-
-        System.out.println(aoyoAddress.toString());
-
-        int i  = userService.addressInsert(aoyoAddress);
-        if(i>0){
-            return  new BaseResponse(StatusCode.Success,i);
-        }
-
-        return new BaseResponse(StatusCode.Fail,i);
-    }
 
     /*首页优惠券查询*/
     @RequestMapping("youhuiquan")
@@ -172,6 +126,66 @@ public class UserController {
 
 
 
+
+
+    /*查询所有的标签页*/
+    @RequestMapping("selectAddLabelAll")
+    @ResponseBody
+    public List<AoyoAddressLabel> selectAddLabelAll( ){
+
+        return userService.selectAddLabelAll();
+    }
+
+    //查询所有的省
+    @RequestMapping("selectProv")
+    @ResponseBody
+    public List<AoyoProvince> selectedProv(){
+
+        return userService.selectedProv();
+    }
+
+    //根据省的id查询所有的城市
+    @RequestMapping("selectCity")
+    @ResponseBody
+    public List<AoyoCity> selectCity(Integer asd){
+
+        return userService.selectCity(asd);
+    }
+
+    //根据城市的id查询所有的县
+    @RequestMapping("selectAreas")
+    @ResponseBody
+    public List<AoyoArea> selectAreas(String asd){
+
+        return userService.selectAreas(asd);
+    }
+
+
+    /*添加新的地址简直是太难了*/
+    @RequestMapping("addressInsert")
+    @ResponseBody
+    public BaseResponse addressInsert(AoyoAddress aoyoAddress){
+
+
+        //默认选中则修改default_address 全部为2
+        if(aoyoAddress.getDefaultAddress() == 1){
+            System.out.println("前台已经默认选中："+aoyoAddress.getDefaultAddress());
+            userService.upDefaultAddress(aoyoAddress.getCustomId());
+        }
+
+        int i  = userService.addressInsert(aoyoAddress);
+
+        if(i>0){
+            System.out.println("添加地址成功");
+            return  new BaseResponse(StatusCode.Success,1);
+        }
+
+        return new BaseResponse(StatusCode.Fail,0);
+    }
+
+
+
+
     //发送验证码
     @RequestMapping("SendSmCode")
     @ResponseBody
@@ -191,7 +205,7 @@ public class UserController {
     //    判断是否登录
     @RequestMapping("ifloginCon")
     @ResponseBody
-    public BaseResponse ifloginCon(HttpServletRequest request, String customId){
+    public BaseResponse ifloginCon(HttpServletRequest request,String customId){
 
         String ltoken = request.getHeader("Ltoken");
 
@@ -201,16 +215,16 @@ public class UserController {
             return  new BaseResponse(StatusCode.CurrUserNotLogin);
         }
 
-        System.out.println("不为空");
         HashMap hashMap = new HashMap();
+
+        //如果已经登录了  查询个人信息
         AoyoCustom aoyoCustom = userService.selectByCustomId(customId);
         hashMap.put("aoyo",aoyoCustom);
 
-        System.out.println(customId+"查询个人信息："+aoyoCustom.toString());
+        System.out.println(customId+"--查询个人信息：--"+aoyoCustom.toString());
 
         return new BaseResponse(StatusCode.Success,hashMap);
     }
-
 
 
     /*根据手机进行登录并且存入token*/
@@ -229,7 +243,6 @@ public class UserController {
         BaseResponse<AuthTokenModel> baseResponse = new BaseResponse<>(StatusCode.Success);
 
         try {
-            System.out.println("进来了------------");
 
             AoyoCustom aoyoCustom = userService.moblieLogin(mobile);
             AuthTokenModel authTokenModel = userService.authUserAndCreateToken(mobile);
@@ -248,23 +261,8 @@ public class UserController {
     }
 
 
-    // queryCustomAddress所有地址
-    @RequestMapping("queryCustomAddress")
-    @ResponseBody
-    public BaseResponse queryCustomAddress(String customId){
-
-        List<MyAddressList> myAddressLists = userService.queryCustomAddress(customId);
-
-        System.out.println("进来查询所有地址");
-        return new BaseResponse(StatusCode.Success,myAddressLists);
-    }
-
-
-
-
 
     //修改个人信息
-
     @RequestMapping("successCustom")
     @ResponseBody
     public BaseResponse successCustom(AoyoCustom aoyoCustom){
@@ -276,16 +274,27 @@ public class UserController {
     }
 
 
+    // queryCustomAddress所有地址
+    @RequestMapping("queryCustomAddress")
+    @ResponseBody
+    public BaseResponse queryCustomAddress(String customId){
 
-    //查询所有订单
-    @ResponseBody@RequestMapping("selectShowOder")
-    public  BaseResponse SelecOderAll(String customID){
-
-        List<MyAddressList> list = userService.selectShowOder(customID);
-
-        return  null;
+        HashMap map = new HashMap<>();
+        List<MyAddressList> myAddressLists = userService.queryCustomAddress(customId);
+        map.put("addressList",myAddressLists);
+        System.out.println("进来查询所有地址");
+        return new BaseResponse(StatusCode.Success,map);
     }
 
+
+    //    deleAddress  删除用户地址
+    @ResponseBody@RequestMapping("deleAddress")
+    public  BaseResponse deleAddress(String addressId){
+
+        int i = userService.deleAddress(addressId);
+
+        return  new BaseResponse(StatusCode.Success);
+    }
 
 
 
@@ -296,7 +305,7 @@ public class UserController {
     public BaseResponse uploadBackIdentityImg(HttpServletRequest request){
 
         MultipartHttpServletRequest req = (MultipartHttpServletRequest) request;
-
+        System.out.println(req);
         //对应前端的upload的name参数"file"
         MultipartFile multipartFile = req.getFile("file");
         String originalFilename = request.getSession().getServletContext().getRealPath("/") + "upload/01";
@@ -329,14 +338,19 @@ public class UserController {
             String s = ImageUtils.encodeImgageToBase64(ossObject.getObjectContent());
 
             map = new HashMap();
-            map.put("key","3c457b1283fcc1355c6cc400814352e5");
+            map.put("key","b1c8560faa70b2b20e0b9994f61ee330");
             map.put("image",s);
             map.put("side","front");
             map.put("fileUrl",upload);
 
             String   s1 = HttpClientUtil.doPost("http://apis.juhe.cn/idimage/verify", map);
+            HashMap hashMap = new HashMap();
 
-            return new BaseResponse(StatusCode.Success,s1);
+            //把数据传给前台
+            hashMap.put("result",s1);
+            hashMap.put("fileUrl",upload);
+
+            return new BaseResponse(StatusCode.Success,hashMap);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -345,10 +359,6 @@ public class UserController {
 
         return null;
     }
-
-
-
-
 
 
 

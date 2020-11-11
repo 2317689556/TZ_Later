@@ -61,4 +61,8 @@ public interface UserMapper {
 
     /*购物车列表查询升级版*/
     List<Goshopping> goshoppings();
+    int upDefaultAddress(long customId);
+
+    int deleAddress(String addressId);
+
 }
