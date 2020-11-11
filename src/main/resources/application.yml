@@ -22,9 +22,10 @@ spring:
   #数据源
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rm-bp1n43r616i2i5493so.mysql.rds.aliyuncs.com:3306/aoyo?useUnicode=true&characterEncoding=utf8
-    username: hjl
-    password: hjl510170
+    #url: jdbc:mysql://rm-bp1n43r616i2i5493so.mysql.rds.aliyuncs.com:3306/aoyo?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/aoyo?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
 #mybatis的配置

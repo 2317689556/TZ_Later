@@ -47,11 +47,17 @@ public class AoyoCommodity {
   private boolean collection;
   private int commoditCommentCount;
 
+
+  private String commodityImgUrl;//图片路径   AoyoCommodityImg
   private List<AoyoCommodityComment>  comments;
   private List<AoyoCommodityImg>  imgs;
   private List<AoyoCommodityNorms>  norms;
 
   public int getCommoditCommentCount() {
-    return comments.size();
+    if(comments==null){
+      return 0;
+    }else {
+      return comments.size();
+    }
   }
 }

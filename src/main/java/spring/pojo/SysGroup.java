@@ -12,7 +12,6 @@ public class SysGroup {
 
 
   private String areaName;//机构名称
-  private String groupTypeName;
   private String streetName;
   private String distanceNow;
   private String cityName;
@@ -79,7 +78,5 @@ public class SysGroup {
   private List<AoyoGroupTechnician> groupTechnician;
   private List<String> featuredServicesSame;
   private AoyoGroupIndex groupIndex;
-
-
-
+  private String groupTypeName;//机构类型名称
 }
