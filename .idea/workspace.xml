@@ -1,13 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="郝家乐（整合毕秀峰,董莽）">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/95592128-4c8e-4322-b995-f97f63ceb936.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/95592128-4c8e-4322-b995-f97f63ceb936.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/de55db97-60b0-4d34-8adb-f6882ba693ba/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+    <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="郝家乐(整合之后bug修改1.0)">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/CarController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/CityController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/ClassifyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/ShopController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/CarMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/CityMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/ClassifyMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/ShopMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AccessTokenDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoAddressLabel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoArea.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarDisplacement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarMotorcycleType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarProductionYear.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarSeries.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCarType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityBrand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityClassStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityComment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityImg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityNorms.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommodityStock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCommoditySuit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCoupon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCouponType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoCustom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupFeaturedServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupIndex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoGroupTechnician.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoOrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoPlatformImage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoProvince.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoStreet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AoyoWorkOrderServe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AppClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AuthToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/AuthTokenModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/CarBrand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/CarBrandHot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/Constant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/Goshopping.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/GuanZhuShop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/MyAddressList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/OrderStatusCount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/Param.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroupAddress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/SysGroupType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/CarService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/CityService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/ClassifyService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/ShopService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/utils/AliyunOSSUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/utils/AliyunOSSUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/allyun.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/allyun.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CarMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CityMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ClassifyMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShopMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/01" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/upload/01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/allyun.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/allyun.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CarMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CityMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ClassifyMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ShopMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/CarController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/CityController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/ClassifyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/ShopController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/CarMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/CityMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/ClassifyMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/ShopMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/dao/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AccessTokenDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoAddress.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoAddressLabel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoArea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCarDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCarDisplacement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCarMotorcycleType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCarProductionYear.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCarSeries.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCarType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityBrand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityClassStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityCollection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityImg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityNorms.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommodityStock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCommoditySuit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCouponType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoCustom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupFeaturedServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoGroupTechnician.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoOrderDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoPlatformImage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoProvince.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoStreet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AoyoWorkOrderServe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AppClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AuthToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/AuthTokenModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/CarBrand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/CarBrandHot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/Constant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/GuanZhuShop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/MyAddressList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/OrderStatusCount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/Param.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroupAddress.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/SysGroupType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/aoyoCoupon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/goshopping.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/CarService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/CityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/ClassifyService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/ShopService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/utils/AliyunOSSUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/utils/AliyunOSSUtil.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +223,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/spring/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,15 +236,15 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\idea\workspace2\aoyo\src\main\resources" />
       <recent name="F:\idea\workspace2\aoyo\src\main\java\spring\utils" />
       <recent name="F:\idea\workspace2\aoyo\src\main\java\spring\pojo" />
       <recent name="F:\idea\workspace2\aoyo\src\main\resources\mapper" />
       <recent name="F:\idea\workspace2\aoyo\src\main\java\spring\dao" />
-      <recent name="F:\idea\workspace2\aoyo\src\main\java\spring\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="spring.utils" />
@@ -127,8 +272,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="aoyo" />
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="TZ" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="spring.*" />
@@ -136,6 +281,10 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="spring.Application" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="F:\material\jdk\jre" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,11 +299,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.Application" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -260,14 +404,15 @@
       <workItem from="1604831270932" duration="3306000" />
       <workItem from="1604881622126" duration="20155000" />
       <workItem from="1604967589488" duration="17292000" />
-      <workItem from="1605053859483" duration="4087000" />
-    </task>
-    <task id="LOCAL-00001" summary="图标字体">
-      <created>1575853579497</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1575853579497</updated>
+      <workItem from="1605053859483" duration="5983000" />
+      <workItem from="1605075998143" duration="5510000" />
+      <workItem from="1605082541442" duration="7597000" />
+      <workItem from="1605140179772" duration="8756000" />
+      <workItem from="1605151688200" duration="8753000" />
+      <workItem from="1605228539259" duration="1354000" />
+      <workItem from="1605490283786" duration="475000" />
+      <workItem from="1605695267832" duration="371000" />
+      <workItem from="1606131670581" duration="990000" />
     </task>
     <task id="LOCAL-00002" summary="侧边栏">
       <created>1575870018701</created>
@@ -605,7 +750,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605063065949</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="郝家乐(整合之后bug修改1.0)">
+      <created>1605064899881</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1605064899882</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +778,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="出库单2" />
     <MESSAGE value="出库单详情" />
     <MESSAGE value="出库单详情(完结)" />
     <MESSAGE value="出库单详情（完结）" />
@@ -651,18 +802,19 @@
     <MESSAGE value="郝家乐（个人中心优惠券）" />
     <MESSAGE value="郝家乐（整合毕秀峰）" />
     <MESSAGE value="郝家乐（整合毕秀峰,董莽）" />
-    <option name="LAST_COMMIT_MESSAGE" value="郝家乐（整合毕秀峰,董莽）" />
+    <MESSAGE value="郝家乐(整合之后bug修改1.0)" />
+    <option name="LAST_COMMIT_MESSAGE" value="郝家乐(整合之后bug修改1.0)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="595" y="179" key="#Application" timestamp="1603625803306">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="595" y="179" key="#Application/0.0.1920.1080@0.0.1920.1080" timestamp="1603625803306" />
-    <state x="414" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603870348311">
+    <state x="414" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606132054182">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="414" y="191" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603716534159" />
-    <state x="414" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603870348311" />
+    <state x="414" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1606132054182" />
     <state x="716" y="349" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603629637261">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -671,16 +823,16 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="329" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603625799376" />
-    <state x="231" y="113" key="CommitChangelistDialog2" timestamp="1605064571390">
+    <state x="231" y="113" key="CommitChangelistDialog2" timestamp="1605064896892">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="542" y="131" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603713319087" />
-    <state x="231" y="113" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1605064571390" />
-    <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1604979107764">
+    <state x="231" y="113" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1605064896892" />
+    <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1606132758513">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603713083258" />
-    <state x="740" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1604979107764" />
+    <state x="740" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1606132758513" />
     <state x="785" y="454" width="373" height="171" key="Github.CreateGistDialog" timestamp="1603626608041">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -693,46 +845,62 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="835" y="436" width="274" height="208" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604489673611" />
-    <state width="1877" height="197" key="GridCell.Tab.0.bottom" timestamp="1605064681006">
+    <state width="1860" height="278" key="GridCell.Tab.0.bottom" timestamp="1606132413571">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="197" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1605064681006" />
-    <state width="1877" height="197" key="GridCell.Tab.0.center" timestamp="1605064681005">
+    <state width="1860" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1606132413571" />
+    <state width="1860" height="278" key="GridCell.Tab.0.center" timestamp="1606132413571">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="197" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1605064681005" />
-    <state width="1877" height="197" key="GridCell.Tab.0.left" timestamp="1605064681005">
+    <state width="1860" height="278" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1606132413571" />
+    <state width="1860" height="278" key="GridCell.Tab.0.left" timestamp="1606132413570">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="197" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1605064681005" />
-    <state width="1877" height="197" key="GridCell.Tab.0.right" timestamp="1605064681006">
+    <state width="1860" height="278" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1606132413570" />
+    <state width="1860" height="278" key="GridCell.Tab.0.right" timestamp="1606132413571">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="197" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1605064681006" />
-    <state width="1877" height="197" key="GridCell.Tab.1.bottom" timestamp="1605064662832">
+    <state width="1860" height="278" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1606132413571" />
+    <state width="1860" height="278" key="GridCell.Tab.1.bottom" timestamp="1606132413571">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="197" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1605064662832" />
-    <state width="1877" height="197" key="GridCell.Tab.1.center" timestamp="1605064662832">
+    <state width="1860" height="278" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1606132413571" />
+    <state width="1860" height="278" key="GridCell.Tab.1.center" timestamp="1606132413571">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="197" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1605064662832" />
-    <state width="1877" height="197" key="GridCell.Tab.1.left" timestamp="1605064662832">
+    <state width="1860" height="278" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1606132413571" />
+    <state width="1860" height="278" key="GridCell.Tab.1.left" timestamp="1606132413571">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="197" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1605064662832" />
-    <state width="1877" height="197" key="GridCell.Tab.1.right" timestamp="1605064662832">
+    <state width="1860" height="278" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1606132413571" />
+    <state width="1860" height="278" key="GridCell.Tab.1.right" timestamp="1606132413571">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="197" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1605064662832" />
+    <state width="1860" height="278" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1606132413571" />
+    <state width="1877" height="399" key="GridCell.Tab.2.bottom" timestamp="1605142167525">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="399" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1605142167525" />
+    <state width="1877" height="399" key="GridCell.Tab.2.center" timestamp="1605142167525">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="399" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1605142167525" />
+    <state width="1877" height="399" key="GridCell.Tab.2.left" timestamp="1605142167525">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="399" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1605142167525" />
+    <state width="1877" height="399" key="GridCell.Tab.2.right" timestamp="1605142167525">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="399" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1605142167525" />
     <state x="184" y="96" key="MergeDialog" timestamp="1603956954506">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -746,28 +914,28 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="600" y="244" key="NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1603628059858" />
-    <state x="781" y="253" key="RollbackChangesDialog" timestamp="1603627091143">
+    <state x="781" y="253" key="RollbackChangesDialog" timestamp="1605145652217">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="781" y="253" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603627091143" />
-    <state x="463" y="185" key="SettingsEditor" timestamp="1605064628475">
+    <state x="781" y="253" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605145652217" />
+    <state x="463" y="185" key="SettingsEditor" timestamp="1606132690359">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="463" y="178" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603716419456" />
-    <state x="463" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1605064628475" />
-    <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1605063082284">
+    <state x="463" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1606132690359" />
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1605065312302">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="266" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603713851531" />
-    <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1605063082284" />
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1605065312302" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604487968978">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604487968978" />
-    <state x="652" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1605054035118">
+    <state x="652" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1605695271060">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="652" y="368" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605054035118" />
+    <state x="652" y="368" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605695271060" />
     <state x="752" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605064576285">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -781,10 +949,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="749" y="342" key="git4idea.merge.GitMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603627748314" />
-    <state x="763" y="419" key="git4idea.rebase.GitRebaseDialog" timestamp="1603627720080">
+    <state x="763" y="419" key="git4idea.rebase.GitRebaseDialog" timestamp="1605073357008">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="763" y="419" key="git4idea.rebase.GitRebaseDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603627720080" />
+    <state x="763" y="419" key="git4idea.rebase.GitRebaseDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605073357008" />
     <state x="771" y="393" key="git4idea.ui.GitTagDialog" timestamp="1603629000505">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -809,10 +977,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1604580328957" />
-    <state x="790" y="334" key="svn.repositoryBrowser" timestamp="1604535602438">
+    <state x="790" y="334" key="svn.repositoryBrowser" timestamp="1606132745431">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="790" y="334" key="svn.repositoryBrowser/0.0.1920.1080@0.0.1920.1080" timestamp="1604535602438" />
+    <state x="790" y="334" key="svn.repositoryBrowser/0.0.1920.1080@0.0.1920.1080" timestamp="1606132745431" />
     <state x="783" y="315" key="svn4idea.import.options" timestamp="1604489719448">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

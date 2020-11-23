@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>cn.buba.maven</groupId>
-    <artifactId>xgy</artifactId>
+    <artifactId>TZ</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>cat_project</name>
-    <description>xgy</description>
+    <description>TZ</description>
     <packaging>war</packaging>
 
     <properties>

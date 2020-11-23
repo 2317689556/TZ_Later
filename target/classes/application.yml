@@ -6,12 +6,11 @@ spring:
         max-file-size:
           30mb
         max-request-size:
-          30mb
+          100mb
   mvc:
     view:
       suffix: .jsp
       prefix: /jsps/
-
   #开启热部署
   devtools:
     restart:
@@ -22,12 +21,20 @@ spring:
   #数据源
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-#    url: jdbc:mysql://rm-bp1n43r616i2i5493so.mysql.rds.aliyuncs.com:3306/aoyo?useUnicode=true&characterEncoding=utf8
-    url: jdbc:mysql://localhost:3306/aoyo?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://rm-bp1n43r616i2i5493so.mysql.rds.aliyuncs.com:3306/aoyo?useUnicode=true&characterEncoding=utf8
     username: root
-    password: root
+    password: password321
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
+  redis:
+    hostname: localhost
+    port: 6379
+    database: 0
+    password: 123456
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
 #mybatis的配置
 mybatis:
   #读取mapping映射文件

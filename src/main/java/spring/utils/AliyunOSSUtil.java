@@ -58,7 +58,7 @@ public class AliyunOSSUtil {
             ossClient.setBucketAcl(bucketName,CannedAccessControlList.PublicRead);*/
             if (null != result) {
                 logger.info("==========>OSS文件上传成功,OSS地址：" + fileUrl);
-                return "http://oss-cn-beijing.aliyuncs.com/" + fileUrl;
+                return "https://mkdirphoto.oss-cn-beijing.aliyuncs.com/" + fileUrl;
             }
         } catch (OSSException oe) {
             logger.error(oe.getMessage());
