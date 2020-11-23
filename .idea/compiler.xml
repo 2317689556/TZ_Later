@@ -11,6 +11,7 @@
         <module name="xgy" />
         <module name="aoyo" />
         <module name="hospital" />
+        <module name="TZ_Later" />
       </profile>
     </annotationProcessing>
   </component>
