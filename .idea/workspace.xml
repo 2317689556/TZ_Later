@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="项目搭建（郝家乐）">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -266,6 +264,8 @@
       <workItem from="1605695267832" duration="371000" />
       <workItem from="1606131670581" duration="1557000" />
       <workItem from="1606134264852" duration="802000" />
+      <workItem from="1606176705871" duration="1684000" />
+      <workItem from="1606263266480" duration="2355000" />
     </task>
     <task id="LOCAL-00003" summary="权限">
       <created>1575873992248</created>
@@ -681,11 +681,11 @@
     </state>
     <state x="542" y="131" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603713319087" />
     <state x="231" y="113" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1606135132127" />
-    <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1606135101652">
+    <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1606267967163">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603713083258" />
-    <state x="740" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1606135101652" />
+    <state x="740" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1606267967163" />
     <state x="785" y="454" width="373" height="171" key="Github.CreateGistDialog" timestamp="1603626608041">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -785,10 +785,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604487968978" />
-    <state x="652" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1605695271060">
+    <state x="652" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1606177184113">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="652" y="368" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605695271060" />
+    <state x="652" y="368" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1606177184113" />
     <state x="752" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605064576285">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
