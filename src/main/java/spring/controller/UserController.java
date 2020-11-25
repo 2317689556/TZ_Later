@@ -22,6 +22,7 @@ public class UserController {
         User user1 = userService.login(user);
         if (user1 != null) {
             session.setAttribute("USER", user1);
+            System.out.println(44);
             return "index";
         } else {
             return "login";
