@@ -18,7 +18,7 @@ public class UserController {
     //测试
     @RequestMapping("login")
     public String login(User user, HttpSession session) {
-        System.out.println("进来了");
+        System.out.println("进来了哦");
         User user1 = userService.login(user);
         if (user1 != null) {
             session.setAttribute("USER", user1);
