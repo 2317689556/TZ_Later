@@ -15,7 +15,7 @@ public class UserController {
     @Resource
     UserService userService;
 
-    //测试
+    //测试lll
     @RequestMapping("login")
     public String login(User user, HttpSession session) {
         System.out.println("进来了哦");
