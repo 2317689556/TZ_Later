@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TZ" />
-        <module name="xgy" />
         <module name="aoyo" />
         <module name="hospital" />
+        <module name="TZ" />
         <module name="TZ_Later" />
+        <module name="xgy" />
       </profile>
     </annotationProcessing>
   </component>
