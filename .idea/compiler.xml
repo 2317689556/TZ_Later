@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="aoyo" />
-        <module name="hospital" />
         <module name="TZ" />
+        <module name="hospital" />
+        <module name="aoyo" />
         <module name="TZ_Later" />
         <module name="xgy" />
       </profile>
