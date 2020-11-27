@@ -23,7 +23,7 @@ public class UserController {
         if (user1 != null) {
             session.setAttribute("USER", user1);
             System.out.println(44);
-            return "index";
+            return "shouye/index";
         } else {
             return "login";
         }
