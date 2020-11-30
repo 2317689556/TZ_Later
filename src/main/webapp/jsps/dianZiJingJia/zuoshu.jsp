@@ -10,12 +10,17 @@
 <div style="width: 150px">
 <ul class="ce">
 
+    <%--监管办能看--%>
+    <c:if test="${USER.entityId==4||USER.entityId==0}">
     <li>
         <a href="#">竞价管理<img class="more" src="/images/more.png"/></a>
         <ul class="er">
             <li>     <a  href="##">电子竞价管理</a>    </li>
         </ul>
     </li>
+    </c:if>
+
+    <c:if test="${USER.entityId==4||USER.entityId==0}">
     <li>
         <a href="#">竞价监督<img class="more" src="/images/more.png"/></a>
         <ul class="er">
@@ -24,6 +29,8 @@
             <li> <a  href="##">标的设置规则</a> </li>
         </ul>
     </li>
+    </c:if>
+
     <div class="clear"></div>
 </ul>
 </div>

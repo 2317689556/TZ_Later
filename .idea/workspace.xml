@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="导航栏和左树（郝家乐）">
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/KXPMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/spring/controller/KXPController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/spring/dao/KXPMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/spring/service/KXPService.class" afterDir="false" />
+    <list default="true" id="0870ce28-f704-4d7f-8b95-8978d2d98d5d" name="Default" comment="个人办公权限（郝家乐）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/controller/HJLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/controller/HJLController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/dao/HJLMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/dao/HJLMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/pojo/PbUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/pojo/PbUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/service/HJLService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/service/HJLService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HJLMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HJLMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/chanQuanJiaoYi/zuoshu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/chanQuanJiaoYi/zuoshu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/dianZiJingJia/zuoshu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/dianZiJingJia/zuoshu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/geRenBanGong/zuoshu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/geRenBanGong/zuoshu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/jiaoYiDaTing/zuoshu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/jiaoYiDaTing/zuoshu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/utlis/daohang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/utlis/daohang.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/utlis/zuoshu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/utlis/zuoshu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/HJLMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/HJLMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/controller/HJLController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/controller/HJLController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/dao/HJLMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/dao/HJLMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/pojo/PbUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/pojo/PbUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/service/HJLService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/service/HJLService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +78,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../11/TZ" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../workspace/hospital" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -294,14 +277,7 @@
       <workItem from="1606436493065" duration="12424000" />
       <workItem from="1606525826533" duration="9998000" />
       <workItem from="1606646231082" duration="3747000" />
-      <workItem from="1606695530329" duration="743000" />
-    </task>
-    <task id="LOCAL-00007" summary="用户管理">
-      <created>1575888600029</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1575888600029</updated>
+      <workItem from="1606695530329" duration="13962000" />
     </task>
     <task id="LOCAL-00008" summary="用户管理">
       <created>1575889149410</created>
@@ -639,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606455658441</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="个人办公权限（郝家乐）">
+      <created>1606696333799</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1606696333799</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,7 +643,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="手术单（按钮）" />
     <MESSAGE value="采购申请/入库单（签批/驳回）" />
     <MESSAGE value="出库单、入库单（功能完善）" />
     <MESSAGE value="异常查询（完善）" />
@@ -685,7 +667,8 @@
     <MESSAGE value="测试提交（郝家乐）" />
     <MESSAGE value="项目类的完善（郝家乐）" />
     <MESSAGE value="导航栏和左树（郝家乐）" />
-    <option name="LAST_COMMIT_MESSAGE" value="导航栏和左树（郝家乐）" />
+    <MESSAGE value="个人办公权限（郝家乐）" />
+    <option name="LAST_COMMIT_MESSAGE" value="个人办公权限（郝家乐）" />
   </component>
   <component name="WindowStateProjectService">
     <state x="595" y="179" key="#Application" timestamp="1603625803306">
@@ -705,16 +688,16 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="329" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603625799376" />
-    <state x="562" y="137" key="CommitChangelistDialog2" timestamp="1606455653120">
+    <state x="562" y="137" key="CommitChangelistDialog2" timestamp="1606696330280">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="542" y="131" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603713319087" />
-    <state x="562" y="137" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1606455653120" />
-    <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1606654537630">
+    <state x="562" y="137" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1606696330280" />
+    <state x="740" y="298" key="FileChooserDialogImpl" timestamp="1606700783748">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603713083258" />
-    <state x="740" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1606654537630" />
+    <state x="740" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1606700783748" />
     <state x="785" y="454" width="373" height="171" key="Github.CreateGistDialog" timestamp="1603626608041">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -727,46 +710,46 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="835" y="436" width="274" height="208" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1604489673611" />
-    <state width="1877" height="220" key="GridCell.Tab.0.bottom" timestamp="1606648344310">
+    <state width="1877" height="284" key="GridCell.Tab.0.bottom" timestamp="1606714472964">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1606648344310" />
-    <state width="1877" height="220" key="GridCell.Tab.0.center" timestamp="1606648344310">
+    <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1606714472964" />
+    <state width="1877" height="284" key="GridCell.Tab.0.center" timestamp="1606714472964">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1606648344310" />
-    <state width="1877" height="220" key="GridCell.Tab.0.left" timestamp="1606648344309">
+    <state width="1877" height="284" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1606714472964" />
+    <state width="1877" height="284" key="GridCell.Tab.0.left" timestamp="1606714472964">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1606648344309" />
-    <state width="1877" height="220" key="GridCell.Tab.0.right" timestamp="1606648344310">
+    <state width="1877" height="284" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1606714472964" />
+    <state width="1877" height="284" key="GridCell.Tab.0.right" timestamp="1606714472964">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1606648344310" />
-    <state width="1877" height="220" key="GridCell.Tab.1.bottom" timestamp="1606648344310">
+    <state width="1877" height="284" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1606714472964" />
+    <state width="1877" height="284" key="GridCell.Tab.1.bottom" timestamp="1606714472965">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="220" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1606648344310" />
-    <state width="1877" height="220" key="GridCell.Tab.1.center" timestamp="1606648344310">
+    <state width="1877" height="284" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1606714472965" />
+    <state width="1877" height="284" key="GridCell.Tab.1.center" timestamp="1606714472965">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="220" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1606648344310" />
-    <state width="1877" height="220" key="GridCell.Tab.1.left" timestamp="1606648344310">
+    <state width="1877" height="284" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1606714472965" />
+    <state width="1877" height="284" key="GridCell.Tab.1.left" timestamp="1606714472964">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="220" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1606648344310" />
-    <state width="1877" height="220" key="GridCell.Tab.1.right" timestamp="1606648344310">
+    <state width="1877" height="284" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1606714472964" />
+    <state width="1877" height="284" key="GridCell.Tab.1.right" timestamp="1606714472965">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603717428609" />
-    <state width="1877" height="220" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1606648344310" />
+    <state width="1877" height="284" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1606714472965" />
     <state width="1877" height="367" key="GridCell.Tab.2.bottom" timestamp="1606546696215">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -805,11 +788,11 @@
     </state>
     <state x="463" y="178" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603716419456" />
     <state x="463" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1606132690359" />
-    <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1606455669778">
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1606696339897">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="266" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603713851531" />
-    <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1606455669778" />
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1606696339897" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1604487968978">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

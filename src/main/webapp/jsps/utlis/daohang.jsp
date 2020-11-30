@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -91,16 +92,17 @@
             <li class="info-i user-name has-pulldown">
                 <em class="f-icon pull-arrow"></em>
                 <a class="f-icon identity" href="" title="未开通VIP"></a>
-                <span class="name top-username">李四</span>
+                <span class="name top-username">${USER.userName}</span>
+                <span class="name top-username">(${USER.entityName})</span>
                 <div class="pulldown user-info">
                     <em class="arrow"></em>
                     <div class="content">
-                        <span class="li"><a href="">个人资料</a></span>
+                        <span class="li"><a data-toggle="modal" data-target="#myModal">个人资料</a></span>
                         <span class="li"><a href="">购买容量</a></span>
                         <span class="li"><a href="">免费扩容</a></span>
                         <span class="li"><a href="">会员中心</a></span>
                         <span class="separate-li no-height"></span>
-                        <span class="li"><a href="javascript:;" id="signout">退出</a></span>
+                        <span class="li"><a href="/jsps/login.jsp" id="signout">退出</a></span>
                     </div>
                 </div>
             </li>
@@ -129,5 +131,7 @@
             </li>
         </ul>
     </div>
-
+        </div>
 </div>
+
+

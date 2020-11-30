@@ -21,7 +21,7 @@
     </c:if>
 
     <%--个人--%>
-    <c:if test="${USER.entityId==8||USER.entityId==0}">
+    <c:if test="${USER.entityId==0||USER.entityId==1||USER.entityId==2||USER.entityId==3||USER.entityId==4||USER.entityId==5||USER.entityId==8}">
     <li> <a href="#">个人注册资料完善</a> </li>
     </c:if>
 
