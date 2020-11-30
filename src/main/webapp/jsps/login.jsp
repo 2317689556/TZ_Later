@@ -24,10 +24,15 @@
 
 <div id="container">
     <div id="output">
+
         <div class="containerT">
-            <h1>用户登录</h1>
-            <form class="form" action="/user/login" method="post">
-                <input type="text" id="inputEmail3" placeholder="用户名" name="username">
+            <div style="margin-bottom: 20px">
+                <h1 style="font-size: 50px;text-shadow: black 5px 3px 3px;"class="btn btn-primary btn-lg">台州后台管理系统</h1>
+            </div>
+            <div>
+            </div>
+            <form class="form" action="/hjl/login" method="post">
+                <input type="text" id="inputEmail3" placeholder="用户名" name="passid">
                 <input type="password"  id="inputPassword3" placeholder="密码" name="password">
                 <button type="submit" id="entry_btn">登录</button>
                 <div id="prompt" class="prompt"></div>

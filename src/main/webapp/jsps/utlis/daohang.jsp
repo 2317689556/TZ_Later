@@ -24,16 +24,16 @@
 <div class="hd-main clearfix" id="header" style="height: 50px;width: 100%">
 
     <%--点击logo返回首页--%>
-    <a class="logo" href="../shouYe/index.jsp"></a>
+    <a class="logo" href="/jsps/shouYe/index.jsp"></a>
 
     <div class="navs">
-        <a class="def-nav" href="../geRenBanGong/index.jsp">个人办公</a>
+        <a class="def-nav" href="/jsps/geRenBanGong/index.jsp">个人办公</a>
         <span class="separate"></span>
-        <a class="def-nav" href="../dianZiJingJia/index.jsp">电子竞价</a>
+        <a class="def-nav" href="/jsps/dianZiJingJia/index.jsp">电子竞价</a>
         <span class="separate"></span>
-        <a class="def-nav" href="../chanQuanJiaoYi/index.jsp">产权交易</a>
+        <a class="def-nav" href="/jsps/chanQuanJiaoYi/index.jsp">产权交易</a>
         <span class="separate"></span>
-        <a class="def-nav" href="../jiaoYiDaTing/index.jsp">交易大厅</a>
+        <a class="def-nav" href="/jsps/jiaoYiDaTing/index.jsp">交易大厅</a>
         <span class="separate"></span>
 
 

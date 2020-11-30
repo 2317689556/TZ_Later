@@ -4,5 +4,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring.dao.HJLMapper">
 
+    <!--用户登录-->
+    <!--User login(PbUser user);-->
+    <select id="login" resultType="pbUser">
+        SELECT
+	    a.user_name,
+	    b.qx_id,
+	    c.entity_id,
+        c.entity_name
+        FROM
+	pb_user a,
+	pb_quan_x b,
+	pb_entity c
+WHERE
+	a.user_id = b.user_id
+AND b.qx_id = c.entity_id
+ and a.passid=#{passid}
+ and a.password=#{password}
+    </select>
 
 </mapper>

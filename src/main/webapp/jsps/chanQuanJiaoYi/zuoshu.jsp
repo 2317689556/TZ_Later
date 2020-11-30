@@ -6,60 +6,114 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div style="width: 150px">
 <ul class="ce">
-    <li> <a class="xz"  href="#">目录A</a> </li>
     <li>
-        <a href="#">目录B <img class="more" src="/images/more.png"/></a>
+        <a href="#">业务办理<img class="more" src="/images/more.png"/></a>
+
         <ul class="er">
-            <li>     <a  href="##">二级目录A</a>    </li>
+
             <li class="e_li">
-                <a  href="##">二级目录B</a>
+                <a  href="##">财务</a>
                 <ul class="thr">
-                    <li> <a  href="##">三级目录A</a> </li>
-                    <li>
-                        <a  href="##">三级目录B <img class="more1" src="/images/more1.png"/></a>
-                        <div class="thr_nr">
-                            <h3> 三级目录B主要内容 </h3>
-                            <img src="/images/aa.png"/>
-                        </div>
-                    </li>
-                    <li> <a  href="##">三级目录C</a> </li>
-                    <li>
-                        <a  href="##">三级目录D <img class="more1" src="/images/more1.png"/></a>
-                        <div class="thr_nr">
-                            <h3> 三级目录D主要内容 </h3>
-                            <img src="/images/bb.png"/>
-                        </div>
-                    </li>
+                    <li> <a  href="##">正常保证金</a> </li>
+                    <li> <a  href="##">异常保证金</a> </li>
+                    <li> <a  href="##">退保证金审核</a> </li>
+
+                    <%--委托人--%>
+                    <li> <a  href="##">保证金退付管理</a> </li>
+                    <li> <a  href="##">已办理</a> </li>
                     <div class="clear"></div>
                 </ul>
             </li>
-            <li>     <a  href="##">二级目录C</a>   </li>
+            <%--竞买人--%>
+            <li> <a href="#">缴纳保证金</a> </li>
+
+            <%--竞买人--%>
+            <li> <a href="#">项目报名</a> </li>
+
+            <li> <a href="#">合同办理</a> </li>
+
+            <li> <a href="#">项目交易申请</a> </li>
+
+            <li> <a href="#">合同审核</a> </li>
+        </ul>
+
+    </li>
+
+
+
+    <li>
+        <a href="#">项目管理<img class="more" src="/images/more.png"/></a>
+
+        <ul class="er">
+
             <li class="e_li">
-                <a  href="##">二级目录D</a>
+
+                <a  href="##">资格审核</a>
+
                 <ul class="thr">
-                    <li> <a  href="##">三级目录A</a> </li>
-                    <li> <a  href="##">三级目录B</a> </li>
-                    <li> <a  href="##">三级目录C</a> </li>
-                    <li> <a  href="##">三级目录D</a> </li>
+
+                    <li> <a  href="##">竞买人列表</a> </li>
+
                     <div class="clear"></div>
                 </ul>
             </li>
+            <li> <a href="#">合同办理</a> </li>
+
+            <li> <a href="#">合同备案</a> </li>
+
+            <li> <a href="#">项目交易受理</a> </li>
+
+            <%--处长--%>
+            <li> <a href="#">项目交易审核</a> </li>
+
+            <%--委托人--%>
+            <li> <a href="#">项目申请审核</a> </li>
+
+            <%--处长--%>
+            <li> <a href="#">项目申请分派</a> </li>
+
+            <li> <a href="#">成交确认书</a> </li>
+
+            <li> <a href="#">成交结果录入办理</a> </li>
+
+            <li> <a href="#">补充文件办理</a> </li>
+
+            <li> <a href="#">结果公示</a> </li>
+
         </ul>
+
     </li>
-    <li> <a href="#">目录C</a> </li>
-    <li> <a href="#">目录D</a> </li>
-    <li> <a href="#">目录E</a> </li>
+
+
     <li>
-        <a href="#">目录F <img class="more" src="/images/more.png"/></a>
+        <a href="#">项目办理<img class="more" src="/images/more.png"/></a>
+
         <ul class="er">
-            <li> <a  href="##">二级目录A</a> </li>
-            <li> <a  href="##">二级目录B</a> </li>
-            <li> <a  href="##">二级目录C</a> </li>
-            <li> <a  href="##">二级目录D</a> </li>
+
+            <%--监管办--%>
+            <li> <a href="#">竞价规则设置</a> </li>
+
+            <%--监管办--%>
+            <li> <a href="#">项目负责人登记办理项目</a> </li>
+
+            <%--委托人--%>
+            <li> <a href="#">委托人确认</a> </li>
+
+            <%--监管办--%>
+            <li> <a href="#">监管办备案</a> </li>
+
+            <%--处长--%>
+            <li> <a href="#">处长审核</a> </li>
+
         </ul>
+
     </li>
+
+
+
     <div class="clear"></div>
 </ul>
 </div>
