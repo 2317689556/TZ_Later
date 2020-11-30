@@ -17,7 +17,7 @@
 
     <%--委托人--%>
     <c:if test="${USER.entityId==6||USER.entityId==0}">
-    <li> <a  href="#">委托人注册资料完善</a> </li>
+    <li> <a  href="${pageContext.request.contextPath}/cjl/findByid">委托人注册资料完善</a> </li>
     </c:if>
 
     <%--个人--%>

@@ -8,6 +8,7 @@ import spring.pojo.User;
 import spring.service.HJLService;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -21,13 +22,13 @@ public class HJLController {
     @RequestMapping("login")
     public String login(PbUser user, HttpSession session) {
         PbUser user1 = hjlService.login(user);
-        System.out.println(user1);
         if (user1 != null) {
             session.setAttribute("USER", user1);
-
             return "shouYe/index";
         } else {
             return "login";
         }
     }
+
+
 }
