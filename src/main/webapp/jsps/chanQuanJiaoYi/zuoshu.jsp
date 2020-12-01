@@ -132,7 +132,6 @@
 
                         <%--监管办--%>
                     <c:if test="${USER.entityId==4||USER.entityId==0}">
-                        <li><a href="#">竞价规则设置</a></li>
 
                         <%--监管办--%>
                         <li><a href="#">项目负责人登记办理项目</a></li>
