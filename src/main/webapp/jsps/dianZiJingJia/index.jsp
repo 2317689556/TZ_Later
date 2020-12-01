@@ -23,7 +23,7 @@
 </head>
 
 <body>
-<c:import url="../utlis/daohang.jsp"/>
+<c:import url="/jsps/utlis/daohang.jsp"/>
 <c:import url="zuoshu.jsp"/>
 <div style="width: 1500px; height: 900px; border:1px solid rgba(0,0,0,0.6); float: left; margin: 50px 0px 0px 250px; box-shadow: 0 0 8px black;">
     <h3 style="margin-top:20px; margin-bottom: 30px;margin-left: 700px;font-size: 30px">电子竞价</h3>
