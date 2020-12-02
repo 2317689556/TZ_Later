@@ -79,7 +79,7 @@
                         <li class="e_li">
                             <a href="##">资格审核</a>
                             <ul class="thr">
-                                <li><a href="##">竞买人列表</a></li>
+                                <li><a href="/jsps/chanQuanJiaoYi/hjl/jingmairen.jsp">竞买人列表</a></li>
                                 <div class="clear"></div>
                             </ul>
                         </li>
@@ -158,7 +158,6 @@
         <div class="clear"></div>
     </ul>
 </div>
-<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 
 

@@ -24,4 +24,52 @@ AND b.qx_id = c.entity_id
  and a.password=#{password}
     </select>
 
+    <!--竞买人列表_全查-->
+    <!--List<PbUser> jingmaorenFindAll();-->
+    <select id="jingmaorenFindAll" resultType="pbUser">
+        SELECT
+        a.user_id,
+        a.user_idcard,
+        a.user_name,
+        a.user_lxr_name,
+        a.user_lxr_phone,
+        c.entity_id,
+        c.entity_name,
+        a.start_time
+        FROM
+        pb_user a,
+        pb_quan_x b,
+        pb_entity c
+        WHERE
+        a.user_id = b.user_id
+        AND b.qx_id = c.entity_id
+        AND c.entity_id&lt;=8 AND c.entity_id&gt;=7
+    </select>
+
+
+    <!--竞买人列表_详情-->
+    <!--List<PbUser> jingmairenFindAllById(Integer userId);-->
+    <select id="jingmairenFindAllById" resultType="pbUser">
+        SELECT
+        a.user_id,
+        a.user_idcard,
+        a.user_name,
+        a.user_lxr_name,
+        a.user_lxr_phone,
+        a.user_address,
+        a.user_lxr_id_card,
+        a.user_fr_name,
+	    a.user_fr_phone,
+        c.entity_id,
+        c.entity_name,
+        a.start_time
+        FROM
+        pb_user a,
+        pb_quan_x b,
+        pb_entity c
+        WHERE
+        a.user_id = b.user_id
+        AND b.qx_id = c.entity_id
+        AND a.user_id=#{userId}
+    </select>
 </mapper>
